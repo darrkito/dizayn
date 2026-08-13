@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/content/services";
+import { blogPosts } from "@/content/blog";
 
 // TODO: update once the production domain is live.
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
@@ -18,5 +19,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages];
+  const blogListPages: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/blog`,
+      priority: 0.7,
+      alternates: { languages: { es: `${SITE_URL}/blog`, en: `${SITE_URL}/en/blog` } },
+    },
+    {
+      url: `${SITE_URL}/en/blog`,
+      priority: 0.7,
+      alternates: { languages: { es: `${SITE_URL}/blog`, en: `${SITE_URL}/en/blog` } },
+    },
+  ];
+
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.flatMap((p) => {
+    const esUrl = `${SITE_URL}/blog/${p.slug}`;
+    const enUrl = `${SITE_URL}/en/blog/${p.slug}`;
+    const alternates = { languages: { es: esUrl, en: enUrl } };
+    return [
+      { url: esUrl, lastModified: p.dateModified, priority: 0.6, alternates },
+      { url: enUrl, lastModified: p.dateModified, priority: 0.6, alternates },
+    ];
+  });
+
+  return [...staticPages, ...servicePages, ...blogListPages, ...blogPostPages];
 }

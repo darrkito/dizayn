@@ -49,6 +49,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href={lang === "en" ? "/en/blog" : "/blog"} className="text-sm text-muted-foreground hover:text-foreground">
+                {t.nav.blog}
+              </Link>
+            </li>
+            <li>
               <Link href="/contacto" className="text-sm text-muted-foreground hover:text-foreground">
                 {t.nav.contact}
               </Link>

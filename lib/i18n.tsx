@@ -11,9 +11,21 @@ const dict = {
       home: "Inicio",
       services: "Servicios",
       portfolio: "Portafolio",
+      blog: "Blog",
       about: "Nosotros",
       contact: "Contacto",
       cta: "Cotizar proyecto",
+    },
+    blog: {
+      title: "Blog",
+      lead: "Ideas y guías sobre marketing, diseño y posicionamiento en buscadores e IA, escritas por el equipo de Dizayn en Guadalajara.",
+      readMore: "Leer artículo",
+      back: "Volver al blog",
+      published: "Publicado",
+      updated: "Actualizado",
+      relatedTitle: "Artículos relacionados",
+      ctaTitle: "¿Tu marca necesita esto?",
+      ctaLead: "Hablemos de tu proyecto y te decimos por dónde empezar.",
     },
     home: {
       eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
@@ -126,9 +138,21 @@ const dict = {
       home: "Home",
       services: "Services",
       portfolio: "Portfolio",
+      blog: "Blog",
       about: "About",
       contact: "Contact",
       cta: "Start a project",
+    },
+    blog: {
+      title: "Blog",
+      lead: "Ideas and guides on marketing, design, and ranking in search and AI, written by the Dizayn team in Guadalajara.",
+      readMore: "Read article",
+      back: "Back to blog",
+      published: "Published",
+      updated: "Updated",
+      relatedTitle: "Related articles",
+      ctaTitle: "Does your brand need this?",
+      ctaLead: "Let's talk about your project and where to start.",
     },
     home: {
       eyebrow: "Marketing agency · Guadalajara, Mexico",
@@ -237,6 +261,10 @@ const dict = {
 } as const;
 
 export type Dict = (typeof dict)["es"];
+
+/** Look up dict text for an explicit lang, independent of ambient i18n context — use where the
+ * language is determined by the URL (e.g. /en/blog/*) and must not depend on client hydration state. */
+export const getDict = (l: Lang): Dict => dict[l] as Dict;
 
 const STORAGE_KEY = "dizayn-lang";
 

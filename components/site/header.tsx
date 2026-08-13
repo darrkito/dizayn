@@ -1,22 +1,43 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type Lang } from "@/lib/i18n";
 import { ThemeToggle } from "./theme-toggle";
 
 const linkClass = "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
 const activeLinkClass = "text-sm font-semibold text-primary";
 
+/** /blog and /en/blog are the only routes with a real per-language URL pair so far —
+ * everywhere else the toggle still just flips client state (see seo-ai-search-playbook.md §6). */
+function blogSiblingPath(pathname: string, targetLang: Lang): string | null {
+  if (pathname === "/en/blog" || pathname.startsWith("/en/blog/")) {
+    const esPath = pathname.slice(3); // strip "/en" prefix
+    return targetLang === "en" ? pathname : esPath;
+  }
+  if (pathname === "/blog" || pathname.startsWith("/blog/")) {
+    return targetLang === "en" ? `/en${pathname}` : pathname;
+  }
+  return null;
+}
+
 export function Header() {
   const { t, lang, setLang } = useI18n();
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
+
+  const handleLang = (l: Lang) => {
+    const alt = blogSiblingPath(pathname ?? "", l);
+    setLang(l);
+    if (alt && alt !== pathname) router.push(alt);
+  };
 
   const items = [
     { href: "/servicios", label: t.nav.services },
     { href: "/portafolio", label: t.nav.portfolio },
+    { href: lang === "en" ? "/en/blog" : "/blog", label: t.nav.blog },
     { href: "/nosotros", label: t.nav.about },
     { href: "/contacto", label: t.nav.contact },
   ] as const;
@@ -44,7 +65,7 @@ export function Header() {
           <div className="flex items-center gap-1 text-xs uppercase tracking-[0.18em]">
             <button
               type="button"
-              onClick={() => setLang("es")}
+              onClick={() => handleLang("es")}
               className={lang === "es" ? "text-primary" : "text-muted-foreground hover:text-foreground"}
               aria-label="Español"
             >
@@ -53,7 +74,7 @@ export function Header() {
             <span className="text-border">/</span>
             <button
               type="button"
-              onClick={() => setLang("en")}
+              onClick={() => handleLang("en")}
               className={lang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"}
               aria-label="English"
             >
