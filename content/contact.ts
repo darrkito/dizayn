@@ -1,8 +1,7 @@
 export const CONTACT = {
-  // TODO: replace with the real numbers/emails
-  whatsapp: "5213300000000",
-  whatsappDisplay: "+52 33 0000 0000",
-  email: "hola@dizayn.mx",
+  whatsapp: "524621922778",
+  whatsappDisplay: "+52 462 192 2778",
+  email: "sebasesc5@gmail.com",
   instagram: "https://www.instagram.com/dizayn_mx/",
   city: "Guadalajara, Jalisco, México",
 };
