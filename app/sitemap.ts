@@ -3,7 +3,7 @@ import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
 
 // TODO: update once the production domain is live.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

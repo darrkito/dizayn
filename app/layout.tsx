@@ -16,7 +16,7 @@ const jakarta = Plus_Jakarta_Sans({
 const title = "Dizayn | Agencia de marketing en Guadalajara";
 const description =
   "Agencia de marketing en Guadalajara: sitios web, SEO, posicionamiento en IA, redes sociales, embudos de venta, fotografía y video. México y el mundo.";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
