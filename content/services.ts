@@ -24,7 +24,7 @@ export const services: Service[] = [
     slug: "sitios-web",
     number: "01",
     es: {
-      name: "Creación de sitios web",
+      name: "Diseño de sitios web",
       tagline: "Sitios que venden, no folletos digitales.",
       intro:
         "Diseñamos y desarrollamos sitios web rápidos, claros y pensados para convertir visitas en clientes. Cada proyecto arranca con estrategia de mensaje y termina con un sitio medible, editable y listo para posicionar.",
@@ -52,7 +52,7 @@ export const services: Service[] = [
         { q: "¿Cuánto tarda un sitio?", a: "Un sitio corporativo típico toma de 3 a 6 semanas, dependiendo de contenido y aprobaciones." },
         { q: "¿Puedo editarlo yo?", a: "Sí. Entregamos el sitio con capacitación y documentación para que tu equipo actualice contenido sin depender de nosotros." },
       ],
-      metaTitle: "Creación de sitios web en Guadalajara",
+      metaTitle: "Agencia de Diseño Web en Guadalajara",
       metaDescription:
         "Diseño y desarrollo de sitios web a medida en Guadalajara: rápidos, optimizados para SEO y enfocados en convertir visitas en clientes.",
     },
@@ -332,7 +332,7 @@ export const services: Service[] = [
         { q: "¿Incluye la inversión publicitaria?", a: "No. El presupuesto de anuncios se paga directo a la plataforma y se define contigo." },
         { q: "¿Con qué herramientas trabajan?", a: "Nos adaptamos a tu stack; si no tienes, montamos uno simple y económico." },
       ],
-      metaTitle: "Embudos de venta y landing pages que convierten",
+      metaTitle: "Agencia de Embudos de Venta en Guadalajara",
       metaDescription:
         "Diseño de embudos de venta completos: oferta, landing, automatización y seguimiento. Menos costo por prospecto, más cierres.",
     },
@@ -365,7 +365,7 @@ export const services: Service[] = [
         { q: "Is ad spend included?", a: "No. Media budget is paid directly to the platform and agreed with you." },
         { q: "Which tools do you use?", a: "We adapt to your stack; if you don't have one, we set up something simple and affordable." },
       ],
-      metaTitle: "Sales funnels & landing pages that convert",
+      metaTitle: "Sales Funnel Agency in Guadalajara",
       metaDescription:
         "Full sales funnel design: offer, landing page, automation and follow-up. Lower cost per lead, more closed deals.",
     },
