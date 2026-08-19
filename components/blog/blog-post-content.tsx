@@ -14,6 +14,7 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
   const post = getPost(slug)!;
   const copy = post[lang];
   const blogHref = lang === "es" ? "/blog" : "/en/blog";
+  const contactHref = lang === "es" ? "/contacto" : "/en/contacto";
 
   useEffect(() => {
     setLang(lang);
@@ -51,7 +52,7 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
         </header>
 
         <div className="mt-10" itemProp="articleBody">
-          {renderBlogContent(copy.content)}
+          {renderBlogContent(copy.content, lang)}
         </div>
 
         {copy.faq.length > 0 && (
@@ -72,7 +73,7 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
       <section className="mt-20 rule pt-16">
         <h2 className="font-display text-2xl">{t.blog.ctaTitle}</h2>
         <p className="mt-3 max-w-xl text-muted-foreground">{t.blog.ctaLead}</p>
-        <Link href="/contacto" className="mt-6 btn-primary inline-block">
+        <Link href={contactHref} className="mt-6 btn-primary inline-block">
           {t.nav.cta}
         </Link>
       </section>

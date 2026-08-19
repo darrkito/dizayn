@@ -1,6 +1,13 @@
 import type { ReactNode } from "react";
+import type { Lang } from "@/content/services";
 
-const parseInline = (text: string) =>
+/** Content strings write internal links as plain ES paths (e.g. `/servicios/seo`) regardless of
+ * which language copy they're in — this prefixes them for `en` so EN pages don't link back into
+ * the ES URL tree. Paths already under `/en` (e.g. cross-links to other EN blog posts) are left alone. */
+const localizePath = (path: string, lang: Lang) =>
+  lang === "en" && !path.startsWith("/en") ? `/en${path}` : path;
+
+const parseInline = (text: string, lang: Lang) =>
   text
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
     .replace(
@@ -11,13 +18,13 @@ const parseInline = (text: string) =>
       /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g,
       '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary underline underline-offset-4 hover:no-underline">$1</a>'
     )
-    .replace(
-      /\[([^\]]+)\]\((\/[^)]+)\)/g,
-      '<a href="$2" class="text-primary underline underline-offset-4 hover:no-underline">$1</a>'
-    );
+    .replace(/\[([^\]]+)\]\((\/[^)]+)\)/g, (_match, label: string, path: string) => {
+      const href = localizePath(path, lang);
+      return `<a href="${href}" class="text-primary underline underline-offset-4 hover:no-underline">${label}</a>`;
+    });
 
 /** Parses a small markdown-lite dialect (headers, bold, links, lists, blockquote, tables) into JSX. */
-export function renderBlogContent(content: string): ReactNode[] {
+export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
   const lines = content.trim().split("\n");
   const elements: ReactNode[] = [];
   let i = 0;
@@ -114,7 +121,7 @@ export function renderBlogContent(content: string): ReactNode[] {
         <blockquote
           key={i}
           className="border-l-2 border-primary pl-5 my-6 text-lg text-foreground"
-          dangerouslySetInnerHTML={{ __html: parseInline(trimmed.slice(2)) }}
+          dangerouslySetInnerHTML={{ __html: parseInline(trimmed.slice(2), lang) }}
         />
       );
       i++;
@@ -125,7 +132,7 @@ export function renderBlogContent(content: string): ReactNode[] {
       if (listType !== "ul") flushList();
       listType = "ul";
       listBuffer.push(
-        <li key={i} className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: parseInline(trimmed.slice(2)) }} />
+        <li key={i} className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: parseInline(trimmed.slice(2), lang) }} />
       );
       i++;
       continue;
@@ -138,7 +145,7 @@ export function renderBlogContent(content: string): ReactNode[] {
         <li
           key={i}
           className="text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: parseInline(trimmed.replace(/^\d+\.\s/, "")) }}
+          dangerouslySetInnerHTML={{ __html: parseInline(trimmed.replace(/^\d+\.\s/, ""), lang) }}
         />
       );
       i++;
@@ -147,7 +154,7 @@ export function renderBlogContent(content: string): ReactNode[] {
 
     flushList();
     elements.push(
-      <p key={i} className="text-muted-foreground leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: parseInline(trimmed) }} />
+      <p key={i} className="text-muted-foreground leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: parseInline(trimmed, lang) }} />
     );
     i++;
   }
