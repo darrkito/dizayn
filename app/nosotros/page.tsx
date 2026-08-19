@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { AboutContent } from "@/components/about/about-content";
 
-const title = "Sobre Dizayn, agencia creativa en Guadalajara | Dizayn";
+const title = "Sobre Dizayn, agencia creativa en Guadalajara";
 const description =
   "Dizayn es un equipo creativo con base en Guadalajara, Jalisco: estrategia, diseño, producción audiovisual y crecimiento digital para México y el mundo.";
 

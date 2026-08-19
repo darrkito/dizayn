@@ -52,7 +52,7 @@ export const services: Service[] = [
         { q: "¿Cuánto tarda un sitio?", a: "Un sitio corporativo típico toma de 3 a 6 semanas, dependiendo de contenido y aprobaciones." },
         { q: "¿Puedo editarlo yo?", a: "Sí. Entregamos el sitio con capacitación y documentación para que tu equipo actualice contenido sin depender de nosotros." },
       ],
-      metaTitle: "Creación de sitios web en Guadalajara | Dizayn",
+      metaTitle: "Creación de sitios web en Guadalajara",
       metaDescription:
         "Diseño y desarrollo de sitios web a medida en Guadalajara: rápidos, optimizados para SEO y enfocados en convertir visitas en clientes.",
     },
@@ -85,7 +85,7 @@ export const services: Service[] = [
         { q: "How long does a site take?", a: "A typical corporate site takes 3 to 6 weeks depending on content and approvals." },
         { q: "Can I edit it myself?", a: "Yes. We hand over with training and documentation so your team updates content without us." },
       ],
-      metaTitle: "Web design & development in Guadalajara | Dizayn",
+      metaTitle: "Web design & development in Guadalajara",
       metaDescription:
         "Custom website design and development from Guadalajara, Mexico: fast, SEO-ready and built to convert visitors into customers.",
     },
@@ -122,7 +122,7 @@ export const services: Service[] = [
         { q: "¿En cuánto tiempo veo resultados?", a: "Las mejoras técnicas y locales suelen notarse en 4 a 8 semanas; el crecimiento sostenido toma de 3 a 6 meses." },
         { q: "¿Garantizan el primer lugar?", a: "Nadie puede garantizarlo honestamente. Garantizamos trabajo medible y reportes claros de lo que sí se mueve." },
       ],
-      metaTitle: "Agencia SEO en Guadalajara | Dizayn",
+      metaTitle: "Agencia SEO en Guadalajara",
       metaDescription:
         "SEO técnico, local y de contenido para negocios en Guadalajara y todo México. Más tráfico calificado y más prospectos, con reportes claros.",
     },
@@ -155,7 +155,7 @@ export const services: Service[] = [
         { q: "How fast will I see results?", a: "Technical and local wins usually show in 4 to 8 weeks; compounding growth takes 3 to 6 months." },
         { q: "Do you guarantee position one?", a: "Nobody honestly can. We guarantee measurable work and clear reporting on what actually moves." },
       ],
-      metaTitle: "SEO agency in Guadalajara, Mexico | Dizayn",
+      metaTitle: "SEO agency in Guadalajara, Mexico",
       metaDescription:
         "Technical, local and content SEO for businesses in Mexico and abroad. More qualified traffic, more leads, transparent reporting.",
     },
@@ -164,10 +164,10 @@ export const services: Service[] = [
     slug: "posicionamiento-ia",
     number: "03",
     es: {
-      name: "Posicionamiento en IA y LLMs",
+      name: "GEO: posicionamiento en IA y LLMs",
       tagline: "Que ChatGPT también te recomiende.",
       intro:
-        "Cada vez más personas preguntan a ChatGPT, Perplexity o Gemini antes de comprar. Preparamos tu marca para ser citada por esos modelos: contenido estructurado, entidades claras y fuentes que la IA puede leer y confiar.",
+        "Cada vez más personas preguntan a ChatGPT, Perplexity o Gemini antes de comprar. A optimizar tu marca para estos motores se le llama GEO (Generative Engine Optimization). Preparamos tu marca para ser citada por esos modelos: contenido estructurado, entidades claras y fuentes que la IA puede leer y confiar.",
       includes: [
         "Auditoría de visibilidad en ChatGPT, Perplexity y Gemini",
         "Datos estructurados y definición de entidad de marca",
@@ -192,15 +192,15 @@ export const services: Service[] = [
         { q: "¿Esto reemplaza al SEO?", a: "No, lo complementa. La base técnica y de contenido sirve para ambos, pero el formato y las fuentes cambian." },
         { q: "¿Se puede medir?", a: "Sí. Documentamos las respuestas de los modelos antes y después, con capturas y prompts repetibles." },
       ],
-      metaTitle: "Posicionamiento en IA y LLMs (ChatGPT, Perplexity) | Dizayn",
+      metaTitle: "Agencia GEO en Guadalajara (Posicionamiento en IA)",
       metaDescription:
-        "Haz que ChatGPT, Perplexity y Gemini recomienden tu marca. Estrategia de visibilidad en modelos de IA para negocios en México.",
+        "Agencia GEO en México: haz que ChatGPT, Perplexity y Gemini recomienden tu marca. Estrategia de visibilidad en modelos de IA para negocios en México.",
     },
     en: {
-      name: "AI & LLM visibility",
+      name: "GEO: AI & LLM visibility",
       tagline: "Get recommended by ChatGPT too.",
       intro:
-        "More people ask ChatGPT, Perplexity or Gemini before they buy. We prepare your brand to be cited by those models: structured content, clear entities and sources AI can read and trust.",
+        "More people ask ChatGPT, Perplexity or Gemini before they buy. Optimizing your brand for these engines is called GEO (Generative Engine Optimization). We prepare your brand to be cited by those models: structured content, clear entities and sources AI can read and trust.",
       includes: [
         "Visibility audit across ChatGPT, Perplexity and Gemini",
         "Structured data and brand entity definition",
@@ -225,16 +225,16 @@ export const services: Service[] = [
         { q: "Does this replace SEO?", a: "No, it complements it. The technical and content base serves both, but format and sources differ." },
         { q: "Can it be measured?", a: "Yes. We document model answers before and after with repeatable prompts and screenshots." },
       ],
-      metaTitle: "AI & LLM visibility (ChatGPT, Perplexity) | Dizayn",
+      metaTitle: "GEO Agency in Guadalajara (AI Search Visibility)",
       metaDescription:
-        "Make ChatGPT, Perplexity and Gemini recommend your brand. AI search visibility strategy for businesses in Mexico and worldwide.",
+        "GEO agency in Mexico: make ChatGPT, Perplexity and Gemini recommend your brand. AI search visibility strategy for businesses in Mexico and worldwide.",
     },
   },
   {
     slug: "redes-sociales",
     number: "04",
     es: {
-      name: "Crecimiento en redes sociales",
+      name: "Agencia de redes sociales",
       tagline: "Comunidad que compra, no solo que da like.",
       intro:
         "Estrategia, producción y publicación para que tus redes trabajen como canal de venta. Contenido con dirección de arte real, calendario constante y métricas que importan.",
@@ -262,12 +262,12 @@ export const services: Service[] = [
         { q: "¿Incluye la producción de contenido?", a: "Sí. Fotografía y video están incluidos en los planes mensuales; no dependes de material de banco." },
         { q: "¿Manejan pauta?", a: "Sí, gestionamos campañas en Meta y TikTok con presupuesto aparte del fee." },
       ],
-      metaTitle: "Manejo y crecimiento de redes sociales en Guadalajara | Dizayn",
+      metaTitle: "Agencia de Redes Sociales en Guadalajara",
       metaDescription:
         "Estrategia, producción de contenido y community management para marcas en Guadalajara y todo México. Redes que generan ventas.",
     },
     en: {
-      name: "Social media growth",
+      name: "Social media management agency",
       tagline: "A community that buys, not just likes.",
       intro:
         "Strategy, production and publishing so your social channels work as a sales channel. Content with real art direction, a consistent calendar and metrics that matter.",
@@ -295,7 +295,7 @@ export const services: Service[] = [
         { q: "Is content production included?", a: "Yes. Photo and video are part of the monthly plans, so you never rely on stock." },
         { q: "Do you run ads?", a: "Yes, we manage Meta and TikTok campaigns with ad spend billed separately." },
       ],
-      metaTitle: "Social media management & growth | Dizayn",
+      metaTitle: "Social Media Management Agency in Guadalajara",
       metaDescription:
         "Content strategy, production and community management for brands in Mexico and abroad. Social channels that actually generate sales.",
     },
@@ -332,7 +332,7 @@ export const services: Service[] = [
         { q: "¿Incluye la inversión publicitaria?", a: "No. El presupuesto de anuncios se paga directo a la plataforma y se define contigo." },
         { q: "¿Con qué herramientas trabajan?", a: "Nos adaptamos a tu stack; si no tienes, montamos uno simple y económico." },
       ],
-      metaTitle: "Embudos de venta y landing pages que convierten | Dizayn",
+      metaTitle: "Embudos de venta y landing pages que convierten",
       metaDescription:
         "Diseño de embudos de venta completos: oferta, landing, automatización y seguimiento. Menos costo por prospecto, más cierres.",
     },
@@ -365,7 +365,7 @@ export const services: Service[] = [
         { q: "Is ad spend included?", a: "No. Media budget is paid directly to the platform and agreed with you." },
         { q: "Which tools do you use?", a: "We adapt to your stack; if you don't have one, we set up something simple and affordable." },
       ],
-      metaTitle: "Sales funnels & landing pages that convert | Dizayn",
+      metaTitle: "Sales funnels & landing pages that convert",
       metaDescription:
         "Full sales funnel design: offer, landing page, automation and follow-up. Lower cost per lead, more closed deals.",
     },
@@ -402,7 +402,7 @@ export const services: Service[] = [
         { q: "¿Viajan fuera de Guadalajara?", a: "Sí. Trabajamos en todo México y en proyectos internacionales cuando el alcance lo justifica." },
         { q: "¿Cuántas fotos entregan?", a: "Depende del proyecto; siempre se define el número de tomas finales retocadas antes de empezar." },
       ],
-      metaTitle: "Fotografía profesional en Guadalajara | Dizayn",
+      metaTitle: "Fotografía profesional en Guadalajara",
       metaDescription:
         "Fotografía de producto, gastronomía, arquitectura y retrato corporativo en Guadalajara. Dirección de arte y retoque profesional.",
     },
@@ -435,7 +435,7 @@ export const services: Service[] = [
         { q: "Do you travel outside Guadalajara?", a: "Yes. We work across Mexico and internationally when the scope justifies it." },
         { q: "How many photos do we get?", a: "It depends on the project; the number of final retouched frames is always agreed up front." },
       ],
-      metaTitle: "Professional photography in Guadalajara | Dizayn",
+      metaTitle: "Professional photography in Guadalajara",
       metaDescription:
         "Product, food, architecture and corporate portrait photography based in Guadalajara, Mexico. Art direction and pro retouching.",
     },
@@ -472,7 +472,7 @@ export const services: Service[] = [
         { q: "¿Hacen paquetes mensuales de reels?", a: "Sí. Un día de rodaje al mes suele rendir contenido para cuatro a seis semanas." },
         { q: "¿Incluyen locución o actores?", a: "Podemos incluir casting, voz en off y música licenciada dentro del presupuesto de producción." },
       ],
-      metaTitle: "Producción de video y reels en Guadalajara | Dizayn",
+      metaTitle: "Producción de video y reels en Guadalajara",
       metaDescription:
         "Producción de video de marca, comerciales y reels en Guadalajara. Guion, rodaje, edición y color para México y el extranjero.",
     },
@@ -505,7 +505,7 @@ export const services: Service[] = [
         { q: "Do you offer monthly reel packages?", a: "Yes. One shoot day per month usually yields four to six weeks of content." },
         { q: "Do you include voiceover or talent?", a: "Casting, voiceover and licensed music can all be included in the production budget." },
       ],
-      metaTitle: "Video production & reels in Guadalajara | Dizayn",
+      metaTitle: "Video production & reels in Guadalajara",
       metaDescription:
         "Brand video, commercials and reels produced in Guadalajara, Mexico. Script, shoot, edit and color for local and global clients.",
     },

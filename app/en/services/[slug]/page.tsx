@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(resolveEsSlug(slug));
-  if (!service) return { title: "Service not found | Dizayn", robots: { index: false } };
+  if (!service) return { title: "Service not found", robots: { index: false } };
 
   const { metaTitle, metaDescription } = service.en;
   const enPath = `/en/services/${slug}`;

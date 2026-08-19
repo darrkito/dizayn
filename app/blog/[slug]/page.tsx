@@ -17,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  if (!post) return { title: "Artículo no encontrado | Dizayn", robots: { index: false } };
+  if (!post) return { title: "Artículo no encontrado", robots: { index: false } };
 
   const { metaTitle, metaDescription } = post.es;
   return {

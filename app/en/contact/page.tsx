@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
 
-const title = "Contact | Dizayn, marketing agency in Guadalajara";
+const title = "Contact | Marketing agency in Guadalajara";
 const description =
   "Tell us about your project: websites, SEO, AI, social media, funnels, photo and video. Reach us on WhatsApp, email, or the form below.";
 

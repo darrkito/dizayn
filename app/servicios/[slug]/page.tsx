@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
-  if (!service) return { title: "Servicio no encontrado | Dizayn", robots: { index: false } };
+  if (!service) return { title: "Servicio no encontrado", robots: { index: false } };
 
   const { metaTitle, metaDescription } = service.es;
   return {

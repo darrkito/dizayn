@@ -21,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(resolveEsSlug(slug));
-  if (!post) return { title: "Article not found | Dizayn", robots: { index: false } };
+  if (!post) return { title: "Article not found", robots: { index: false } };
 
   const { metaTitle, metaDescription } = post.en;
   const enPath = `/en/blog/${slug}`;
