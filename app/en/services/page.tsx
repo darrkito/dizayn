@@ -8,10 +8,10 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: { title, description, type: "website", url: "/en/servicios" },
-  alternates: { canonical: "/en/servicios", languages: { es: "/servicios", en: "/en/servicios" } },
+  openGraph: { title, description, type: "website", url: "/en/services" },
+  alternates: { canonical: "/en/services", languages: { es: "/servicios", en: "/en/services" } },
 };
 
-export default function ServiciosPageEn() {
+export default function ServicesPageEn() {
   return <ServicesContent lang="en" />;
 }

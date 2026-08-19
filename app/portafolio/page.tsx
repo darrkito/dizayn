@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/portafolio" },
-  alternates: { canonical: "/portafolio", languages: { es: "/portafolio", en: "/en/portafolio" } },
+  alternates: { canonical: "/portafolio", languages: { es: "/portafolio", en: "/en/portfolio" } },
 };
 
 export default function PortafolioPage() {

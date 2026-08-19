@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Lang } from "@/content/services";
 import type { BlogPost } from "@/content/blog";
+import { langPath } from "@/lib/routes";
 
 const formatDate = (date: string, lang: Lang) =>
   new Date(`${date}T00:00:00`).toLocaleDateString(lang === "es" ? "es-MX" : "en-US", {
@@ -11,7 +12,7 @@ const formatDate = (date: string, lang: Lang) =>
 
 export function BlogCard({ post, lang, readMore }: { post: BlogPost; lang: Lang; readMore: string }) {
   const copy = post[lang];
-  const href = lang === "es" ? `/blog/${post.slug}` : `/en/blog/${post.slug}`;
+  const href = langPath(`/blog/${post.slug}`, lang);
 
   return (
     <Link

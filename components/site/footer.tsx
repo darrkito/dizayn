@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CONTACT } from "@/content/contact";
 import { services } from "@/content/services";
-import { getDict, type Lang } from "@/lib/i18n";
+import { getDict } from "@/lib/i18n";
+import { langFromPath, langPath } from "@/lib/routes";
 
 export function Footer() {
   // Derived from the URL (see header.tsx) so the initial render matches SSR — no hydration flash.
   const pathname = usePathname() ?? "/";
-  const lang: Lang = pathname.startsWith("/en") ? "en" : "es";
+  const lang = langFromPath(pathname);
   const t = getDict(lang);
   const year = new Date().getFullYear();
 
@@ -29,7 +30,7 @@ export function Footer() {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link
-                  href={lang === "en" ? `/en/servicios/${s.slug}` : `/servicios/${s.slug}`}
+                  href={langPath(`/servicios/${s.slug}`, lang)}
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {s[lang].name}
@@ -43,22 +44,22 @@ export function Footer() {
           <h2 className="text-xs uppercase tracking-[0.2em] text-primary">{t.footer.company}</h2>
           <ul className="mt-4 space-y-2">
             <li>
-              <Link href={lang === "en" ? "/en/nosotros" : "/nosotros"} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/nosotros", lang)} className="text-sm text-muted-foreground hover:text-foreground">
                 {t.nav.about}
               </Link>
             </li>
             <li>
-              <Link href={lang === "en" ? "/en/portafolio" : "/portafolio"} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/portafolio", lang)} className="text-sm text-muted-foreground hover:text-foreground">
                 {t.nav.portfolio}
               </Link>
             </li>
             <li>
-              <Link href={lang === "en" ? "/en/blog" : "/blog"} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/blog", lang)} className="text-sm text-muted-foreground hover:text-foreground">
                 {t.nav.blog}
               </Link>
             </li>
             <li>
-              <Link href={lang === "en" ? "/en/contacto" : "/contacto"} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/contacto", lang)} className="text-sm text-muted-foreground hover:text-foreground">
                 {t.nav.contact}
               </Link>
             </li>

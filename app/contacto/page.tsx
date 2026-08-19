@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/contacto" },
-  alternates: { canonical: "/contacto", languages: { es: "/contacto", en: "/en/contacto" } },
+  alternates: { canonical: "/contacto", languages: { es: "/contacto", en: "/en/contact" } },
 };
 
 export default function ContactoPage() {

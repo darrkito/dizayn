@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import type { Lang } from "@/content/services";
+import { altPath } from "./routes";
 
 /** Content strings write internal links as plain ES paths (e.g. `/servicios/seo`) regardless of
- * which language copy they're in — this prefixes them for `en` so EN pages don't link back into
- * the ES URL tree. Paths already under `/en` (e.g. cross-links to other EN blog posts) are left alone. */
-const localizePath = (path: string, lang: Lang) =>
-  lang === "en" && !path.startsWith("/en") ? `/en${path}` : path;
+ * which language copy they're in — this both /en-prefixes AND translates the section/slug for
+ * `en` (self-healing even against an already-/en-prefixed but untranslated legacy link). */
+const localizePath = (path: string, lang: Lang) => altPath(path, lang);
 
 const parseInline = (text: string, lang: Lang) =>
   text

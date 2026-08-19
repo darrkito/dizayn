@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
+import { langPath } from "@/lib/routes";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
 
@@ -25,7 +26,7 @@ export async function generateMetadata({
     openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `/blog/${slug}` },
     alternates: {
       canonical: `/blog/${slug}`,
-      languages: { es: `/blog/${slug}`, en: `/en/blog/${slug}` },
+      languages: { es: `/blog/${slug}`, en: langPath(`/blog/${slug}`, "en") },
     },
   };
 }

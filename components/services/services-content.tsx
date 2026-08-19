@@ -4,11 +4,11 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
+import { langPath } from "@/lib/routes";
 
 export function ServicesContent({ lang }: { lang: Lang }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
-  const prefix = lang === "en" ? "/en" : "";
 
   useEffect(() => {
     setLang(lang);
@@ -23,7 +23,7 @@ export function ServicesContent({ lang }: { lang: Lang }) {
         {services.map((s) => (
           <Link
             key={s.slug}
-            href={`${prefix}/servicios/${s.slug}`}
+            href={langPath(`/servicios/${s.slug}`, lang)}
             className="group flex flex-col justify-between bg-background p-8 transition-colors hover:bg-card"
           >
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>

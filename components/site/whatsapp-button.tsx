@@ -2,11 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import { CONTACT, waLink } from "@/content/contact";
-import { getDict, type Lang } from "@/lib/i18n";
+import { getDict } from "@/lib/i18n";
+import { langFromPath } from "@/lib/routes";
 
 export function WhatsAppButton() {
   const pathname = usePathname() ?? "/";
-  const lang: Lang = pathname.startsWith("/en") ? "en" : "es";
+  const lang = langFromPath(pathname);
   const t = getDict(lang);
 
   return (

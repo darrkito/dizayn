@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/nosotros" },
-  alternates: { canonical: "/nosotros", languages: { es: "/nosotros", en: "/en/nosotros" } },
+  alternates: { canonical: "/nosotros", languages: { es: "/nosotros", en: "/en/about" } },
 };
 
 export default function NosotrosPage() {

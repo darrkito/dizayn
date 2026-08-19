@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
+import { langPath } from "@/lib/routes";
 
 export function AboutContent({ lang }: { lang: Lang }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
-  const prefix = lang === "en" ? "/en" : "";
 
   useEffect(() => {
     setLang(lang);
@@ -48,7 +48,7 @@ export function AboutContent({ lang }: { lang: Lang }) {
       </section>
 
       <section className="container-x py-24">
-        <Link href={`${prefix}/contacto`} className="btn-primary">
+        <Link href={langPath("/contacto", lang)} className="btn-primary">
           {t.about.cta}
         </Link>
       </section>

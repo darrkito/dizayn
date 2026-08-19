@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
+import { langPath } from "@/lib/routes";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -23,7 +24,7 @@ export async function generateMetadata({
     openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}` },
     alternates: {
       canonical: `/servicios/${slug}`,
-      languages: { es: `/servicios/${slug}`, en: `/en/servicios/${slug}` },
+      languages: { es: `/servicios/${slug}`, en: langPath(`/servicios/${slug}`, "en") },
     },
   };
 }

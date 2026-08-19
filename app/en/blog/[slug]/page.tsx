@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
+import { langPath, stripLangPrefix } from "@/lib/routes";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
 
+/** The route param is the translated English slug — resolve it back to the canonical
+ * Spanish slug the content is actually keyed by. */
+const resolveEsSlug = (enSlug: string) => stripLangPrefix(`/en/blog/${enSlug}`).split("/").pop()!;
+
 export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
+  return blogPosts.map((p) => ({ slug: langPath(`/blog/${p.slug}`, "en").split("/").pop()! }));
 }
 
 export async function generateMetadata({
@@ -15,17 +20,18 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = getPost(resolveEsSlug(slug));
   if (!post) return { title: "Article not found | Dizayn", robots: { index: false } };
 
   const { metaTitle, metaDescription } = post.en;
+  const enPath = `/en/blog/${slug}`;
   return {
     title: metaTitle,
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `/en/blog/${slug}` },
+    openGraph: { title: metaTitle, description: metaDescription, type: "article", url: enPath },
     alternates: {
-      canonical: `/en/blog/${slug}`,
-      languages: { es: `/blog/${slug}`, en: `/en/blog/${slug}` },
+      canonical: enPath,
+      languages: { es: `/blog/${post.slug}`, en: enPath },
     },
   };
 }
@@ -36,7 +42,8 @@ export default async function BlogPostPageEn({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const esSlug = resolveEsSlug(slug);
+  const post = getPost(esSlug);
   if (!post) notFound();
 
   const copy = post.en;
@@ -74,7 +81,7 @@ export default async function BlogPostPageEn({
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
-      <BlogPostContent slug={slug} lang="en" />
+      <BlogPostContent slug={esSlug} lang="en" />
     </>
   );
 }

@@ -6,6 +6,7 @@ import type { Lang } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
 import { getDict, useI18n } from "@/lib/i18n";
 import { renderBlogContent } from "@/lib/blog-render";
+import { langPath } from "@/lib/routes";
 import { BlogCard, formatDate } from "./blog-card";
 
 export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
@@ -13,8 +14,8 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
   const t = getDict(lang);
   const post = getPost(slug)!;
   const copy = post[lang];
-  const blogHref = lang === "es" ? "/blog" : "/en/blog";
-  const contactHref = lang === "es" ? "/contacto" : "/en/contacto";
+  const blogHref = langPath("/blog", lang);
+  const contactHref = langPath("/contacto", lang);
 
   useEffect(() => {
     setLang(lang);

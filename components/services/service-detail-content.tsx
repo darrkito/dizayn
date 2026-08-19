@@ -4,11 +4,11 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { getService, services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
+import { langPath } from "@/lib/routes";
 
 export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
-  const prefix = lang === "en" ? "/en" : "";
   const service = getService(slug)!;
   const copy = service[lang];
   const others = services.filter((s) => s.slug !== slug).slice(0, 3);
@@ -20,14 +20,14 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
   return (
     <div>
       <section className="container-x py-20">
-        <Link href={`${prefix}/servicios`} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
+        <Link href={langPath("/servicios", lang)} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
           ← {t.services.back}
         </Link>
         <p className="mt-10 text-xs tracking-[0.2em] text-primary">{service.number}</p>
         <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.name}</h1>
         <p className="mt-6 max-w-2xl font-display text-xl text-primary">{copy.tagline}</p>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{copy.intro}</p>
-        <Link href={`${prefix}/contacto`} className="mt-10 btn-primary">
+        <Link href={langPath("/contacto", lang)} className="mt-10 btn-primary">
           {t.services.cta}
         </Link>
       </section>
@@ -96,7 +96,7 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
             {others.map((o) => (
               <Link
                 key={o.slug}
-                href={`${prefix}/servicios/${o.slug}`}
+                href={langPath(`/servicios/${o.slug}`, lang)}
                 className="bg-background p-6 transition-colors hover:bg-card"
               >
                 <h3 className="font-display text-xl">{o[lang].name}</h3>
