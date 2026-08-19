@@ -1,12 +1,18 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n";
+import { useEffect } from "react";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { portfolioItems } from "@/content/portfolio";
 import { PortfolioGallery } from "./portfolio-gallery";
 import { InstagramBand } from "./instagram-band";
 
-export function PortfolioContent() {
-  const { t } = useI18n();
+export function PortfolioContent({ lang }: { lang: Lang }) {
+  const { setLang } = useI18n();
+  const t = getDict(lang);
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang, setLang]);
 
   return (
     <div className="container-x py-24">
@@ -14,10 +20,10 @@ export function PortfolioContent() {
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.portfolio.lead}</p>
 
       <div className="mt-16">
-        <PortfolioGallery items={portfolioItems} />
+        <PortfolioGallery items={portfolioItems} lang={lang} />
       </div>
 
-      <InstagramBand />
+      <InstagramBand lang={lang} />
     </div>
   );
 }

@@ -14,21 +14,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
-  if (!service) return { title: "Servicio no encontrado | Dizayn", robots: { index: false } };
+  if (!service) return { title: "Service not found | Dizayn", robots: { index: false } };
 
-  const { metaTitle, metaDescription } = service.es;
+  const { metaTitle, metaDescription } = service.en;
   return {
     title: metaTitle,
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}` },
+    openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/en/servicios/${slug}` },
     alternates: {
-      canonical: `/servicios/${slug}`,
+      canonical: `/en/servicios/${slug}`,
       languages: { es: `/servicios/${slug}`, en: `/en/servicios/${slug}` },
     },
   };
 }
 
-export default async function ServiceDetailPage({
+export default async function ServiceDetailPageEn({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -40,8 +40,8 @@ export default async function ServiceDetailPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.es.name,
-    description: service.es.intro,
+    name: service.en.name,
+    description: service.en.intro,
     provider: { "@type": "Organization", name: "Dizayn" },
     areaServed: "MX",
   };
@@ -49,7 +49,7 @@ export default async function ServiceDetailPage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <ServiceDetailContent slug={slug} lang="es" />
+      <ServiceDetailContent slug={slug} lang="en" />
     </>
   );
 }

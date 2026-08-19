@@ -1,10 +1,10 @@
 "use client";
 
 import { CONTACT } from "@/content/contact";
-import { useI18n } from "@/lib/i18n";
+import { getDict, type Lang } from "@/lib/i18n";
 
-export function InstagramBand() {
-  const { t } = useI18n();
+export function InstagramBand({ lang }: { lang: Lang }) {
+  const t = getDict(lang);
 
   return (
     <div className="mt-20 border border-border p-10 text-center">

@@ -1,11 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { services } from "@/content/services";
-import { useI18n } from "@/lib/i18n";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 
-export function ServicesContent() {
-  const { t, lang } = useI18n();
+export function ServicesContent({ lang }: { lang: Lang }) {
+  const { setLang } = useI18n();
+  const t = getDict(lang);
+  const prefix = lang === "en" ? "/en" : "";
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang, setLang]);
 
   return (
     <div className="container-x py-24">
@@ -16,7 +23,7 @@ export function ServicesContent() {
         {services.map((s) => (
           <Link
             key={s.slug}
-            href={`/servicios/${s.slug}`}
+            href={`${prefix}/servicios/${s.slug}`}
             className="group flex flex-col justify-between bg-background p-8 transition-colors hover:bg-card"
           >
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>

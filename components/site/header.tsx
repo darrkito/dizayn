@@ -3,49 +3,51 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { useI18n, type Lang } from "@/lib/i18n";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { ThemeToggle } from "./theme-toggle";
 
 const linkClass = "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
 const activeLinkClass = "text-sm font-semibold text-primary";
 
-/** /blog and /en/blog are the only routes with a real per-language URL pair so far —
- * everywhere else the toggle still just flips client state (see seo-ai-search-playbook.md §6). */
-function blogSiblingPath(pathname: string, targetLang: Lang): string | null {
-  if (pathname === "/en/blog" || pathname.startsWith("/en/blog/")) {
-    const esPath = pathname.slice(3); // strip "/en" prefix
-    return targetLang === "en" ? pathname : esPath;
-  }
-  if (pathname === "/blog" || pathname.startsWith("/blog/")) {
-    return targetLang === "en" ? `/en${pathname}` : pathname;
-  }
-  return null;
+/** Every route now has a real per-language URL pair (see seo-ai-search-playbook.md §6):
+ * "/" <-> "/en", "/servicios*" <-> "/en/servicios*", etc. */
+function siblingPath(pathname: string, targetLang: Lang): string {
+  const esPath = pathname.startsWith("/en") ? pathname.slice(3) || "/" : pathname;
+  if (targetLang === "es") return esPath;
+  return esPath === "/" ? "/en" : `/en${esPath}`;
 }
 
 export function Header() {
-  const { t, lang, setLang } = useI18n();
-  const pathname = usePathname();
+  const { setLang } = useI18n();
+  const pathname = usePathname() ?? "/";
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
+  // Derived from the URL, not the ambient i18n context: this is a client component but its
+  // first render must match the server-rendered HTML (no post-hydration flash) so crawlers
+  // that don't execute JS still see the correct per-language nav links.
+  const lang: Lang = pathname.startsWith("/en") ? "en" : "es";
+  const t = getDict(lang);
+
   const handleLang = (l: Lang) => {
-    const alt = blogSiblingPath(pathname ?? "", l);
+    const alt = siblingPath(pathname, l);
     setLang(l);
-    if (alt && alt !== pathname) router.push(alt);
+    if (alt !== pathname) router.push(alt);
   };
 
+  const prefix = lang === "en" ? "/en" : "";
   const items = [
-    { href: "/servicios", label: t.nav.services },
-    { href: "/portafolio", label: t.nav.portfolio },
-    { href: lang === "en" ? "/en/blog" : "/blog", label: t.nav.blog },
-    { href: "/nosotros", label: t.nav.about },
-    { href: "/contacto", label: t.nav.contact },
+    { href: `${prefix}/servicios`, label: t.nav.services },
+    { href: `${prefix}/portafolio`, label: t.nav.portfolio },
+    { href: `${prefix}/blog`, label: t.nav.blog },
+    { href: `${prefix}/nosotros`, label: t.nav.about },
+    { href: `${prefix}/contacto`, label: t.nav.contact },
   ] as const;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="font-display text-2xl font-bold tracking-[-0.06em]">
+        <Link href={lang === "en" ? "/en" : "/"} className="font-display text-2xl font-bold tracking-[-0.06em]">
           DIZAYN<span className="text-primary">.</span>
         </Link>
 
@@ -85,7 +87,7 @@ export function Header() {
           <ThemeToggle />
 
           <span className="hidden sm:block">
-            <Link href="/contacto" className="btn-primary !px-5 !py-2.5 text-[0.8rem]">
+            <Link href={`${prefix}/contacto`} className="btn-primary !px-5 !py-2.5 text-[0.8rem]">
               {t.nav.cta}
             </Link>
           </span>

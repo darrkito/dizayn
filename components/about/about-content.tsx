@@ -1,10 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
-import { useI18n } from "@/lib/i18n";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 
-export function AboutContent() {
-  const { t } = useI18n();
+export function AboutContent({ lang }: { lang: Lang }) {
+  const { setLang } = useI18n();
+  const t = getDict(lang);
+  const prefix = lang === "en" ? "/en" : "";
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang, setLang]);
 
   return (
     <div>
@@ -41,7 +48,7 @@ export function AboutContent() {
       </section>
 
       <section className="container-x py-24">
-        <Link href="/contacto" className="btn-primary">
+        <Link href={`${prefix}/contacto`} className="btn-primary">
           {t.about.cta}
         </Link>
       </section>

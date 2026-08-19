@@ -6,18 +6,35 @@ import { blogPosts } from "@/content/blog";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/`, priority: 1.0 },
-    { url: `${SITE_URL}/servicios`, priority: 0.9 },
-    { url: `${SITE_URL}/portafolio`, priority: 0.7 },
-    { url: `${SITE_URL}/nosotros`, priority: 0.6 },
-    { url: `${SITE_URL}/contacto`, priority: 0.7 },
+  const pair = (esPath: string) => ({
+    languages: { es: `${SITE_URL}${esPath}`, en: `${SITE_URL}/en${esPath === "/" ? "" : esPath}` },
+  });
+
+  const staticEsPaths: { path: string; priority: number }[] = [
+    { path: "/", priority: 1.0 },
+    { path: "/servicios", priority: 0.9 },
+    { path: "/portafolio", priority: 0.7 },
+    { path: "/nosotros", priority: 0.6 },
+    { path: "/contacto", priority: 0.7 },
   ];
 
-  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${SITE_URL}/servicios/${s.slug}`,
-    priority: 0.8,
-  }));
+  const staticPages: MetadataRoute.Sitemap = staticEsPaths.flatMap(({ path, priority }) => {
+    const enPath = path === "/" ? "/en" : `/en${path}`;
+    const alternates = pair(path);
+    return [
+      { url: `${SITE_URL}${path}`, priority, alternates },
+      { url: `${SITE_URL}${enPath}`, priority, alternates },
+    ];
+  });
+
+  const servicePages: MetadataRoute.Sitemap = services.flatMap((s) => {
+    const esPath = `/servicios/${s.slug}`;
+    const alternates = pair(esPath);
+    return [
+      { url: `${SITE_URL}${esPath}`, priority: 0.8, alternates },
+      { url: `${SITE_URL}/en${esPath}`, priority: 0.8, alternates },
+    ];
+  });
 
   const blogListPages: MetadataRoute.Sitemap = [
     {

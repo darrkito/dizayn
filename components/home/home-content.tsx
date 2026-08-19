@@ -1,16 +1,23 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/content/services";
 import { portfolioItems } from "@/content/portfolio";
 import { cloudinaryUrl } from "@/lib/cloudinary";
-import { useI18n } from "@/lib/i18n";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 
 const teaserImages = portfolioItems.filter((i) => i.kind === "image").slice(0, 3);
 
-export function HomeContent() {
-  const { t, lang } = useI18n();
+export function HomeContent({ lang }: { lang: Lang }) {
+  const { setLang } = useI18n();
+  const t = getDict(lang);
+  const prefix = lang === "en" ? "/en" : "";
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang, setLang]);
 
   return (
     <div>
@@ -27,10 +34,10 @@ export function HomeContent() {
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground">{t.home.lead}</p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Link href="/contacto" className="btn-primary">
+              <Link href={`${prefix}/contacto`} className="btn-primary">
                 {t.home.ctaPrimary}
               </Link>
-              <Link href="/portafolio" className="btn-ghost">
+              <Link href={`${prefix}/portafolio`} className="btn-ghost">
                 {t.home.ctaSecondary}
               </Link>
             </div>
@@ -67,7 +74,7 @@ export function HomeContent() {
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.servicesTitle}</h2>
             <p className="mt-4 max-w-md text-muted-foreground">{t.home.servicesLead}</p>
           </div>
-          <Link href="/servicios" className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
+          <Link href={`${prefix}/servicios`} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
             {t.home.servicesAll} →
           </Link>
         </div>
@@ -76,7 +83,7 @@ export function HomeContent() {
           {services.map((s) => (
             <li key={s.slug}>
               <Link
-                href={`/servicios/${s.slug}`}
+                href={`${prefix}/servicios/${s.slug}`}
                 className="group flex flex-col gap-2 rounded-2xl border-b border-border px-3 py-7 transition-colors hover:bg-muted md:flex-row md:items-baseline md:gap-10 md:px-2"
               >
                 <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
@@ -95,7 +102,7 @@ export function HomeContent() {
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.portfolioTitle}</h2>
             <p className="mt-5 max-w-md text-muted-foreground">{t.home.portfolioLead}</p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/portafolio" className="btn-primary">
+              <Link href={`${prefix}/portafolio`} className="btn-primary">
                 {t.home.portfolioCta}
               </Link>
             </div>
@@ -104,7 +111,7 @@ export function HomeContent() {
             {teaserImages.map((item) => (
               <Link
                 key={item.id}
-                href="/portafolio"
+                href={`${prefix}/portafolio`}
                 className="relative flex aspect-[3/4] overflow-hidden rounded-2xl border border-border"
               >
                 <Image
@@ -122,7 +129,7 @@ export function HomeContent() {
       <section className="container-x py-28 text-center">
         <h2 className="mx-auto max-w-3xl text-[clamp(2rem,6vw,4.5rem)] leading-[0.95]">{t.home.ctaTitle}</h2>
         <p className="mx-auto mt-6 max-w-xl text-muted-foreground">{t.home.ctaLead}</p>
-        <Link href="/contacto" className="mt-10 btn-primary">
+        <Link href={`${prefix}/contacto`} className="mt-10 btn-primary">
           {t.nav.cta}
         </Link>
       </section>

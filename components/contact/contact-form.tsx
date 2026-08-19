@@ -1,18 +1,23 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
-import { useI18n } from "@/lib/i18n";
+import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { submitContact } from "@/app/contacto/actions";
 
 const fieldClass =
   "mt-2 w-full border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
-export function ContactForm() {
-  const { t, lang } = useI18n();
+export function ContactForm({ lang }: { lang: Lang }) {
+  const { setLang } = useI18n();
+  const t = getDict(lang);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang, setLang]);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

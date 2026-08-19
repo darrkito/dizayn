@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/contacto" },
-  alternates: { canonical: "/contacto" },
+  alternates: { canonical: "/contacto", languages: { es: "/contacto", en: "/en/contacto" } },
 };
 
 export default function ContactoPage() {
-  return <ContactForm />;
+  return <ContactForm lang="es" />;
 }

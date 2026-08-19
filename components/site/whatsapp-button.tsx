@@ -1,10 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { CONTACT, waLink } from "@/content/contact";
-import { useI18n } from "@/lib/i18n";
+import { getDict, type Lang } from "@/lib/i18n";
 
 export function WhatsAppButton() {
-  const { t } = useI18n();
+  const pathname = usePathname() ?? "/";
+  const lang: Lang = pathname.startsWith("/en") ? "en" : "es";
+  const t = getDict(lang);
 
   return (
     <a

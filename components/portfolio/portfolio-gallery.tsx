@@ -6,13 +6,13 @@ import { Play } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { cloudinaryUrl } from "@/lib/cloudinary";
-import { useI18n } from "@/lib/i18n";
+import { getDict, type Lang } from "@/lib/i18n";
 import type { PortfolioItem } from "@/content/portfolio";
 
 type Filter = "all" | PortfolioItem["category"];
 
-export function PortfolioGallery({ items }: { items: PortfolioItem[] }) {
-  const { t } = useI18n();
+export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang: Lang }) {
+  const t = getDict(lang);
   const [filter, setFilter] = useState<Filter>("all");
   const [active, setActive] = useState<PortfolioItem | null>(null);
 

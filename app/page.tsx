@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/" },
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
 };
 
 export default function HomePage() {
-  return <HomeContent />;
+  return <HomeContent lang="es" />;
 }
