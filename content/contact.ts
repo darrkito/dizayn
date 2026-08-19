@@ -3,7 +3,7 @@ export const CONTACT = {
   whatsappDisplay: "+52 462 192 2778",
   email: "sebasesc5@gmail.com",
   instagram: "https://www.instagram.com/dizayn_mx/",
-  city: "Guadalajara, Jalisco, México",
+  city: { es: "Guadalajara, Jalisco, México", en: "Guadalajara, Jalisco, Mexico" },
 };
 
 export const waLink = (message: string) =>

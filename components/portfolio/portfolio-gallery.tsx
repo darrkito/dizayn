@@ -16,6 +16,12 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
   const [filter, setFilter] = useState<Filter>("all");
   const [active, setActive] = useState<PortfolioItem | null>(null);
 
+  // Item titles/alt text are auto-generated generic labels ("Fotografía 12", "Diseño 3") from
+  // the original scrape — ES-only by construction, not real per-item descriptions worth
+  // translating individually. Rebuild the label from the item's category (dict key matches
+  // PortfolioItem["category"] 1:1) + id-encoded index instead of rendering the stored title/alt.
+  const localizedLabel = (item: PortfolioItem) => `${t.portfolio[item.category]} ${item.id.split("-").pop()}`;
+
   const filters: { key: Filter; label: string }[] = [
     { key: "all", label: t.portfolio.filterAll },
     { key: "photo", label: t.portfolio.photo },
@@ -59,7 +65,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
             {item.kind === "image" && item.cloudinaryPublicId ? (
               <Image
                 src={cloudinaryUrl(item.cloudinaryPublicId, 800)}
-                alt={item.alt}
+                alt={localizedLabel(item)}
                 width={800}
                 height={1000}
                 className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
@@ -68,7 +74,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
               <div className="relative aspect-video w-full overflow-hidden bg-muted">
                 <iframe
                   src={item.embedUrl}
-                  title={item.title}
+                  title={localizedLabel(item)}
                   className="pointer-events-none h-full w-full"
                   loading="lazy"
                 />
@@ -78,7 +84,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
               </div>
             )}
             <span className="absolute bottom-0 left-0 right-0 translate-y-full bg-gradient-to-t from-black/70 to-transparent px-4 py-3 text-xs font-medium text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-              {item.title}
+              {localizedLabel(item)}
             </span>
           </button>
         ))}
@@ -86,11 +92,11 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
 
       <Dialog open={active !== null} onOpenChange={(open) => !open && setActive(null)}>
         <DialogContent className="max-w-3xl bg-background p-2 sm:p-2">
-          <DialogTitle className="sr-only">{active?.title ?? ""}</DialogTitle>
+          <DialogTitle className="sr-only">{active ? localizedLabel(active) : ""}</DialogTitle>
           {active?.kind === "image" && active.cloudinaryPublicId && (
             <Image
               src={cloudinaryUrl(active.cloudinaryPublicId, 1600)}
-              alt={active.alt}
+              alt={localizedLabel(active)}
               width={1600}
               height={1200}
               className="max-h-[80vh] w-full rounded-xl object-contain"
@@ -99,7 +105,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
           {active?.kind === "video-embed" && (
             <iframe
               src={active.embedUrl}
-              title={active.title}
+              title={localizedLabel(active)}
               allow="autoplay; fullscreen"
               className="aspect-video w-full rounded-xl"
             />

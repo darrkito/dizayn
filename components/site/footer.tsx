@@ -79,7 +79,7 @@ export function Footer() {
                 @dizayn_mx
               </a>
             </li>
-            <li>{CONTACT.city}</li>
+            <li>{CONTACT.city[lang]}</li>
           </ul>
         </div>
       </div>
@@ -89,7 +89,7 @@ export function Footer() {
           <span>
             © {year} Dizayn. {t.footer.rights}
           </span>
-          <span>Guadalajara · México · Worldwide</span>
+          <span>Guadalajara · {lang === "en" ? "Mexico" : "México"} · Worldwide</span>
         </div>
       </div>
     </footer>

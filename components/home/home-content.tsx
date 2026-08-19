@@ -46,7 +46,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
             <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-2xl" aria-hidden />
             <Image
               src="/images/hero.jpg"
-              alt="Producción creativa de Dizayn en Guadalajara"
+              alt={t.home.heroAlt}
               width={960}
               height={1200}
               priority
@@ -115,7 +115,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
               >
                 <Image
                   src={cloudinaryUrl(item.cloudinaryPublicId!, 400)}
-                  alt={item.alt}
+                  alt={`${t.portfolio.photo} ${item.id.split("-").pop()}`}
                   fill
                   className="object-cover transition-transform duration-300 hover:scale-105"
                 />

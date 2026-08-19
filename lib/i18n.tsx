@@ -29,6 +29,7 @@ const dict = {
     },
     home: {
       eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
+      heroAlt: "Producción creativa de Dizayn en Guadalajara",
       h1a: "Marcas que",
       h1b: "se ven",
       h1c: "y se venden.",
@@ -156,6 +157,7 @@ const dict = {
     },
     home: {
       eyebrow: "Marketing agency · Guadalajara, Mexico",
+      heroAlt: "Creative production by Dizayn in Guadalajara",
       h1a: "Brands that",
       h1b: "look right",
       h1c: "and sell.",

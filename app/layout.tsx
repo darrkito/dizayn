@@ -35,14 +35,19 @@ export const metadata: Metadata = {
   },
 };
 
+// This schema block renders identically on every route (root layout can only declare it once —
+// see the <html lang> note below for the same static-generation tradeoff). It deliberately
+// carries no marketing-copy `description` field, so it has nothing to be the wrong language
+// about — each page's own JSON-LD (blog posts, service details) and <meta name="description">
+// already carry the real per-language copy. Only structural identity facts (name/address/areaServed)
+// live here, in English, since schema.org values are machine-read identifiers, not display copy.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "ProfessionalService",
       name: "Dizayn",
-      description,
-      areaServed: ["Guadalajara", "Jalisco", "México", "Worldwide"],
+      areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
       address: {
         "@type": "PostalAddress",
         addressLocality: "Guadalajara",
@@ -55,7 +60,6 @@ const jsonLd = {
     {
       "@type": "LocalBusiness",
       name: "Dizayn",
-      description,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Guadalajara",
@@ -63,7 +67,7 @@ const jsonLd = {
         addressCountry: "MX",
       },
       email: CONTACT.email,
-      areaServed: ["Guadalajara", "Jalisco", "México", "Worldwide"],
+      areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
       sameAs: [CONTACT.instagram],
     },
   ],
