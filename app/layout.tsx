@@ -6,6 +6,7 @@ import { I18nProvider } from "@/lib/i18n";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
+import { WebMcpRegister } from "@/components/webmcp-register";
 import { CONTACT } from "@/content/contact";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${jakarta.variable} h-full`} suppressHydrationWarning>
       <head>
+        <link rel="alternate" type="text/markdown" href="/llms.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -89,6 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <main className="flex-1">{children}</main>
             <Footer />
             <WhatsAppButton />
+            <WebMcpRegister />
           </I18nProvider>
         </ThemeProvider>
       </body>

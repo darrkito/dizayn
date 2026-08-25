@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
   },
+  async headers() {
+    return [
+      {
+        // Page routes only — excludes /api/*, /mcp, /.well-known/*, and Next's
+        // static assets, which already set their own headers or don't need this.
+        source: "/((?!api/|mcp|\\.well-known/|_next/).*)",
+        headers: [{ key: "Link", value: '</llms.txt>; rel="alternate"; type="text/markdown"' }],
+      },
+    ];
+  },
   async redirects() {
     // The /en/* routes briefly shipped with untranslated Spanish section names/slugs
     // (e.g. /en/servicios/seo) before this fix — already pinged to Bing/Yandex via
