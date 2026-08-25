@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -98,6 +99,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <WebMcpRegister />
           </I18nProvider>
         </ThemeProvider>
+        {/* Microsoft Clarity — session recording/heatmaps. strategy="lazyOnload"
+            (matches the pattern already established for GA4 on the
+            SwapperBetweenChains project): Clarity's own snippet dynamically
+            injects a second script tag, so there's no benefit to loading it
+            any earlier than the page becoming interactive. */}
+        <Script id="clarity-init" strategy="lazyOnload">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "y7tbs2av0v");
+          `}
+        </Script>
       </body>
     </html>
   );
