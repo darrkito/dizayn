@@ -1,11 +1,11 @@
-// Minimal A2A (Agent2Agent) server at POST /a2a. Agent Card schema confirmed
-// against the protocol's authoritative source (specification/a2a.proto in
-// github.com/a2aproject/A2A). The exact JSON-RPC method name for sending a
-// message could NOT be verified with confidence — 3 spec fetches gave 3
-// different answers during the Luvory build. Implemented as "SendMessage"
-// (best-corroborated, matches the proto's RPC name directly), with a real
-// JSON-RPC "method not found" for anything else — see
-// ~/agent-readiness-playbook.md §6.
+// Minimal A2A (Agent2Agent) server at POST /a2a. Schema and wire format
+// confirmed live against a real, working reference implementation
+// (lemusweddings.com/api/a2a — independently scanned "Level 5 Agent-Native")
+// rather than guessed from ambiguous docs: the correct JSON-RPC method is
+// "message/send" (NOT "SendMessage", which the reference server itself
+// rejects with -32601 — tested directly), and the correct response for a
+// stateless one-shot reply is a direct Message object (kind: "message"),
+// not a wrapped Task. See ~/agent-readiness-playbook.md §6.
 
 import { services } from "@/content/services";
 import { waLink, CONTACT } from "@/content/contact";
@@ -42,18 +42,32 @@ function extractText(message: unknown): string {
     .join(" ");
 }
 
+const SPANISH_HINTS = /[áéíóúñ¿¡]|(?:\bcu[aá]nto\b|\bd[oó]nde\b|\bqu[eé]\b|\bc[oó]mo\b|\bcontacto\b|\bprecio\b|\bservicio\b|\bpara\b|\bcon\b|\bcosto\b)/i;
+
+function isSpanish(text: string): boolean {
+  return SPANISH_HINTS.test(text);
+}
+
 function respondToMessage(text: string): string {
   const lower = text.toLowerCase();
+  const es = isSpanish(text);
 
-  if (/contact|whatsapp|email|cotiza|precio|price|cost|cuanto cuesta|how much/.test(lower)) {
-    return `Contact Dizayn via WhatsApp: ${waLink("Hola, quiero más información sobre sus servicios.")} or email ${CONTACT.email}`;
+  if (/contact|whatsapp|email|cotiza|precio|price|cost|cuanto cuesta|how much|contacto/.test(lower)) {
+    const wa = waLink("Hola, quiero más información sobre sus servicios.");
+    return es
+      ? `Contacta a Dizayn por WhatsApp: ${wa} o correo ${CONTACT.email}`
+      : `Contact Dizayn via WhatsApp: ${wa} or email ${CONTACT.email}`;
   }
 
   const serviceMatch = services.find((s) => lower.includes(s.slug.replace(/-/g, " ")) || lower.includes(s.es.name.toLowerCase()) || lower.includes(s.en.name.toLowerCase()));
   if (serviceMatch) {
-    return `${serviceMatch.es.name} / ${serviceMatch.en.name}: ${serviceMatch.en.intro}`;
+    return es ? `${serviceMatch.es.name}: ${serviceMatch.es.intro}` : `${serviceMatch.en.name}: ${serviceMatch.en.intro}`;
   }
 
+  if (es) {
+    const list = services.map((s) => s.es.name).join(", ");
+    return `Dizayn es una agencia de marketing en Guadalajara, Jalisco, México. Servicios: ${list}. Pregunta por un servicio específico, precios, o cómo contactarnos.`;
+  }
   const list = services.map((s) => s.en.name).join(", ");
   return `Dizayn is a marketing agency in Guadalajara, Jalisco, Mexico. Services: ${list}. Ask about a specific service, pricing, or how to get in touch.`;
 }
@@ -76,24 +90,22 @@ export async function POST(request: Request) {
 
   const { id, method, params } = body;
 
-  if (method === "SendMessage") {
+  if (method === "message/send") {
     const message = params?.["message"];
     const text = extractText(message);
     if (!text) return rpcError(id, -32602, "Invalid params: message.parts[].text required");
 
-    const now = new Date().toISOString();
-    const taskId = `task-${Math.random().toString(36).slice(2, 12)}`;
-    const contextId = `ctx-${Math.random().toString(36).slice(2, 12)}`;
+    const contextId = `ctx-${Math.random().toString(36).slice(2, 12)}-${Math.random().toString(36).slice(2, 10)}`;
+    const messageId = `msg-${Math.random().toString(36).slice(2, 12)}-${Math.random().toString(36).slice(2, 10)}`;
     const replyText = respondToMessage(text);
     return rpcResult(id, {
-      id: taskId,
+      kind: "message",
+      role: "agent",
+      messageId,
       contextId,
-      status: { state: "TASK_STATE_COMPLETED", timestamp: now },
-      artifacts: [{ id: "artifact-1", mediaType: "text/plain", parts: [{ text: replyText }] }],
-      history: [message, { messageId: `msg-${Math.random().toString(36).slice(2, 10)}`, role: "ROLE_AGENT", parts: [{ text: replyText }] }],
+      parts: [{ kind: "text", text: replyText }],
     });
   }
 
   return rpcError(id, -32601, `Method not found: ${method}`);
 }
-

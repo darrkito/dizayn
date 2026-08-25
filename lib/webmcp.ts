@@ -30,7 +30,7 @@ export function registerWebMcpTools() {
       {
         name: "contactDizayn",
         description:
-          "Open a pre-filled WhatsApp conversation with Dizayn, a marketing agency in Guadalajara, Jalisco, Mexico, to ask about web design, SEO, GEO/AI visibility, social media, sales funnels, photography, or video production services.",
+          "Open a pre-filled WhatsApp conversation with Dizayn, a marketing agency in Guadalajara, Jalisco, Mexico, to ask about web design, SEO, GEO/AI visibility, social media, sales funnels, photography, or video production services. Accepts the message in English or Spanish (Español) — abre WhatsApp con Dizayn en español o inglés.",
         inputSchema: {
           type: "object",
           properties: {
