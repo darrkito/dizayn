@@ -42,7 +42,8 @@ function extractText(message: unknown): string {
     .join(" ");
 }
 
-const SPANISH_HINTS = /[áéíóúñ¿¡]|(?:\bcu[aá]nto\b|\bd[oó]nde\b|\bqu[eé]\b|\bc[oó]mo\b|\bcontacto\b|\bprecio\b|\bservicio\b|\bpara\b|\bcon\b|\bcosto\b)/i;
+const SPANISH_HINTS =
+  /[áéíóúñ¿¡]|(?:\bcu[aá]nto\b|\bd[oó]nde\b|\bqu[eé]\b|\bc[oó]mo\b|\bcontacto\b|\bprecio\b|\bservicio\b|\bpara\b|\bcon\b|\bcosto\b|\bhola\b|\bbuenas?\b|\bgracias\b|\bquiero\b|\bnecesito\b|\bayuda\b|\btienen\b|\bofrecen\b|\bsobre\b|\by\b|\bde\b)/i;
 
 function isSpanish(text: string): boolean {
   return SPANISH_HINTS.test(text);
