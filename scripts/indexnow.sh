@@ -4,14 +4,14 @@
 #        ./scripts/indexnow.sh url1 url2 ...    (specific URLs only)
 
 KEY="86d75beb2370cde7857a6c24e46ed141"
-HOST="www.dizayn.com.mx"
-SITE_URL="https://www.dizayn.com.mx"
+HOST="dizayn.com.mx"
+SITE_URL="https://dizayn.com.mx"
 
 if [ "$#" -gt 0 ]; then
   URLS=("$@")
 else
   # Pull the current URL list straight from the live sitemap — no hand-maintained list to drift out of sync.
-  mapfile -t URLS < <(curl -s "$SITE_URL/sitemap.xml" | grep -oP '(?<=<loc>)[^<]*' | sed "s#https://dizayn.com.mx#$SITE_URL#")
+  mapfile -t URLS < <(curl -s "$SITE_URL/sitemap.xml" | grep -oP '(?<=<loc>)[^<]*')
 fi
 
 JSON_URLS=$(printf '"%s",' "${URLS[@]}")
