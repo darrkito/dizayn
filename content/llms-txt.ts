@@ -1,4 +1,8 @@
-# Dizayn
+// Single source of truth for the site's llms.txt content — served as a static
+// file at /llms.txt (app/llms.txt/route.ts) AND reused by proxy.ts for
+// Accept: text/markdown content negotiation on the homepage. Keeping this as
+// one constant avoids the two ever drifting out of sync.
+export const LLMS_TXT = `# Dizayn
 
 > Marketing and brand agency in Guadalajara, Jalisco, Mexico. Web design, SEO, GEO/AI-visibility marketing, social media management, sales funnels, photography, and video production.
 
@@ -27,7 +31,7 @@ Practical pricing guides and marketing comparisons for the Guadalajara market.
 
 ## English
 
-An English version of every page above is available at the equivalent `/en/*` path with translated slugs, e.g. https://www.dizayn.com.mx/en, https://www.dizayn.com.mx/en/services/web-design.
+An English version of every page above is available at the equivalent /en/* path with translated slugs, e.g. https://www.dizayn.com.mx/en, https://www.dizayn.com.mx/en/services/web-design.
 
 ## Agent access
 
@@ -39,3 +43,4 @@ An English version of every page above is available at the equivalent `/en/*` pa
 - Sitemap: https://www.dizayn.com.mx/sitemap.xml
 - Service area: Guadalajara, Jalisco, Mexico
 - Contact: WhatsApp +52 462 192 2778, sebasesc5@gmail.com
+`;
