@@ -1,4 +1,4 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
 
 export function apiJson(data: unknown, init?: { status?: number; contentType?: string }): Response {
   return new Response(JSON.stringify(data, null, 2), {

@@ -9,9 +9,9 @@ export async function GET() {
       title: "Dizayn",
       version: "1.0.0",
       description: "Real, read-only MCP server over Dizayn's marketing agency service catalog in Guadalajara, Jalisco, Mexico.",
-      websiteUrl: "https://www.dizayn.com.mx",
+      websiteUrl: "https://dizayn.com.mx",
     },
     protocolVersion: "2025-06-18",
-    transport: { type: "streamable-http", url: "https://www.dizayn.com.mx/mcp" },
+    transport: { type: "streamable-http", url: "https://dizayn.com.mx/mcp" },
   });
 }

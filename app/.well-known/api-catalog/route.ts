@@ -1,4 +1,4 @@
-const SITE_URL = "https://www.dizayn.com.mx";
+const SITE_URL = "https://dizayn.com.mx";
 
 export async function GET() {
   const body = {

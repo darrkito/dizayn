@@ -4,7 +4,7 @@ import { blogPosts } from "@/content/blog";
 import { langPath } from "@/lib/routes";
 
 // TODO: update once the production domain is live.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pair = (esPath: string) => ({

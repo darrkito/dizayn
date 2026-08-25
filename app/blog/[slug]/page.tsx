@@ -4,7 +4,7 @@ import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
 import { langPath } from "@/lib/routes";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.dizayn.com.mx";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));

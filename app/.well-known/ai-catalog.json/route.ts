@@ -1,6 +1,6 @@
 import { apiJson } from "@/lib/api-response";
 
-const SITE_URL = "https://www.dizayn.com.mx";
+const SITE_URL = "https://dizayn.com.mx";
 
 export async function GET() {
   return apiJson({

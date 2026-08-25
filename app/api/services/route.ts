@@ -12,7 +12,7 @@ export async function GET(request: Request) {
         lang === "en"
           ? "Marketing and brand agency in Guadalajara, Jalisco, Mexico — web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production."
           : "Agencia de marketing y marca en Guadalajara, Jalisco, México — diseño web, SEO, GEO/visibilidad en IA, redes sociales, embudos de venta, fotografía, video.",
-      url: "https://www.dizayn.com.mx",
+      url: "https://dizayn.com.mx",
       city: CONTACT.city[lang],
     },
     services: services.map((s) => {
@@ -24,7 +24,7 @@ export async function GET(request: Request) {
         intro: copy.intro,
         includes: copy.includes,
         forWho: copy.forWho,
-        url: `https://www.dizayn.com.mx${langPath(`/servicios/${s.slug}`, lang)}`,
+        url: `https://dizayn.com.mx${langPath(`/servicios/${s.slug}`, lang)}`,
       };
     }),
   });

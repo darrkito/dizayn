@@ -19,7 +19,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ slug
     process: copy.process,
     forWho: copy.forWho,
     faq: copy.faq,
-    url: `https://www.dizayn.com.mx${langPath(`/servicios/${service.slug}`, lang)}`,
+    url: `https://dizayn.com.mx${langPath(`/servicios/${service.slug}`, lang)}`,
     contactLink: waLink(lang === "en" ? `Hi, I'm interested in ${copy.name}` : `Hola, me interesa ${copy.name}`),
   });
 }
