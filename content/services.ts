@@ -51,6 +51,10 @@ export const services: Service[] = [
       faq: [
         { q: "¿Cuánto tarda un sitio?", a: "Un sitio corporativo típico toma de 3 a 6 semanas, dependiendo de contenido y aprobaciones." },
         { q: "¿Puedo editarlo yo?", a: "Sí. Entregamos el sitio con capacitación y documentación para que tu equipo actualice contenido sin depender de nosotros." },
+        { q: "¿Cuánto cuesta un sitio web?", a: "Depende del número de páginas, si necesitas tienda en línea y cuánto contenido hay que crear desde cero. Tenemos una guía con rangos reales para Guadalajara en el blog, y damos una cotización exacta después de conocer tu proyecto." },
+        { q: "¿Incluye hosting y dominio?", a: "Podemos gestionarlo o dejarlo en tu cuenta si prefieres tener el control directo — te explicamos las dos opciones antes de arrancar, sin obligarte a depender de nosotros para algo tan básico." },
+        { q: "¿El sitio queda optimizado para SEO?", a: "Sí, la base técnica (velocidad, estructura, datos estructurados, metadatos) va incluida en todo proyecto. Posicionar de forma continua ya es el servicio de SEO aparte, pero el sitio nunca sale con deuda técnica que lo frene." },
+        { q: "¿Hacen tiendas en línea?", a: "Sí, integramos catálogo y pago cuando el proyecto lo requiere. Lo evaluamos junto contigo desde la etapa de diagnóstico para dimensionar el alcance correcto." },
       ],
       metaTitle: "Agencia de Diseño Web en Guadalajara",
       metaDescription:
@@ -84,6 +88,10 @@ export const services: Service[] = [
       faq: [
         { q: "How long does a site take?", a: "A typical corporate site takes 3 to 6 weeks depending on content and approvals." },
         { q: "Can I edit it myself?", a: "Yes. We hand over with training and documentation so your team updates content without us." },
+        { q: "How much does a website cost?", a: "It depends on page count, whether you need an online store, and how much content has to be written from scratch. We publish real Guadalajara pricing ranges on the blog, and give an exact quote once we know your project." },
+        { q: "Does it include hosting and a domain?", a: "We can manage it, or leave it on your own account if you'd rather keep direct control — we walk through both options before starting, no lock-in for something this basic." },
+        { q: "Is the site SEO-ready?", a: "Yes, the technical foundation (speed, structure, structured data, metadata) is included in every project. Ongoing ranking work is the separate SEO service, but the site never launches with technical debt holding it back." },
+        { q: "Do you build online stores?", a: "Yes, we integrate catalog and payment when a project calls for it. We scope it together during discovery so the build matches what you actually need." },
       ],
       metaTitle: "Web design & development in Guadalajara",
       metaDescription:
@@ -121,6 +129,10 @@ export const services: Service[] = [
       faq: [
         { q: "¿En cuánto tiempo veo resultados?", a: "Las mejoras técnicas y locales suelen notarse en 4 a 8 semanas; el crecimiento sostenido toma de 3 a 6 meses." },
         { q: "¿Garantizan el primer lugar?", a: "Nadie puede garantizarlo honestamente. Garantizamos trabajo medible y reportes claros de lo que sí se mueve." },
+        { q: "¿Qué incluye una auditoría SEO?", a: "Revisamos indexación real en Google, velocidad de carga, estructura del sitio, contenido existente contra lo que tu competencia está posicionando, y el estado de tus perfiles locales (Google Business, directorios). Sales con una lista priorizada, no un PDF genérico de 100 puntos." },
+        { q: "¿Trabajan con negocios fuera de Guadalajara?", a: "Sí. La mayoría de nuestros clientes están en Guadalajara y Zapopan, pero el mismo proceso técnico y de contenido aplica a cualquier ciudad o mercado nacional." },
+        { q: "¿Necesito rehacer mi sitio para hacer SEO?", a: "No siempre. Si el sitio ya tiene una base técnica sana, trabajamos sobre lo existente. Solo recomendamos reconstruir cuando la plataforma actual realmente está limitando el crecimiento." },
+        { q: "¿Cuál es la diferencia entre SEO y pauta paga?", a: "El SEO construye posiciones que se quedan sin pagar por clic; la pauta paga resultados inmediatos que desaparecen si dejas de pagar. Los buenos negocios locales usan ambos en momentos distintos — tenemos una guía completa en el blog." },
       ],
       metaTitle: "Agencia SEO en Guadalajara",
       metaDescription:
@@ -154,6 +166,10 @@ export const services: Service[] = [
       faq: [
         { q: "How fast will I see results?", a: "Technical and local wins usually show in 4 to 8 weeks; compounding growth takes 3 to 6 months." },
         { q: "Do you guarantee position one?", a: "Nobody honestly can. We guarantee measurable work and clear reporting on what actually moves." },
+        { q: "What's included in an SEO audit?", a: "We check real Google indexing, load speed, site structure, existing content against what your competitors are ranking for, and your local profiles (Google Business, directories). You get a prioritized list, not a generic 100-point PDF." },
+        { q: "Do you work with businesses outside Guadalajara?", a: "Yes. Most of our clients are in Guadalajara and Zapopan, but the same technical and content process applies to any city or national market." },
+        { q: "Do I need to rebuild my site for SEO?", a: "Not always. If the site already has a healthy technical foundation, we build on what's there. We only recommend a rebuild when the current platform is genuinely capping growth." },
+        { q: "What's the difference between SEO and paid search?", a: "SEO builds rankings that stay without paying per click; paid search buys immediate results that stop the moment you stop paying. Good local businesses use both at different moments — we cover this in depth on the blog." },
       ],
       metaTitle: "SEO agency in Guadalajara, Mexico",
       metaDescription:
@@ -191,6 +207,9 @@ export const services: Service[] = [
       faq: [
         { q: "¿Esto reemplaza al SEO?", a: "No, lo complementa. La base técnica y de contenido sirve para ambos, pero el formato y las fuentes cambian." },
         { q: "¿Se puede medir?", a: "Sí. Documentamos las respuestas de los modelos antes y después, con capturas y prompts repetibles." },
+        { q: "¿Qué es GEO exactamente?", a: "GEO (Generative Engine Optimization) es preparar tu contenido y presencia de marca para que sistemas como ChatGPT, Perplexity o los AI Overviews de Google te citen como fuente al responder — no solo para que aparezcas en una lista de links." },
+        { q: "¿Cómo saben qué dice la IA de mi marca hoy?", a: "Le preguntamos directamente a los modelos por tu categoría y tu marca, con prompts repetibles, y documentamos las respuestas con capturas. Esa es tu línea base antes de empezar cualquier trabajo." },
+        { q: "¿Sirve para negocios locales?", a: "Sí. Entre más específico y verificable sea el dato (ciudad, servicio, precio), más fácil es para un modelo de IA citarte con confianza en una búsqueda local." },
       ],
       metaTitle: "Agencia GEO en Guadalajara (Posicionamiento en IA)",
       metaDescription:
@@ -224,6 +243,9 @@ export const services: Service[] = [
       faq: [
         { q: "Does this replace SEO?", a: "No, it complements it. The technical and content base serves both, but format and sources differ." },
         { q: "Can it be measured?", a: "Yes. We document model answers before and after with repeatable prompts and screenshots." },
+        { q: "What exactly is GEO?", a: "GEO (Generative Engine Optimization) is preparing your content and brand presence so systems like ChatGPT, Perplexity, or Google's AI Overviews cite you as a source when answering — not just so you show up in a list of links." },
+        { q: "How do you know what AI says about my brand today?", a: "We ask the models directly about your category and your brand, with repeatable prompts, and document the answers with screenshots. That's your baseline before any work starts." },
+        { q: "Does this work for local businesses?", a: "Yes. The more specific and verifiable the fact (city, service, price), the easier it is for an AI model to confidently cite you in a local search." },
       ],
       metaTitle: "GEO Agency in Guadalajara (AI Search Visibility)",
       metaDescription:
@@ -261,6 +283,9 @@ export const services: Service[] = [
       faq: [
         { q: "¿Incluye la producción de contenido?", a: "Sí. Fotografía y video están incluidos en los planes mensuales; no dependes de material de banco." },
         { q: "¿Manejan pauta?", a: "Sí, gestionamos campañas en Meta y TikTok con presupuesto aparte del fee." },
+        { q: "¿Cuántas publicaciones incluye el plan?", a: "Varía según el plan y la plataforma — lo que importa más que la cantidad es la constancia y que cada pieza tenga un propósito. Tenemos una guía completa sobre cuánto publicar según tu tipo de negocio en el blog." },
+        { q: "¿En qué plataformas trabajan?", a: "Principalmente Instagram, TikTok y Facebook, que es donde vive la mayoría de nuestros clientes de producto, restaurantes y retail. Evaluamos LinkedIn para marcas B2B según el caso." },
+        { q: "¿Puedo pedir solo producción sin manejo de cuenta?", a: "Sí, podemos separar producción de foto/video de la gestión diaria de la cuenta si ya tienes quien publique internamente." },
       ],
       metaTitle: "Agencia de Redes Sociales en Guadalajara",
       metaDescription:
@@ -294,6 +319,9 @@ export const services: Service[] = [
       faq: [
         { q: "Is content production included?", a: "Yes. Photo and video are part of the monthly plans, so you never rely on stock." },
         { q: "Do you run ads?", a: "Yes, we manage Meta and TikTok campaigns with ad spend billed separately." },
+        { q: "How many posts does the plan include?", a: "It varies by plan and platform — what matters more than volume is consistency and every piece having a purpose. We cover how much to post for your type of business in a full guide on the blog." },
+        { q: "Which platforms do you work on?", a: "Mainly Instagram, TikTok and Facebook, where most of our product, restaurant and retail clients live. We evaluate LinkedIn for B2B brands case by case." },
+        { q: "Can I get just production without account management?", a: "Yes, we can split photo/video production from day-to-day account management if you already have someone posting in-house." },
       ],
       metaTitle: "Social Media Management Agency in Guadalajara",
       metaDescription:
@@ -331,6 +359,9 @@ export const services: Service[] = [
       faq: [
         { q: "¿Incluye la inversión publicitaria?", a: "No. El presupuesto de anuncios se paga directo a la plataforma y se define contigo." },
         { q: "¿Con qué herramientas trabajan?", a: "Nos adaptamos a tu stack; si no tienes, montamos uno simple y económico." },
+        { q: "¿Cuánto tiempo toma construir un embudo?", a: "Un embudo básico (landing, automatización simple, seguimiento) suele estar listo en 2 a 4 semanas. Embudos con múltiples pasos o integraciones complejas toman más." },
+        { q: "¿Sirve si ya tengo sitio web?", a: "Sí, un embudo casi siempre vive aparte del sitio principal — una landing enfocada en una sola oferta convierte mejor que mandar tráfico pagado a un sitio con muchas distracciones." },
+        { q: "¿Qué pasa si el embudo no convierte al inicio?", a: "Es normal — los primeros datos sirven para diagnosticar dónde se pierde el prospecto, y ahí es donde iteramos oferta, mensaje o segmentación antes de subir la inversión en anuncios." },
       ],
       metaTitle: "Agencia de Embudos de Venta en Guadalajara",
       metaDescription:
@@ -364,6 +395,9 @@ export const services: Service[] = [
       faq: [
         { q: "Is ad spend included?", a: "No. Media budget is paid directly to the platform and agreed with you." },
         { q: "Which tools do you use?", a: "We adapt to your stack; if you don't have one, we set up something simple and affordable." },
+        { q: "How long does it take to build a funnel?", a: "A basic funnel (landing page, simple automation, follow-up) is usually ready in 2 to 4 weeks. Multi-step funnels or complex integrations take longer." },
+        { q: "Does this work if I already have a website?", a: "Yes, a funnel almost always lives separately from the main site — a landing page focused on one offer converts better than sending paid traffic to a site full of distractions." },
+        { q: "What if the funnel doesn't convert at first?", a: "That's normal — early data is what tells us where leads are dropping off, and that's where we iterate on offer, message or targeting before increasing ad spend." },
       ],
       metaTitle: "Sales Funnel Agency in Guadalajara",
       metaDescription:
@@ -401,6 +435,9 @@ export const services: Service[] = [
       faq: [
         { q: "¿Viajan fuera de Guadalajara?", a: "Sí. Trabajamos en todo México y en proyectos internacionales cuando el alcance lo justifica." },
         { q: "¿Cuántas fotos entregan?", a: "Depende del proyecto; siempre se define el número de tomas finales retocadas antes de empezar." },
+        { q: "¿Cuánto cuesta una sesión de fotos?", a: "Depende del tipo de producto, la cantidad de tomas y si es en estudio o locación. Tenemos una guía con rangos reales para sesiones de producto en Guadalajara en el blog, y cotizamos exacto según tu proyecto." },
+        { q: "¿Necesito preparar algo antes de la sesión?", a: "Coordinamos moodboard, lista de tomas y logística (producto limpio, locación lista) contigo antes del día de rodaje, para que la sesión sea eficiente." },
+        { q: "¿Puedo usar las fotos en redes y en el sitio web?", a: "Sí, la licencia de uso comercial que entregamos cubre tu sitio, redes sociales y materiales de marca." },
       ],
       metaTitle: "Fotografía profesional en Guadalajara",
       metaDescription:
@@ -434,6 +471,9 @@ export const services: Service[] = [
       faq: [
         { q: "Do you travel outside Guadalajara?", a: "Yes. We work across Mexico and internationally when the scope justifies it." },
         { q: "How many photos do we get?", a: "It depends on the project; the number of final retouched frames is always agreed up front." },
+        { q: "How much does a photo session cost?", a: "It depends on the product type, number of shots and whether it's studio or on location. We publish real Guadalajara pricing ranges for product sessions on the blog, and quote exactly based on your project." },
+        { q: "Do I need to prepare anything before the shoot?", a: "We coordinate the moodboard, shot list and logistics (clean product, location ready) with you before shoot day, so the session runs efficiently." },
+        { q: "Can I use the photos on social media and my website?", a: "Yes, the commercial usage license we deliver covers your site, social channels and brand materials." },
       ],
       metaTitle: "Professional photography in Guadalajara",
       metaDescription:
@@ -471,6 +511,9 @@ export const services: Service[] = [
       faq: [
         { q: "¿Hacen paquetes mensuales de reels?", a: "Sí. Un día de rodaje al mes suele rendir contenido para cuatro a seis semanas." },
         { q: "¿Incluyen locución o actores?", a: "Podemos incluir casting, voz en off y música licenciada dentro del presupuesto de producción." },
+        { q: "¿Cuánto cuesta un video corporativo?", a: "Depende de duración, número de locaciones y si hay animación o motion graphics. Publicamos rangos reales para Guadalajara en el blog, y cotizamos exacto según tu guion." },
+        { q: "¿Cuánto dura la producción de un video?", a: "Un video institucional típico toma de 2 a 4 semanas de guion a entrega final; reels sueltos pueden estar listos en días." },
+        { q: "¿Filman en exteriores o en otras ciudades?", a: "Sí, trabajamos locaciones dentro y fuera de Guadalajara según lo que pida el guion." },
       ],
       metaTitle: "Producción de video y reels en Guadalajara",
       metaDescription:
@@ -504,6 +547,9 @@ export const services: Service[] = [
       faq: [
         { q: "Do you offer monthly reel packages?", a: "Yes. One shoot day per month usually yields four to six weeks of content." },
         { q: "Do you include voiceover or talent?", a: "Casting, voiceover and licensed music can all be included in the production budget." },
+        { q: "How much does a corporate video cost?", a: "It depends on length, number of locations and whether it needs animation or motion graphics. We publish real Guadalajara pricing ranges on the blog, and quote exactly based on your script." },
+        { q: "How long does video production take?", a: "A typical corporate film takes 2 to 4 weeks from script to final delivery; standalone reels can be ready in days." },
+        { q: "Do you shoot on location outside Guadalajara?", a: "Yes, we work locations in and outside Guadalajara depending on what the script calls for." },
       ],
       metaTitle: "Video production & reels in Guadalajara",
       metaDescription:
