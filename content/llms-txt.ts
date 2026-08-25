@@ -41,6 +41,11 @@ Practical pricing guides and marketing comparisons for the Guadalajara market.
 - [Auditoría SEO en Guadalajara: qué revisamos](https://dizayn.com.mx/blog/auditoria-seo-guadalajara)
 - [¿Qué es el posicionamiento web?](https://dizayn.com.mx/blog/que-es-posicionamiento-web)
 - [SEO vs. GEO: por qué necesitas ambos](https://dizayn.com.mx/blog/seo-vs-geo-guadalajara)
+- [Agencia de marketing digital: ¿Guadalajara o CDMX?](https://dizayn.com.mx/blog/agencia-marketing-guadalajara-vs-cdmx)
+- [Cómo elegir una agencia de marketing digital confiable en México](https://dizayn.com.mx/blog/como-elegir-agencia-marketing-digital-confiable)
+- [Video marketing para marcas mexicanas: qué tipo de video necesitas](https://dizayn.com.mx/blog/video-marketing-marcas-mexicanas)
+- [Fotografía de producto para e-commerce: lo que realmente necesitas](https://dizayn.com.mx/blog/fotografia-producto-ecommerce)
+- [Cómo hacer un sitio web que venda (no solo que se vea bien)](https://dizayn.com.mx/blog/sitio-web-que-vende-guadalajara)
 
 ## Blog: real client case studies (Luvory Luxury Toilets)
 

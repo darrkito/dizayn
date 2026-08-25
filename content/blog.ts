@@ -48,6 +48,10 @@ export const blogPosts: BlogPost[] = [
           q: "¿Cuánto tarda en verse resultados en las respuestas de IA?",
           a: "Varía según qué tan rápido indexen y recrawleen tu dominio los motores — puede ser semanas. Lo que sí es inmediato es la calidad de la señal: una página mal estructurada nunca será citada sin importar cuánto tiempo pase; una bien estructurada empieza a competir en cuanto se indexa.",
         },
+        {
+          q: "¿Cómo uso ChatGPT para promocionar mi negocio?",
+          a: "ChatGPT no es un canal donde 'publicas' contenido — es un motor de respuesta que cita fuentes cuando alguien pregunta algo relacionado con tu negocio. La forma de aparecer ahí es la misma que para AI Overviews: tener páginas con respuestas directas, específicas y verificables sobre tu servicio, ciudad y precios, para que ChatGPT tenga una fuente clara que citar cuando un usuario pregunta algo que tu negocio resuelve.",
+        },
       ],
       content: `
 ## ¿Cómo posiciono mi marca en las respuestas de IA?
@@ -95,6 +99,10 @@ Cualquier dato con más de dos variantes numéricas (precios por tipo de product
 
 El SEO técnico de base sigue siendo el cimiento: velocidad de carga, estructura semántica correcta, autoridad de dominio, contenido genuinamente útil. Escribir para IA no sustituye eso — se construye encima. Un sitio lento o mal estructurado no va a competir por una cita de IA sin importar qué tan bien redactado esté un párrafo.
 
+## ¿Cómo uso ChatGPT para promocionar mi negocio?
+
+ChatGPT no funciona como una red social donde publicas contenido — funciona como un motor de respuesta que cita fuentes cuando un usuario pregunta algo relacionado con tu servicio, ciudad o industria. La estrategia para aparecer ahí es la misma descrita arriba: páginas con respuesta directa, datos específicos y estructura FAQPage que coincida con el texto visible. No hay un "perfil de negocio en ChatGPT" que optimizar — hay contenido en tu sitio que ChatGPT puede o no encontrar y citar.
+
 ¿Quieres que evaluemos cómo está posicionada tu marca hoy en búsquedas normales y en respuestas de IA? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [posicionamiento en IA](/servicios/posicionamiento-ia).
       `,
     },
@@ -122,6 +130,10 @@ El SEO técnico de base sigue siendo el cimiento: velocidad de carga, estructura
         {
           q: "How long until I see results in AI answers?",
           a: "It varies with how fast search engines crawl and recrawl your domain — can be weeks. What's immediate is the quality of the signal: a poorly structured page will never get cited no matter how much time passes; a well-structured one starts competing as soon as it's indexed.",
+        },
+        {
+          q: "How do I use ChatGPT to promote my business?",
+          a: "ChatGPT isn't a channel where you 'post' content — it's an answer engine that cites sources when someone asks something related to your business. The way to show up there is the same as for AI Overviews: have pages with direct, specific, verifiable answers about your service, city, and pricing, so ChatGPT has a clear source to cite when a user asks something your business solves.",
         },
       ],
       content: `
@@ -246,6 +258,8 @@ Una tienda en línea no es solo "un sitio con más páginas" — necesita integr
 
 Un sitio bien construido se paga solo con el tiempo, porque no necesitas reconstruirlo en 12 meses para que empiece a posicionar de verdad.
 
+El precio y lo que incluye un sitio son solo la mitad de la historia — revisa también [qué hace que un sitio web realmente venda](/blog/sitio-web-que-vende-guadalajara), más allá del diseño visual.
+
 ¿Quieres una cotización exacta para tu proyecto? [Cuéntanos qué necesitas](/contacto) o revisa el detalle de nuestro servicio de [creación de sitios web](/servicios/sitios-web).
       `,
     },
@@ -316,6 +330,8 @@ An online store isn't just "a site with more pages" — it needs payment integra
 - No training included — you depend on the same agency for any text change.
 
 A well-built site pays for itself over time, because you won't need to rebuild it in 12 months just to start actually ranking.
+
+Price and what's included are only half the story — also check [what actually makes a website sell](/en/blog/website-that-sells-guadalajara), beyond visual design.
 
 Want an exact quote for your project? [Tell us what you need](/contacto) or check the details of our [website design service](/servicios/sitios-web).
       `,
@@ -531,6 +547,8 @@ Producir un reel a la vez cuesta más por pieza que aprovechar un solo día de r
 
 Un video bien producido se reutiliza en redes, en el sitio web y en pauta durante meses — el costo por uso baja mientras más canales lo aprovechan.
 
+Si no sabes qué tipo de video necesita tu marca (corporativo, de producto, para redes o testimonial), revisa primero [qué tipo de video necesita tu marca](/blog/video-marketing-marcas-mexicanas).
+
 ¿Quieres una cotización exacta para tu proyecto de video? [Cuéntanos qué necesitas](/contacto) o revisa el detalle de nuestro servicio de [videografía](/servicios/videografia).
       `,
     },
@@ -598,6 +616,8 @@ Producing one reel at a time costs more per piece than using a single shoot day 
 - Do you deliver platform-specific versions (vertical, horizontal, subtitled)?
 
 A well-produced video gets reused across social, the website, and paid media for months — the cost per use drops the more channels it serves.
+
+Not sure what type of video your brand needs (corporate, product, social, or testimonial)? Check [what type of video your brand needs](/en/blog/video-marketing-mexican-brands) first.
 
 Want an exact quote for your video project? [Tell us what you need](/contacto) or check the details of our [videography service](/servicios/videografia).
       `,
@@ -669,6 +689,8 @@ Uso digital (sitio, redes, pauta) suele estar incluido en el precio base. Uso en
 - Verifica si el número de fotos finales está definido o es "lo que salga del día".
 - Pregunta si la licencia cubre todos los canales donde planeas usar las imágenes.
 
+Si tu producto se vende en línea, revisa qué necesita específicamente [la fotografía de producto para e-commerce](/blog/fotografia-producto-ecommerce) — no es la misma sesión que para catálogo impreso o redes.
+
 ¿Quieres cotizar tu sesión de fotografía? [Cuéntanos de tu proyecto](/contacto) o conoce el detalle de nuestro servicio de [fotografía](/servicios/fotografia).
       `,
     },
@@ -733,6 +755,8 @@ Digital use (site, social, ads) is usually included in the base price. Use on bi
 - A much lower price may not include retouching, just raw file delivery.
 - Check whether the final photo count is defined or "whatever comes out of the day."
 - Ask whether the license covers every channel you plan to use the images on.
+
+If your product sells online, check what [product photography for e-commerce](/en/blog/product-photography-for-ecommerce) specifically needs — it's not the same session as print catalog or social photography.
 
 Want to get a quote for your photography session? [Tell us about your project](/contacto) or check the details of our [photography service](/servicios/fotografia).
       `,
@@ -1187,6 +1211,8 @@ Negocios con necesidad diaria y alta de una sola disciplina (por ejemplo, una ma
 
 Muchas marcas combinan: alguien interno que coordina el día a día con una agencia externa que aporta producción especializada (video, diseño, estrategia de pauta) que no justifica todavía un sueldo completo dedicado a esa disciplina.
 
+Si decides que una agencia es la opción, revisa cómo [elegir una agencia de marketing digital confiable](/blog/como-elegir-agencia-marketing-digital-confiable) antes de firmar con la primera que te cotice.
+
 ¿No estás seguro de qué modelo te conviene en tu etapa actual? [Cuéntanos de tu negocio](/contacto) y te damos una opinión honesta, incluso si la respuesta no es contratarnos.
       `,
     },
@@ -1245,6 +1271,8 @@ Businesses with high, daily demand for a single discipline (like an e-commerce b
 ## The hybrid model — the most common in practice
 
 Many brands combine both: someone internal coordinating day-to-day with an external agency contributing specialized production (video, design, ad strategy) that doesn't yet justify a full salary dedicated to that discipline.
+
+If you decide an agency is the right fit, check [how to choose a reliable digital marketing agency](/en/blog/how-to-choose-a-reliable-digital-marketing-agency) before signing with the first one that quotes you.
 
 Not sure which model fits your current stage? [Tell us about your business](/contacto) and we'll give you an honest read, even if the answer isn't hiring us.
       `,
@@ -1806,6 +1834,8 @@ Un sitio que solo la agencia puede editar te vuelve dependiente para cualquier c
 
 Pregunta directamente: ¿el precio incluye SEO técnico? ¿Es diseño a medida o plantilla? ¿Incluye capacitación? Si la respuesta a cualquiera es "eso se cotiza aparte" sin haberlo mencionado antes, ese costo va a aparecer después, cuando ya invertiste en un sitio que necesita reconstrucción para funcionar de verdad.
 
+Tener todos estos elementos no garantiza ventas por sí solo — revisa también [qué hace que un sitio web realmente venda](/blog/sitio-web-que-vende-guadalajara).
+
 ¿Quieres ver ejemplos reales de sitios que hemos lanzado en Guadalajara? [Cuéntanos tu proyecto](/contacto) o revisa el detalle completo de nuestro servicio de [diseño de sitios web](/servicios/sitios-web).
       `,
     },
@@ -1873,6 +1903,8 @@ A site only the agency can edit makes you dependent for any text or price change
 
 Ask directly: does the price include technical SEO? Is it custom design or a template? Does it include training? If the answer to any of these is "that's quoted separately" without it being mentioned upfront, that cost will show up later, once you've already invested in a site that needs rebuilding to actually work.
 
+Having all these elements doesn't guarantee sales on its own — also check [what actually makes a website sell](/en/blog/website-that-sells-guadalajara).
+
 Want to see real sites we've launched in Guadalajara? [Tell us about your project](/contacto) or check the full detail of our [website design service](/servicios/sitios-web).
       `,
     },
@@ -1905,6 +1937,10 @@ Want to see real sites we've launched in Guadalajara? [Tell us about your projec
         {
           q: "¿Necesito producir contenido nuevo o pueden usar lo que ya tengo?",
           a: "Depende de qué tan reciente y consistente sea tu material actual. La mayoría de las marcas necesitan producción nueva regular para no repetir el mismo contenido — bancos de imágenes o material viejo se nota rápido en redes.",
+        },
+        {
+          q: "¿Cómo hago contenido en redes sociales que realmente convierta en ventas?",
+          a: "Tres cosas: producción real de tu marca (no plantillas genéricas), un llamado a la acción claro en cada publicación relevante (no solo estética), y consistencia en los pilares de contenido para que el algoritmo y la audiencia entiendan de qué habla tu cuenta. El contenido que convierte responde a una pregunta o necesidad específica del cliente, no solo busca 'verse bien'.",
         },
       ],
       content: `
@@ -1946,6 +1982,10 @@ Alcance y guardados importan, pero lo que realmente indica si vale la pena la in
 
 Una agencia que responde estas preguntas con claridad, sin evasivas, suele ser una señal más confiable que cualquier portafolio bonito.
 
+## ¿Cómo hago contenido en redes sociales que convierta en ventas?
+
+El contenido que convierte tiene tres características: **está producido para tu marca específica** (no es una plantilla genérica con tu logo), **incluye un llamado a la acción claro** cuando el objetivo es generar un prospecto (no toda publicación necesita vender, pero las que buscan conversión deben decirlo explícitamente), y **responde a una pregunta o necesidad real de tu cliente** en vez de solo buscar verse estético. Una publicación bonita sin ninguna de las tres genera likes, no ventas.
+
 ¿Quieres ver cómo trabajamos la producción y estrategia para marcas en Guadalajara? [Cuéntanos de tu marca](/contacto) o revisa el detalle de nuestro servicio de [redes sociales](/servicios/redes-sociales).
       `,
     },
@@ -1973,6 +2013,10 @@ Una agencia que responde estas preguntas con claridad, sin evasivas, suele ser u
         {
           q: "Do I need new content produced or can they use what I already have?",
           a: "It depends how recent and consistent your current material is. Most brands need regular new production to avoid repeating the same content — stock or old material shows quickly on social.",
+        },
+        {
+          q: "How do I make social media content that actually converts into sales?",
+          a: "Three things: real production for your specific brand (not a generic template), a clear call to action on every post meant to generate a lead (not every post needs to sell, but the ones aiming for conversion should say so explicitly), and consistently answering a real question or need your customer has, rather than just chasing an aesthetic. A pretty post with none of the three generates likes, not sales.",
         },
       ],
       content: `
@@ -2013,6 +2057,10 @@ Reach and saves matter, but what actually tells you if the investment is worth i
 - Do you run paid ads or only organic content?
 
 An agency that answers these clearly, without dodging, is usually a more reliable signal than any pretty portfolio.
+
+## How do I make social media content that converts into sales?
+
+Content that converts has three traits: **it's produced for your specific brand** (not a generic template with your logo pasted on), **it includes a clear call to action** when the goal is generating a lead (not every post needs to sell, but the ones aiming for conversion should say so explicitly), and **it answers a real question or need your customer has**, instead of just chasing an aesthetic. A pretty post with none of the three generates likes, not sales.
 
 Want to see how we handle production and strategy for brands in Guadalajara? [Tell us about your brand](/contacto) or check the details of our [social media service](/servicios/redes-sociales).
       `,
@@ -3177,6 +3225,655 @@ The same approach applied to the **Mau y Ricky** concert, presented as part of W
 Content that honestly competes for real searches about major Guadalajara events, without inflating figures or fabricating connections — built on real presence and verifiable data, with the business connection presented as exactly what it genuinely is.
 
 Was your brand at a major event that could become real content? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo). See the real result at [luvory.com.mx](https://luvory.com.mx).
+      `,
+    },
+  },
+  {
+    slug: "agencia-marketing-guadalajara-vs-cdmx",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Agencia de marketing digital: ¿Guadalajara o CDMX? Lo que realmente cambia",
+      excerpt:
+        "Contratar una agencia en Guadalajara o una en CDMX no cambia la calidad del trabajo — cambia el tiempo de respuesta, el conocimiento del mercado local y el costo. Esto es lo que sí importa.",
+      category: "Estrategia",
+      metaTitle: "Agencia de marketing Guadalajara vs CDMX: diferencias reales",
+      metaDescription:
+        "¿Conviene una agencia de marketing digital en Guadalajara o en CDMX? Diferencias reales en costo, tiempo de respuesta y conocimiento de mercado local.",
+      faq: [
+        {
+          q: "¿Es mejor contratar una agencia de marketing en Guadalajara o en CDMX?",
+          a: "Ninguna ubicación garantiza mejor calidad por sí sola. Lo que sí cambia con una agencia local en Guadalajara: tiempo de respuesta más rápido (misma zona horaria y disponibilidad para reuniones presenciales), conocimiento directo del mercado tapatío, y costos generalmente 15-30% menores que una agencia equivalente en CDMX, sin sacrificar capacidades técnicas.",
+        },
+        {
+          q: "¿Las agencias de CDMX cobran más que las de Guadalajara?",
+          a: "En general sí — el costo de operación en CDMX es mayor y eso se refleja en las tarifas. No es una regla absoluta, pero es un patrón consistente en el mercado mexicano de agencias digitales.",
+        },
+        {
+          q: "¿Una agencia de Guadalajara puede atender un negocio en otra ciudad?",
+          a: "Sí. El trabajo de marketing digital (SEO, redes sociales, sitios web, GEO) es remoto por naturaleza. La ubicación de la agencia importa para el conocimiento de mercado local si tu negocio también opera en esa ciudad, no como limitante técnico.",
+        },
+        {
+          q: "¿Qué debo verificar antes de contratar cualquier agencia, sin importar la ciudad?",
+          a: "Portafolio con trabajo real y verificable (no solo mockups), reportes que midan resultados de negocio y no solo actividad, un proceso claro, y referencias que puedas contactar directamente.",
+        },
+      ],
+      content: `
+## ¿Conviene una agencia de marketing en Guadalajara o en CDMX?
+
+La ubicación de la agencia no determina la calidad del trabajo — SEO, redes sociales, sitios web y GEO se ejecutan igual de bien desde cualquier ciudad. Lo que sí cambia entre una agencia tapatía y una chilanga son tres cosas concretas: **tiempo de respuesta, conocimiento de mercado local, y costo**.
+
+## Las tres diferencias reales
+
+### 1. Tiempo de respuesta y disponibilidad
+Una agencia en la misma ciudad que tu negocio puede reunirse en persona cuando hace falta, entender el ritmo de tu operación de primera mano, y responder en la misma jornada sin fricción de coordinación entre ciudades.
+
+### 2. Conocimiento de mercado local
+Si tu cliente ideal está en Guadalajara o Zapopan, una agencia que ya opera y conoce ese mercado — colonias, temporadas, competencia local — parte con ventaja sobre una agencia que investiga el mercado desde cero, sin importar qué tan buena sea técnicamente.
+
+### 3. Costo
+El costo de operación en CDMX es estructuralmente mayor (renta, nómina, competencia por talento), y eso se traduce en tarifas más altas para el mismo alcance de trabajo. Una agencia en Guadalajara con el mismo nivel técnico suele cobrar entre 15-30% menos.
+
+| Factor | Agencia local (Guadalajara) | Agencia CDMX |
+|---|---|---|
+| Tiempo de respuesta | Mismo día, reuniones presenciales posibles | Depende de coordinación remota |
+| Conocimiento de mercado tapatío | Directo | Requiere investigación previa |
+| Costo típico | 15-30% menor | Mayor por costo de operación |
+| Capacidad técnica | Igual (SEO, GEO, redes, web, funnels) | Igual |
+
+## Lo que NO cambia con la ubicación
+
+La calidad técnica de SEO, GEO, diseño web, redes sociales o video no depende de en qué ciudad esté la agencia — depende de su proceso, experiencia real y equipo. Una mala agencia en Guadalajara no es mejor que una mala agencia en CDMX solo por cercanía, y viceversa.
+
+## ¿Cómo decidir?
+
+Si tu negocio opera principalmente en Guadalajara o Jalisco, una agencia local suele ganar en las tres variables que sí importan. Si tu negocio es nacional o remoto por naturaleza, la ubicación de la agencia pesa menos que su portafolio y proceso — [revisa qué verificar antes de contratar cualquier agencia](/blog/como-elegir-agencia-marketing-digital-confiable).
+
+¿Quieres platicar tu proyecto con una agencia que opera desde Guadalajara y entiende el mercado local? [Cuéntanos de tu marca](/contacto) o revisa nuestros [servicios](/servicios).
+      `,
+    },
+    en: {
+      title: "Digital Marketing Agency: Guadalajara or Mexico City? What Actually Changes",
+      excerpt:
+        "Hiring an agency in Guadalajara vs. Mexico City doesn't change the quality of the work — it changes response time, local market knowledge, and cost. Here's what actually matters.",
+      category: "Strategy",
+      metaTitle: "Marketing Agency Guadalajara vs Mexico City: Real Differences",
+      metaDescription:
+        "Is it better to hire a digital marketing agency in Guadalajara or Mexico City? Real differences in cost, response time, and local market knowledge.",
+      faq: [
+        {
+          q: "Is it better to hire a marketing agency in Guadalajara or Mexico City?",
+          a: "No location guarantees better quality on its own. What does change with a local Guadalajara agency: faster response time (same time zone, availability for in-person meetings), direct knowledge of the Guadalajara market, and costs generally 15-30% lower than an equivalent Mexico City agency, without sacrificing technical capability.",
+        },
+        {
+          q: "Do Mexico City agencies charge more than Guadalajara ones?",
+          a: "Generally yes — operating costs in Mexico City are higher, and that shows up in rates. It's not an absolute rule, but it's a consistent pattern in the Mexican digital agency market.",
+        },
+        {
+          q: "Can a Guadalajara agency serve a business in another city?",
+          a: "Yes. Digital marketing work (SEO, social media, websites, GEO) is remote by nature. The agency's location matters for local market knowledge if your business also operates in that city, not as a technical limitation.",
+        },
+        {
+          q: "What should I check before hiring any agency, regardless of city?",
+          a: "A portfolio with real, verifiable work (not just mockups), reports that measure business outcomes rather than just activity, a clear process, and references you can contact directly.",
+        },
+      ],
+      content: `
+## Is it better to hire a marketing agency in Guadalajara or Mexico City?
+
+The agency's location doesn't determine the quality of the work — SEO, social media, websites, and GEO execute just as well from any city. What actually changes between a Guadalajara agency and a Mexico City one comes down to three concrete things: **response time, local market knowledge, and cost**.
+
+## The three real differences
+
+### 1. Response time and availability
+An agency in the same city as your business can meet in person when needed, understand your operation's rhythm firsthand, and respond same-day without cross-city coordination friction.
+
+### 2. Local market knowledge
+If your ideal customer is in Guadalajara or Zapopan, an agency that already operates in and knows that market — neighborhoods, seasons, local competition — starts with an advantage over one researching the market from scratch, no matter how technically strong it is.
+
+### 3. Cost
+Operating costs in Mexico City are structurally higher (rent, payroll, competition for talent), and that translates into higher rates for the same scope of work. A Guadalajara agency at the same technical level typically charges 15-30% less.
+
+| Factor | Local agency (Guadalajara) | Mexico City agency |
+|---|---|---|
+| Response time | Same-day, in-person meetings possible | Depends on remote coordination |
+| Guadalajara market knowledge | Direct | Requires upfront research |
+| Typical cost | 15-30% lower | Higher due to operating costs |
+| Technical capability | Equal (SEO, GEO, social, web, funnels) | Equal |
+
+## What does NOT change with location
+
+The technical quality of SEO, GEO, web design, social media, or video doesn't depend on which city the agency is in — it depends on its process, real experience, and team. A bad agency in Guadalajara isn't better than a bad agency in Mexico City just for proximity, and vice versa.
+
+## How to decide
+
+If your business operates mainly in Guadalajara or Jalisco, a local agency usually wins on the three variables that actually matter. If your business is national or remote by nature, the agency's location matters less than its portfolio and process — [check what to verify before hiring any agency](/en/blog/how-to-choose-a-reliable-digital-marketing-agency).
+
+Want to talk about your project with an agency that operates from Guadalajara and understands the local market? [Tell us about your brand](/en/contact) or check our [services](/en/services).
+      `,
+    },
+  },
+  {
+    slug: "como-elegir-agencia-marketing-digital-confiable",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Cómo elegir una agencia de marketing digital confiable en México",
+      excerpt:
+        "No todas las agencias que prometen resultados los entregan. Estas son las señales reales que separan a una agencia confiable de una que solo vende humo.",
+      category: "Estrategia",
+      metaTitle: "Cómo elegir una agencia de marketing digital confiable",
+      metaDescription:
+        "Señales para identificar una agencia de marketing digital confiable en México: portafolio verificable, contratos claros, reportes reales y red flags que evitar.",
+      faq: [
+        {
+          q: "¿Cómo sé si una agencia de marketing digital es confiable?",
+          a: "Revisa si tiene portafolio verificable (proyectos reales que puedas visitar o confirmar, no solo mockups), si ofrece contrato claro con entregables definidos, si sus reportes miden resultados de negocio (prospectos, ventas) y no solo actividad, y si puedes hablar directamente con un cliente actual como referencia.",
+        },
+        {
+          q: "¿Qué preguntas debo hacer antes de contratar una agencia SEO?",
+          a: "Pide ejemplos verificables de sitios que posicionan, pregunta qué método usan (nunca deberían garantizar posición #1 en un plazo fijo — eso es una red flag), y confirma si el trabajo queda documentado y es tuyo si terminas la relación.",
+        },
+        {
+          q: "¿Cuáles son las señales de alerta de una agencia poco confiable?",
+          a: "Promesas de resultados garantizados en tiempos irreales, portafolio sin proyectos verificables, contratos vagos sin entregables específicos, reportes que solo muestran actividad (publicaciones, horas trabajadas) sin resultados de negocio, y presión para firmar sin tiempo de revisar el contrato.",
+        },
+        {
+          q: "¿Una agencia local es más confiable que una remota?",
+          a: "No necesariamente por ubicación — pero una agencia local sí facilita verificar referencias, visitar sus instalaciones y resolver problemas más rápido. La confiabilidad depende del proceso y el historial, no solo de la cercanía.",
+        },
+      ],
+      content: `
+## ¿Cómo elijo una agencia de marketing digital confiable?
+
+Una agencia confiable se identifica por cuatro señales verificables: **portafolio con proyectos reales que puedes confirmar, contrato con entregables específicos (no promesas vagas), reportes que miden resultados de negocio, y referencias de clientes actuales con las que puedes hablar directamente**. Si una agencia no puede ofrecer las cuatro, es una señal de alerta.
+
+## Por qué esto importa más de lo que parece
+
+El marketing digital tiene una asimetría de información real: el cliente normalmente no puede evaluar técnicamente si el SEO, la estrategia de redes o la pauta están bien ejecutados. Eso hace que sea fácil para una agencia poco seria cobrar por actividad (publicaciones, horas, reportes bonitos) sin generar resultados de negocio reales.
+
+## Las cuatro señales de una agencia confiable
+
+### 1. Portafolio verificable
+No basta con ver capturas de pantalla o mockups. Pide sitios reales que puedas visitar, cuentas de redes sociales que puedas revisar, o resultados de búsqueda que puedas confirmar tú mismo.
+
+### 2. Contrato con entregables específicos
+"Manejo de redes sociales" no es un entregable. "12 publicaciones al mes, 2 sesiones de producción, reporte mensual con alcance y prospectos" sí lo es. Si el contrato es vago, los resultados también lo serán.
+
+### 3. Reportes de resultados, no de actividad
+Un buen reporte responde "¿cuántos prospectos o ventas generó esto?", no solo "¿cuánto trabajamos este mes?". Si el reporte solo enumera publicaciones o "impresiones" sin conectarlo a resultados de negocio, es una señal de que la agencia no está midiendo lo que realmente importa.
+
+### 4. Referencias reales
+Una agencia confiable puede ponerte en contacto con un cliente actual dispuesto a hablar contigo directamente, sin filtrar la conversación.
+
+## Red flags que debes evitar
+
+- Garantiza posición #1 en Google en un plazo fijo (nadie controla el algoritmo de Google al 100%)
+- No tiene portafolio verificable, solo diseños "de muestra"
+- Presiona para firmar rápido, sin tiempo de revisar el contrato
+- Reportes que solo muestran actividad, nunca resultados de negocio
+
+## ¿Y si la agencia es local, en Guadalajara?
+
+Una agencia local no es automáticamente más confiable, pero sí facilita verificar las cuatro señales de arriba: puedes visitar sus instalaciones, hablar en persona con su equipo, y resolver problemas sin la fricción de husos horarios o coordinación remota — lee más sobre [las diferencias reales entre una agencia local y una de otra ciudad](/blog/agencia-marketing-guadalajara-vs-cdmx).
+
+¿Quieres verificar tú mismo nuestro portafolio y proceso? [Cuéntanos de tu proyecto](/contacto) o revisa nuestros [casos de éxito reales](/blog).
+      `,
+    },
+    en: {
+      title: "How to Choose a Reliable Digital Marketing Agency in Mexico",
+      excerpt:
+        "Not every agency that promises results delivers them. These are the real signals that separate a reliable agency from one that's just selling smoke.",
+      category: "Strategy",
+      metaTitle: "How to Choose a Reliable Digital Marketing Agency",
+      metaDescription:
+        "Signals to identify a reliable digital marketing agency in Mexico: verifiable portfolio, clear contracts, real reporting, and red flags to avoid.",
+      faq: [
+        {
+          q: "How do I know if a digital marketing agency is reliable?",
+          a: "Check whether it has a verifiable portfolio (real projects you can visit or confirm, not just mockups), a clear contract with defined deliverables, reports that measure business outcomes (leads, sales) rather than just activity, and whether you can speak directly with a current client as a reference.",
+        },
+        {
+          q: "What questions should I ask before hiring an SEO agency?",
+          a: "Ask for verifiable examples of sites that rank, ask what method they use (they should never guarantee #1 position in a fixed timeframe — that's a red flag), and confirm whether the work is documented and yours to keep if you end the relationship.",
+        },
+        {
+          q: "What are the warning signs of an unreliable agency?",
+          a: "Guaranteed results in unrealistic timeframes, a portfolio with no verifiable projects, vague contracts with no specific deliverables, reports that only show activity (posts, hours worked) with no business outcomes, and pressure to sign without time to review the contract.",
+        },
+        {
+          q: "Is a local agency more reliable than a remote one?",
+          a: "Not necessarily by location alone — but a local agency does make it easier to verify references, visit their office, and resolve issues faster. Reliability depends on process and track record, not just proximity.",
+        },
+      ],
+      content: `
+## How do I choose a reliable digital marketing agency?
+
+A reliable agency shows four verifiable signals: **a portfolio of real projects you can confirm, a contract with specific deliverables (not vague promises), reports that measure business outcomes, and references from current clients you can talk to directly**. If an agency can't offer all four, that's a warning sign.
+
+## Why this matters more than it seems
+
+Digital marketing has a real information asymmetry: clients usually can't technically evaluate whether SEO, social strategy, or ad spend is well executed. That makes it easy for a less serious agency to charge for activity (posts, hours, pretty reports) without generating real business results.
+
+## The four signals of a reliable agency
+
+### 1. Verifiable portfolio
+Screenshots or mockups aren't enough. Ask for real sites you can visit, social accounts you can check, or search results you can confirm yourself.
+
+### 2. Contract with specific deliverables
+"Social media management" isn't a deliverable. "12 posts a month, 2 production sessions, monthly report with reach and leads" is. If the contract is vague, the results will be too.
+
+### 3. Results reporting, not activity reporting
+A good report answers "how many leads or sales did this generate?", not just "how much did we work this month?" If the report only lists posts or "impressions" without tying it to business outcomes, that's a sign the agency isn't measuring what actually matters.
+
+### 4. Real references
+A reliable agency can connect you with a current client willing to talk to you directly, without filtering the conversation.
+
+## Red flags to avoid
+
+- Guarantees #1 Google ranking in a fixed timeframe (nobody fully controls Google's algorithm)
+- No verifiable portfolio, only "sample" designs
+- Pressures you to sign quickly, with no time to review the contract
+- Reports that only show activity, never business outcomes
+
+## What about a local Guadalajara agency?
+
+A local agency isn't automatically more reliable, but it does make it easier to verify the four signals above: you can visit their office, talk to their team in person, and resolve issues without time-zone or remote-coordination friction — read more about [the real differences between a local agency and one from another city](/en/blog/marketing-agency-guadalajara-vs-mexico-city).
+
+Want to verify our portfolio and process yourself? [Tell us about your project](/en/contact) or check our [real case studies](/en/blog).
+      `,
+    },
+  },
+  {
+    slug: "video-marketing-marcas-mexicanas",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Video marketing para marcas mexicanas: qué tipo de video necesitas",
+      excerpt:
+        "No todo negocio necesita el mismo tipo de video. Esto es lo que realmente separa un video corporativo, uno para redes sociales y uno de producto, y cuándo usar cada uno.",
+      category: "Video",
+      metaTitle: "Video marketing para marcas mexicanas: guía por tipo de video",
+      metaDescription:
+        "Qué tipo de video marketing necesita tu marca en México: corporativo, para redes sociales, de producto o testimonial. Diferencias reales y cuándo usar cada uno.",
+      faq: [
+        {
+          q: "¿Qué tipo de video necesita mi marca?",
+          a: "Depende del objetivo: video corporativo para presentar la marca a inversionistas o clientes B2B, video de producto para mostrar función y detalle en e-commerce, video para redes sociales (formato vertical, corto, con gancho en los primeros 3 segundos) para generar alcance y engagement, y video testimonial para generar confianza con prospectos.",
+        },
+        {
+          q: "¿Qué diferencia hay entre video para redes sociales y video corporativo?",
+          a: "El video corporativo es horizontal, de mayor duración (2-5 minutos), pensado para presentaciones o la página web. El video para redes sociales es vertical, corto (15-60 segundos), con gancho inmediato porque compite por atención en un feed donde el usuario decide en segundos si sigue viendo.",
+        },
+        {
+          q: "¿El video marketing realmente genera más ventas que las fotos?",
+          a: "El video genera más tiempo de retención y mayor alcance orgánico en la mayoría de las plataformas sociales actuales, lo que se traduce en más oportunidades de conversión — pero solo si el contenido está hecho para el formato correcto, no es simplemente una foto animada.",
+        },
+        {
+          q: "¿Cuánto cuesta producir video marketing para mi marca?",
+          a: "Varía según el tipo y volumen de producción. Consulta el rango real de precios en nuestra guía de [costo de video corporativo en Guadalajara](/blog/cuanto-cuesta-video-corporativo-guadalajara).",
+        },
+      ],
+      content: `
+## ¿Qué tipo de video marketing necesita mi marca?
+
+La pregunta correcta no es "¿necesito video?" —casi todas las marcas se benefician de video— sino **"¿qué tipo de video, para qué objetivo?"**. Un video corporativo, uno de producto, uno para redes sociales y uno testimonial cumplen funciones distintas, y usar el formato equivocado para el objetivo equivocado es la razón número uno por la que una marca invierte en video y no ve resultado.
+
+## Los cuatro tipos de video y cuándo usar cada uno
+
+### Video corporativo
+Horizontal, 2-5 minutos, para la página web o presentaciones a inversionistas/clientes B2B. Objetivo: transmitir seriedad, escala y proceso de la empresa.
+
+### Video de producto
+Enfocado en mostrar función, detalle y uso real del producto. Esencial para e-commerce y catálogos — el video de producto reduce dudas de compra que una foto estática no resuelve (cómo se ve en movimiento, cómo se usa, escala real).
+
+### Video para redes sociales
+Vertical, 15-60 segundos, con gancho en los primeros 3 segundos. Compite por atención en un feed donde el usuario decide en segundos si sigue viendo — el formato y el ritmo de edición son tan importantes como el mensaje.
+
+### Video testimonial
+Clientes reales hablando de su experiencia. Genera confianza de una forma que ningún texto de marketing logra, especialmente para servicios de alto valor donde el prospecto necesita evidencia social antes de decidir.
+
+| Tipo de video | Formato | Duración | Objetivo principal |
+|---|---|---|---|
+| Corporativo | Horizontal | 2-5 min | Presentar la marca (web, inversionistas) |
+| Producto | Horizontal o cuadrado | 15-60 seg | Reducir dudas de compra en e-commerce |
+| Redes sociales | Vertical | 15-60 seg | Alcance y engagement |
+| Testimonial | Horizontal o vertical | 30-90 seg | Generar confianza con prospectos |
+
+## El error más común
+
+Producir un solo video corporativo y tratar de reutilizarlo en todos los canales. Un video pensado para la página web casi nunca funciona recortado para redes sociales — el ritmo, la duración y el gancho inicial son distintos por diseño, no por descuido.
+
+## ¿Cuánto invertir en video marketing?
+
+Depende del tipo y volumen que necesites. Revisa el rango real de precios en nuestra guía de [costo de video corporativo en Guadalajara](/blog/cuanto-cuesta-video-corporativo-guadalajara), y si también necesitas fotografía de producto, aquí está [lo que cuesta una sesión de fotografía de producto](/blog/cuanto-cuesta-fotografia-producto-guadalajara).
+
+¿Quieres definir qué tipo de video necesita tu marca? [Cuéntanos de tu proyecto](/contacto) o revisa nuestro servicio de [videografía](/servicios/videografia).
+      `,
+    },
+    en: {
+      title: "Video Marketing for Mexican Brands: What Type of Video Do You Need",
+      excerpt:
+        "Not every business needs the same type of video. Here's what actually separates a corporate video, a social media video, and a product video, and when to use each.",
+      category: "Video",
+      metaTitle: "Video Marketing for Mexican Brands: A Guide by Video Type",
+      metaDescription:
+        "What type of video marketing does your brand need in Mexico: corporate, social media, product, or testimonial? Real differences and when to use each.",
+      faq: [
+        {
+          q: "What type of video does my brand need?",
+          a: "It depends on the goal: corporate video to present the brand to investors or B2B clients, product video to show function and detail for e-commerce, social media video (vertical, short, with a hook in the first 3 seconds) to drive reach and engagement, and testimonial video to build trust with prospects.",
+        },
+        {
+          q: "What's the difference between social media video and corporate video?",
+          a: "Corporate video is horizontal, longer (2-5 minutes), meant for presentations or the website. Social media video is vertical, short (15-60 seconds), with an immediate hook since it competes for attention in a feed where users decide in seconds whether to keep watching.",
+        },
+        {
+          q: "Does video marketing actually generate more sales than photos?",
+          a: "Video generates more watch time and greater organic reach on most social platforms today, which translates into more conversion opportunities — but only if the content is made for the right format, not just an animated photo.",
+        },
+        {
+          q: "How much does it cost to produce video marketing for my brand?",
+          a: "It varies by type and production volume. Check the real price range in our [corporate video cost in Guadalajara guide](/en/blog/corporate-video-cost-guadalajara).",
+        },
+      ],
+      content: `
+## What type of video marketing does my brand need?
+
+The right question isn't "do I need video?" — almost every brand benefits from video — it's **"what type of video, for what goal?"**. Corporate, product, social media, and testimonial video each serve a different purpose, and using the wrong format for the wrong goal is the number-one reason a brand invests in video and sees no results.
+
+## The four types of video and when to use each
+
+### Corporate video
+Horizontal, 2-5 minutes, for the website or investor/B2B presentations. Goal: convey the company's credibility, scale, and process.
+
+### Product video
+Focused on showing function, detail, and real use of the product. Essential for e-commerce and catalogs — product video reduces purchase hesitation that a static photo can't resolve (how it moves, how it's used, real scale).
+
+### Social media video
+Vertical, 15-60 seconds, with a hook in the first 3 seconds. It competes for attention in a feed where the user decides in seconds whether to keep watching — format and editing pace matter as much as the message.
+
+### Testimonial video
+Real customers talking about their experience. Builds trust in a way no marketing copy can, especially for high-value services where the prospect needs social proof before deciding.
+
+| Video type | Format | Duration | Main goal |
+|---|---|---|---|
+| Corporate | Horizontal | 2-5 min | Present the brand (website, investors) |
+| Product | Horizontal or square | 15-60 sec | Reduce purchase hesitation in e-commerce |
+| Social media | Vertical | 15-60 sec | Reach and engagement |
+| Testimonial | Horizontal or vertical | 30-90 sec | Build trust with prospects |
+
+## The most common mistake
+
+Producing a single corporate video and trying to reuse it across every channel. A video made for the website almost never works cut down for social media — pacing, duration, and the opening hook are different by design, not by oversight.
+
+## How much to invest in video marketing?
+
+It depends on the type and volume you need. Check the real price range in our [corporate video cost in Guadalajara guide](/en/blog/corporate-video-cost-guadalajara), and if you also need product photography, here's [what a product photography session costs](/en/blog/product-photography-cost-guadalajara).
+
+Want to define what type of video your brand needs? [Tell us about your project](/en/contact) or check our [video production service](/en/services/video-production).
+      `,
+    },
+  },
+  {
+    slug: "fotografia-producto-ecommerce",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Fotografía de producto para e-commerce: lo que realmente necesitas",
+      excerpt:
+        "Una foto bonita no siempre vende. Esto es lo que separa la fotografía de producto que reduce devoluciones y aumenta conversión de la que solo se ve bien.",
+      category: "Fotografía",
+      metaTitle: "Fotografía de producto para e-commerce en México",
+      metaDescription:
+        "Qué necesita una sesión de fotografía de producto para e-commerce: fondo blanco, ángulos múltiples, detalle y contexto de uso. Guía práctica y precios reales.",
+      faq: [
+        {
+          q: "¿Qué tipo de fotos necesito para vender un producto en línea?",
+          a: "Como mínimo: foto de fondo blanco/neutro (obligatoria en la mayoría de los marketplaces), 3-4 ángulos del producto, una foto de detalle (textura, material, acabado), y al menos una foto de contexto/lifestyle mostrando el producto en uso real.",
+        },
+        {
+          q: "¿La fotografía de producto realmente reduce devoluciones?",
+          a: "Sí. La mayoría de las devoluciones de e-commerce citan 'el producto no era como se veía en las fotos' como razón. Fotos con ángulos múltiples, detalle real de textura/color y escala clara reducen esa brecha entre expectativa y producto real.",
+        },
+        {
+          q: "¿Necesito fotos de fondo blanco y de lifestyle, o solo una de las dos?",
+          a: "Ambas cumplen funciones distintas: el fondo blanco es el estándar para catálogo y marketplaces (Amazon, Mercado Libre exigen este formato), mientras que las fotos de lifestyle/contexto son las que generan deseo de compra en redes sociales y en la página de producto.",
+        },
+        {
+          q: "¿Cuánto cuesta una sesión de fotografía de producto para e-commerce?",
+          a: "Varía según número de productos y ángulos por producto. Revisa el rango real en nuestra guía de [costo de fotografía de producto en Guadalajara](/blog/cuanto-cuesta-fotografia-producto-guadalajara).",
+        },
+      ],
+      content: `
+## ¿Qué necesita realmente la fotografía de producto para e-commerce?
+
+Una sesión de fotografía de producto para e-commerce necesita cubrir cuatro funciones distintas: **catálogo (fondo blanco, ángulos múltiples), detalle (textura y acabado real), contexto (uso en la vida real) y escala (que el comprador entienda el tamaño real)**. Una sesión que solo cubre una de las cuatro deja información crítica sin resolver para el comprador.
+
+## Las cuatro funciones de una buena sesión
+
+### 1. Fondo blanco / catálogo
+El estándar de e-commerce. Marketplaces como Amazon y Mercado Libre lo exigen para la imagen principal — sin sombras distractoras, producto centrado, iluminación uniforme.
+
+### 2. Ángulos múltiples
+Frente, lateral, atrás, y cualquier ángulo donde el producto tenga un detalle relevante. Un comprador en línea no puede tomar el producto en sus manos — los ángulos múltiples son el sustituto de esa interacción física.
+
+### 3. Detalle de textura y acabado
+Costuras, material, textura de superficie, color real bajo luz neutra. Es la información que más se pierde en fotos genéricas y la que más genera devoluciones cuando falta.
+
+### 4. Contexto de uso (lifestyle)
+El producto en una situación real de uso. Esta es la foto que genera deseo de compra en redes sociales y en la sección superior de la página de producto — el fondo blanco vende información, el lifestyle vende la experiencia.
+
+## Por qué esto reduce devoluciones
+
+La razón más citada para devolver un producto de e-commerce es "no era como se veía en las fotos". Eso casi siempre significa una sesión incompleta: sin ángulo suficiente para mostrar el tamaño real, sin foto de detalle para textura o color exacto, o solo fotos de lifestyle sin el fondo blanco de referencia clara.
+
+| Elemento | Qué resuelve | Dónde se usa |
+|---|---|---|
+| Fondo blanco | Estándar de catálogo, requisito de marketplaces | Imagen principal, listados |
+| Ángulos múltiples | Sustituye la interacción física | Galería de producto |
+| Detalle de textura | Reduce sorpresas en color/material real | Zoom, galería |
+| Lifestyle/contexto | Genera deseo de compra | Redes sociales, sección superior de la página |
+
+## ¿Cuánto cuesta esto?
+
+El costo depende del número de productos y ángulos por producto que necesites. Consulta el rango real en nuestra guía de [costo de fotografía de producto en Guadalajara](/blog/cuanto-cuesta-fotografia-producto-guadalajara). Si también necesitas video de producto, aquí está [qué tipo de video necesita tu marca](/blog/video-marketing-marcas-mexicanas).
+
+¿Listo para una sesión que realmente resuelva las cuatro funciones? [Cuéntanos de tu catálogo](/contacto) o revisa nuestro servicio de [fotografía](/servicios/fotografia).
+      `,
+    },
+    en: {
+      title: "Product Photography for E-commerce: What You Actually Need",
+      excerpt:
+        "A pretty photo doesn't always sell. Here's what separates product photography that reduces returns and boosts conversion from photography that just looks good.",
+      category: "Photography",
+      metaTitle: "Product Photography for E-commerce in Mexico",
+      metaDescription:
+        "What a product photography session for e-commerce needs: white background, multiple angles, detail, and use context. Practical guide and real pricing.",
+      faq: [
+        {
+          q: "What kind of photos do I need to sell a product online?",
+          a: "At minimum: a white/neutral background photo (required by most marketplaces), 3-4 angles of the product, a detail shot (texture, material, finish), and at least one lifestyle/context photo showing the product in real use.",
+        },
+        {
+          q: "Does product photography actually reduce returns?",
+          a: "Yes. Most e-commerce returns cite 'the product wasn't as shown in the photos' as the reason. Photos with multiple angles, real texture/color detail, and clear scale close that gap between expectation and the real product.",
+        },
+        {
+          q: "Do I need both white-background and lifestyle photos, or just one?",
+          a: "Both serve different purposes: white background is the catalog/marketplace standard (Amazon, Mercado Libre require this format), while lifestyle/context photos are what generates purchase desire on social media and the product page.",
+        },
+        {
+          q: "How much does a product photography session for e-commerce cost?",
+          a: "It varies by number of products and angles per product. Check the real range in our [product photography cost in Guadalajara guide](/en/blog/product-photography-cost-guadalajara).",
+        },
+      ],
+      content: `
+## What does product photography for e-commerce actually need?
+
+An e-commerce product photography session needs to cover four distinct functions: **catalog (white background, multiple angles), detail (real texture and finish), context (real-life use), and scale (so the buyer understands actual size)**. A session that only covers one of the four leaves critical information unresolved for the buyer.
+
+## The four functions of a good session
+
+### 1. White background / catalog
+The e-commerce standard. Marketplaces like Amazon and Mercado Libre require it for the main image — no distracting shadows, centered product, even lighting.
+
+### 2. Multiple angles
+Front, side, back, and any angle where the product has a relevant detail. An online buyer can't hold the product in their hands — multiple angles are the substitute for that physical interaction.
+
+### 3. Texture and finish detail
+Stitching, material, surface texture, real color under neutral light. This is the information most often lost in generic photos, and the one that drives the most returns when it's missing.
+
+### 4. Use context (lifestyle)
+The product in a real-use situation. This is the photo that generates purchase desire on social media and at the top of the product page — the white background sells information, lifestyle sells the experience.
+
+## Why this reduces returns
+
+The most-cited reason for returning an e-commerce product is "it wasn't as shown in the photos." That almost always means an incomplete session: not enough angles to show real size, no detail shot for exact texture or color, or only lifestyle photos with no white-background reference.
+
+| Element | What it solves | Where it's used |
+|---|---|---|
+| White background | Catalog standard, marketplace requirement | Main image, listings |
+| Multiple angles | Substitutes for physical interaction | Product gallery |
+| Texture detail | Reduces surprises about real color/material | Zoom, gallery |
+| Lifestyle/context | Generates purchase desire | Social media, top of the page |
+
+## How much does this cost?
+
+Cost depends on the number of products and angles per product you need. Check the real range in our [product photography cost in Guadalajara guide](/en/blog/product-photography-cost-guadalajara). If you also need product video, here's [what type of video your brand needs](/en/blog/video-marketing-mexican-brands).
+
+Ready for a session that actually covers all four functions? [Tell us about your catalog](/en/contact) or check our [photography service](/en/services/photography).
+      `,
+    },
+  },
+  {
+    slug: "sitio-web-que-vende-guadalajara",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Cómo hacer un sitio web que venda (no solo que se vea bien)",
+      excerpt:
+        "Un sitio web bonito y un sitio web que vende no son lo mismo. Esto es lo que realmente convierte visitas en clientes, más allá del diseño visual.",
+      category: "Sitios web",
+      metaTitle: "Cómo hacer un sitio web que venda en Guadalajara",
+      metaDescription:
+        "Qué necesita un sitio web para realmente vender: llamado a la acción claro, velocidad de carga, diseño mobile-first y señales de confianza. Guía práctica.",
+      faq: [
+        {
+          q: "¿Qué hace que un sitio web venda más que otro?",
+          a: "Cinco elementos: un llamado a la acción claro visible sin hacer scroll, velocidad de carga rápida (cada segundo extra reduce conversión), diseño mobile-first (la mayoría del tráfico llega desde celular), señales de confianza visibles (testimonios reales, datos de contacto verificables), y un camino claro hacia la conversión sin fricción innecesaria.",
+        },
+        {
+          q: "¿Un sitio web bonito garantiza más ventas?",
+          a: "No. El diseño visual atractivo ayuda a la percepción de marca, pero no genera conversión por sí solo. Un sitio puede verse excelente y aun así perder visitantes si el llamado a la acción no es claro, si carga lento, o si no funciona bien en celular.",
+        },
+        {
+          q: "¿Qué tan importante es la velocidad de carga para las ventas?",
+          a: "Muy importante. Estudios de conversión muestran que cada segundo adicional de carga reduce la tasa de conversión de forma medible — un sitio lento pierde visitantes antes de que lean el mensaje de venta, sin importar qué tan bien esté escrito.",
+        },
+        {
+          q: "¿Cuánto cuesta un sitio web diseñado para vender en Guadalajara?",
+          a: "El costo varía según páginas y funcionalidad. Revisa el rango real en nuestra guía de [costo de un sitio web en Guadalajara](/blog/cuanto-cuesta-sitio-web-guadalajara).",
+        },
+      ],
+      content: `
+## ¿Qué hace que un sitio web realmente venda?
+
+Un sitio web que vende y uno que solo se ve bien no son lo mismo. La diferencia está en cinco elementos concretos: **llamado a la acción claro, velocidad de carga, diseño mobile-first, señales de confianza, y un camino sin fricción hacia la conversión**. El diseño visual atractivo ayuda a la percepción de marca, pero ninguno de esos cinco elementos depende únicamente de que el sitio se vea bonito.
+
+## Los cinco elementos que sí convierten
+
+### 1. Llamado a la acción claro, sin scroll
+El visitante debe entender en los primeros segundos qué quieres que haga — cotizar, comprar, agendar una llamada — sin tener que buscarlo. Un botón de contacto escondido al final de la página pierde a la mayoría de los visitantes antes de llegar ahí.
+
+### 2. Velocidad de carga
+Cada segundo adicional de carga reduce la conversión de forma medible. Un sitio visualmente impresionante que tarda 6 segundos en cargar pierde visitantes antes de que vean ese diseño.
+
+### 3. Diseño mobile-first
+La mayoría del tráfico llega desde celular. Un sitio diseñado primero para pantalla de escritorio y "adaptado" después a móvil casi siempre tiene fricción — botones pequeños, texto que requiere zoom, formularios difíciles de llenar con el pulgar.
+
+### 4. Señales de confianza visibles
+Testimonios reales (no genéricos), datos de contacto verificables, casos de trabajo reales. Un visitante que no conoce tu marca decide en segundos si confía lo suficiente para dar el siguiente paso.
+
+### 5. Camino sin fricción hacia la conversión
+Menos pasos entre "estoy interesado" y "ya contacté/compré". Cada campo de formulario innecesario, cada clic extra, es una oportunidad para que el visitante abandone.
+
+| Elemento | Sitio que solo se ve bien | Sitio que vende |
+|---|---|---|
+| Llamado a la acción | Escondido o poco claro | Visible sin scroll |
+| Velocidad | Secundaria al diseño visual | Prioridad medible |
+| Mobile | "Adaptado" después | Diseñado primero para móvil |
+| Confianza | Genérica o ausente | Testimonios y datos reales |
+| Conversión | Formularios largos, pasos extra | Camino corto y directo |
+
+## El diseño visual sigue importando — pero no es suficiente
+
+Nada de esto significa que el diseño no importe. Un sitio con buen diseño Y estos cinco elementos convierte mejor que uno con solo diseño o solo los cinco elementos por separado — la combinación es lo que realmente vende. Si quieres saber qué debe incluir un sitio bien diseñado desde cero, revisa [qué debe incluir el diseño de páginas web en Guadalajara](/blog/diseno-paginas-web-guadalajara-que-incluye), y si tu sitio necesita convertir visitantes en un proceso de ventas más largo, revisa [qué es un embudo de ventas](/blog/que-es-un-embudo-de-ventas).
+
+¿Quieres que evaluemos si tu sitio actual tiene estos cinco elementos? [Cuéntanos de tu sitio](/contacto) o revisa nuestro servicio de [diseño de sitios web](/servicios/sitios-web).
+      `,
+    },
+    en: {
+      title: "How to Build a Website That Sells (Not Just Looks Good)",
+      excerpt:
+        "A pretty website and a website that sells aren't the same thing. Here's what actually converts visitors into customers, beyond visual design.",
+      category: "Websites",
+      metaTitle: "How to Build a Website That Sells in Guadalajara",
+      metaDescription:
+        "What a website needs to actually sell: a clear call to action, fast load times, mobile-first design, and trust signals. A practical guide.",
+      faq: [
+        {
+          q: "What makes one website sell more than another?",
+          a: "Five elements: a clear call to action visible without scrolling, fast load speed (every extra second reduces conversion), mobile-first design (most traffic comes from phones), visible trust signals (real testimonials, verifiable contact info), and a low-friction path to conversion.",
+        },
+        {
+          q: "Does a pretty website guarantee more sales?",
+          a: "No. Attractive visual design helps brand perception, but doesn't generate conversion on its own. A site can look excellent and still lose visitors if the call to action isn't clear, if it loads slowly, or if it doesn't work well on mobile.",
+        },
+        {
+          q: "How important is load speed for sales?",
+          a: "Very. Conversion studies show every additional second of load time measurably reduces conversion rate — a slow site loses visitors before they even read the sales message, no matter how well it's written.",
+        },
+        {
+          q: "How much does a website designed to sell cost in Guadalajara?",
+          a: "Cost varies by pages and functionality. Check the real range in our [website cost in Guadalajara guide](/en/blog/website-cost-guadalajara).",
+        },
+      ],
+      content: `
+## What actually makes a website sell?
+
+A website that sells and one that just looks good aren't the same thing. The difference comes down to five concrete elements: **a clear call to action, load speed, mobile-first design, trust signals, and a low-friction path to conversion**. Attractive visual design helps brand perception, but none of those five elements depend solely on the site looking pretty.
+
+## The five elements that actually convert
+
+### 1. Clear call to action, no scrolling required
+The visitor should understand within seconds what you want them to do — get a quote, buy, book a call — without having to search for it. A contact button buried at the bottom of the page loses most visitors before they get there.
+
+### 2. Load speed
+Every extra second of load time measurably reduces conversion. A visually impressive site that takes 6 seconds to load loses visitors before they ever see that design.
+
+### 3. Mobile-first design
+Most traffic comes from phones. A site designed for desktop first and "adapted" to mobile later almost always has friction — small buttons, text that requires zooming, forms that are hard to fill with a thumb.
+
+### 4. Visible trust signals
+Real testimonials (not generic ones), verifiable contact info, real work examples. A visitor who doesn't know your brand decides in seconds whether they trust it enough to take the next step.
+
+### 5. Low-friction path to conversion
+Fewer steps between "I'm interested" and "I contacted/bought." Every unnecessary form field, every extra click, is an opportunity for the visitor to leave.
+
+| Element | A site that just looks good | A site that sells |
+|---|---|---|
+| Call to action | Hidden or unclear | Visible without scrolling |
+| Speed | Secondary to visual design | A measurable priority |
+| Mobile | "Adapted" afterward | Designed mobile-first |
+| Trust | Generic or absent | Real testimonials and data |
+| Conversion | Long forms, extra steps | Short, direct path |
+
+## Visual design still matters — it's just not enough on its own
+
+None of this means design doesn't matter. A site with good design AND these five elements converts better than one with just design or just the five elements alone — the combination is what actually sells. If you want to know what a well-designed site should include from the ground up, check [what website design in Guadalajara should include](/en/blog/website-design-guadalajara-what-to-include), and if your site needs to convert visitors through a longer sales process, check [what a sales funnel is](/en/blog/what-is-a-sales-funnel).
+
+Want us to evaluate whether your current site has these five elements? [Tell us about your site](/en/contact) or check our [web design service](/en/services/web-design).
       `,
     },
   },

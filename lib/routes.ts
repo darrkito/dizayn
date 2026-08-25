@@ -44,6 +44,11 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/blog/caso-luvory-wta-guadalajara-open": "/blog/luvory-wta-guadalajara-open-case-study",
   "/blog/caso-luvory-mundial-2026": "/blog/luvory-world-cup-2026-case-study",
   "/blog/caso-luvory-conciertos-mana-mau-ricky": "/blog/luvory-concerts-case-study",
+  "/blog/agencia-marketing-guadalajara-vs-cdmx": "/blog/marketing-agency-guadalajara-vs-mexico-city",
+  "/blog/como-elegir-agencia-marketing-digital-confiable": "/blog/how-to-choose-a-reliable-digital-marketing-agency",
+  "/blog/video-marketing-marcas-mexicanas": "/blog/video-marketing-mexican-brands",
+  "/blog/fotografia-producto-ecommerce": "/blog/product-photography-for-ecommerce",
+  "/blog/sitio-web-que-vende-guadalajara": "/blog/website-that-sells-guadalajara",
 };
 
 const ES_SLUG_MAP: Record<string, string> = Object.fromEntries(
