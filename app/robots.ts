@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/mcp"],
+      disallow: ["/api/", "/mcp", "/a2a"],
       other: {
         "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
       },

@@ -32,6 +32,14 @@ export async function GET() {
         url: `${SITE_URL}/.well-known/mcp/server-card.json`,
         representativeQueries: ["get details on Dizayn's SEO service", "contact Dizayn about a new website"],
       },
+      {
+        identifier: "urn:air:dizayn.com.mx:agent:a2a",
+        displayName: "Dizayn Assistant (A2A)",
+        description: "Agent-to-Agent endpoint that answers service and contact questions from Dizayn's real content.",
+        type: "application/json",
+        url: `${SITE_URL}/.well-known/agent-card.json`,
+        representativeQueries: ["what marketing services does Dizayn offer", "how do I contact Dizayn"],
+      },
     ],
   });
 }
