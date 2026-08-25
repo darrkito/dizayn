@@ -2465,7 +2465,7 @@ Ninguno de los dos se ve al navegar el sitio normalmente — ambos se encontraro
 
 Un sitio que corre sobre la misma base de diseño de siempre, pero con arquitectura real por debajo: headers HTTP controlables, URLs en inglés y español correctamente separadas (no solo un prefijo \`/en/\`, sino rutas realmente traducidas), y espacio para seguir agregando funcionalidad sin toparse con el mismo límite otra vez.
 
-¿Tu sitio actual tiene este mismo tipo de límite invisible? [Cuéntanos tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [diseño de sitios web](/servicios/sitios-web).
+¿Tu sitio actual tiene este mismo tipo de límite invisible? [Cuéntanos tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [diseño de sitios web](/servicios/sitios-web). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2508,7 +2508,7 @@ Neither shows up browsing the site normally — both were caught by an explicit 
 
 A site running on the same design foundation as always, but with real architecture underneath: controllable HTTP headers, correctly separated English and Spanish URLs (not just an \`/en/\` prefix, but actually translated routes), and room to keep adding features without hitting the same limit again.
 
-Does your current site have this same kind of invisible limit? [Tell us about your project](/contacto) or check the details of our [website design service](/servicios/sitios-web).
+Does your current site have this same kind of invisible limit? [Tell us about your project](/contacto) or check the details of our [website design service](/servicios/sitios-web). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2553,7 +2553,7 @@ La mayoría de las auditorías SEO se enfocan en lo que se puede ver en la pági
 
 Corregir las señales técnicas — no agregar más contenido — fue lo que realmente movió la aguja. El contenido ya real de Luvory (incluyendo la cobertura de eventos como el WTA Open y el Mundial 2026) empezó a tener la oportunidad real de indexarse y competir, en vez de estar bloqueado por una señal técnica que nadie había revisado directamente.
 
-¿Tu sitio tiene contenido real que no está apareciendo donde debería? [Pide un diagnóstico](/contacto) o revisa el detalle de nuestro servicio de [SEO](/servicios/seo).
+¿Tu sitio tiene contenido real que no está apareciendo donde debería? [Pide un diagnóstico](/contacto) o revisa el detalle de nuestro servicio de [SEO](/servicios/seo). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2593,7 +2593,7 @@ Most SEO audits focus on what's visible on the page: keywords, meta descriptions
 
 Fixing the technical signals — not adding more content — was what actually moved the needle. Luvory's already-real content (including its coverage of events like the WTA Open and the 2026 World Cup) got a real chance to index and compete, instead of being blocked by a technical signal nobody had checked directly.
 
-Does your site have real content that isn't showing up where it should? [Request a diagnosis](/contacto) or check the details of our [SEO service](/servicios/seo).
+Does your site have real content that isn't showing up where it should? [Request a diagnosis](/contacto) or check the details of our [SEO service](/servicios/seo). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2641,7 +2641,7 @@ Luvory ya tenía algo poco común: contenido real y detallado sobre eventos veri
 
 Un sitio preparado para dos audiencias a la vez: la persona que lee el contenido completo, y el sistema de IA que necesita extraer un párrafo específico para responder una pregunta. Ninguna se sacrifica por la otra.
 
-¿Quieres saber qué dice la IA de tu marca hoy? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia).
+¿Quieres saber qué dice la IA de tu marca hoy? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2684,7 +2684,7 @@ Luvory already had something uncommon: real, detailed content about verifiable e
 
 A site prepared for two audiences at once: the person reading the full content, and the AI system that needs to extract one specific passage to answer a question. Neither is sacrificed for the other.
 
-Want to know what AI says about your brand today? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia).
+Want to know what AI says about your brand today? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2728,7 +2728,7 @@ La decisión más importante en este trabajo no fue técnica, fue de principio: 
 
 La adopción de agentes de IA autónomos todavía es baja comparada con búsqueda tradicional — pero eso es exactamente lo que hace que construir esta infraestructura ahora, mientras casi nadie más lo tiene, sea una ventaja real y no solo un checklist técnico.
 
-¿Quieres que tu negocio sea descubrible por agentes de IA, no solo por personas? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia).
+¿Quieres que tu negocio sea descubrible por agentes de IA, no solo por personas? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2767,7 +2767,7 @@ The most important decision in this work wasn't technical, it was a matter of pr
 
 Autonomous AI agent adoption is still low compared to traditional search — but that's exactly what makes building this infrastructure now, while almost no one else has it, a real advantage rather than just a technical checklist item.
 
-Want your business discoverable by AI agents, not just people? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia).
+Want your business discoverable by AI agents, not just people? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2810,7 +2810,7 @@ Luvory tiene algo que la mayoría de sus competidores no: presencia documentada 
 
 Una cuenta que no solo publica con constancia, sino que construye la percepción de marca correcta para el precio que Luvory cobra — y que usa la presencia en eventos reales como el activo diferenciador que realmente es, en vez de tratarlo como contenido más entre publicaciones genéricas.
 
-¿Tu marca necesita que sus redes sociales reflejen lo que realmente vende? [Cuéntanos de tu marca](/contacto) o revisa el detalle de nuestro servicio de [redes sociales](/servicios/redes-sociales).
+¿Tu marca necesita que sus redes sociales reflejen lo que realmente vende? [Cuéntanos de tu marca](/contacto) o revisa el detalle de nuestro servicio de [redes sociales](/servicios/redes-sociales). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2848,7 +2848,7 @@ Luvory has something most competitors don't: documented presence at real, verifi
 
 An account that doesn't just post consistently, but builds the right brand perception for what Luvory charges — and uses real event presence as the genuine differentiating asset it is, instead of treating it as just more content among generic posts.
 
-Does your brand need its social media to actually reflect what it sells? [Tell us about your brand](/contacto) or check the details of our [social media service](/servicios/redes-sociales).
+Does your brand need its social media to actually reflect what it sells? [Tell us about your brand](/contacto) or check the details of our [social media service](/servicios/redes-sociales). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2892,7 +2892,7 @@ Cada pieza de contenido de evento cierra con la conexión obvia: si tu evento ne
 
 Un archivo creciente de contenido verificable que funciona simultáneamente como evidencia de experiencia real, material de posicionamiento en buscadores y sistemas de IA, y contenido de redes sociales — construido sobre presencia real, no sobre producción de contenido genérico.
 
-¿Tu negocio tiene presencia real en eventos que no está aprovechando como contenido? [Hablemos de tu marca](/contacto) o revisa nuestros servicios de [redes sociales](/servicios/redes-sociales) y [SEO](/servicios/seo).
+¿Tu negocio tiene presencia real en eventos que no está aprovechando como contenido? [Hablemos de tu marca](/contacto) o revisa nuestros servicios de [redes sociales](/servicios/redes-sociales) y [SEO](/servicios/seo). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -2931,7 +2931,7 @@ Every piece of event content closes with the obvious connection: if your event n
 
 A growing archive of verifiable content that simultaneously works as evidence of real experience, search-engine and AI-system ranking material, and social media content — built on real presence, not generic content production.
 
-Does your business have real event presence it isn't turning into content? [Let's talk about your brand](/contacto) or check our [social media](/servicios/redes-sociales) and [SEO](/servicios/seo) services.
+Does your business have real event presence it isn't turning into content? [Let's talk about your brand](/contacto) or check our [social media](/servicios/redes-sociales) and [SEO](/servicios/seo) services. See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -2974,7 +2974,7 @@ El contenido cierra con lo que Luvory realmente proveyó: baños VIP y presidenc
 
 Contenido que compite por búsquedas reales del torneo (tráfico que de otra forma nunca llegaría a Luvory), mientras documenta honestamente un trabajo real — sin fabricar ninguna conexión que no exista.
 
-¿Tu marca tiene presencia real en eventos que podría documentar así? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo).
+¿Tu marca tiene presencia real en eventos que podría documentar así? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -3012,7 +3012,7 @@ The content closes with what Luvory actually provided: VIP and presidential toil
 
 Content that competes for real tournament searches (traffic that would never otherwise reach Luvory), while honestly documenting real work — without fabricating any connection that doesn't exist.
 
-Does your brand have real event presence it could document this way? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo).
+Does your brand have real event presence it could document this way? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -3053,7 +3053,7 @@ Con partidos que llenaron el Estadio Akron con más de 45,000 personas y celebra
 
 Contenido que capta búsquedas reales sobre el Mundial en Guadalajara, mantiene una distinción honesta entre lo que Luvory realmente provee y lo que no, y conecta con la demanda genuina de quien organiza un evento privado en medio de una ciudad en modo Mundial.
 
-¿Tu negocio necesita resolver logística para un evento masivo? [Cuéntanos tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo) para posicionar contenido de eventos reales.
+¿Tu negocio necesita resolver logística para un evento masivo? [Cuéntanos tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo) para posicionar contenido de eventos reales. Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -3089,7 +3089,7 @@ With matches that filled Estadio Akron with over 45,000 people, and celebrations
 
 Content that captures real World Cup-related searches in Guadalajara, keeps an honest distinction between what Luvory actually provides and what it doesn't, and connects with genuine demand from whoever is organizing a private event in the middle of a city in World Cup mode.
 
-Does your business need to solve logistics for a large-scale event? [Tell us about your project](/contacto) or check our [SEO service](/servicios/seo) for positioning real event content.
+Does your business need to solve logistics for a large-scale event? [Tell us about your project](/contacto) or check our [SEO service](/servicios/seo) for positioning real event content. See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
@@ -3135,7 +3135,7 @@ El mismo enfoque aplicó al concierto de **Mau y Ricky**, presentado como parte 
 
 Contenido que compite honestamente por búsquedas reales sobre eventos masivos de Guadalajara, sin inflar cifras ni fabricar conexiones — construido sobre presencia real y datos verificables, con la conexión al negocio presentada como lo que genuinamente es.
 
-¿Tu marca estuvo en un evento masivo que podría convertirse en contenido real? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo).
+¿Tu marca estuvo en un evento masivo que podría convertirse en contenido real? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo). Ve el trabajo real en [luvory.com.mx](https://luvory.com.mx).
       `,
     },
     en: {
@@ -3176,7 +3176,7 @@ The same approach applied to the **Mau y Ricky** concert, presented as part of W
 
 Content that honestly competes for real searches about major Guadalajara events, without inflating figures or fabricating connections — built on real presence and verifiable data, with the business connection presented as exactly what it genuinely is.
 
-Was your brand at a major event that could become real content? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo).
+Was your brand at a major event that could become real content? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo). See the real result at [luvory.com.mx](https://luvory.com.mx).
       `,
     },
   },
