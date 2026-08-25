@@ -1738,6 +1738,689 @@ Does your firm need a content and local presence strategy? [Let's talk about you
       `,
     },
   },
+  {
+    slug: "diseno-paginas-web-guadalajara-que-incluye",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Diseño de páginas web en Guadalajara: qué debe incluir un sitio profesional",
+      excerpt:
+        "No es solo cómo se ve. Un sitio web profesional en Guadalajara incluye estrategia de mensaje, SEO técnico, velocidad y capacitación — esto es lo que deberías exigir antes de contratar.",
+      category: "Sitios web",
+      metaTitle: "Diseño de páginas web en Guadalajara: qué incluir",
+      metaDescription:
+        "Guía de qué debe incluir un sitio web profesional en Guadalajara: estrategia, diseño a medida, SEO técnico, velocidad y capacitación. Qué exigir antes de contratar.",
+      faq: [
+        {
+          q: "¿Qué diferencia a un diseño de páginas web profesional de uno genérico?",
+          a: "Un sitio profesional arranca con estrategia de mensaje y arquitectura de información antes de diseñar una sola pantalla, usa dirección de arte propia en vez de una plantilla ajustada, y sale con SEO técnico y velocidad optimizada desde el lanzamiento. Un sitio genérico suele saltarse los primeros dos pasos y enfocarse solo en la parte visual.",
+        },
+        {
+          q: "¿Qué debo pedir ver antes de contratar una agencia de diseño web?",
+          a: "Pide ver sitios reales que hayan lanzado, no solo mockups. Pregunta específicamente si el precio incluye SEO técnico, si el sitio es responsivo probado en un teléfono real, y si te entregan capacitación para editarlo tú mismo después.",
+        },
+        {
+          q: "¿Cuánto tarda el diseño de una página web en Guadalajara?",
+          a: "Un sitio corporativo típico de 5 a 10 páginas toma de 3 a 6 semanas de principio a fin, contando estrategia, diseño, desarrollo y revisiones. El tiempo depende más de qué tan rápido se aprueba el contenido que del desarrollo en sí.",
+        },
+        {
+          q: "¿El diseño de mi página web debe incluir SEO?",
+          a: "La base técnica sí — estructura semántica, velocidad, datos estructurados y metadatos correctos deberían venir incluidos en cualquier sitio nuevo. El trabajo de posicionamiento continuo (contenido, autoridad, palabras clave) ya es un servicio de SEO aparte, pero el sitio nunca debería lanzar con deuda técnica que después haya que corregir.",
+        },
+      ],
+      content: `
+## ¿Qué debe incluir el diseño de una página web profesional?
+
+Un sitio web profesional en Guadalajara debe incluir **estrategia de mensaje antes del diseño visual, dirección de arte propia (no plantilla), desarrollo responsivo y rápido, SEO técnico desde el lanzamiento, y capacitación para que tú lo administres después**. Si a una cotización le falta alguno de estos cinco elementos, no estás comparando lo mismo que un sitio realmente profesional.
+
+## Por qué "se ve bonito" no es suficiente
+
+Es fácil evaluar un sitio web solo por cómo se ve en la primera pantalla. El problema es que la mayoría de los sitios que fallan en generar clientes también se veían bien en la presentación — el diseño visual es la parte más fácil de evaluar a simple vista, y por eso es donde más agencias compiten, pero rara vez es la razón por la que un sitio no convierte.
+
+## Los cinco elementos que sí mueven el resultado
+
+### 1. Estrategia de mensaje antes de diseñar
+Antes de elegir un color o una tipografía, hay que responder: ¿quién es tu cliente ideal, qué necesita escuchar primero, y qué acción quieres que tome? Un sitio sin esta base termina con páginas bonitas que no guían a nadie hacia una decisión.
+
+### 2. Dirección de arte propia, no plantilla ajustada
+Una plantilla puede verse profesional en aislamiento, pero cuando tu competencia directa usa la misma plantilla (algo muy común en Guadalajara), tu marca deja de diferenciarse en el momento exacto en que alguien está comparando opciones.
+
+### 3. Desarrollo responsivo y rápido de verdad
+No basta con que "se vea bien en la vista previa" — hay que probarlo en un teléfono real, en una conexión normal, no en wifi de oficina. La mayoría del tráfico a un sitio de negocio local llega desde celular.
+
+### 4. SEO técnico desde el día uno
+Estructura semántica correcta, datos estructurados, velocidad de carga optimizada. Este trabajo cuesta lo mismo hacerlo bien desde el inicio que reconstruirlo después — la diferencia es que reconstruirlo después significa meses sin poder posicionar mientras se corrige.
+
+### 5. Capacitación para administrarlo tú mismo
+Un sitio que solo la agencia puede editar te vuelve dependiente para cualquier cambio de texto o precio. Un sitio bien entregado incluye documentación y capacitación para que tu equipo tenga control real.
+
+| Elemento | Sitio genérico | Sitio profesional |
+|----------|----------------|---------------------|
+| Punto de partida | Plantilla o mockup visual | Estrategia de mensaje |
+| Diseño | Plantilla ajustada | Dirección de arte a medida |
+| SEO técnico | Ausente o agregado después | Incluido desde el lanzamiento |
+| Velocidad | No verificada en móvil real | Probada y optimizada |
+| Después de la entrega | Dependes de la agencia | Puedes editarlo tú mismo |
+
+## Cómo saber si una cotización de diseño web es completa
+
+Pregunta directamente: ¿el precio incluye SEO técnico? ¿Es diseño a medida o plantilla? ¿Incluye capacitación? Si la respuesta a cualquiera es "eso se cotiza aparte" sin haberlo mencionado antes, ese costo va a aparecer después, cuando ya invertiste en un sitio que necesita reconstrucción para funcionar de verdad.
+
+¿Quieres ver ejemplos reales de sitios que hemos lanzado en Guadalajara? [Cuéntanos tu proyecto](/contacto) o revisa el detalle completo de nuestro servicio de [diseño de sitios web](/servicios/sitios-web).
+      `,
+    },
+    en: {
+      title: "Website Design in Guadalajara: What a Professional Site Should Include",
+      excerpt:
+        "It's not just how it looks. A professional website in Guadalajara includes message strategy, technical SEO, speed and training — here's what to demand before hiring.",
+      category: "Websites",
+      metaTitle: "Website Design in Guadalajara: What to Include",
+      metaDescription:
+        "A guide to what a professional website should include in Guadalajara: strategy, custom design, technical SEO, speed and training. What to demand before hiring.",
+      faq: [
+        {
+          q: "What separates professional website design from generic design?",
+          a: "A professional site starts with message strategy and information architecture before a single screen is designed, uses original art direction instead of an adjusted template, and ships with technical SEO and optimized speed from launch. A generic site usually skips the first two steps and focuses only on the visual layer.",
+        },
+        {
+          q: "What should I ask to see before hiring a web design agency?",
+          a: "Ask to see real launched sites, not just mockups. Ask specifically whether the price includes technical SEO, whether the site is tested responsive on a real phone, and whether you get training to edit it yourself afterward.",
+        },
+        {
+          q: "How long does website design take in Guadalajara?",
+          a: "A typical 5-10 page corporate site takes 3 to 6 weeks start to finish, including strategy, design, development and revisions. Timeline depends more on how fast content gets approved than on development itself.",
+        },
+        {
+          q: "Should my website design include SEO?",
+          a: "The technical foundation, yes — correct semantic structure, speed, structured data and metadata should come included with any new site. Ongoing ranking work (content, authority, keywords) is a separate SEO service, but the site should never launch with technical debt that has to be fixed later.",
+        },
+      ],
+      content: `
+## What should professional website design include?
+
+A professional website in Guadalajara should include **message strategy before visual design, original art direction (not a template), fast responsive development, technical SEO from launch, and training so you can run it afterward**. If a quote is missing any of these five elements, you're not comparing it to a genuinely professional site.
+
+## Why "it looks nice" isn't enough
+
+It's easy to judge a website by how the first screen looks. The problem is most sites that fail to generate customers also looked good in the pitch — visual design is the easiest part to judge at a glance, which is why most agencies compete on it, but it's rarely the reason a site doesn't convert.
+
+## The five elements that actually move the outcome
+
+### 1. Message strategy before design
+Before picking a color or a typeface, you need to answer: who is your ideal customer, what do they need to hear first, and what action do you want them to take? A site without this foundation ends up with pretty pages that guide no one toward a decision.
+
+### 2. Original art direction, not an adjusted template
+A template can look professional in isolation, but when your direct competitor uses the same template (very common in Guadalajara), your brand stops standing out at the exact moment someone is comparing options.
+
+### 3. Genuinely fast, responsive development
+It's not enough that it "looks fine in the preview" — it needs to be tested on a real phone, on a normal connection, not office wifi. Most traffic to a local business site arrives from mobile.
+
+### 4. Technical SEO from day one
+Correct semantic structure, structured data, optimized load speed. Doing this right from the start costs the same as doing it later — the difference is doing it later means months without ranking while it gets fixed.
+
+### 5. Training to run it yourself
+A site only the agency can edit makes you dependent for any text or price change. A properly delivered site includes documentation and training so your team has real control.
+
+| Element | Generic site | Professional site |
+|---------|--------------|---------------------|
+| Starting point | Template or visual mockup | Message strategy |
+| Design | Adjusted template | Custom art direction |
+| Technical SEO | Missing or added later | Included from launch |
+| Speed | Not verified on real mobile | Tested and optimized |
+| After handoff | You depend on the agency | You can edit it yourself |
+
+## How to tell if a web design quote is complete
+
+Ask directly: does the price include technical SEO? Is it custom design or a template? Does it include training? If the answer to any of these is "that's quoted separately" without it being mentioned upfront, that cost will show up later, once you've already invested in a site that needs rebuilding to actually work.
+
+Want to see real sites we've launched in Guadalajara? [Tell us about your project](/contacto) or check the full detail of our [website design service](/servicios/sitios-web).
+      `,
+    },
+  },
+  {
+    slug: "como-elegir-agencia-redes-sociales-guadalajara",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Cómo elegir una agencia de administración de redes sociales en Guadalajara",
+      excerpt:
+        "No todas las agencias de redes sociales hacen lo mismo. Esto es lo que realmente separa a una que genera ventas de una que solo publica contenido bonito.",
+      category: "Redes sociales",
+      metaTitle: "Cómo elegir agencia de redes sociales en Guadalajara",
+      metaDescription:
+        "Qué preguntar antes de contratar una agencia de administración de redes sociales en Guadalajara: producción, estrategia, community management y reportes reales.",
+      faq: [
+        {
+          q: "¿Qué incluye la administración de redes sociales profesional?",
+          a: "Estrategia de contenido, producción real de foto y video (no solo diseño de plantillas), calendario editorial, publicación, respuesta a mensajes y comentarios, y reportes de resultados — no solo de actividad.",
+        },
+        {
+          q: "¿Cuánto cuesta administrar redes sociales en Guadalajara?",
+          a: "Varía mucho según si incluye producción de contenido, cuántas plataformas maneja y si incluye pauta paga. La pregunta más útil no es el precio, sino qué está incluido exactamente en ese precio.",
+        },
+        {
+          q: "¿Qué reportes debería recibir de mi agencia de redes sociales?",
+          a: "Alcance, guardados, y prospectos generados — no solo número de publicaciones o likes. Si el reporte solo muestra actividad y no resultados de negocio, es difícil saber si la inversión está funcionando.",
+        },
+        {
+          q: "¿Necesito producir contenido nuevo o pueden usar lo que ya tengo?",
+          a: "Depende de qué tan reciente y consistente sea tu material actual. La mayoría de las marcas necesitan producción nueva regular para no repetir el mismo contenido — bancos de imágenes o material viejo se nota rápido en redes.",
+        },
+      ],
+      content: `
+## ¿Cómo elijo una agencia de administración de redes sociales en Guadalajara?
+
+La diferencia entre una buena agencia de redes sociales y una que solo publica contenido está en tres cosas: **si produce contenido real en vez de reciclar plantillas, si tiene un proceso claro más allá de "publicar seguido", y si te reporta resultados de negocio en vez de solo actividad**. Esto es lo que deberías verificar antes de contratar.
+
+## La trampa de "publicamos todos los días"
+
+Muchas agencias venden frecuencia como si fuera el resultado. Publicar todos los días con contenido genérico no genera más ventas que publicar tres veces por semana con contenido que realmente conecta con tu cliente. La pregunta correcta no es "¿cuánto publican?" sino "¿qué está diseñado para lograr cada publicación?"
+
+## Lo que separa a una agencia que sí funciona
+
+### Producción real, no solo diseño
+Fotografía y video propios de tu marca — no plantillas de Canva con tu logo pegado, no bancos de imágenes genéricos. El contenido que convierte se ve como tu negocio, no como cualquier negocio.
+
+### Estrategia antes que calendario
+Antes de definir cuántas veces publicar, hay que definir qué historia está contando la cuenta y a quién le está hablando. Un calendario sin estrategia detrás es solo una lista de fechas.
+
+### Community management real
+Alguien que responde mensajes y comentarios rápido, y que sabe filtrar a un prospecto real de una pregunta genérica, en vez de dejar los mensajes sin responder por días.
+
+### Reportes de resultados, no de actividad
+Alcance y guardados importan, pero lo que realmente indica si vale la pena la inversión es cuántos prospectos genera la cuenta — no cuántas publicaciones se hicieron ese mes.
+
+| Señal de agencia débil | Señal de agencia que funciona |
+|--------------------------|----------------------------------|
+| Solo plantillas con tu logo | Producción de foto/video propia |
+| Calendario sin estrategia detrás | Pilares de contenido definidos |
+| Mensajes sin responder por días | Community management activo |
+| Reporte de "likes y publicaciones" | Reporte de alcance y prospectos |
+
+## Preguntas que deberías hacer antes de contratar
+
+- ¿La producción de foto y video está incluida o es aparte?
+- ¿Quién responde los mensajes y en cuánto tiempo?
+- ¿Qué reporte recibo cada mes y qué mide exactamente?
+- ¿Manejan pauta paga o solo contenido orgánico?
+
+Una agencia que responde estas preguntas con claridad, sin evasivas, suele ser una señal más confiable que cualquier portafolio bonito.
+
+¿Quieres ver cómo trabajamos la producción y estrategia para marcas en Guadalajara? [Cuéntanos de tu marca](/contacto) o revisa el detalle de nuestro servicio de [redes sociales](/servicios/redes-sociales).
+      `,
+    },
+    en: {
+      title: "How to Choose a Social Media Management Agency in Guadalajara",
+      excerpt:
+        "Not all social media agencies do the same work. Here's what actually separates one that generates sales from one that just posts pretty content.",
+      category: "Social media",
+      metaTitle: "How to Choose a Social Media Agency in Guadalajara",
+      metaDescription:
+        "What to ask before hiring a social media management agency in Guadalajara: production, strategy, community management and real reporting.",
+      faq: [
+        {
+          q: "What does professional social media management include?",
+          a: "Content strategy, real photo and video production (not just template design), an editorial calendar, publishing, responding to messages and comments, and results reporting — not just activity reporting.",
+        },
+        {
+          q: "How much does social media management cost in Guadalajara?",
+          a: "It varies a lot based on whether content production is included, how many platforms are covered, and whether paid ads are included. The more useful question isn't the price — it's exactly what's included in that price.",
+        },
+        {
+          q: "What reporting should I get from my social media agency?",
+          a: "Reach, saves, and leads generated — not just post count or likes. If the report only shows activity and not business outcomes, it's hard to know whether the investment is working.",
+        },
+        {
+          q: "Do I need new content produced or can they use what I already have?",
+          a: "It depends how recent and consistent your current material is. Most brands need regular new production to avoid repeating the same content — stock or old material shows quickly on social.",
+        },
+      ],
+      content: `
+## How do I choose a social media management agency in Guadalajara?
+
+The difference between a good social media agency and one that just posts content comes down to three things: **whether it produces real content instead of recycling templates, whether it has a clear process beyond "posting often," and whether it reports business results instead of just activity**. Here's what to check before hiring.
+
+## The "we post every day" trap
+
+Many agencies sell frequency as if it were the result. Posting daily with generic content doesn't generate more sales than posting three times a week with content that actually connects with your customer. The right question isn't "how often do you post?" — it's "what is each post designed to achieve?"
+
+## What separates an agency that actually works
+
+### Real production, not just design
+Photography and video shot for your brand — not Canva templates with your logo pasted on, not generic stock. Content that converts looks like your business, not like any business.
+
+### Strategy before calendar
+Before deciding how often to post, you need to define what story the account is telling and who it's talking to. A calendar with no strategy behind it is just a list of dates.
+
+### Real community management
+Someone who replies to messages and comments quickly, and who can tell a real lead apart from a generic question, instead of leaving messages unanswered for days.
+
+### Results reporting, not activity reporting
+Reach and saves matter, but what actually tells you if the investment is worth it is how many leads the account generates — not how many posts went out that month.
+
+| Sign of a weak agency | Sign of an agency that works |
+|-------------------------|----------------------------------|
+| Only templates with your logo | Real photo/video production |
+| Calendar with no strategy behind it | Defined content pillars |
+| Messages unanswered for days | Active community management |
+| "Likes and posts" reporting | Reach and leads reporting |
+
+## Questions to ask before hiring
+
+- Is photo/video production included or billed separately?
+- Who answers messages, and how fast?
+- What report do I get each month, and what does it actually measure?
+- Do you run paid ads or only organic content?
+
+An agency that answers these clearly, without dodging, is usually a more reliable signal than any pretty portfolio.
+
+Want to see how we handle production and strategy for brands in Guadalajara? [Tell us about your brand](/contacto) or check the details of our [social media service](/servicios/redes-sociales).
+      `,
+    },
+  },
+  {
+    slug: "auditoria-seo-guadalajara",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Auditoría SEO en Guadalajara: qué revisamos y qué encontramos casi siempre",
+      excerpt:
+        "Una auditoría SEO real no es un PDF genérico de 100 puntos. Esto es exactamente qué revisamos y los problemas más comunes que encontramos en sitios de Guadalajara.",
+      category: "SEO",
+      metaTitle: "Auditoría SEO en Guadalajara: qué revisamos",
+      metaDescription:
+        "Qué incluye una auditoría SEO real en Guadalajara: indexación, velocidad, contenido, enlaces y perfiles locales. Los problemas más comunes que encontramos.",
+      faq: [
+        {
+          q: "¿Qué es una auditoría SEO?",
+          a: "Es una revisión completa de cómo está posicionado tu sitio hoy: qué tan bien te indexa Google, qué tan rápido carga, si tu contenido compite con lo que ya está posicionando tu competencia, y si tus perfiles locales están completos y activos.",
+        },
+        {
+          q: "¿Cuánto cuesta una auditoría SEO en Guadalajara?",
+          a: "El costo depende del tamaño del sitio y de si la auditoría es puntual o parte de un servicio continuo de SEO. Lo importante no es solo el precio, sino que salgas con una lista priorizada, no un reporte genérico sin contexto de tu negocio.",
+        },
+        {
+          q: "¿Cada cuánto debería hacer una auditoría SEO?",
+          a: "Al menos una vez al año, o después de cualquier cambio grande al sitio (rediseño, migración de dominio, cambio de plataforma) que pueda haber afectado la indexación sin que te dieras cuenta.",
+        },
+        {
+          q: "¿Qué pasa después de la auditoría?",
+          a: "Debería entregarte una lista de acciones ordenadas por impacto — no cien puntos sin priorizar. Lo que mueve resultados en 30-60 días primero, y lo que es trabajo de fondo (autoridad, contenido) después.",
+        },
+      ],
+      content: `
+## ¿Qué es una auditoría SEO y qué debería incluir?
+
+Una auditoría SEO real revisa **indexación en Google, velocidad de carga, estructura técnica del sitio, contenido comparado contra tu competencia directa, y el estado de tus perfiles locales** — y debería entregarte una lista priorizada por impacto, no un PDF genérico de cien puntos sin contexto de tu negocio.
+
+## Por qué la mayoría de las auditorías gratuitas no sirven de mucho
+
+Muchas herramientas automáticas generan un reporte con decenas de "errores" técnicos que en la práctica tienen impacto mínimo, mezclados sin prioridad con los dos o tres problemas que realmente están frenando tu posicionamiento. Sin ese filtro humano, es fácil pasar semanas corrigiendo detalles menores mientras el problema real sigue ahí.
+
+## Lo que revisamos en una auditoría real
+
+### Indexación: ¿Google realmente tiene tu sitio?
+El punto de partida más básico y el que más se pasa por alto: verificar cuántas de tus páginas están efectivamente indexadas, no solo enviadas en el sitemap. Es común encontrar sitios con decenas de páginas "enviadas" pero cero indexadas — un problema invisible hasta que alguien lo revisa directamente.
+
+### Velocidad y experiencia técnica
+Tiempo de carga real en móvil, no solo en la vista de escritorio de una oficina con buena conexión. Google prioriza sitios rápidos, y la mayoría del tráfico de negocio local llega desde celular.
+
+### Contenido contra tu competencia real
+No basta con tener contenido — hay que compararlo directamente contra lo que ya está posicionando para las mismas búsquedas. Si tu competencia responde una pregunta con más profundidad o especificidad, esa es la página que va a ganar.
+
+### Perfiles locales y señales de confianza
+Google Business Profile completo y activo, reseñas, consistencia de nombre/dirección/teléfono en directorios. Para negocios locales, esta señal pesa tanto como el sitio mismo.
+
+### Arquitectura de enlaces internos
+Cómo se conectan tus páginas entre sí. Un sitio con páginas "huérfanas" (sin enlaces internos que lleven ahí) le dice a Google que esa página importa menos, aunque el contenido sea bueno.
+
+## Los problemas más comunes que encontramos en sitios de Guadalajara
+
+- Páginas enviadas en el sitemap pero nunca confirmadas como indexadas en Search Console.
+- Cambios de dominio (www vs. sin www, http vs. https) sin redirecciones consistentes, que confunden a Google sobre cuál versión es la real.
+- Contenido genérico que no compite en profundidad con lo que ya posiciona para las mismas búsquedas.
+- Perfil de Google Business incompleto o inactivo, a pesar de tener un sitio bien construido.
+
+Una auditoría bien hecha no termina en un reporte — termina en una lista clara de qué hacer primero.
+
+¿Quieres saber exactamente dónde está tu sitio hoy? [Pide tu auditoría](/contacto) o revisa el detalle completo de nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "SEO Audit in Guadalajara: What We Check and What We Almost Always Find",
+      excerpt:
+        "A real SEO audit isn't a generic 100-point PDF. Here's exactly what we check and the most common problems we find on Guadalajara sites.",
+      category: "SEO",
+      metaTitle: "SEO Audit in Guadalajara: What We Check",
+      metaDescription:
+        "What a real SEO audit includes in Guadalajara: indexing, speed, content, links and local profiles. The most common problems we find.",
+      faq: [
+        {
+          q: "What is an SEO audit?",
+          a: "It's a complete review of how your site ranks today: how well Google indexes you, how fast it loads, whether your content competes with what your competitors already rank for, and whether your local profiles are complete and active.",
+        },
+        {
+          q: "How much does an SEO audit cost in Guadalajara?",
+          a: "Cost depends on site size and whether the audit is a one-off or part of an ongoing SEO engagement. What matters more than price is walking away with a prioritized list, not a generic report with no context on your business.",
+        },
+        {
+          q: "How often should I get an SEO audit?",
+          a: "At least once a year, or after any major site change (redesign, domain migration, platform switch) that could have affected indexing without you noticing.",
+        },
+        {
+          q: "What happens after the audit?",
+          a: "You should get a list of actions ordered by impact — not a hundred unranked points. What moves results in 30-60 days comes first, and foundational work (authority, content) comes after.",
+        },
+      ],
+      content: `
+## What is an SEO audit and what should it include?
+
+A real SEO audit checks **Google indexing, load speed, technical site structure, content compared against your direct competitors, and the state of your local profiles** — and should hand you a list prioritized by impact, not a generic hundred-point PDF with no context on your business.
+
+## Why most free audits don't help much
+
+Many automated tools generate a report with dozens of technical "errors" that in practice have minimal impact, mixed together with no priority alongside the two or three problems actually holding your rankings back. Without that human filter, it's easy to spend weeks fixing minor details while the real problem stays untouched.
+
+## What we check in a real audit
+
+### Indexing: does Google actually have your site?
+The most basic starting point, and the most overlooked: verifying how many of your pages are actually indexed, not just submitted in the sitemap. It's common to find sites with dozens of pages "submitted" but zero indexed — invisible until someone checks directly.
+
+### Speed and real technical experience
+Actual load time on mobile, not just the desktop view from an office with good wifi. Google prioritizes fast sites, and most local business traffic arrives from mobile.
+
+### Content against your real competitors
+Having content isn't enough — it has to be compared directly against what's already ranking for the same searches. If your competitor answers a question with more depth or specificity, that's the page that wins.
+
+### Local profiles and trust signals
+Complete, active Google Business Profile, reviews, consistent name/address/phone across directories. For local businesses, this signal carries as much weight as the site itself.
+
+### Internal link architecture
+How your pages connect to each other. A site with "orphan" pages (no internal links pointing there) tells Google that page matters less, no matter how good the content is.
+
+## The most common problems we find on Guadalajara sites
+
+- Pages submitted in the sitemap but never confirmed indexed in Search Console.
+- Domain changes (www vs. non-www, http vs. https) without consistent redirects, confusing Google about which version is real.
+- Generic content that doesn't compete in depth with what already ranks for the same searches.
+- Incomplete or inactive Google Business Profile, despite a well-built site.
+
+A well-done audit doesn't end at a report — it ends at a clear list of what to do first.
+
+Want to know exactly where your site stands today? [Request your audit](/contacto) or check the full detail of our [SEO service](/servicios/seo).
+      `,
+    },
+  },
+  {
+    slug: "que-es-posicionamiento-web",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "¿Qué es el posicionamiento web y cómo funciona en Guadalajara?",
+      excerpt:
+        "Posicionamiento web, SEO y aparecer primero en Google son, en la práctica, la misma conversación. Esto es qué significa realmente y cómo empezar.",
+      category: "SEO",
+      metaTitle: "¿Qué es el posicionamiento web? Guía para Guadalajara",
+      metaDescription:
+        "Qué es el posicionamiento web, en qué se diferencia de la pauta paga, y cómo empezar a posicionar tu negocio en Guadalajara en Google.",
+      faq: [
+        {
+          q: "¿Posicionamiento web es lo mismo que SEO?",
+          a: "Sí, son el mismo concepto — \"posicionamiento web\" es simplemente el término en español para SEO (Search Engine Optimization): el trabajo de aparecer más arriba en los resultados orgánicos (no pagados) de buscadores como Google.",
+        },
+        {
+          q: "¿Cuánto cuesta el posicionamiento web en Guadalajara?",
+          a: "Varía según el estado actual de tu sitio y qué tan competido está tu sector. Un negocio local con poca competencia directa avanza más rápido que uno en un sector saturado con agencias grandes ya posicionadas.",
+        },
+        {
+          q: "¿Cuánto tiempo toma posicionar un sitio en Google?",
+          a: "Las primeras mejoras técnicas y locales suelen notarse en 4 a 8 semanas; el crecimiento sostenido y competir por términos más disputados toma de 3 a 6 meses.",
+        },
+        {
+          q: "¿Puedo hacer posicionamiento web yo mismo?",
+          a: "Lo básico (Google Business Profile completo, contenido claro, sitio rápido) lo puede hacer cualquier negocio. Competir en serio por términos con más búsqueda y más competencia requiere trabajo técnico, de contenido y de autoridad continuo.",
+        },
+      ],
+      content: `
+## ¿Qué es el posicionamiento web?
+
+El posicionamiento web es el trabajo de **hacer que tu negocio aparezca más arriba en los resultados orgánicos de Google** cuando alguien busca lo que ofreces — sin pagar por cada clic. Es el mismo concepto que SEO (Search Engine Optimization), solo que "posicionamiento web" es el término que más se usa en español en México y Latinoamérica.
+
+## Por qué importa para un negocio en Guadalajara
+
+Cuando alguien busca "agencia de [tu servicio] en Guadalajara", la mayoría de las personas nunca pasan de los primeros resultados. Si tu negocio no aparece ahí, es literalmente invisible para esa búsqueda — sin importar qué tan bueno sea tu servicio o qué tan bonito sea tu sitio.
+
+## Posicionamiento orgánico vs. pauta paga
+
+Es la primera confusión que hay que resolver. Son dos formas distintas de aparecer en Google:
+
+| | Posicionamiento web (SEO) | Pauta paga (Google Ads) |
+|---|------------------------------|----------------------------|
+| Costo | No pagas por clic | Pagas por cada clic |
+| Velocidad | Semanas a meses | Resultados desde el día uno |
+| Duración | Se queda mientras el sitio esté sano | Desaparece si dejas de pagar |
+| Confianza | Percibido como más creíble | Marcado como "Anuncio" |
+
+Los negocios que crecen de forma sostenible casi siempre usan ambos en momentos distintos: pauta para resultados inmediatos, posicionamiento orgánico para construir una base que no depende de un presupuesto activo cada mes.
+
+## Los tres pilares del posicionamiento web
+
+### Técnico
+Que Google pueda leer, indexar y entender tu sitio correctamente: velocidad, estructura, datos estructurados.
+
+### Contenido
+Páginas que responden directamente lo que tu cliente ideal está buscando, con la profundidad y especificidad que compite con lo que ya está posicionando.
+
+### Autoridad
+Señales de confianza: reseñas, menciones, perfil de Google Business completo, y en un nivel más avanzado, enlaces desde otros sitios relevantes.
+
+## Cómo empezar si tu negocio no está posicionado hoy
+
+1. Completa y activa tu Google Business Profile — es gratis y es la señal local más directa que tiene Google.
+2. Verifica que tu sitio cargue rápido en un teléfono, no solo en tu computadora de oficina.
+3. Revisa si tu contenido responde directamente lo que la gente busca, o si solo habla de tu marca en general.
+4. Prioriza — no intentes arreglar todo a la vez; empieza por lo que más rápido mueve la aguja.
+
+Posicionar un sitio no es un proyecto que se termina una vez — es trabajo continuo, pero cada mejora se queda construida sobre la anterior.
+
+¿Quieres saber en qué posición está tu negocio hoy para las búsquedas que importan? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "What Is SEO/Web Positioning and How Does It Work in Guadalajara?",
+      excerpt:
+        "SEO, web positioning and showing up first on Google are, in practice, the same conversation. Here's what it actually means and how to start.",
+      category: "SEO",
+      metaTitle: "What Is SEO? A Guide for Guadalajara Businesses",
+      metaDescription:
+        "What SEO (web positioning) is, how it differs from paid ads, and how to start ranking your business in Guadalajara on Google.",
+      faq: [
+        {
+          q: "Is web positioning the same as SEO?",
+          a: "Yes, they're the same concept — \"posicionamiento web\" is simply the Spanish term for SEO (Search Engine Optimization): the work of showing up higher in organic (non-paid) results on search engines like Google.",
+        },
+        {
+          q: "How much does SEO cost in Guadalajara?",
+          a: "It varies based on your site's current state and how competitive your industry is. A local business with little direct competition moves faster than one in a saturated sector with large agencies already ranking.",
+        },
+        {
+          q: "How long does it take to rank a site on Google?",
+          a: "The first technical and local wins usually show in 4 to 8 weeks; sustained growth and competing for more contested terms takes 3 to 6 months.",
+        },
+        {
+          q: "Can I do SEO myself?",
+          a: "The basics (a complete Google Business Profile, clear content, a fast site) any business can do. Seriously competing for higher-volume, more competitive terms requires ongoing technical, content and authority work.",
+        },
+      ],
+      content: `
+## What is SEO / web positioning?
+
+SEO — called "posicionamiento web" in Spanish — is the work of **getting your business to show up higher in Google's organic results** when someone searches for what you offer, without paying per click. It's the same concept whether you call it SEO or web positioning; the term just varies by language.
+
+## Why it matters for a Guadalajara business
+
+When someone searches "[your service] agency in Guadalajara," most people never scroll past the first results. If your business isn't there, it's effectively invisible for that search — no matter how good your service is or how nice your site looks.
+
+## Organic ranking vs. paid ads
+
+This is the first confusion worth clearing up. They're two different ways to show up on Google:
+
+| | SEO (organic ranking) | Paid ads (Google Ads) |
+|---|---------------------------|----------------------------|
+| Cost | No cost per click | You pay per click |
+| Speed | Weeks to months | Results from day one |
+| Duration | Stays as long as the site is healthy | Disappears when you stop paying |
+| Trust | Perceived as more credible | Marked as "Ad" |
+
+Businesses that grow sustainably almost always use both at different moments: paid ads for immediate results, organic ranking to build a base that doesn't depend on an active budget every month.
+
+## The three pillars of SEO
+
+### Technical
+Making sure Google can read, index and understand your site correctly: speed, structure, structured data.
+
+### Content
+Pages that directly answer what your ideal customer is searching for, with the depth and specificity that competes with what's already ranking.
+
+### Authority
+Trust signals: reviews, mentions, a complete Google Business Profile, and at a more advanced level, links from other relevant sites.
+
+## How to start if your business isn't ranking today
+
+1. Complete and activate your Google Business Profile — it's free and the most direct local signal Google has.
+2. Check that your site loads fast on a phone, not just your office computer.
+3. Check whether your content directly answers what people are searching for, or just talks about your brand in general.
+4. Prioritize — don't try to fix everything at once; start with what moves the needle fastest.
+
+Ranking a site isn't a project that finishes once — it's ongoing work, but every improvement stays built on top of the last one.
+
+Want to know where your business ranks today for the searches that matter? [Let's talk about your project](/contacto) or check the details of our [SEO service](/servicios/seo).
+      `,
+    },
+  },
+  {
+    slug: "seo-vs-geo-guadalajara",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "SEO vs. GEO: por qué tu negocio en Guadalajara necesita ambos",
+      excerpt:
+        "SEO te posiciona en Google. GEO hace que ChatGPT y los AI Overviews te citen. Son trabajos distintos que comparten la misma base — esto es cómo se complementan.",
+      category: "SEO e IA",
+      metaTitle: "SEO vs. GEO: qué necesita tu negocio en Guadalajara",
+      metaDescription:
+        "Diferencia entre SEO y GEO (posicionamiento en IA): qué hace cada uno, por qué comparten base técnica, y por qué un negocio local necesita ambos hoy.",
+      faq: [
+        {
+          q: "¿Qué diferencia hay entre SEO y GEO?",
+          a: "El SEO trabaja para que tu sitio aparezca arriba en los resultados clásicos de Google. El GEO (Generative Engine Optimization) trabaja para que sistemas como ChatGPT, Perplexity o los AI Overviews de Google te citen directamente como fuente al responder una pregunta.",
+        },
+        {
+          q: "¿Necesito elegir entre SEO y GEO?",
+          a: "No. Comparten la misma base técnica y de contenido — un sitio con SEO sólido ya tiene buena parte del trabajo hecho para GEO. La diferencia está en el formato: respuestas directas, datos verificables y estructura que un modelo de IA pueda extraer con confianza.",
+        },
+        {
+          q: "¿Cuál da resultados más rápido?",
+          a: "El SEO clásico suele mostrar movimiento en semanas porque hay más historial de cómo funciona. El GEO es más nuevo y depende de qué tan rápido los modelos de IA actualizan lo que saben sobre tu marca — puede variar más.",
+        },
+        {
+          q: "¿Un negocio pequeño en Guadalajara realmente necesita GEO?",
+          a: "Cada vez más personas preguntan directamente a ChatGPT o usan los AI Overviews de Google antes de decidir dónde comprar. Ignorar ese canal significa dejar que solo tu competencia aparezca citada en esas respuestas.",
+        },
+      ],
+      content: `
+## ¿En qué se diferencian SEO y GEO?
+
+El SEO busca que tu sitio aparezca arriba en los **resultados clásicos de Google** — una lista de links. El GEO (Generative Engine Optimization) busca que sistemas como **ChatGPT, Perplexity o los AI Overviews de Google te citen directamente** como la fuente de la respuesta, sin que la persona necesariamente haga clic a ningún link. Son objetivos distintos, pero construidos sobre la misma base técnica y de contenido.
+
+## Por qué esta pregunta importa cada vez más
+
+Cuando alguien busca algo en Google y la respuesta aparece en un resumen generado por IA arriba de los resultados normales, una parte importante de esas personas nunca hace clic — ya obtuvo su respuesta ahí mismo. Tu sitio puede estar en la posición 1 de los resultados clásicos y aun así no recibir esa visita, porque el resumen de IA resolvió la búsqueda primero.
+
+## Lo que comparten SEO y GEO
+
+- **Base técnica sana**: velocidad, estructura semántica, sitio indexable. Sin esto, ni Google ni un modelo de IA pueden confiar en tu contenido.
+- **Contenido específico y verificable**: números reales, respuestas claras, nada de "depende" sin explicar de qué depende.
+- **Señales de autoridad local**: Google Business Profile, reseñas, consistencia de información — ambos sistemas las usan para decidir si confiar en una fuente.
+
+## Dónde se separan
+
+### Formato de la respuesta
+El SEO clásico premia contenido completo y bien estructurado que un humano lee de principio a fin. El GEO premia que la respuesta específica esté en la primera oración, en texto directo, antes de cualquier introducción de marca — porque así es como un modelo de IA extrae un párrafo para citar.
+
+### Datos estructurados
+Un schema FAQPage que coincide exactamente con preguntas y respuestas visibles en la página ayuda a ambos, pero es especialmente importante para GEO — es la señal más directa de que ese contenido responde una pregunta específica.
+
+### Medición
+El SEO se mide con posiciones y tráfico en Search Console. El GEO se mide preguntando directamente a los modelos y documentando qué contestan — es un proceso más manual porque no existe todavía un "Search Console" oficial para respuestas de IA.
+
+## Por qué un negocio en Guadalajara no debería elegir solo uno
+
+Ignorar el SEO clásico significa perder el tráfico que todavía llega por resultados normales — que sigue siendo la mayoría. Ignorar el GEO significa que, cuando alguien le pregunte a ChatGPT o vea un AI Overview sobre tu categoría, la respuesta cite a tu competencia y no a ti — sin que tú siquiera te enteres de que perdiste esa oportunidad.
+
+¿Quieres saber cómo está tu marca hoy en ambos frentes? [Hablemos de tu proyecto](/contacto) o revisa nuestros servicios de [SEO](/servicios/seo) y [posicionamiento en IA (GEO)](/servicios/posicionamiento-ia).
+      `,
+    },
+    en: {
+      title: "SEO vs. GEO: Why Your Guadalajara Business Needs Both",
+      excerpt:
+        "SEO gets you ranked on Google. GEO gets ChatGPT and AI Overviews to cite you. They're different jobs that share the same foundation — here's how they fit together.",
+      category: "SEO & AI",
+      metaTitle: "SEO vs. GEO: What Your Guadalajara Business Needs",
+      metaDescription:
+        "The difference between SEO and GEO (AI search visibility): what each one does, why they share a technical foundation, and why a local business needs both today.",
+      faq: [
+        {
+          q: "What's the difference between SEO and GEO?",
+          a: "SEO works to get your site ranking higher in classic Google results. GEO (Generative Engine Optimization) works to get systems like ChatGPT, Perplexity or Google's AI Overviews to cite you directly as the source when answering a question.",
+        },
+        {
+          q: "Do I need to choose between SEO and GEO?",
+          a: "No. They share the same technical and content foundation — a site with solid SEO has already done much of the work GEO needs. The difference is in format: direct answers, verifiable data and structure a model can confidently extract.",
+        },
+        {
+          q: "Which one shows results faster?",
+          a: "Classic SEO usually shows movement within weeks because there's more track record for how it behaves. GEO is newer and depends on how fast AI models update what they know about your brand — it can vary more.",
+        },
+        {
+          q: "Does a small Guadalajara business really need GEO?",
+          a: "More people are asking ChatGPT directly or using Google's AI Overviews before deciding where to buy. Ignoring that channel means letting only your competitors get cited in those answers.",
+        },
+      ],
+      content: `
+## How are SEO and GEO different?
+
+SEO aims to get your site ranking higher in **classic Google results** — a list of links. GEO (Generative Engine Optimization) aims to get systems like **ChatGPT, Perplexity, or Google's AI Overviews to cite you directly** as the source of the answer, without the person necessarily clicking any link at all. Different goals, built on the same technical and content foundation.
+
+## Why this question matters more every month
+
+When someone searches something on Google and the answer shows up in an AI-generated summary above the normal results, a meaningful share of those people never click through — they already got their answer right there. Your site can sit at position one in the classic results and still not get that visit, because the AI summary resolved the search first.
+
+## What SEO and GEO share
+
+- **A healthy technical foundation**: speed, semantic structure, an indexable site. Without this, neither Google nor an AI model can trust your content.
+- **Specific, verifiable content**: real numbers, clear answers, no "it depends" without explaining on what.
+- **Local authority signals**: Google Business Profile, reviews, consistent information — both systems use these to decide whether to trust a source.
+
+## Where they diverge
+
+### Answer format
+Classic SEO rewards complete, well-structured content a human reads start to finish. GEO rewards having the specific answer in the first sentence, in plain direct text, before any brand introduction — because that's how an AI model extracts a passage to cite.
+
+### Structured data
+An FAQPage schema that exactly matches questions and answers visible on the page helps both, but matters especially for GEO — it's the most direct signal that content answers a specific question.
+
+### Measurement
+SEO is measured with rankings and traffic in Search Console. GEO is measured by asking the models directly and documenting what they answer — a more manual process, since there's no official "Search Console" for AI answers yet.
+
+## Why a Guadalajara business shouldn't pick just one
+
+Ignoring classic SEO means losing the traffic that still arrives through normal results — which is still the majority. Ignoring GEO means that when someone asks ChatGPT or sees an AI Overview about your category, the answer cites your competitor instead of you — without you ever finding out you lost that chance.
+
+Want to know where your brand stands on both fronts today? [Let's talk about your project](/contacto) or check our [SEO](/servicios/seo) and [AI search visibility (GEO)](/servicios/posicionamiento-ia) services.
+      `,
+    },
+  },
 ];
 
 export const getPost = (slug: string) => blogPosts.find((p) => p.slug === slug);

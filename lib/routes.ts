@@ -30,6 +30,11 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/blog/marketing-digital-para-restaurantes-guadalajara": "/blog/restaurant-marketing-guadalajara",
   "/blog/marketing-para-clinicas-guadalajara": "/blog/clinic-marketing-guadalajara",
   "/blog/marketing-para-despachos-profesionales-guadalajara": "/blog/law-firm-marketing-guadalajara",
+  "/blog/diseno-paginas-web-guadalajara-que-incluye": "/blog/website-design-guadalajara-what-to-include",
+  "/blog/como-elegir-agencia-redes-sociales-guadalajara": "/blog/how-to-choose-social-media-agency-guadalajara",
+  "/blog/auditoria-seo-guadalajara": "/blog/seo-audit-guadalajara",
+  "/blog/que-es-posicionamiento-web": "/blog/what-is-seo",
+  "/blog/seo-vs-geo-guadalajara": "/blog/seo-vs-geo-guadalajara",
 };
 
 const ES_SLUG_MAP: Record<string, string> = Object.fromEntries(
