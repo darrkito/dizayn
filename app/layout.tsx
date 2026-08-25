@@ -48,6 +48,8 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       name: "Dizayn",
+      url: SITE_URL,
+      telephone: `+${CONTACT.whatsapp}`,
       areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
       address: {
         "@type": "PostalAddress",
@@ -61,6 +63,8 @@ const jsonLd = {
     {
       "@type": "LocalBusiness",
       name: "Dizayn",
+      url: SITE_URL,
+      telephone: `+${CONTACT.whatsapp}`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Guadalajara",
