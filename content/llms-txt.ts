@@ -46,6 +46,8 @@ Practical pricing guides and marketing comparisons for the Guadalajara market.
 - [Video marketing para marcas mexicanas: qué tipo de video necesitas](https://dizayn.com.mx/blog/video-marketing-marcas-mexicanas)
 - [Fotografía de producto para e-commerce: lo que realmente necesitas](https://dizayn.com.mx/blog/fotografia-producto-ecommerce)
 - [Cómo hacer un sitio web que venda (no solo que se vea bien)](https://dizayn.com.mx/blog/sitio-web-que-vende-guadalajara)
+- [SEO para e-commerce: cómo posicionar una tienda en línea](https://dizayn.com.mx/blog/seo-para-ecommerce-tiendas-online)
+- [SEO para principiantes: 7 tips básicos que sí funcionan](https://dizayn.com.mx/blog/seo-tips-para-principiantes)
 
 ## Blog: real client case studies (Luvory Luxury Toilets)
 

@@ -2131,6 +2131,8 @@ Cómo se conectan tus páginas entre sí. Un sitio con páginas "huérfanas" (si
 
 Una auditoría bien hecha no termina en un reporte — termina en una lista clara de qué hacer primero.
 
+Si tu sitio es una tienda en línea, varios de estos hallazgos cambian — revisa [SEO para e-commerce y tiendas en línea](/blog/seo-para-ecommerce-tiendas-online).
+
 ¿Quieres saber exactamente dónde está tu sitio hoy? [Pide tu auditoría](/contacto) o revisa el detalle completo de nuestro servicio de [SEO](/servicios/seo).
       `,
     },
@@ -2194,6 +2196,8 @@ How your pages connect to each other. A site with "orphan" pages (no internal li
 - Incomplete or inactive Google Business Profile, despite a well-built site.
 
 A well-done audit doesn't end at a report — it ends at a clear list of what to do first.
+
+If your site is an online store, several of these findings work differently — check [SEO for e-commerce and online stores](/en/blog/seo-for-ecommerce-online-stores).
 
 Want to know exactly where your site stands today? [Request your audit](/contacto) or check the full detail of our [SEO service](/servicios/seo).
       `,
@@ -2271,6 +2275,8 @@ Señales de confianza: reseñas, menciones, perfil de Google Business completo, 
 
 Posicionar un sitio no es un proyecto que se termina una vez — es trabajo continuo, pero cada mejora se queda construida sobre la anterior.
 
+Si esto te suena a lo básico y quieres siete acciones concretas para empezar hoy, revisa nuestra [guía de SEO para principiantes](/blog/seo-tips-para-principiantes).
+
 ¿Quieres saber en qué posición está tu negocio hoy para las búsquedas que importan? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [SEO](/servicios/seo).
       `,
     },
@@ -2341,6 +2347,8 @@ Trust signals: reviews, mentions, a complete Google Business Profile, and at a m
 4. Prioritize — don't try to fix everything at once; start with what moves the needle fastest.
 
 Ranking a site isn't a project that finishes once — it's ongoing work, but every improvement stays built on top of the last one.
+
+If this sounds like the basics and you want seven concrete actions to start today, check our [SEO for beginners guide](/en/blog/seo-tips-for-beginners).
 
 Want to know where your business ranks today for the searches that matter? [Let's talk about your project](/contacto) or check the details of our [SEO service](/servicios/seo).
       `,
@@ -3874,6 +3882,268 @@ Fewer steps between "I'm interested" and "I contacted/bought." Every unnecessary
 None of this means design doesn't matter. A site with good design AND these five elements converts better than one with just design or just the five elements alone — the combination is what actually sells. If you want to know what a well-designed site should include from the ground up, check [what website design in Guadalajara should include](/en/blog/website-design-guadalajara-what-to-include), and if your site needs to convert visitors through a longer sales process, check [what a sales funnel is](/en/blog/what-is-a-sales-funnel).
 
 Want us to evaluate whether your current site has these five elements? [Tell us about your site](/en/contact) or check our [web design service](/en/services/web-design).
+      `,
+    },
+  },
+  {
+    slug: "seo-para-ecommerce-tiendas-online",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "SEO para e-commerce: cómo posicionar una tienda en línea",
+      excerpt:
+        "El SEO de una tienda en línea no es el mismo que el de un sitio corporativo. Esto es lo que realmente cambia: páginas de producto, categorías, contenido duplicado y velocidad a escala.",
+      category: "SEO",
+      metaTitle: "SEO para e-commerce y tiendas en línea en México",
+      metaDescription:
+        "Cómo mejorar el SEO de una tienda en línea: optimización de páginas de producto, categorías, datos estructurados y velocidad. Guía práctica para e-commerce en México.",
+      faq: [
+        {
+          q: "¿Cómo mejorar el posicionamiento SEO de una tienda en línea?",
+          a: "Optimiza cada página de producto con título único, descripción real (no copiada del fabricante), datos estructurados de tipo Product, imágenes con alt text descriptivo, y una estructura de categorías clara. La velocidad de carga y evitar contenido duplicado entre variantes de producto son los dos factores técnicos que más afectan a un e-commerce específicamente.",
+        },
+        {
+          q: "¿Cuál es la diferencia entre el SEO de un e-commerce y el de un sitio normal?",
+          a: "Un e-commerce tiene cientos o miles de páginas similares entre sí (productos, variantes, categorías), lo que genera contenido duplicado con mucha más facilidad. También depende más de datos estructurados (Product, Offer, Review) para aparecer con precio y disponibilidad directamente en resultados de búsqueda, y la velocidad de carga pesa más porque hay más imágenes y scripts por página.",
+        },
+        {
+          q: "¿Qué son los datos estructurados de producto y por qué importan?",
+          a: "Es un código (schema.org Product) que le dice explícitamente a Google el precio, disponibilidad y calificación de un producto, permitiendo que aparezca con esa información visible directamente en los resultados de búsqueda (rich snippets), lo que aumenta el clic sin cambiar de posición.",
+        },
+        {
+          q: "¿Cómo evito contenido duplicado en las páginas de producto?",
+          a: "Escribe descripciones únicas en vez de copiar la ficha técnica del proveedor (la copian también tus competidores), usa URLs canónicas cuando un mismo producto tenga variantes de color o talla, y evita generar una página distinta por cada combinación de filtro si no aporta contenido único.",
+        },
+      ],
+      content: `
+## ¿Cómo mejorar el SEO de una tienda en línea?
+
+El SEO de un e-commerce tiene cuatro prioridades específicas que un sitio corporativo no enfrenta de la misma forma: **contenido único por producto (no copiado del fabricante), datos estructurados de producto, evitar contenido duplicado entre variantes, y velocidad de carga a escala** (cientos de imágenes y scripts, no solo unas cuantas páginas).
+
+## Por qué el SEO de e-commerce es distinto
+
+Un sitio corporativo tiene decenas de páginas, cada una con su propio propósito claro. Una tienda en línea tiene potencialmente miles de páginas de producto que se parecen entre sí — mismo formato, descripciones similares, a veces copiadas directamente del proveedor. Eso multiplica el riesgo de contenido duplicado, que es una de las causas más comunes de que un e-commerce no posicione a pesar de tener buen tráfico pagado.
+
+## Las cuatro prioridades reales
+
+### 1. Contenido único por producto
+Si tu descripción de producto es la misma que usa el fabricante (y la copian veinte tiendas más), Google no tiene forma de decidir cuál mostrar primero. Una descripción propia, aunque sea breve, es la diferencia entre competir y ser invisible.
+
+### 2. Datos estructurados de producto (schema Product)
+Permite que tu producto aparezca en resultados de búsqueda con precio, disponibilidad y calificación visibles directamente — sin necesidad de que el usuario entre al sitio para verlo. Esto aumenta el clic incluso sin subir de posición.
+
+### 3. Evitar contenido duplicado entre variantes
+Un producto en 5 colores y 4 tallas puede generar 20 URLs casi idénticas si no se maneja con cuidado. Usa URLs canónicas para indicarle a Google cuál es la versión "principal" de cada producto.
+
+### 4. Velocidad de carga a escala
+Una página de categoría con 40 productos carga 40 imágenes, no una. Comprimir imágenes, usar formatos modernos (WebP) y cargar productos de forma progresiva (lazy loading) importa mucho más aquí que en un sitio de pocas páginas.
+
+| Factor | Sitio corporativo | Tienda en línea |
+|---|---|---|
+| Número de páginas similares | Bajo | Alto (productos, variantes, filtros) |
+| Riesgo de contenido duplicado | Bajo | Alto |
+| Dependencia de datos estructurados | Opcional | Crítica (precio, disponibilidad) |
+| Imágenes por página | Pocas | Muchas (galería de producto) |
+
+## ¿Y las categorías?
+
+Las páginas de categoría necesitan su propio texto introductorio único (no solo una cuadrícula de productos) para tener algo que Google pueda indexar como contenido relevante — una categoría sin ningún texto compite en desventaja contra una que sí lo tiene.
+
+¿Tu tienda en línea no está generando tráfico orgánico a pesar de tener buen catálogo? [Cuéntanos de tu tienda](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo). Si también necesitas fotos que reduzcan devoluciones, revisa [fotografía de producto para e-commerce](/blog/fotografia-producto-ecommerce).
+      `,
+    },
+    en: {
+      title: "SEO for E-commerce: How to Rank an Online Store",
+      excerpt:
+        "SEO for an online store isn't the same as SEO for a corporate site. Here's what actually changes: product pages, categories, duplicate content, and speed at scale.",
+      category: "SEO",
+      metaTitle: "SEO for E-commerce and Online Stores in Mexico",
+      metaDescription:
+        "How to improve an online store's SEO: product page optimization, categories, structured data, and speed. A practical e-commerce SEO guide for Mexico.",
+      faq: [
+        {
+          q: "How do I improve an online store's SEO ranking?",
+          a: "Optimize every product page with a unique title, a real description (not copied from the manufacturer), Product structured data, images with descriptive alt text, and a clear category structure. Load speed and avoiding duplicate content across product variants are the two technical factors that hit e-commerce specifically the hardest.",
+        },
+        {
+          q: "What's the difference between e-commerce SEO and regular site SEO?",
+          a: "An e-commerce site has hundreds or thousands of pages that look similar to each other (products, variants, categories), which generates duplicate content far more easily. It also depends more on structured data (Product, Offer, Review) to show price and availability directly in search results, and load speed matters more since there are more images and scripts per page.",
+        },
+        {
+          q: "What is product structured data and why does it matter?",
+          a: "It's code (schema.org Product) that explicitly tells Google a product's price, availability, and rating, letting it show up with that information visible directly in search results (rich snippets), which increases clicks without needing to change ranking position.",
+        },
+        {
+          q: "How do I avoid duplicate content on product pages?",
+          a: "Write unique descriptions instead of copying the supplier's spec sheet (your competitors are copying it too), use canonical URLs when the same product has color or size variants, and avoid generating a separate page for every filter combination if it doesn't add unique content.",
+        },
+      ],
+      content: `
+## How do I improve an online store's SEO?
+
+E-commerce SEO has four specific priorities that a corporate site doesn't face the same way: **unique content per product (not copied from the manufacturer), product structured data, avoiding duplicate content across variants, and load speed at scale** (hundreds of images and scripts, not just a handful of pages).
+
+## Why e-commerce SEO is different
+
+A corporate site has dozens of pages, each with a clear purpose of its own. An online store can have thousands of product pages that look alike — same format, similar descriptions, sometimes copied straight from the supplier. That multiplies the risk of duplicate content, one of the most common reasons an e-commerce site doesn't rank despite having good paid traffic.
+
+## The four real priorities
+
+### 1. Unique content per product
+If your product description is the same one the manufacturer uses (and twenty other stores are copying it too), Google has no way to decide which to show first. An original description, even a short one, is the difference between competing and being invisible.
+
+### 2. Product structured data (Product schema)
+Lets your product show up in search results with price, availability, and rating visible directly — no need for the user to click through to see it. This boosts clicks even without a ranking improvement.
+
+### 3. Avoiding duplicate content across variants
+A product in 5 colors and 4 sizes can generate 20 nearly identical URLs if it's not handled carefully. Use canonical URLs to tell Google which is the "main" version of each product.
+
+### 4. Load speed at scale
+A category page with 40 products loads 40 images, not one. Compressing images, using modern formats (WebP), and progressively loading products (lazy loading) matter far more here than on a low-page-count site.
+
+| Factor | Corporate site | Online store |
+|---|---|---|
+| Number of similar pages | Low | High (products, variants, filters) |
+| Duplicate content risk | Low | High |
+| Reliance on structured data | Optional | Critical (price, availability) |
+| Images per page | Few | Many (product gallery) |
+
+## What about category pages?
+
+Category pages need their own unique intro text (not just a product grid) to have something Google can index as relevant content — a category with zero text competes at a disadvantage against one that has it.
+
+Is your online store not generating organic traffic despite having a solid catalog? [Tell us about your store](/en/contact) or check our [SEO service](/en/services/seo). If you also need photos that reduce returns, check [product photography for e-commerce](/en/blog/product-photography-for-ecommerce).
+      `,
+    },
+  },
+  {
+    slug: "seo-tips-para-principiantes",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "SEO para principiantes: 7 tips básicos que sí funcionan",
+      excerpt:
+        "Sin jerga técnica: 7 acciones concretas de SEO que cualquier negocio puede aplicar hoy, aunque nunca haya hecho SEO antes.",
+      category: "SEO",
+      metaTitle: "SEO para principiantes: guía básica 2026",
+      metaDescription:
+        "Guía de SEO para principiantes: 7 tips básicos y concretos (título, meta descripción, velocidad, mobile, contenido, enlaces) sin jerga técnica.",
+      faq: [
+        {
+          q: "¿Por dónde empiezo si nunca he hecho SEO?",
+          a: "Empieza por lo que más impacto tiene con menos esfuerzo: título y meta descripción de cada página, que el sitio cargue rápido, que se vea bien en celular, y contenido que responda directamente lo que tu cliente busca. Eso cubre la mayoría de las ganancias rápidas antes de entrar a temas más técnicos.",
+        },
+        {
+          q: "¿Cuánto tiempo tarda en funcionar el SEO?",
+          a: "Generalmente semanas a meses, no días — depende de qué tan rápido Google indexe y recrawlee tu sitio, y de cuánta competencia haya para tus palabras clave. El SEO es una inversión de mediano plazo, no una solución inmediata como la pauta paga.",
+        },
+        {
+          q: "¿Necesito saber programar para hacer SEO básico?",
+          a: "No para lo esencial. Título, meta descripción, contenido de calidad y velocidad de carga se pueden mejorar sin tocar código en la mayoría de las plataformas modernas (WordPress, Shopify, Wix). El SEO técnico más avanzado sí requiere conocimiento de desarrollo.",
+        },
+      ],
+      content: `
+## SEO para principiantes: lo esencial sin complicarlo
+
+Si nunca has hecho SEO, no necesitas dominar todo el tema para ver resultados — necesitas siete cosas concretas, en orden de impacto por esfuerzo.
+
+## 1. Título único y descriptivo en cada página
+El título es lo primero que ve un usuario en Google. Debe describir específicamente qué hay en esa página, no ser genérico ("Inicio", "Servicios") ni repetirse en todo el sitio.
+
+## 2. Meta descripción que invite al clic
+El texto corto que aparece debajo del título en Google. No afecta directamente el ranking, pero sí cuánta gente hace clic — una buena meta descripción responde "qué gano si entro aquí".
+
+## 3. Velocidad de carga
+Un sitio que tarda más de 3 segundos en cargar pierde visitantes antes de que lean nada. Comprime imágenes y evita scripts innecesarios.
+
+## 4. Diseño que funcione bien en celular
+La mayoría de las búsquedas hoy son desde teléfono. Un sitio que no se ve bien en móvil compite en desventaja, sin importar qué tan bueno sea el contenido.
+
+## 5. Contenido que responda una pregunta real
+Google premia páginas que responden directamente lo que alguien busca. Una página genérica sobre "nuestros servicios" compite peor que una que responde "cuánto cuesta X" o "cómo hacer Y".
+
+## 6. Un enlace interno relevante por página
+Conecta tus páginas entre sí de forma natural (de un blog a un servicio, de un servicio a otro relacionado). Ayuda a que Google entienda la estructura de tu sitio y a que el visitante siga navegando.
+
+## 7. Constancia, no perfección
+El SEO no se resuelve en un día. Una página mejorada por semana, de forma constante, supera a un esfuerzo intenso una sola vez y luego abandonado.
+
+| Prioridad | Esfuerzo | Impacto |
+|---|---|---|
+| Título y meta descripción | Bajo | Alto |
+| Velocidad de carga | Medio | Alto |
+| Mobile-friendly | Medio | Alto |
+| Contenido que responde preguntas | Alto | Alto |
+| Enlaces internos | Bajo | Medio |
+
+## ¿Y después de los básicos?
+
+Una vez cubiertos estos siete puntos, el siguiente nivel incluye datos estructurados, auditorías técnicas y estrategia de contenido a largo plazo — revisa [qué revisamos en una auditoría SEO](/blog/auditoria-seo-guadalajara) si ya tienes lo básico resuelto y quieres ir más a fondo.
+
+¿Quieres que revisemos gratis cómo está tu sitio en estos siete puntos? [Cuéntanos tu sitio](/contacto) o conoce nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "SEO for Beginners: 7 Basic Tips That Actually Work",
+      excerpt:
+        "No technical jargon: 7 concrete SEO actions any business can apply today, even if you've never done SEO before.",
+      category: "SEO",
+      metaTitle: "SEO for Beginners: A Basic 2026 Guide",
+      metaDescription:
+        "A beginner's SEO guide: 7 basic, concrete tips (title, meta description, speed, mobile, content, links) with no technical jargon.",
+      faq: [
+        {
+          q: "Where do I start if I've never done SEO?",
+          a: "Start with what has the most impact for the least effort: each page's title and meta description, fast load speed, a mobile-friendly design, and content that directly answers what your customer is searching for. That covers most of the quick wins before you get into more technical topics.",
+        },
+        {
+          q: "How long does it take for SEO to work?",
+          a: "Generally weeks to months, not days — it depends on how fast Google crawls and recrawls your site, and how much competition there is for your keywords. SEO is a medium-term investment, not an instant fix like paid ads.",
+        },
+        {
+          q: "Do I need to know how to code to do basic SEO?",
+          a: "Not for the essentials. Title, meta description, quality content, and load speed can be improved without touching code on most modern platforms (WordPress, Shopify, Wix). More advanced technical SEO does require development knowledge.",
+        },
+      ],
+      content: `
+## SEO for beginners: the essentials, uncomplicated
+
+If you've never done SEO, you don't need to master the whole field to see results — you need seven concrete things, in order of impact per effort.
+
+## 1. A unique, descriptive title on every page
+The title is the first thing a user sees on Google. It should specifically describe what's on that page, not be generic ("Home," "Services") or repeat across the whole site.
+
+## 2. A meta description that invites a click
+The short text that appears below the title on Google. It doesn't directly affect ranking, but it does affect how many people click — a good meta description answers "what do I get if I click this?"
+
+## 3. Load speed
+A site that takes more than 3 seconds to load loses visitors before they read anything. Compress images and avoid unnecessary scripts.
+
+## 4. A design that works well on mobile
+Most searches today happen from a phone. A site that doesn't look good on mobile competes at a disadvantage, no matter how good the content is.
+
+## 5. Content that answers a real question
+Google rewards pages that directly answer what someone is searching for. A generic "our services" page competes worse than one that answers "how much does X cost" or "how do I do Y."
+
+## 6. One relevant internal link per page
+Connect your pages to each other naturally (from a blog post to a service, from one service to a related one). It helps Google understand your site's structure and keeps the visitor browsing.
+
+## 7. Consistency, not perfection
+SEO doesn't get solved in a day. One improved page a week, done consistently, beats one intense effort followed by abandoning it.
+
+| Priority | Effort | Impact |
+|---|---|---|
+| Title and meta description | Low | High |
+| Load speed | Medium | High |
+| Mobile-friendly | Medium | High |
+| Content that answers questions | High | High |
+| Internal links | Low | Medium |
+
+## What comes after the basics?
+
+Once these seven points are covered, the next level includes structured data, technical audits, and long-term content strategy — check [what we review in an SEO audit](/en/blog/seo-audit-guadalajara) once you've got the basics handled and want to go deeper.
+
+Want us to check your site for free against these seven points? [Tell us about your site](/en/contact) or check our [SEO service](/en/services/seo).
       `,
     },
   },
