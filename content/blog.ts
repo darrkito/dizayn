@@ -406,6 +406,8 @@ Nombrar tu zona real de operación no le resta alcance a tu negocio — le da a 
 
 Negocios que, por querer sonar más grandes, escriben "cobertura nacional" como mensaje principal cuando en realidad operan en una sola ciudad o zona. El resultado es casi siempre el opuesto al buscado: en vez de parecer más grandes, se vuelven invisibles para las búsquedas locales específicas que sí podrían convertir en clientes reales, sin ganar tráfico genuino de otras partes del país.
 
+Si tu negocio sí opera en más de una ciudad, la situación es distinta — revisa [SEO para negocios con varias sucursales](/blog/seo-negocios-varias-sucursales-mexico).
+
 ¿Quieres que revisemos cómo está tu negocio posicionado hoy en búsquedas locales? [Hablemos de tu proyecto](/contacto) o conoce el detalle de nuestro servicio de [SEO](/servicios/seo).
       `,
     },
@@ -473,6 +475,8 @@ Naming your real service area doesn't shrink your business's reach — it gives 
 ## The mistake we see most often
 
 Businesses that, wanting to sound bigger, write "nationwide coverage" as their main message when they actually operate in a single city or zone. The result is almost always the opposite of what was intended: instead of looking bigger, they become invisible to the specific local searches that could actually convert into real customers, without gaining genuine traffic from the rest of the country.
+
+If your business actually operates in more than one city, that's a different situation — check [SEO for multi-location businesses](/en/blog/seo-for-multi-location-businesses-mexico).
 
 Want us to review how your business ranks in local search today? [Let's talk about your project](/contacto) or check the details of our [SEO service](/servicios/seo).
       `,
@@ -4144,6 +4148,131 @@ SEO doesn't get solved in a day. One improved page a week, done consistently, be
 Once these seven points are covered, the next level includes structured data, technical audits, and long-term content strategy — check [what we review in an SEO audit](/en/blog/seo-audit-guadalajara) once you've got the basics handled and want to go deeper.
 
 Want us to check your site for free against these seven points? [Tell us about your site](/en/contact) or check our [SEO service](/en/services/seo).
+      `,
+    },
+  },
+  {
+    slug: "seo-negocios-varias-sucursales-mexico",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "SEO para negocios con varias sucursales en México",
+      excerpt:
+        "Si tu negocio tiene presencia en más de una ciudad, el SEO de una sola ubicación no funciona igual. Esto es lo que cambia cuando necesitas posicionar varias sucursales a la vez.",
+      category: "SEO",
+      metaTitle: "SEO multi-sucursal: posicionar varias ubicaciones en México",
+      metaDescription:
+        "Cómo hacer SEO para un negocio con varias sucursales en México: página propia por ubicación, perfil de Google Business por sucursal, datos consistentes y contenido único.",
+      faq: [
+        {
+          q: "¿Cómo mejoro el SEO de mi negocio si tengo varias sucursales?",
+          a: "Crea una página propia por cada ubicación (no una sola página que las liste todas), con su propio perfil de Google Business Profile, su propia dirección y teléfono, y contenido único sobre esa sucursal específica — no la misma descripción copiada con solo el nombre de la ciudad cambiado.",
+        },
+        {
+          q: "¿Necesito una página distinta por cada ciudad donde tengo sucursal?",
+          a: "Sí. Una sola página que menciona varias ciudades en el mismo texto no le da a Google ninguna señal clara de relevancia local para ninguna de ellas. Una página dedicada por ciudad, con contenido real sobre esa ubicación, compite mucho mejor en búsquedas locales.",
+        },
+        {
+          q: "¿Cómo evito el contenido duplicado entre páginas de distintas sucursales?",
+          a: "No repitas el mismo texto cambiando solo el nombre de la ciudad. Cada página de ubicación debe tener información específica y real de esa sucursal: horarios propios si son distintos, equipo local si aplica, referencias a la zona (colonias, puntos de referencia), y reseñas específicas de esa sucursal si las tienes.",
+        },
+        {
+          q: "¿Necesito un perfil de Google Business Profile por cada sucursal?",
+          a: "Sí, uno por cada ubicación física, cada uno con dirección, teléfono y horario exactos de esa sucursal. Un solo perfil que intenta representar varias direcciones confunde a Google y reduce las posibilidades de aparecer en el mapa local de cada ciudad.",
+        },
+      ],
+      content: `
+## ¿Cómo hago SEO si mi negocio tiene varias sucursales?
+
+Para un negocio con presencia en más de una ciudad, el SEO de una sola ubicación no aplica igual: necesitas **una página propia por sucursal, un perfil de Google Business Profile independiente por ubicación, y contenido único para cada una** — no una sola página que liste todas las direcciones, ni páginas duplicadas con solo el nombre de la ciudad cambiado.
+
+## El error más común: una sola página para todo
+
+Muchos negocios con varias sucursales resuelven el sitio con una sola página de "Ubicaciones" que lista todas las direcciones en una tabla. Es cómodo de mantener, pero le da a Google cero señal de relevancia local — cuando alguien busca "[tu servicio] en Zapopan", Google necesita una página que hable específicamente de Zapopan, no una tabla genérica con diez ciudades.
+
+## Los tres pilares del SEO multi-ubicación
+
+### 1. Una página dedicada por sucursal
+Cada ubicación necesita su propia URL, con su propio título ("[Servicio] en [Ciudad]"), su propia dirección visible, y contenido real sobre esa sucursal específica.
+
+### 2. Un perfil de Google Business Profile por ubicación
+Cada sucursal física necesita su propio perfil, con dirección, teléfono y horario exactos de esa ubicación. Esto es lo que determina si apareces en el mapa local cuando alguien busca cerca de esa sucursal específica.
+
+### 3. Contenido único, no duplicado con find-and-replace
+La tentación es escribir una página y duplicarla cambiando solo el nombre de la ciudad. Google detecta ese patrón y penaliza la relevancia de todas las páginas involucradas. Cada página necesita algo genuinamente propio: referencias a colonias o puntos de referencia locales, horarios si son distintos, o reseñas específicas de esa sucursal.
+
+| Elemento | Sitio de una ubicación | Negocio multi-sucursal |
+|---|---|---|
+| Páginas de ubicación | 1 | 1 por sucursal |
+| Perfiles de Google Business | 1 | 1 por sucursal |
+| Riesgo de contenido duplicado | Bajo | Alto si no se gestiona |
+| Datos NAP (nombre/dirección/teléfono) | Simple | Debe ser consistente por sucursal en todo directorio |
+
+## Consistencia de datos (NAP) entre directorios
+
+El nombre, dirección y teléfono de cada sucursal deben ser idénticos en tu sitio, tu perfil de Google Business y cualquier directorio donde aparezcas (Yelp, páginas amarillas, redes sociales). Inconsistencias — aunque sean menores, como "Av." vs "Avenida" — generan confusión y debilitan la señal local de cada ubicación.
+
+¿Tu negocio tiene presencia en más de una ciudad de México y necesita posicionar cada sucursal? [Cuéntanos cuántas ubicaciones tienes](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo). Si aún no tienes claro lo básico, empieza con nuestra [guía de SEO local](/blog/seo-local-guadalajara-guia).
+      `,
+    },
+    en: {
+      title: "SEO for Multi-Location Businesses in Mexico",
+      excerpt:
+        "If your business has a presence in more than one city, single-location SEO doesn't work the same way. Here's what changes when you need to rank several branches at once.",
+      category: "SEO",
+      metaTitle: "Multi-Location SEO: Ranking Several Locations in Mexico",
+      metaDescription:
+        "How to do SEO for a business with multiple branches in Mexico: a dedicated page per location, a Google Business Profile per branch, consistent data, and unique content.",
+      faq: [
+        {
+          q: "How do I improve SEO for my business if I have multiple locations?",
+          a: "Create a dedicated page for each location (not a single page listing them all), with its own Google Business Profile, its own address and phone number, and unique content about that specific branch — not the same description copied with only the city name swapped out.",
+        },
+        {
+          q: "Do I need a separate page for each city where I have a branch?",
+          a: "Yes. A single page that mentions several cities in the same text gives Google no clear local relevance signal for any of them. A dedicated page per city, with real content about that location, competes far better in local search.",
+        },
+        {
+          q: "How do I avoid duplicate content across different branch pages?",
+          a: "Don't repeat the same text with only the city name changed. Each location page needs specific, real information about that branch: its own hours if they differ, local staff if relevant, references to the area (neighborhoods, landmarks), and reviews specific to that branch if you have them.",
+        },
+        {
+          q: "Do I need a separate Google Business Profile for each branch?",
+          a: "Yes, one per physical location, each with the exact address, phone number, and hours for that branch. A single profile trying to represent multiple addresses confuses Google and reduces your chances of showing up on the local map for each city.",
+        },
+      ],
+      content: `
+## How do I do SEO if my business has multiple locations?
+
+For a business with a presence in more than one city, single-location SEO doesn't apply the same way: you need **a dedicated page per branch, an independent Google Business Profile per location, and unique content for each one** — not a single page listing every address, and not duplicate pages with only the city name changed.
+
+## The most common mistake: one page for everything
+
+Many multi-location businesses handle their site with a single "Locations" page listing every address in a table. It's easy to maintain, but it gives Google zero local relevance signal — when someone searches "[your service] in Zapopan," Google needs a page that specifically talks about Zapopan, not a generic table with ten cities.
+
+## The three pillars of multi-location SEO
+
+### 1. A dedicated page per branch
+Each location needs its own URL, its own title ("[Service] in [City]"), its own visible address, and real content about that specific branch.
+
+### 2. A Google Business Profile per location
+Each physical branch needs its own profile, with the exact address, phone number, and hours for that location. This is what determines whether you show up on the local map when someone searches near that specific branch.
+
+### 3. Unique content, not find-and-replace duplication
+The temptation is to write one page and duplicate it with only the city name changed. Google detects that pattern and penalizes the relevance of every page involved. Each page needs something genuinely its own: references to local neighborhoods or landmarks, different hours if applicable, or reviews specific to that branch.
+
+| Element | Single-location site | Multi-location business |
+|---|---|---|
+| Location pages | 1 | 1 per branch |
+| Google Business profiles | 1 | 1 per branch |
+| Duplicate content risk | Low | High if not managed |
+| NAP data (name/address/phone) | Simple | Must be consistent per branch across every directory |
+
+## Data consistency (NAP) across directories
+
+Each branch's name, address, and phone number must be identical across your site, your Google Business profile, and any directory where you appear (Yelp, local directories, social media). Inconsistencies — even minor ones, like "Ave." vs. "Avenue" — create confusion and weaken each location's local signal.
+
+Does your business have a presence in more than one Mexican city and need to rank each branch? [Tell us how many locations you have](/en/contact) or check our [SEO service](/en/services/seo). If you're not clear on the basics yet, start with our [local SEO guide](/en/blog/local-seo-guadalajara-guide).
       `,
     },
   },

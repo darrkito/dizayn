@@ -51,6 +51,7 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/blog/sitio-web-que-vende-guadalajara": "/blog/website-that-sells-guadalajara",
   "/blog/seo-para-ecommerce-tiendas-online": "/blog/seo-for-ecommerce-online-stores",
   "/blog/seo-tips-para-principiantes": "/blog/seo-tips-for-beginners",
+  "/blog/seo-negocios-varias-sucursales-mexico": "/blog/seo-for-multi-location-businesses-mexico",
 };
 
 const ES_SLUG_MAP: Record<string, string> = Object.fromEntries(

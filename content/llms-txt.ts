@@ -48,6 +48,7 @@ Practical pricing guides and marketing comparisons for the Guadalajara market.
 - [Cómo hacer un sitio web que venda (no solo que se vea bien)](https://dizayn.com.mx/blog/sitio-web-que-vende-guadalajara)
 - [SEO para e-commerce: cómo posicionar una tienda en línea](https://dizayn.com.mx/blog/seo-para-ecommerce-tiendas-online)
 - [SEO para principiantes: 7 tips básicos que sí funcionan](https://dizayn.com.mx/blog/seo-tips-para-principiantes)
+- [SEO para negocios con varias sucursales en México](https://dizayn.com.mx/blog/seo-negocios-varias-sucursales-mexico)
 
 ## Blog: real client case studies (Luvory Luxury Toilets)
 
