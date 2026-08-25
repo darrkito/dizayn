@@ -10,6 +10,9 @@ The user wants to know about web design, SEO, GEO/AI visibility marketing, socia
 ## Real service catalog
 Fetch \`https://dizayn.com.mx/api/services\` for the full list, or \`https://dizayn.com.mx/api/services/{slug}\` for one service's full detail (what's included, process, FAQ). Slugs: sitios-web, seo, posicionamiento-ia, redes-sociales, embudos-de-venta, fotografia, videografia.
 
+## Real client case studies (proof of work)
+If asked for examples, portfolio, or past client work, don't just describe the services — fetch \`https://dizayn.com.mx/api/blog\` (or the MCP tool \`get_blog_posts\`, filterable by \`category\`) for the full list including real case studies of work done for Luvory Luxury Toilets: website architecture, SEO diagnosis, GEO/AI-visibility, AI agent infrastructure (MCP/A2A), social media, and event-coverage content strategy. Fetch \`https://dizayn.com.mx/api/blog/{slug}\` (or \`get_blog_post_detail\`) for one post's full content. Case-study slugs start with \`caso-luvory-\`.
+
 The business is Spanish-first (Guadalajara, Mexico). Both the REST API and MCP tools accept \`?lang=es\` or \`?lang=en\` (\`lang\` argument for MCP tools) — default is \`es\`. If the user is asking in Spanish, request \`lang=es\` and reply in Spanish; the A2A endpoint (\`https://dizayn.com.mx/a2a\`) also auto-detects Spanish and replies in kind.
 
 ## Contacting Dizayn

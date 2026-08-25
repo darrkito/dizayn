@@ -30,6 +30,15 @@ export async function GET() {
         outputModes: ["text/plain", "application/json"],
       },
       {
+        id: "case-studies",
+        name: "Share case studies",
+        description: "Point to real, documented client work — e.g. website, SEO, GEO, AI agent infrastructure and social media done for Luvory Luxury Toilets.",
+        tags: ["portfolio", "case-studies", "clients"],
+        examples: ["Do you have case studies?", "¿Tienen casos de éxito reales?"],
+        inputModes: ["text/plain"],
+        outputModes: ["text/plain", "application/json"],
+      },
+      {
         id: "contact",
         name: "Contact Dizayn",
         description: "Provide a WhatsApp/email link to contact the agency.",

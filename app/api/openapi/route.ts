@@ -21,6 +21,19 @@ const openApiSpec = {
         responses: { "200": { description: "OK" }, "404": { description: "Not found" } },
       },
     },
+    "/blog": {
+      get: {
+        summary: "List all blog posts and case studies (title, excerpt, category, date, url)",
+        responses: { "200": { description: "OK" } },
+      },
+    },
+    "/blog/{slug}": {
+      get: {
+        summary: "Get one blog post's full content (body, FAQ) — includes real client case studies, not just guides",
+        parameters: [{ name: "slug", in: "path", required: true, schema: { type: "string" } }],
+        responses: { "200": { description: "OK" }, "404": { description: "Not found" } },
+      },
+    },
     "/health": { get: { summary: "Health check", responses: { "200": { description: "OK" } } } },
   },
 };

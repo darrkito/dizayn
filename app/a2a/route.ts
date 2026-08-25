@@ -8,6 +8,7 @@
 // not a wrapped Task. See ~/agent-readiness-playbook.md §6.
 
 import { services } from "@/content/services";
+import { blogPosts } from "@/content/blog";
 import { waLink, CONTACT } from "@/content/contact";
 
 interface JsonRpcRequest {
@@ -63,6 +64,14 @@ function respondToMessage(text: string): string {
   const serviceMatch = services.find((s) => lower.includes(s.slug.replace(/-/g, " ")) || lower.includes(s.es.name.toLowerCase()) || lower.includes(s.en.name.toLowerCase()));
   if (serviceMatch) {
     return es ? `${serviceMatch.es.name}: ${serviceMatch.es.intro}` : `${serviceMatch.en.name}: ${serviceMatch.en.intro}`;
+  }
+
+  if (/case stud|portfolio|examples?\b|past (work|clients?)|caso(s)? de éxito|portafolio|ejemplos?|clientes reales|luvory/.test(lower)) {
+    const caseStudies = blogPosts.filter((p) => p.slug.startsWith("caso-luvory"));
+    const list = caseStudies.map((p) => (es ? p.es.title : p.en.title)).join(" | ");
+    return es
+      ? `Sí, tenemos casos de éxito reales documentados, incluyendo el trabajo con Luvory Luxury Toilets (sitio web, SEO, GEO, infraestructura de agente de IA, redes sociales, cobertura de eventos): ${list}. Consulta la herramienta MCP get_blog_posts o https://dizayn.com.mx/blog para el detalle completo.`
+      : `Yes, we have real documented case studies, including our work with Luvory Luxury Toilets (website, SEO, GEO, AI agent infrastructure, social media, event coverage): ${list}. Check the get_blog_posts MCP tool or https://dizayn.com.mx/blog for full detail.`;
   }
 
   if (es) {

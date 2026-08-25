@@ -4,6 +4,7 @@
 // Same proven pattern as luvory.com.mx's /mcp — see ~/agent-readiness-playbook.md §5.
 
 import { services, getService } from "@/content/services";
+import { blogPosts, getPost } from "@/content/blog";
 import { waLink, CONTACT } from "@/content/contact";
 
 const PROTOCOL_VERSION = "2025-06-18";
@@ -27,6 +28,26 @@ const TOOLS = [
     inputSchema: {
       type: "object",
       properties: { slug: { type: "string", description: "Service slug, e.g. sitios-web, seo, posicionamiento-ia, redes-sociales, embudos-de-venta, fotografia, videografia" }, lang: { type: "string", enum: ["es", "en"] } },
+      required: ["slug"],
+    },
+  },
+  {
+    name: "get_blog_posts",
+    description: "List Dizayn's blog posts, including real client case studies (e.g. work done for Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media, event coverage). Use this to find proof of past work, not just guides.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        category: { type: "string", description: "Optional filter, e.g. 'Casos de éxito'/'Case studies' for client work only, 'SEO', 'Websites', etc." },
+        lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" },
+      },
+    },
+  },
+  {
+    name: "get_blog_post_detail",
+    description: "Get the full content and FAQ of one Dizayn blog post or case study by slug.",
+    inputSchema: {
+      type: "object",
+      properties: { slug: { type: "string", description: "Blog post slug, e.g. caso-luvory-sitio-web, caso-luvory-seo, seo-vs-geo-guadalajara" }, lang: { type: "string", enum: ["es", "en"] } },
       required: ["slug"],
     },
   },
@@ -60,6 +81,24 @@ function callTool(name: string, args: Record<string, unknown>) {
         null,
         2,
       ),
+    );
+  }
+
+  if (name === "get_blog_posts") {
+    const category = typeof args["category"] === "string" ? args["category"].toLowerCase() : undefined;
+    const list = blogPosts
+      .filter((p) => !category || p[lang].category.toLowerCase().includes(category))
+      .map((p) => ({ slug: p.slug, title: p[lang].title, excerpt: p[lang].excerpt, category: p[lang].category, date: p.date }));
+    return textResult(JSON.stringify({ posts: list }, null, 2));
+  }
+
+  if (name === "get_blog_post_detail") {
+    const slug = String(args["slug"] ?? "");
+    const post = getPost(slug);
+    if (!post) return textResult(`Unknown blog post slug: ${slug}`, true);
+    const copy = post[lang];
+    return textResult(
+      JSON.stringify({ slug: post.slug, title: copy.title, category: copy.category, content: copy.content, faq: copy.faq, date: post.date }, null, 2),
     );
   }
 
@@ -109,7 +148,7 @@ export async function POST(request: Request) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "dizayn-mcp", title: "Dizayn", version: "1.0.0" },
-      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico. No authentication required.",
+      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico, plus the blog — including real client case studies (e.g. Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media). No authentication required.",
     });
   }
 
