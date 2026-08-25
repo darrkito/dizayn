@@ -35,6 +35,15 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/blog/auditoria-seo-guadalajara": "/blog/seo-audit-guadalajara",
   "/blog/que-es-posicionamiento-web": "/blog/what-is-seo",
   "/blog/seo-vs-geo-guadalajara": "/blog/seo-vs-geo-guadalajara",
+  "/blog/caso-luvory-sitio-web": "/blog/luvory-website-case-study",
+  "/blog/caso-luvory-seo": "/blog/luvory-seo-case-study",
+  "/blog/caso-luvory-geo-posicionamiento-ia": "/blog/luvory-geo-case-study",
+  "/blog/caso-luvory-agente-ia-mcp": "/blog/luvory-ai-agent-case-study",
+  "/blog/caso-luvory-redes-sociales": "/blog/luvory-social-media-case-study",
+  "/blog/caso-luvory-cobertura-eventos-guadalajara": "/blog/luvory-event-coverage-case-study",
+  "/blog/caso-luvory-wta-guadalajara-open": "/blog/luvory-wta-guadalajara-open-case-study",
+  "/blog/caso-luvory-mundial-2026": "/blog/luvory-world-cup-2026-case-study",
+  "/blog/caso-luvory-conciertos-mana-mau-ricky": "/blog/luvory-concerts-case-study",
 };
 
 const ES_SLUG_MAP: Record<string, string> = Object.fromEntries(

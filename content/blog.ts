@@ -2421,6 +2421,765 @@ Want to know where your brand stands on both fronts today? [Let's talk about you
       `,
     },
   },
+  {
+    slug: "caso-luvory-sitio-web",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: el sitio web de Luvory Luxury Toilets",
+      excerpt: "Cómo llevamos el sitio de Luvory, renta de baños de lujo en Guadalajara, de un sitio estático a una plataforma real con headers propios, indexación sana y contenido bilingüe.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: sitio web de Luvory Luxury Toilets",
+      metaDescription: "Cómo Dizayn migró y optimizó el sitio web de Luvory (renta de baños de lujo, Guadalajara): arquitectura real, indexación y contenido bilingüe.",
+      faq: [
+        { q: "¿Qué problema tenía el sitio de Luvory antes?", a: "Corría en una plataforma de hosting estático que no permitía controlar headers HTTP reales — un límite técnico invisible para un visitante normal, pero que bloqueaba mejoras de SEO y de discovery que sí importan para buscadores y sistemas de IA." },
+        { q: "¿Por qué migrar a TanStack Start en vez de reconstruir desde cero?", a: "Porque desbloqueaba control real de servidor (headers, rutas dinámicas) sin perder el trabajo de diseño ya invertido — la migración se hizo sobre la base existente, no como una reconstrucción completa." },
+        { q: "¿Qué gana un negocio con esto en la práctica?", a: "Headers HTTP reales para señales de descubrimiento (no solo etiquetas HTML), URLs en inglés y español correctamente separadas, y una arquitectura que no exige reconstrucción cada vez que se agrega una funcionalidad nueva." },
+        { q: "¿Este tipo de trabajo aplica a cualquier sitio?", a: "El caso específico de headers aplica a sitios en hosting estático limitado. El principio general — arquitectura que no bloquea mejoras futuras — aplica a cualquier proyecto." },
+      ],
+      content: `
+## El problema: un sitio bonito con un límite técnico invisible
+
+El sitio de **Luvory Luxury Toilets**, renta de baños portátiles de lujo en Guadalajara, se veía bien y funcionaba — pero corría sobre una plataforma de hosting estático que no dejaba controlar headers HTTP reales. Es un límite que un visitante nunca nota, pero que bloquea señales técnicas reales de descubrimiento que buscadores y sistemas de IA sí leen.
+
+## Por qué esto importa más de lo que parece
+
+Un header HTTP es información que el servidor manda antes de que la página siquiera cargue — a diferencia de una etiqueta HTML, que un sistema tiene que descargar y parsear toda la página para encontrar. Confirmamos empíricamente (con una prueba directa, no asumiendo) que la plataforma anterior descartaba headers personalizados en silencio, aunque la configuración estuviera técnicamente bien escrita.
+
+## La decisión: migrar, no reconstruir
+
+En vez de tirar el trabajo de diseño ya invertido, migramos el sitio a **TanStack Start**, lo que desbloqueó control real de servidor sin perder nada del diseño existente. Confirmamos con una prueba directa (\`curl -I\` contra el sitio publicado) que los headers ahora sí llegan completos — no era una suposición, era verificable.
+
+## Lo que se corrigió en el proceso
+
+La migración automática trajo dos regresiones reales que no eran obvias a simple vista:
+
+| Problema encontrado | Por qué importaba |
+|----------------------|----------------------|
+| Etiqueta \`<title>\` duplicada en cada página | Confunde a buscadores sobre cuál es el título real |
+| \`<html lang="es-MX">\` fijo en todas las páginas, incluyendo las en inglés | Le dice al navegador y a los buscadores que una página en inglés está en español |
+
+Ninguno de los dos se ve al navegar el sitio normalmente — ambos se encontraron con una auditoría explícita, no confiando en "si compila, está bien".
+
+## El resultado
+
+Un sitio que corre sobre la misma base de diseño de siempre, pero con arquitectura real por debajo: headers HTTP controlables, URLs en inglés y español correctamente separadas (no solo un prefijo \`/en/\`, sino rutas realmente traducidas), y espacio para seguir agregando funcionalidad sin toparse con el mismo límite otra vez.
+
+¿Tu sitio actual tiene este mismo tipo de límite invisible? [Cuéntanos tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [diseño de sitios web](/servicios/sitios-web).
+      `,
+    },
+    en: {
+      title: "Case Study: Luvory Luxury Toilets' Website",
+      excerpt: "How we took Luvory's website, a luxury portable toilet rental business in Guadalajara, from a static site to a real platform with proper headers, healthy indexing, and bilingual content.",
+      category: "Case studies",
+      metaTitle: "Case Study: Luvory Luxury Toilets Website",
+      metaDescription: "How Dizayn migrated and optimized Luvory's website (luxury toilet rental, Guadalajara): real architecture, healthy indexing, bilingual content.",
+      faq: [
+        { q: "What problem did Luvory's site have before?", a: "It ran on a static hosting platform that didn't allow control over real HTTP headers — a technical limit invisible to a regular visitor, but one that blocked SEO and discovery improvements that matter to search engines and AI systems." },
+        { q: "Why migrate to TanStack Start instead of rebuilding from scratch?", a: "Because it unlocked real server control (headers, dynamic routes) without losing the design work already invested — the migration happened on top of the existing base, not as a full rebuild." },
+        { q: "What does a business actually gain from this?", a: "Real HTTP headers for discovery signals (not just HTML tags), correctly separated English and Spanish URLs, and an architecture that doesn't require a rebuild every time a new feature gets added." },
+        { q: "Does this type of work apply to any site?", a: "The specific header case applies to sites on limited static hosting. The general principle — architecture that doesn't block future improvements — applies to any project." },
+      ],
+      content: `
+## The problem: a good-looking site with an invisible technical limit
+
+**Luvory Luxury Toilets**' website, a luxury portable toilet rental business in Guadalajara, looked good and worked fine — but it ran on a static hosting platform that didn't allow control over real HTTP headers. It's a limit a visitor never notices, but one that blocks real technical discovery signals that search engines and AI systems actually read.
+
+## Why this matters more than it sounds
+
+An HTTP header is information the server sends before the page even loads — unlike an HTML tag, which a system has to download and parse the entire page to find. We confirmed empirically (with a direct test, not an assumption) that the previous platform silently dropped custom headers, even when the config was technically written correctly.
+
+## The decision: migrate, don't rebuild
+
+Instead of throwing away the design work already invested, we migrated the site to **TanStack Start**, which unlocked real server control without losing any of the existing design. We confirmed with a direct test (\`curl -I\` against the published site) that headers now arrive fully intact — not an assumption, a verifiable check.
+
+## What got fixed along the way
+
+The automated migration brought two real regressions that weren't obvious at a glance:
+
+| Problem found | Why it mattered |
+|----------------|----------------------|
+| Duplicate \`<title>\` tag on every page | Confuses search engines about which title is real |
+| \`<html lang="es-MX">\` hardcoded on every page, including English ones | Tells the browser and search engines an English page is in Spanish |
+
+Neither shows up browsing the site normally — both were caught by an explicit audit, not by trusting "if it builds, it's fine."
+
+## The result
+
+A site running on the same design foundation as always, but with real architecture underneath: controllable HTTP headers, correctly separated English and Spanish URLs (not just an \`/en/\` prefix, but actually translated routes), and room to keep adding features without hitting the same limit again.
+
+Does your current site have this same kind of invisible limit? [Tell us about your project](/contacto) or check the details of our [website design service](/servicios/sitios-web).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-seo",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: diagnóstico y corrección de SEO para Luvory",
+      excerpt: "Cómo encontramos por qué Luvory no aparecía en Google — no era el contenido, era una cadena de señales técnicas rotas que nadie había revisado directamente.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: SEO técnico para Luvory Luxury Toilets",
+      metaDescription: "Diagnóstico real de indexación en Search Console para Luvory: qué encontramos, qué corregimos, y por qué el contenido nunca fue el problema real.",
+      faq: [
+        { q: "¿Qué tan común es que un sitio bueno no esté indexado?", a: "Más de lo que parece. Un sitio puede tener contenido real y buen diseño y aun así no estar indexado si hay una señal técnica contradictoria — cambios de dominio, headers inconsistentes, o simplemente falta de una verificación directa en Search Console." },
+        { q: "¿Cómo se diagnostica esto correctamente?", a: "Con datos reales de Search Console, no suposiciones: qué URLs están efectivamente indexadas (no solo enviadas), cuándo fue el último rastreo exitoso, y qué estado de cobertura reporta cada página." },
+        { q: "¿El contenido de Luvory era el problema?", a: "No. El contenido — servicios, precios, blog con eventos reales de Guadalajara — ya era sólido. El problema estaba en señales técnicas que Google interpretaba de forma contradictoria." },
+        { q: "¿Cuánto tiempo toma ver el efecto de estas correcciones?", a: "La recrawl completa suele tomar días a un par de semanas, dependiendo de cuánto tráfico/autoridad ya tenga el dominio." },
+      ],
+      content: `
+## El síntoma: tráfico real, pero posiciones que no reflejaban el trabajo
+
+Luvory tiene contenido real: servicios claros, precios, y un blog que documenta con detalle eventos reales de Guadalajara (el WTA Guadalajara Open, el Mundial 2026, conciertos). Aun así, las posiciones en Google no reflejaban ese esfuerzo. La pregunta correcta no era "¿necesitamos más contenido?" sino "¿Google realmente está viendo lo que ya existe?"
+
+## El diagnóstico: revisar datos reales, no suponer
+
+En vez de asumir que el problema era de contenido, revisamos directamente los datos de Search Console: qué URLs estaban efectivamente indexadas (no solo enviadas en el sitemap), cuándo fue el último rastreo exitoso de cada página, y qué estado de cobertura reportaba Google para cada una.
+
+## Lo que encontramos
+
+Encontramos señales técnicas contradictorias — el tipo de problema que ninguna cantidad de contenido nuevo resuelve, porque el problema no era de contenido:
+
+- URLs enviadas en el sitemap sin confirmación real de indexación.
+- Inconsistencias entre versiones del dominio que confundían a Google sobre cuál era la fuente autoritativa.
+- Rastreos exitosos desactualizados frente al estado real y actual del sitio.
+
+## Por qué esto se pasa por alto tan seguido
+
+La mayoría de las auditorías SEO se enfocan en lo que se puede ver en la página: palabras clave, meta descripciones, velocidad. Pero si Google ni siquiera tiene indexada la página, ninguna de esas optimizaciones importa todavía. Es un paso que se salta con frecuencia porque requiere revisar datos de Search Console directamente, no solo herramientas automáticas de auditoría.
+
+## El resultado
+
+Corregir las señales técnicas — no agregar más contenido — fue lo que realmente movió la aguja. El contenido ya real de Luvory (incluyendo la cobertura de eventos como el WTA Open y el Mundial 2026) empezó a tener la oportunidad real de indexarse y competir, en vez de estar bloqueado por una señal técnica que nadie había revisado directamente.
+
+¿Tu sitio tiene contenido real que no está apareciendo donde debería? [Pide un diagnóstico](/contacto) o revisa el detalle de nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "Case Study: SEO Diagnosis and Fix for Luvory",
+      excerpt: "How we found why Luvory wasn't showing up on Google — it wasn't the content, it was a chain of broken technical signals nobody had checked directly.",
+      category: "Case studies",
+      metaTitle: "Case Study: Technical SEO for Luvory Luxury Toilets",
+      metaDescription: "A real Search Console indexing diagnosis for Luvory: what we found, what we fixed, and why content was never the real problem.",
+      faq: [
+        { q: "How common is it for a good site to not be indexed?", a: "More common than it sounds. A site can have real content and good design and still not be indexed if there's a contradictory technical signal — domain changes, inconsistent headers, or simply a lack of a direct check in Search Console." },
+        { q: "How do you properly diagnose this?", a: "With real Search Console data, not assumptions: which URLs are actually indexed (not just submitted), when the last successful crawl happened, and what coverage state each page reports." },
+        { q: "Was Luvory's content the problem?", a: "No. The content — services, pricing, a blog documenting real Guadalajara events in detail — was already solid. The problem was technical signals Google was interpreting contradictorily." },
+        { q: "How long until you see the effect of these fixes?", a: "A full recrawl usually takes days to a couple of weeks, depending on how much traffic/authority the domain already has." },
+      ],
+      content: `
+## The symptom: real traffic, but rankings that didn't reflect the work
+
+Luvory has real content: clear services, pricing, and a blog that documents real Guadalajara events in detail (the WTA Guadalajara Open, the 2026 World Cup, concerts). Even so, Google rankings didn't reflect that effort. The right question wasn't "do we need more content?" — it was "is Google actually seeing what already exists?"
+
+## The diagnosis: check real data, don't assume
+
+Instead of assuming the problem was content, we checked Search Console data directly: which URLs were actually indexed (not just submitted in the sitemap), when each page's last successful crawl happened, and what coverage state Google reported for each one.
+
+## What we found
+
+We found contradictory technical signals — the kind of problem no amount of new content fixes, because content was never the issue:
+
+- URLs submitted in the sitemap with no real indexing confirmation.
+- Inconsistencies between domain versions confusing Google about which was the authoritative source.
+- Successful crawls that were stale compared to the site's real, current state.
+
+## Why this gets overlooked so often
+
+Most SEO audits focus on what's visible on the page: keywords, meta descriptions, speed. But if Google doesn't even have the page indexed, none of those optimizations matter yet. It's a step frequently skipped because it requires checking Search Console data directly, not just automated audit tools.
+
+## The result
+
+Fixing the technical signals — not adding more content — was what actually moved the needle. Luvory's already-real content (including its coverage of events like the WTA Open and the 2026 World Cup) got a real chance to index and compete, instead of being blocked by a technical signal nobody had checked directly.
+
+Does your site have real content that isn't showing up where it should? [Request a diagnosis](/contacto) or check the details of our [SEO service](/servicios/seo).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-geo-posicionamiento-ia",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: GEO — que la IA recomiende a Luvory",
+      excerpt: "ChatGPT y los AI Overviews de Google ya responden preguntas sobre renta de baños en Guadalajara sin que nadie haga clic. Así preparamos a Luvory para ser la fuente citada.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: GEO para Luvory Luxury Toilets",
+      metaDescription: "Cómo optimizamos a Luvory para ser citada por ChatGPT y AI Overviews: datos estructurados, entidad de marca y formato de respuesta directa.",
+      faq: [
+        { q: "¿Por qué un negocio de renta de baños necesita GEO?", a: "Porque cada vez más gente pregunta directamente a ChatGPT o ve un AI Overview antes de buscar un proveedor para su evento — si Luvory no está preparada para ser citada, esa recomendación va a otro negocio." },
+        { q: "¿Qué es lo primero que se hace en un trabajo de GEO?", a: "Preguntarle directamente a los modelos qué contestan hoy sobre la categoría del negocio, para tener una línea base real antes de cambiar nada." },
+        { q: "¿Este trabajo reemplaza al SEO normal?", a: "No, lo complementa. Comparten base técnica y de contenido, pero el formato que un modelo de IA extrae para citar es distinto al que un humano prefiere leer completo." },
+        { q: "¿Se puede medir si está funcionando?", a: "Sí. Se documentan las respuestas de los modelos antes y después con prompts repetibles — es evidencia concreta, no una suposición sobre si mejoró." },
+      ],
+      content: `
+## La pregunta que cambia todo
+
+Cuando alguien en Guadalajara pregunta "¿dónde rento baños de lujo para mi boda?" directamente en ChatGPT o ve la respuesta en un AI Overview de Google, esa persona puede quedar satisfecha sin hacer clic a ningún sitio. La pregunta para Luvory dejó de ser solo "¿aparecemos en Google?" y pasó a ser "¿la IA nos recomienda cuando alguien pregunta esto?"
+
+## Por qué esto es distinto al SEO clásico
+
+El SEO clásico premia contenido completo que un humano lee de principio a fin. Un modelo de IA, en cambio, busca extraer un párrafo específico y verificable para citar como fuente — eso significa que la respuesta directa tiene que estar disponible desde la primera oración, no enterrada bajo tres párrafos de introducción.
+
+## Lo que hicimos
+
+### Línea base real
+Antes de cambiar nada, le preguntamos directamente a los modelos qué contestaban hoy sobre renta de baños de lujo en Guadalajara y documentamos las respuestas — para saber realmente de dónde partíamos.
+
+### Entidad de marca consistente
+Definimos quién es Luvory, qué hace y dónde, de forma consistente en todo el sitio y en las fuentes externas que un modelo de IA consulta.
+
+### Contenido en el formato que se cita
+Reestructuramos páginas clave para que la respuesta específica esté en la primera oración, con datos estructurados que coinciden exactamente con el texto visible — no solo en el schema, también en lo que un humano lee.
+
+## El diferenciador real: el contenido de eventos ya existía
+
+Luvory ya tenía algo poco común: contenido real y detallado sobre eventos verificables — el WTA Guadalajara Open, el Mundial 2026, conciertos de Maná y Mau y Ricky. Ese tipo de especificidad (fechas reales, datos verificables, contexto local genuino) es exactamente lo que hace que un modelo de IA confíe en una fuente. El trabajo de GEO no fue crear ese contenido desde cero — fue estructurarlo para que la IA pudiera extraerlo con confianza.
+
+## El resultado
+
+Un sitio preparado para dos audiencias a la vez: la persona que lee el contenido completo, y el sistema de IA que necesita extraer un párrafo específico para responder una pregunta. Ninguna se sacrifica por la otra.
+
+¿Quieres saber qué dice la IA de tu marca hoy? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia).
+      `,
+    },
+    en: {
+      title: "Case Study: GEO — Getting AI to Recommend Luvory",
+      excerpt: "ChatGPT and Google's AI Overviews already answer questions about toilet rental in Guadalajara without anyone clicking through. Here's how we prepared Luvory to be the cited source.",
+      category: "Case studies",
+      metaTitle: "Case Study: GEO for Luvory Luxury Toilets",
+      metaDescription: "How we optimized Luvory to get cited by ChatGPT and AI Overviews: structured data, brand entity, and direct-answer formatting.",
+      faq: [
+        { q: "Why does a toilet rental business need GEO?", a: "Because more people ask ChatGPT directly or see an AI Overview before searching for a vendor for their event — if Luvory isn't prepared to be cited, that recommendation goes to another business." },
+        { q: "What's the first thing done in a GEO engagement?", a: "Asking the models directly what they answer today about the business's category, to get a real baseline before changing anything." },
+        { q: "Does this replace regular SEO?", a: "No, it complements it. They share technical and content foundations, but the format an AI model extracts to cite differs from what a human prefers to read in full." },
+        { q: "Can you measure whether it's working?", a: "Yes. Model answers are documented before and after with repeatable prompts — that's concrete evidence, not a guess about whether it improved." },
+      ],
+      content: `
+## The question that changes everything
+
+When someone in Guadalajara asks "where can I rent luxury toilets for my wedding?" directly in ChatGPT, or sees the answer in a Google AI Overview, that person can be satisfied without clicking through to any site. The question for Luvory stopped being just "do we show up on Google?" and became "does AI recommend us when someone asks this?"
+
+## Why this is different from classic SEO
+
+Classic SEO rewards complete content a human reads start to finish. An AI model, instead, tries to extract one specific, verifiable passage to cite as its source — meaning the direct answer needs to be available from the first sentence, not buried under three paragraphs of introduction.
+
+## What we did
+
+### A real baseline
+Before changing anything, we asked the models directly what they answered today about luxury toilet rental in Guadalajara and documented the answers — to know where we were actually starting from.
+
+### A consistent brand entity
+We defined who Luvory is, what it does and where, consistently across the site and the external sources an AI model consults.
+
+### Content in the format that gets cited
+We restructured key pages so the specific answer sits in the first sentence, with structured data that exactly matches the visible text — not just in the schema, in what a human reads too.
+
+## The real differentiator: the event content already existed
+
+Luvory already had something uncommon: real, detailed content about verifiable events — the WTA Guadalajara Open, the 2026 World Cup, Maná and Mau y Ricky concerts. That kind of specificity (real dates, verifiable facts, genuine local context) is exactly what makes an AI model trust a source. The GEO work wasn't creating that content from scratch — it was structuring it so AI could confidently extract it.
+
+## The result
+
+A site prepared for two audiences at once: the person reading the full content, and the AI system that needs to extract one specific passage to answer a question. Neither is sacrificed for the other.
+
+Want to know what AI says about your brand today? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-agente-ia-mcp",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: Luvory ahora es visible para agentes de IA, no solo para personas",
+      excerpt: "Construimos un servidor MCP y un agente A2A reales para Luvory — capacidades que un agente de IA puede usar directamente, no solo texto que puede leer.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: agente de IA (MCP/A2A) para Luvory",
+      metaDescription: "Cómo construimos infraestructura real de descubrimiento para agentes de IA en el sitio de Luvory: servidor MCP, agente A2A y API pública.",
+      faq: [
+        { q: "¿Qué es un servidor MCP y por qué le serviría a un negocio?", a: "Es un estándar que le permite a un agente de IA (no solo leer tu sitio) llamar directamente a herramientas reales sobre tu negocio: consultar servicios, precios o disponibilidad, de forma estructurada." },
+        { q: "¿Esto es lo mismo que el chatbot de un sitio web?", a: "No. Un chatbot vive dentro de tu sitio para tus visitantes. Esto es infraestructura que cualquier agente de IA externo — el asistente de un cliente potencial — puede descubrir y usar por su cuenta." },
+        { q: "¿Se puede fabricar esta infraestructura sin que exista de verdad?", a: "Se podría, pero publicar un archivo que apunta a una capacidad que no existe es peor que no publicarlo — un agente real que lo intenta usar y falla pierde confianza en la fuente. Todo lo que construimos es real y funcional." },
+        { q: "¿Cualquier negocio necesita esto hoy?", a: "Todavía es una inversión de infraestructura, no una urgencia para cualquier negocio. Tiene más sentido para negocios que ya están adelantados en SEO y GEO y quieren estar preparados antes que su competencia." },
+      ],
+      content: `
+## Un tipo de visibilidad distinto
+
+Hasta ahora, "ser encontrado en línea" significaba aparecer en una lista de resultados o ser citado en una respuesta de texto. Hay un tercer nivel que casi ningún negocio local tiene todavía: que un **agente de IA autónomo** — no una persona, no un chatbot dentro de tu sitio — pueda descubrir y usar directamente las capacidades reales de tu negocio.
+
+## Qué construimos, en concreto
+
+### Un servidor MCP real
+MCP (Model Context Protocol) es el estándar que le permite a un agente de IA llamar herramientas reales sobre el negocio de Luvory — no solo leer texto, sino consultar servicios y precios de forma estructurada, con un protocolo verificable.
+
+### Un agente A2A (Agent2Agent)
+Un endpoint que otro agente de IA puede usar para hacer preguntas directas sobre Luvory y recibir una respuesta real, generada desde el contenido genuino del negocio, no un texto inventado.
+
+### Los archivos de descubrimiento correctos
+Un agente necesita saber que estas capacidades existen antes de poder usarlas — eso significa archivos \`.well-known\` correctos, un catálogo de API real y una Tarjeta de Agente (Agent Card) con el esquema exacto que estos sistemas esperan.
+
+## La disciplina detrás de esto: nunca fabricar lo que no existe
+
+La decisión más importante en este trabajo no fue técnica, fue de principio: **nunca publicar un archivo de descubrimiento que apunte a una capacidad que no existe de verdad.** Es tentador marcar todas las casillas de un checklist de "qué tan listo estás para agentes de IA" sin construir nada real detrás — pero un agente real que confía en ese archivo y falla al intentar usarlo pierde confianza en la fuente, algo peor que simplemente no tener la capacidad.
+
+## Por qué esto importa ahora, aunque parezca temprano
+
+La adopción de agentes de IA autónomos todavía es baja comparada con búsqueda tradicional — pero eso es exactamente lo que hace que construir esta infraestructura ahora, mientras casi nadie más lo tiene, sea una ventaja real y no solo un checklist técnico.
+
+¿Quieres que tu negocio sea descubrible por agentes de IA, no solo por personas? [Hablemos de tu proyecto](/contacto) o revisa el detalle de nuestro servicio de [GEO: posicionamiento en IA](/servicios/posicionamiento-ia).
+      `,
+    },
+    en: {
+      title: "Case Study: Luvory Is Now Visible to AI Agents, Not Just People",
+      excerpt: "We built a real MCP server and A2A agent for Luvory — capabilities an AI agent can actually call, not just text it can read.",
+      category: "Case studies",
+      metaTitle: "Case Study: AI Agent Infrastructure (MCP/A2A) for Luvory",
+      metaDescription: "How we built real AI-agent discovery infrastructure on Luvory's site: MCP server, A2A agent and a public API.",
+      faq: [
+        { q: "What's an MCP server and why would it help a business?", a: "It's a standard that lets an AI agent, instead of just reading your site, directly call real tools about your business: checking services, pricing or availability, in a structured way." },
+        { q: "Is this the same as a chatbot on a website?", a: "No. A chatbot lives inside your site for your visitors. This is infrastructure any external AI agent — a prospective customer's own assistant — can discover and use on its own." },
+        { q: "Could this infrastructure be faked without actually existing?", a: "It could, but publishing a file that points to a capability that doesn't exist is worse than not publishing it at all — a real agent that tries to use it and fails loses trust in the source. Everything we built is real and functional." },
+        { q: "Does every business need this today?", a: "It's still an infrastructure investment, not an urgent need for every business. It makes the most sense for businesses already ahead on SEO and GEO who want to be ready before their competitors are." },
+      ],
+      content: `
+## A different kind of visibility
+
+Until now, "being found online" meant showing up in a list of results, or being cited in a text answer. There's a third level almost no local business has yet: an **autonomous AI agent** — not a person, not a chatbot inside your site — being able to discover and directly use your business's real capabilities.
+
+## What we built, specifically
+
+### A real MCP server
+MCP (Model Context Protocol) is the standard that lets an AI agent call real tools about Luvory's business — not just read text, but query services and pricing in a structured way, through a verifiable protocol.
+
+### An A2A (Agent2Agent) agent
+An endpoint another AI agent can use to ask direct questions about Luvory and get a real answer, generated from the business's genuine content, not invented text.
+
+### The right discovery files
+An agent needs to know these capabilities exist before it can use them — that means correct \`.well-known\` files, a real API catalog, and an Agent Card with the exact schema these systems expect.
+
+## The discipline behind it: never fabricate what doesn't exist
+
+The most important decision in this work wasn't technical, it was a matter of principle: **never publish a discovery file pointing to a capability that doesn't genuinely exist.** It's tempting to check every box on an "AI-agent-ready" checklist without building anything real behind it — but a real agent that trusts that file and fails when it tries to use it loses trust in the source, which is worse than simply not having the capability.
+
+## Why this matters now, even though it seems early
+
+Autonomous AI agent adoption is still low compared to traditional search — but that's exactly what makes building this infrastructure now, while almost no one else has it, a real advantage rather than just a technical checklist item.
+
+Want your business discoverable by AI agents, not just people? [Let's talk about your project](/contacto) or check the details of our [GEO: AI visibility service](/servicios/posicionamiento-ia).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-redes-sociales",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: redes sociales de Luvory",
+      excerpt: "Cómo manejamos Instagram y TikTok para una marca que renta baños de lujo — un producto que no es glamoroso por sí solo, pero cuya presentación sí lo determina.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: redes sociales para Luvory Luxury Toilets",
+      metaDescription: "Cómo Dizayn maneja la estrategia y producción de contenido en redes sociales para Luvory, renta de baños de lujo en Guadalajara.",
+      faq: [
+        { q: "¿Cómo se hace atractivo un producto como renta de baños en redes?", a: "Con dirección de arte real — iluminación, encuadre, presentación — que trate al producto con el mismo cuidado que una marca de espacios de lujo, no como un servicio utilitario." },
+        { q: "¿Qué formatos funcionan mejor para este tipo de negocio?", a: "Contenido que muestra el producto instalado en eventos reales rinde mejor que renders o fotos genéricas de catálogo — la gente compra confianza de que se va a ver bien en su propio evento." },
+        { q: "¿Los eventos reales que cubre Luvory (WTA, conciertos) forman parte del contenido de redes?", a: "Sí. Documentar presencia real en eventos verificables — el WTA Guadalajara Open, conciertos masivos — es contenido que ninguna marca competidora puede replicar sin haber estado ahí de verdad." },
+        { q: "¿Manejan también pauta paga?", a: "Sí, como parte del servicio de redes sociales — campañas en Meta y TikTok con presupuesto definido aparte del fee de gestión." },
+      ],
+      content: `
+## El reto: hacer deseable un producto utilitario
+
+Renta de baños portátiles no es, a primera vista, un producto que se preste a redes sociales atractivas. El reto real fue tratarlo como lo que Luvory realmente vende: una experiencia de hospitalidad de lujo, no un servicio de infraestructura básica.
+
+## La estrategia: dirección de arte, no solo publicar seguido
+
+En vez de solo mantener un calendario activo, el trabajo se centró en dirección de arte real — iluminación, encuadre, presentación — aplicada al producto con el mismo cuidado que una marca de eventos de lujo, para que cada publicación reforzara el posicionamiento premium en vez de verse como cualquier proveedor de baños portátiles.
+
+## El diferenciador que ningún competidor puede copiar fácilmente
+
+Luvory tiene algo que la mayoría de sus competidores no: presencia documentada en eventos reales y verificables de Guadalajara — el WTA Guadalajara Open, conciertos masivos como Maná en La Minerva. Ese contenido no se puede fabricar ni replicar sin haber estado realmente ahí, y es exactamente el tipo de prueba social que construye confianza más rápido que cualquier publicación genérica.
+
+## Cómo se estructura el contenido
+
+- **Producto en contexto real**: instalaciones en eventos reales, no renders ni fotos de catálogo genéricas.
+- **Presencia en eventos de alto perfil**: documentar cuándo Luvory está presente en un evento masivo, con la calidad de producción que ese momento merece.
+- **Respuesta y filtrado de prospectos**: community management activo que convierte mensajes en cotizaciones reales, no solo interacción pasiva.
+
+## El resultado
+
+Una cuenta que no solo publica con constancia, sino que construye la percepción de marca correcta para el precio que Luvory cobra — y que usa la presencia en eventos reales como el activo diferenciador que realmente es, en vez de tratarlo como contenido más entre publicaciones genéricas.
+
+¿Tu marca necesita que sus redes sociales reflejen lo que realmente vende? [Cuéntanos de tu marca](/contacto) o revisa el detalle de nuestro servicio de [redes sociales](/servicios/redes-sociales).
+      `,
+    },
+    en: {
+      title: "Case Study: Luvory's Social Media",
+      excerpt: "How we run Instagram and TikTok for a brand that rents luxury toilets — a product that isn't glamorous on its own, but whose presentation is what determines that.",
+      category: "Case studies",
+      metaTitle: "Case Study: Social Media for Luvory Luxury Toilets",
+      metaDescription: "How Dizayn runs social media strategy and content production for Luvory, a luxury toilet rental business in Guadalajara.",
+      faq: [
+        { q: "How do you make a product like toilet rental appealing on social?", a: "With real art direction — lighting, framing, presentation — that treats the product with the same care as a luxury venue brand, not as a utilitarian service." },
+        { q: "What formats work best for this type of business?", a: "Content showing the product installed at real events performs better than renders or generic catalog photos — people are buying confidence that it will look good at their own event." },
+        { q: "Are the real events Luvory covers (WTA, concerts) part of the social content?", a: "Yes. Documenting real presence at verifiable events — the WTA Guadalajara Open, massive concerts — is content no competing brand can replicate without genuinely having been there." },
+        { q: "Do you also run paid ads?", a: "Yes, as part of the social media service — Meta and TikTok campaigns with a budget defined separately from the management fee." },
+      ],
+      content: `
+## The challenge: making a utilitarian product desirable
+
+Portable toilet rental isn't, at first glance, a product that lends itself to appealing social content. The real challenge was treating it as what Luvory actually sells: a luxury hospitality experience, not a basic infrastructure service.
+
+## The strategy: art direction, not just posting often
+
+Instead of just keeping an active calendar, the work centered on real art direction — lighting, framing, presentation — applied to the product with the same care as a luxury events brand, so every post reinforces the premium positioning instead of looking like any other portable toilet vendor.
+
+## The differentiator no competitor can easily copy
+
+Luvory has something most competitors don't: documented presence at real, verifiable Guadalajara events — the WTA Guadalajara Open, massive concerts like Maná at La Minerva. That content can't be faked or replicated without genuinely having been there, and it's exactly the kind of social proof that builds trust faster than any generic post.
+
+## How the content is structured
+
+- **Product in real context**: installations at real events, not renders or generic catalog photos.
+- **Presence at high-profile events**: documenting when Luvory is present at a major event, with the production quality that moment deserves.
+- **Response and lead filtering**: active community management that converts messages into real quote requests, not just passive engagement.
+
+## The result
+
+An account that doesn't just post consistently, but builds the right brand perception for what Luvory charges — and uses real event presence as the genuine differentiating asset it is, instead of treating it as just more content among generic posts.
+
+Does your brand need its social media to actually reflect what it sells? [Tell us about your brand](/contacto) or check the details of our [social media service](/servicios/redes-sociales).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-cobertura-eventos-guadalajara",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: convertir presencia en eventos reales en contenido que posiciona",
+      excerpt: "Luvory ha estado en los eventos que definen a Guadalajara. Esto es cómo esa presencia real se convierte en estrategia de contenido, no solo en una publicación de Instagram.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: contenido de eventos para Luvory",
+      metaDescription: "Cómo estructuramos el contenido de la presencia real de Luvory en eventos masivos de Guadalajara: SEO, GEO y redes en un solo trabajo.",
+      faq: [
+        { q: "¿Por qué documentar eventos en vez de solo hacer el trabajo?", a: "Porque la presencia real en un evento de alto perfil es un activo de contenido único — nadie más puede publicar honestamente sobre haber estado ahí si no estuvo. Documentarlo bien lo convierte en prueba social, contenido SEO y material de redes al mismo tiempo." },
+        { q: "¿Qué tipo de eventos ha cubierto Luvory?", a: "Torneos deportivos internacionales (el WTA Guadalajara Open), eventos masivos alrededor del Mundial 2026, y conciertos con decenas de miles de asistentes, entre otros." },
+        { q: "¿Cómo se conecta esto con SEO y GEO?", a: "El mismo contenido que documenta un evento real, con fechas y datos verificables, es exactamente el tipo de especificidad que tanto Google como los modelos de IA usan para confiar en una fuente." },
+        { q: "¿Cualquier negocio de eventos podría hacer esto?", a: "Sí, siempre que la presencia sea real. El valor está precisamente en que no se puede fabricar — solo se puede documentar bien algo que realmente sucedió." },
+      ],
+      content: `
+## El activo que casi nadie usa bien
+
+Cuando un negocio está presente en un evento masivo y de alto perfil, la reacción típica es publicar una foto en redes y seguir adelante. Con Luvory, la presencia en eventos como el **WTA Guadalajara Open**, los eventos alrededor del **Mundial 2026** y conciertos masivos en Guadalajara se trató como lo que realmente es: un activo de contenido que ningún competidor puede replicar sin haber estado ahí de verdad.
+
+## Por qué la especificidad es la que hace el trabajo
+
+Un contenido genérico ("estuvimos en un evento este fin de semana") no construye nada. Un contenido específico — fechas reales, nombres de artistas, resultados de partidos, contexto verificable del evento — es exactamente el tipo de información que un buscador y un modelo de IA pueden confirmar y en el que pueden confiar.
+
+## Cómo se estructura este tipo de contenido
+
+### Documentación completa, no solo una mención
+Cada evento cubierto se documenta con el mismo nivel de detalle que tendría una nota periodística real: fechas, contexto, cifras verificables — no solo "estuvimos presentes."
+
+### Un mismo activo, tres canales
+El mismo trabajo de documentación alimenta contenido de blog (SEO y GEO), publicaciones de redes sociales (prueba social) y material que refuerza la marca en conversaciones directas con clientes potenciales.
+
+### Conexión directa al servicio real
+Cada pieza de contenido de evento cierra con la conexión obvia: si tu evento necesita esta misma infraestructura, así es como se ve trabajar con Luvory.
+
+## El resultado
+
+Un archivo creciente de contenido verificable que funciona simultáneamente como evidencia de experiencia real, material de posicionamiento en buscadores y sistemas de IA, y contenido de redes sociales — construido sobre presencia real, no sobre producción de contenido genérico.
+
+¿Tu negocio tiene presencia real en eventos que no está aprovechando como contenido? [Hablemos de tu marca](/contacto) o revisa nuestros servicios de [redes sociales](/servicios/redes-sociales) y [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "Case Study: Turning Real Event Presence Into Content That Ranks",
+      excerpt: "Luvory has been at the events that define Guadalajara. Here's how that real presence turns into content strategy, not just an Instagram post.",
+      category: "Case studies",
+      metaTitle: "Case Study: Event Content Strategy for Luvory",
+      metaDescription: "How we structured content around Luvory's real presence at major Guadalajara events: SEO, GEO and social media in one piece of work.",
+      faq: [
+        { q: "Why document events instead of just doing the work?", a: "Because real presence at a high-profile event is a unique content asset — no one else can honestly post about having been there if they weren't. Documenting it well turns it into social proof, SEO content, and social material at once." },
+        { q: "What kind of events has Luvory covered?", a: "International sporting tournaments (the WTA Guadalajara Open), events around the 2026 World Cup, and concerts drawing tens of thousands, among others." },
+        { q: "How does this connect to SEO and GEO?", a: "The same content documenting a real event, with real dates and verifiable facts, is exactly the kind of specificity both Google and AI models use to trust a source." },
+        { q: "Could any events business do this?", a: "Yes, as long as the presence is real. The value is precisely that it can't be faked — you can only document well something that genuinely happened." },
+      ],
+      content: `
+## The asset almost no one uses well
+
+When a business is present at a massive, high-profile event, the typical reaction is to post a photo on social and move on. With Luvory, presence at events like the **WTA Guadalajara Open**, events around the **2026 World Cup**, and massive concerts in Guadalajara was treated for what it actually is: a content asset no competitor can replicate without genuinely having been there.
+
+## Why specificity is what does the work
+
+Generic content ("we were at an event this weekend") builds nothing. Specific content — real dates, artist names, match results, verifiable event context — is exactly the kind of information a search engine and an AI model can confirm and trust.
+
+## How this content is structured
+
+### Full documentation, not just a mention
+Every covered event gets documented with the same level of detail a real news piece would have: dates, context, verifiable figures — not just "we were present."
+
+### One asset, three channels
+The same documentation work fuels blog content (SEO and GEO), social media posts (social proof), and material that reinforces the brand in direct conversations with prospects.
+
+### A direct connection to the real service
+Every piece of event content closes with the obvious connection: if your event needs this same infrastructure, this is what working with Luvory looks like.
+
+## The result
+
+A growing archive of verifiable content that simultaneously works as evidence of real experience, search-engine and AI-system ranking material, and social media content — built on real presence, not generic content production.
+
+Does your business have real event presence it isn't turning into content? [Let's talk about your brand](/contacto) or check our [social media](/servicios/redes-sociales) and [SEO](/servicios/seo) services.
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-wta-guadalajara-open",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: cómo posicionamos la cobertura de Luvory del WTA Guadalajara Open",
+      excerpt: "Luvory proveyó baños VIP y presidenciales para el WTA 500 en Zapopan. Esto es cómo convertimos esa presencia real en una guía completa que compite por búsquedas del torneo.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: contenido del WTA Guadalajara Open para Luvory",
+      metaDescription: "Cómo estructuramos el contenido de Luvory sobre el WTA Guadalajara Open (Zapopan) para competir por búsquedas reales del torneo, con SEO y GEO.",
+      faq: [
+        { q: "¿Qué papel tuvo Luvory en el WTA Guadalajara Open?", a: "Proveyó baños VIP y presidenciales para las zonas de jugadoras y hospitalidad, remolques premium para las zonas de mayor afluencia, y mantenimiento continuo durante toda la semana del torneo." },
+        { q: "¿Por qué escribir una guía completa del torneo en vez de solo mencionar la participación?", a: "Porque las búsquedas reales sobre el torneo (fechas, sede, boletos) tienen volumen genuino — responderlas con la misma calidad que un medio deportivo, con la presencia real de Luvory integrada, compite por ese tráfico." },
+        { q: "¿Este enfoque funciona para cualquier evento con patrocinio o presencia de marca?", a: "Sí, siempre que la información del evento sea real y verificable, y la conexión con el servicio del negocio sea genuina, no forzada." },
+        { q: "¿Qué tan específico debe ser este tipo de contenido?", a: "Muy específico — fechas exactas, sede, jugadoras confirmadas. Esa especificidad es lo que hace que tanto un buscador como un modelo de IA confíen en el contenido como fuente." },
+      ],
+      content: `
+## La oportunidad: un torneo real con búsquedas reales
+
+El **Guadalajara Open Akron**, torneo **WTA 500** que se juega en el Centro Panamericano de Tenis de Zapopan, genera búsquedas reales de gente que quiere saber fechas, sede y cómo comprar boletos. Luvory no es solo un observador de este evento — proveyó baños VIP y presidenciales para las zonas de jugadoras y hospitalidad, y remolques premium para las zonas de mayor afluencia durante toda la semana del torneo.
+
+## La estrategia de contenido
+
+En vez de una mención breve de "estuvimos en el torneo," se construyó una guía completa y útil del evento — fechas, sede, información de boletos, jugadoras destacadas — con la presencia real de Luvory integrada de forma natural, no forzada.
+
+### Por qué esto funciona mejor que solo un anuncio de servicio
+Alguien buscando información del torneo (no necesariamente buscando baños portátiles) encuentra contenido genuinamente útil, y en el proceso conoce que Luvory es parte de la operación real del evento — una introducción a la marca mucho más creíble que un anuncio directo.
+
+### Especificidad verificable
+Fechas exactas del torneo, la sede correcta (Centro Panamericano de Tenis, Zapopan), jugadoras confirmadas, y detalles como el concierto que forma parte de la semana del evento — todo verificable, nada genérico.
+
+## La conexión con el servicio real
+
+El contenido cierra con lo que Luvory realmente proveyó: baños VIP y presidenciales para jugadoras y hospitalidad, remolques premium para las zonas de mayor afluencia, mantenimiento continuo durante toda la semana — la prueba de que la marca no solo escribe sobre el evento, estuvo operando dentro de él.
+
+## El resultado
+
+Contenido que compite por búsquedas reales del torneo (tráfico que de otra forma nunca llegaría a Luvory), mientras documenta honestamente un trabajo real — sin fabricar ninguna conexión que no exista.
+
+¿Tu marca tiene presencia real en eventos que podría documentar así? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "Case Study: How We Positioned Luvory's WTA Guadalajara Open Coverage",
+      excerpt: "Luvory provided VIP and presidential toilets for the WTA 500 in Zapopan. Here's how we turned that real presence into a complete guide competing for tournament searches.",
+      category: "Case studies",
+      metaTitle: "Case Study: WTA Guadalajara Open Content for Luvory",
+      metaDescription: "How we structured Luvory's content about the WTA Guadalajara Open (Zapopan) to compete for real tournament searches, with SEO and GEO.",
+      faq: [
+        { q: "What role did Luvory play at the WTA Guadalajara Open?", a: "It provided VIP and presidential toilets for player and hospitality areas, premium trailers for the highest-traffic zones, and continuous maintenance throughout tournament week." },
+        { q: "Why write a full tournament guide instead of just mentioning participation?", a: "Because real searches about the tournament (dates, venue, tickets) have genuine volume — answering them with the same quality as a sports outlet, with Luvory's real presence woven in, competes for that traffic." },
+        { q: "Does this approach work for any event with sponsorship or brand presence?", a: "Yes, as long as the event information is real and verifiable, and the connection to the business's service is genuine, not forced." },
+        { q: "How specific does this kind of content need to be?", a: "Very specific — exact dates, venue, confirmed players. That specificity is what makes both a search engine and an AI model trust the content as a source." },
+      ],
+      content: `
+## The opportunity: a real tournament with real searches
+
+The **Guadalajara Open Akron**, a **WTA 500** tournament played at the Centro Panamericano de Tenis in Zapopan, generates real searches from people wanting to know dates, venue, and how to buy tickets. Luvory isn't just an observer of this event — it provided VIP and presidential toilets for player and hospitality areas, and premium trailers for the highest-traffic zones, throughout tournament week.
+
+## The content strategy
+
+Instead of a brief "we were at the tournament" mention, we built a complete, genuinely useful event guide — dates, venue, ticket info, featured players — with Luvory's real presence woven in naturally, not forced.
+
+### Why this works better than just a service ad
+Someone searching for tournament information (not necessarily searching for portable toilets) finds genuinely useful content, and in the process learns Luvory is part of the event's real operation — a far more credible brand introduction than a direct ad.
+
+### Verifiable specificity
+Exact tournament dates, the correct venue (Centro Panamericano de Tenis, Zapopan), confirmed players, and details like the concert that's part of event week — all verifiable, nothing generic.
+
+## The connection to the real service
+
+The content closes with what Luvory actually provided: VIP and presidential toilets for players and hospitality, premium trailers for the highest-traffic zones, continuous maintenance throughout the week — proof the brand doesn't just write about the event, it was operating inside it.
+
+## The result
+
+Content that competes for real tournament searches (traffic that would never otherwise reach Luvory), while honestly documenting real work — without fabricating any connection that doesn't exist.
+
+Does your brand have real event presence it could document this way? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo).
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-mundial-2026",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: cómo Luvory se posicionó para eventos alrededor del Mundial 2026 en Guadalajara",
+      excerpt: "El Mundial trajo a Guadalajara partidos, Fan Fest y cientos de eventos satélite. Esto es cómo estructuramos el contenido de Luvory para captar esa demanda real.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: contenido del Mundial 2026 para Luvory",
+      metaDescription: "Cómo posicionamos a Luvory para la demanda real de eventos satélite alrededor del Mundial 2026 en Guadalajara: Fan Fest, activaciones y hospitalidad.",
+      faq: [
+        { q: "¿Luvory proveyó los baños del Fan Fest oficial de la FIFA?", a: "No — la infraestructura del Fan Fest oficial la cubre la propia FIFA. El trabajo de Luvory y de este contenido se enfoca en los eventos satélite: activaciones de marca, viewing parties, zonas VIP corporativas y afterparties alrededor del Mundial." },
+        { q: "¿Por qué es relevante escribir sobre el Mundial si Luvory no cubre el evento oficial?", a: "Porque quien busca información sobre el Mundial en Guadalajara — Fan Fest, partidos, cómo llegar — es exactamente la misma audiencia que organiza o asiste a los eventos satélite que sí necesitan la infraestructura de Luvory." },
+        { q: "¿Qué tan grande fue la demanda real de estos eventos satélite?", a: "Con partidos que atrajeron a más de 45,000 personas al estadio y celebraciones con decenas de miles más en puntos como La Minerva, la cantidad de eventos privados alrededor de esos días fue considerable." },
+        { q: "¿Este enfoque de contenido aplica a otros eventos masivos?", a: "Sí — cualquier evento de gran escala en la ciudad genera la misma oportunidad: contenido útil sobre el evento en sí, conectado honestamente con el servicio real que resuelve la logística alrededor de él." },
+      ],
+      content: `
+## La oportunidad: una ciudad entera en modo evento
+
+Cuando el Mundial 2026 llegó a Guadalajara — partidos en el Estadio Akron, el Fan Fest oficial de la FIFA en el Centro Histórico, semanas de actividad — la ciudad completa entró en modo evento. Eso significó una multiplicación real de eventos privados alrededor del torneo: activaciones de marca, viewing parties, zonas VIP corporativas, afterparties.
+
+## Una distinción importante que se mantuvo honesta
+
+Luvory no provee la infraestructura del Fan Fest oficial de la FIFA — eso lo cubre la propia organización del torneo. El contenido y el posicionamiento se enfocaron específicamente en los **eventos satélite**: la demanda real y desatendida de quien organiza un evento privado alrededor del Mundial y necesita resolver su propia logística sanitaria.
+
+## Por qué el contenido sobre el Mundial en sí también importa
+
+Alguien buscando "Fan Fest Guadalajara horarios" o "cómo llegar al Estadio Akron" no está buscando baños portátiles directamente — pero es exactamente la misma audiencia que, si está organizando su propio evento privado alrededor de esos días, sí necesita resolver esa logística. Contenido genuinamente útil sobre el Mundial en Guadalajara construye la relación antes de que exista la necesidad directa.
+
+## La escala real de la demanda
+
+Con partidos que llenaron el Estadio Akron con más de 45,000 personas y celebraciones que reunieron a decenas de miles más en puntos como la Glorieta Minerva, la cantidad de eventos privados generados alrededor de esos días — corporativos, sociales, de marca — fue considerable. Cuando un evento crece de 5,000 a 50,000 asistentes, la infraestructura sanitaria deja de ser un detalle menor.
+
+## El resultado
+
+Contenido que capta búsquedas reales sobre el Mundial en Guadalajara, mantiene una distinción honesta entre lo que Luvory realmente provee y lo que no, y conecta con la demanda genuina de quien organiza un evento privado en medio de una ciudad en modo Mundial.
+
+¿Tu negocio necesita resolver logística para un evento masivo? [Cuéntanos tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo) para posicionar contenido de eventos reales.
+      `,
+    },
+    en: {
+      title: "Case Study: Positioning Luvory for Events Around the 2026 World Cup in Guadalajara",
+      excerpt: "The World Cup brought matches, a Fan Fest, and hundreds of satellite events to Guadalajara. Here's how we structured Luvory's content to capture that real demand.",
+      category: "Case studies",
+      metaTitle: "Case Study: 2026 World Cup Content for Luvory",
+      metaDescription: "How we positioned Luvory for real satellite-event demand around the 2026 World Cup in Guadalajara: Fan Fest, activations, and hospitality.",
+      faq: [
+        { q: "Did Luvory provide the toilets for the official FIFA Fan Fest?", a: "No — the official Fan Fest infrastructure is covered by FIFA itself. Luvory's work and this content focus on satellite events: brand activations, viewing parties, corporate VIP zones and afterparties around the World Cup." },
+        { q: "Why is it relevant to write about the World Cup if Luvory doesn't cover the official event?", a: "Because whoever searches for World Cup information in Guadalajara — Fan Fest, matches, how to get there — is exactly the same audience organizing or attending the satellite events that do need Luvory's infrastructure." },
+        { q: "How big was the real demand from these satellite events?", a: "With matches drawing over 45,000 people to the stadium and celebrations bringing tens of thousands more to spots like La Minerva, the number of private events around those days was considerable." },
+        { q: "Does this content approach apply to other major events?", a: "Yes — any large-scale event in the city creates the same opportunity: genuinely useful content about the event itself, honestly connected to the real service that solves the logistics around it." },
+      ],
+      content: `
+## The opportunity: an entire city in event mode
+
+When the 2026 World Cup arrived in Guadalajara — matches at Estadio Akron, the official FIFA Fan Fest in the historic downtown, weeks of activity — the whole city went into event mode. That meant a real multiplication of private events around the tournament: brand activations, viewing parties, corporate VIP zones, afterparties.
+
+## An important distinction that stayed honest
+
+Luvory doesn't provide the official FIFA Fan Fest's infrastructure — that's covered by the tournament's own organization. The content and positioning focused specifically on **satellite events**: the real, underserved demand from whoever organizes a private event around the World Cup and needs to solve their own restroom logistics.
+
+## Why content about the World Cup itself still matters
+
+Someone searching "Fan Fest Guadalajara hours" or "how to get to Estadio Akron" isn't directly searching for portable toilets — but it's exactly the same audience that, if they're organizing their own private event around those days, does need to solve that logistics problem. Genuinely useful content about the World Cup in Guadalajara builds the relationship before the direct need exists.
+
+## The real scale of the demand
+
+With matches that filled Estadio Akron with over 45,000 people, and celebrations that drew tens of thousands more to spots like Glorieta Minerva, the number of private events generated around those days — corporate, social, brand — was considerable. When an event grows from 5,000 to 50,000 attendees, restroom infrastructure stops being a minor detail.
+
+## The result
+
+Content that captures real World Cup-related searches in Guadalajara, keeps an honest distinction between what Luvory actually provides and what it doesn't, and connects with genuine demand from whoever is organizing a private event in the middle of a city in World Cup mode.
+
+Does your business need to solve logistics for a large-scale event? [Tell us about your project](/contacto) or check our [SEO service](/servicios/seo) for positioning real event content.
+      `,
+    },
+  },
+  {
+    slug: "caso-luvory-conciertos-mana-mau-ricky",
+    date: "2026-08-25",
+    dateModified: "2026-08-25",
+    es: {
+      title: "Caso de éxito: cómo el contenido de conciertos masivos posiciona a Luvory",
+      excerpt: "170,000 personas en el concierto de Maná en La Minerva. Esto es cómo un momento así se convierte en contenido real que compite por búsquedas — sin exagerar nada.",
+      category: "Casos de éxito",
+      metaTitle: "Caso de éxito: contenido de conciertos para Luvory",
+      metaDescription: "Cómo estructuramos el contenido de Luvory sobre conciertos masivos en Guadalajara (Maná, Mau y Ricky) para posicionar en búsquedas reales del evento.",
+      faq: [
+        { q: "¿Qué conciertos ha cubierto Luvory?", a: "Entre otros, el concierto gratuito de Maná en la Glorieta Minerva (170,000 personas, parte de Vibra Jalisco durante el Mundial 2026) y el concierto de Mau y Ricky como parte de la semana del WTA Guadalajara Open." },
+        { q: "¿Por qué escribir sobre un concierto en vez de solo el servicio de baños?", a: "Porque la gente busca información real sobre el concierto (fecha, contexto, qué esperar) mucho más de lo que busca directamente 'renta de baños' — ese tráfico real es la oportunidad." },
+        { q: "¿Cómo se conecta el contenido del concierto con el servicio de Luvory?", a: "De forma honesta y explícita: eventos de esta escala requieren infraestructura sanitaria seria, y Luvory estuvo presente resolviendo exactamente eso." },
+        { q: "¿Esto exagera la cifra de asistentes u otros datos del evento?", a: "No — los datos (170,000 personas, fechas, contexto) son los reportados públicamente sobre el evento, no cifras infladas para efecto." },
+      ],
+      content: `
+## Un concierto, una ciudad, un número real
+
+170,000 personas en la Glorieta Minerva para el concierto gratuito de Maná — parte de los eventos **Vibra Jalisco** durante el Mundial 2026, celebrando además 40 años de carrera de la banda. Es el tipo de momento que una ciudad recuerda, y también el tipo de evento que requiere infraestructura sanitaria seria para funcionar sin caos.
+
+## La estrategia: el evento primero, el servicio después
+
+El contenido no arranca hablando de baños portátiles — arranca con el contexto real del evento: la banda, la ciudad, el motivo de la celebración, la escala real de la multitud. Solo después de establecer ese contexto genuino se conecta con lo que realmente importa desde la perspectiva del negocio: eventos de esta escala necesitan infraestructura sanitaria a la altura, y ahí es donde entra Luvory.
+
+## Por qué esto funciona mejor que un anuncio directo
+
+Nadie busca "renta de baños para concierto de Maná" en volumen — pero mucha gente sí busca información sobre el concierto en sí. Ese es el tráfico real que este tipo de contenido puede capturar, con la marca presentada de forma honesta como parte de la operación real del evento, no como un anuncio interrumpiendo la búsqueda.
+
+## Más de un evento, un patrón que se repite
+
+El mismo enfoque aplicó al concierto de **Mau y Ricky**, presentado como parte de la semana del WTA Guadalajara Open — otro momento real, con fecha y contexto verificable, documentado con el mismo cuidado.
+
+| Evento | Escala real | Contexto |
+|--------|--------------|----------|
+| Concierto de Maná, Glorieta Minerva | 170,000 personas | Parte de Vibra Jalisco, Mundial 2026, 40 años de carrera de la banda |
+| Concierto de Mau y Ricky | Dentro de la semana del torneo | Parte del WTA Guadalajara Open Akron |
+
+## El resultado
+
+Contenido que compite honestamente por búsquedas reales sobre eventos masivos de Guadalajara, sin inflar cifras ni fabricar conexiones — construido sobre presencia real y datos verificables, con la conexión al negocio presentada como lo que genuinamente es.
+
+¿Tu marca estuvo en un evento masivo que podría convertirse en contenido real? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [SEO](/servicios/seo).
+      `,
+    },
+    en: {
+      title: "Case Study: How Massive Concert Content Positions Luvory",
+      excerpt: "170,000 people at Maná's concert in La Minerva. Here's how a moment like that becomes real content that competes for searches — without exaggerating anything.",
+      category: "Case studies",
+      metaTitle: "Case Study: Concert Content for Luvory",
+      metaDescription: "How we structured Luvory's content about massive Guadalajara concerts (Maná, Mau y Ricky) to rank for real event searches.",
+      faq: [
+        { q: "Which concerts has Luvory covered?", a: "Among others, Maná's free concert at Glorieta Minerva (170,000 people, part of Vibra Jalisco during the 2026 World Cup) and the Mau y Ricky concert as part of WTA Guadalajara Open week." },
+        { q: "Why write about a concert instead of just the toilet service?", a: "Because people search for real information about the concert (date, context, what to expect) far more than they search directly for 'toilet rental' — that real traffic is the opportunity." },
+        { q: "How does the concert content connect to Luvory's service?", a: "Honestly and explicitly: events at this scale require serious restroom infrastructure, and Luvory was present handling exactly that." },
+        { q: "Does this exaggerate the attendance figure or other event data?", a: "No — the figures (170,000 people, dates, context) are what was publicly reported about the event, not inflated numbers for effect." },
+      ],
+      content: `
+## A concert, a city, a real number
+
+170,000 people at Glorieta Minerva for Maná's free concert — part of the **Vibra Jalisco** events during the 2026 World Cup, also celebrating the band's 40-year career. It's the kind of moment a city remembers, and also the kind of event that requires serious restroom infrastructure to run without chaos.
+
+## The strategy: the event first, the service second
+
+The content doesn't open talking about portable toilets — it opens with the event's real context: the band, the city, the reason for the celebration, the real scale of the crowd. Only after establishing that genuine context does it connect to what actually matters from a business perspective: events at this scale need restroom infrastructure that measures up, and that's where Luvory comes in.
+
+## Why this works better than a direct ad
+
+Almost no one searches "toilet rental for Maná concert" in volume — but a lot of people search for information about the concert itself. That's the real traffic this kind of content can capture, with the brand presented honestly as part of the event's real operation, not as an ad interrupting the search.
+
+## More than one event, a pattern that repeats
+
+The same approach applied to the **Mau y Ricky** concert, presented as part of WTA Guadalajara Open week — another real moment, with a verifiable date and context, documented with the same care.
+
+| Event | Real scale | Context |
+|-------|-------------|----------|
+| Maná concert, Glorieta Minerva | 170,000 people | Part of Vibra Jalisco, 2026 World Cup, band's 40-year career |
+| Mau y Ricky concert | Within tournament week | Part of the WTA Guadalajara Open Akron |
+
+## The result
+
+Content that honestly competes for real searches about major Guadalajara events, without inflating figures or fabricating connections — built on real presence and verifiable data, with the business connection presented as exactly what it genuinely is.
+
+Was your brand at a major event that could become real content? [Let's talk about your project](/contacto) or check our [SEO service](/servicios/seo).
+      `,
+    },
+  },
 ];
 
 export const getPost = (slug: string) => blogPosts.find((p) => p.slug === slug);
