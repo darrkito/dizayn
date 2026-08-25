@@ -87,7 +87,7 @@ function callTool(name: string, args: Record<string, unknown>) {
   if (name === "get_blog_posts") {
     const category = typeof args["category"] === "string" ? args["category"].toLowerCase() : undefined;
     const list = blogPosts
-      .filter((p) => !category || p[lang].category.toLowerCase().includes(category))
+      .filter((p) => !category || p.es.category.toLowerCase().includes(category) || p.en.category.toLowerCase().includes(category))
       .map((p) => ({ slug: p.slug, title: p[lang].title, excerpt: p[lang].excerpt, category: p[lang].category, date: p.date }));
     return textResult(JSON.stringify({ posts: list }, null, 2));
   }
