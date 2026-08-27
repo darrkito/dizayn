@@ -71,7 +71,7 @@ An English version of every page above is available at the equivalent /en/* path
 ## Agent access
 
 - Public REST API: https://dizayn.com.mx/api/openapi (OpenAPI 3.1) — includes /api/blog and /api/blog/{slug} for full post/case-study content, not just services
-- MCP server: https://dizayn.com.mx/.well-known/mcp/server-card.json — tools include get_blog_posts and get_blog_post_detail
+- MCP server: https://dizayn.com.mx/.well-known/mcp/server-card.json — tools: get_services, get_service_detail, get_blog_posts, get_blog_post_detail, search_faq, request_contact
 - A2A agent: https://dizayn.com.mx/a2a — ask it directly for case studies or examples
 
 ## Notes

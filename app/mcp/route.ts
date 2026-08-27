@@ -52,6 +52,11 @@ const TOOLS = [
     },
   },
   {
+    name: "search_faq",
+    description: "Search Dizayn's FAQ content: every service's own Q&A plus every blog post's Q&A (pricing, process, deliverables, timelines).",
+    inputSchema: { type: "object", properties: { query: { type: "string", description: "Search keywords" }, lang: { type: "string", enum: ["es", "en"] } }, required: ["query"] },
+  },
+  {
     name: "request_contact",
     description: "Get a link to contact Dizayn via WhatsApp about a specific service or general inquiry.",
     inputSchema: { type: "object", properties: { message: { type: "string", description: "What the user wants to ask about" } } },
@@ -100,6 +105,17 @@ function callTool(name: string, args: Record<string, unknown>) {
     return textResult(
       JSON.stringify({ slug: post.slug, title: copy.title, category: copy.category, content: copy.content, faq: copy.faq, date: post.date }, null, 2),
     );
+  }
+
+  if (name === "search_faq") {
+    const query = String(args["query"] ?? "").toLowerCase().trim();
+    if (!query) return textResult("Missing required argument: query", true);
+    const allFaq = [
+      ...services.flatMap((s) => s[lang].faq.map((f) => ({ ...f, source: s.slug }))),
+      ...blogPosts.flatMap((p) => p[lang].faq.map((f) => ({ ...f, source: p.slug }))),
+    ];
+    const results = allFaq.filter((f) => f.q.toLowerCase().includes(query) || f.a.toLowerCase().includes(query));
+    return textResult(JSON.stringify({ query, results }, null, 2));
   }
 
   if (name === "request_contact") {
