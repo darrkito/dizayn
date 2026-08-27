@@ -74,6 +74,22 @@ function respondToMessage(text: string): string {
       : `Yes, we have real documented case studies, including our work with Luvory Luxury Toilets (website, SEO, GEO, AI agent infrastructure, social media, event coverage): ${list}. Check the get_blog_posts MCP tool or https://dizayn.com.mx/blog for full detail.`;
   }
 
+  // 2026-08-27 — added after the same gap was found and fixed on Luvory's A2A:
+  // this responder had no FAQ search at all, only service-name and case-study
+  // matches above, so any question matching a service/blog post's own FAQ
+  // (real, specific answers) fell straight through to the generic services
+  // list below. Searches every service's and blog post's faq[] for this
+  // language directly — no separate homepage-only FAQ file exists here to
+  // drift from, so this is additive, not a duplicate-source fix like Luvory's.
+  const lang = es ? "es" : "en";
+  const inputWords = new Set(lower.split(/\W+/).filter((w) => w.length > 4));
+  const allFaq = [...services.flatMap((s) => s[lang].faq), ...blogPosts.flatMap((p) => p[lang].faq)];
+  const faqMatch = allFaq.find((f) => {
+    const questionWords = f.q.toLowerCase().split(/\W+/);
+    return questionWords.some((w) => w.length > 4 && inputWords.has(w));
+  });
+  if (faqMatch) return faqMatch.a;
+
   if (es) {
     const list = services.map((s) => s.es.name).join(", ");
     return `Dizayn es una agencia de marketing en Guadalajara, Jalisco, México. Servicios: ${list}. Pregunta por un servicio específico, precios, o cómo contactarnos.`;
