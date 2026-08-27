@@ -34,4 +34,5 @@ npx tsc --noEmit        # type-check only
 
 - Google Search Console + Bing Webmaster both connected — see memory for credential locations
 - `app/sitemap.ts` / `app/robots.ts` — Next.js MetadataRoute conventions, not static files
+- **Keyword cannibalization audit (2026-08-27)**: full title/H1 dedup check across all static pages, 7 services (`content/services.ts`), and all blog posts (`content/blog.ts`, ES+EN) — zero exact-duplicate titles found. Blog posts and service pages are cleanly split by intent (informational/long-tail in blog, commercial head-term in services), which is the correct pattern, not a coincidence to re-verify each time. See `~/seo-ai-search-playbook.md` §5 for the audit method and what a real collision looks like (found and fixed on Luvory the same session).
 
