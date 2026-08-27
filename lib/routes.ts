@@ -17,6 +17,8 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/portafolio": "/portfolio",
   "/nosotros": "/about",
   "/contacto": "/contact",
+  "/privacidad": "/privacy-policy",
+  "/terminos": "/terms-and-conditions",
   "/blog/posicionamiento-marcas-ia-2026": "/blog/rank-brand-ai-search-2026",
   "/blog/cuanto-cuesta-sitio-web-guadalajara": "/blog/website-cost-guadalajara",
   "/blog/seo-local-guadalajara-guia": "/blog/local-seo-guadalajara-guide",

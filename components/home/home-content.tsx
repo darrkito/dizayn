@@ -5,11 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/content/services";
 import { portfolioItems } from "@/content/portfolio";
+import { blogPosts } from "@/content/blog";
 import { cloudinaryUrl } from "@/lib/cloudinary";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath } from "@/lib/routes";
 
 const teaserImages = portfolioItems.filter((i) => i.kind === "image").slice(0, 3);
+
+// Real, documented client work — not written testimonials, since we don't have
+// any client-quote testimonials to show yet (see eeat_multisite_fixes memory).
+const CASE_STUDY_SLUGS = ["caso-luvory-sitio-web", "caso-luvory-seo", "caso-luvory-geo-posicionamiento-ia"];
+const caseStudies = CASE_STUDY_SLUGS.map((slug) => blogPosts.find((p) => p.slug === slug)!).filter(Boolean);
 
 export function HomeContent({ lang }: { lang: Lang }) {
   const { setLang } = useI18n();
@@ -122,6 +128,33 @@ export function HomeContent({ lang }: { lang: Lang }) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="rule">
+        <div className="container-x py-24">
+          <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.casesTitle}</h2>
+          <p className="mt-5 max-w-md text-muted-foreground">{t.home.casesLead}</p>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {caseStudies.map((post) => {
+              const copy = post[lang];
+              return (
+                <Link
+                  key={post.slug}
+                  href={langPath(`/blog/${post.slug}`, lang)}
+                  className="flex flex-col rounded-2xl border border-border p-6 transition-colors hover:border-primary"
+                >
+                  <span className="text-xs uppercase tracking-[0.18em] text-primary">{copy.category}</span>
+                  <h3 className="mt-3 font-display text-lg leading-snug">{copy.title}</h3>
+                  <p className="mt-3 flex-1 text-sm text-muted-foreground">{copy.excerpt}</p>
+                  <span className="mt-4 text-sm font-medium text-primary">{t.home.casesCta} →</span>
+                </Link>
+              );
+            })}
+          </div>
+          <Link href={langPath("/blog", lang)} className="mt-8 inline-block text-sm text-primary hover:underline">
+            {t.home.casesAll} →
+          </Link>
         </div>
       </section>
 

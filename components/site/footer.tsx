@@ -89,6 +89,14 @@ export function Footer() {
           <span>
             © {year} Dizayn. {t.footer.rights}
           </span>
+          <span className="flex gap-4 normal-case tracking-normal">
+            <Link href={langPath("/privacidad", lang)} className="hover:text-foreground">
+              {t.footer.privacy}
+            </Link>
+            <Link href={langPath("/terminos", lang)} className="hover:text-foreground">
+              {t.footer.terms}
+            </Link>
+          </span>
           <span>Guadalajara · {lang === "en" ? "Mexico" : "México"} · Worldwide</span>
         </div>
       </div>

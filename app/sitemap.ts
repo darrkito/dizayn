@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/nosotros", priority: 0.6 },
     { path: "/contacto", priority: 0.7 },
     { path: "/blog", priority: 0.7 },
+    { path: "/privacidad", priority: 0.3 },
+    { path: "/terminos", priority: 0.3 },
   ];
 
   const staticPages: MetadataRoute.Sitemap = staticEsPaths.flatMap(({ path, priority }) => {
