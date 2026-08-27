@@ -43,11 +43,17 @@ export const metadata: Metadata = {
 // about — each page's own JSON-LD (blog posts, service details) and <meta name="description">
 // already carry the real per-language copy. Only structural identity facts (name/address/areaServed)
 // live here, in English, since schema.org values are machine-read identifiers, not display copy.
+// Single @id-anchored entity (ProfessionalService + LocalBusiness merged), matching the
+// Luvory pattern — every "Dizayn" reference sitewide (blog author/publisher, service
+// provider) points at this same @id instead of re-declaring anonymous duplicate
+// Organization nodes, which fragments entity recognition for Google/AI crawlers.
+export const ORG_ID = `${SITE_URL}/#organization`;
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": ORG_ID,
       name: "Dizayn",
       url: SITE_URL,
       telephone: `+${CONTACT.whatsapp}`,
@@ -59,21 +65,6 @@ const jsonLd = {
         addressCountry: "MX",
       },
       email: CONTACT.email,
-      sameAs: [CONTACT.instagram],
-    },
-    {
-      "@type": "LocalBusiness",
-      name: "Dizayn",
-      url: SITE_URL,
-      telephone: `+${CONTACT.whatsapp}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Guadalajara",
-        addressRegion: "Jalisco",
-        addressCountry: "MX",
-      },
-      email: CONTACT.email,
-      areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
       sameAs: [CONTACT.instagram],
     },
   ],

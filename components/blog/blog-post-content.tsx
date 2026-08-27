@@ -42,6 +42,7 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
           <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] leading-[1.02]" itemProp="headline">
             {copy.title}
           </h1>
+          <p className="mt-4 text-sm text-muted-foreground">{t.blog.by}</p>
           {post.dateModified !== post.date && (
             <p className="mt-4 text-xs text-muted-foreground">
               {t.blog.updated}{" "}

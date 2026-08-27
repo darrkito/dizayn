@@ -4,6 +4,8 @@ import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { langPath } from "@/lib/routes";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
@@ -43,7 +45,7 @@ export default async function ServiceDetailPage({
     "@type": "Service",
     name: service.es.name,
     description: service.es.intro,
-    provider: { "@type": "Organization", name: "Dizayn" },
+    provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: "MX",
   };
 

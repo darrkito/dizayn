@@ -57,8 +57,8 @@ export default async function BlogPostPageEn({
     datePublished: post.date,
     dateModified: post.dateModified,
     inLanguage: "en",
-    author: { "@type": "Organization", name: "Dizayn" },
-    publisher: { "@type": "Organization", name: "Dizayn" },
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage` },
   };
 

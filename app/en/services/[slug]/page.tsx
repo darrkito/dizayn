@@ -4,6 +4,8 @@ import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { langPath, stripLangPrefix } from "@/lib/routes";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+
 /** The route param is the translated English slug (e.g. "ai-visibility") — resolve it back
  * to the canonical Spanish slug the content is actually keyed by. */
 const resolveEsSlug = (enSlug: string) => stripLangPrefix(`/en/services/${enSlug}`).split("/").pop()!;
@@ -49,7 +51,7 @@ export default async function ServiceDetailPageEn({
     "@type": "Service",
     name: service.en.name,
     description: service.en.intro,
-    provider: { "@type": "Organization", name: "Dizayn" },
+    provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: "MX",
   };
 
