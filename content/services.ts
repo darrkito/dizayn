@@ -49,6 +49,7 @@ export const services: Service[] = [
         "Empresas que exportan y necesitan sitio bilingüe",
       ],
       faq: [
+        { q: "¿Qué debe incluir un diseño de páginas web en Guadalajara?", a: "Un sitio profesional debe incluir base técnica de SEO (velocidad, estructura, datos estructurados), diseño a medida (no plantilla genérica), contenido real de tu negocio y capacitación para que tu equipo lo actualice sin depender de nosotros. Trabajamos con negocios de Guadalajara y Zapopan, y también proyectos nacionales." },
         { q: "¿Cuánto tarda un sitio?", a: "Un sitio corporativo típico toma de 3 a 6 semanas, dependiendo de contenido y aprobaciones." },
         { q: "¿Puedo editarlo yo?", a: "Sí. Entregamos el sitio con capacitación y documentación para que tu equipo actualice contenido sin depender de nosotros." },
         { q: "¿Cuánto cuesta un sitio web?", a: "Depende del número de páginas, si necesitas tienda en línea y cuánto contenido hay que crear desde cero. Tenemos una guía con rangos reales para Guadalajara en el blog, y damos una cotización exacta después de conocer tu proyecto." },
@@ -86,6 +87,7 @@ export const services: Service[] = [
         "Companies exporting that need a bilingual site",
       ],
       faq: [
+        { q: "What should professional web design in Guadalajara include?", a: "A professional site should include an SEO technical foundation (speed, structure, structured data), custom design (not a generic template), real content about your business, and training so your team can update it without depending on us. We work with businesses in Guadalajara and Zapopan, and national projects too." },
         { q: "How long does a site take?", a: "A typical corporate site takes 3 to 6 weeks depending on content and approvals." },
         { q: "Can I edit it myself?", a: "Yes. We hand over with training and documentation so your team updates content without us." },
         { q: "How much does a website cost?", a: "It depends on page count, whether you need an online store, and how much content has to be written from scratch. We publish real Guadalajara pricing ranges on the blog, and give an exact quote once we know your project." },
@@ -127,6 +129,7 @@ export const services: Service[] = [
         "Empresas locales que compiten por su ciudad",
       ],
       faq: [
+        { q: "¿Qué hace una agencia SEO en Guadalajara?", a: "Una agencia SEO en Guadalajara optimiza tu sitio para que aparezca cuando gente de la ciudad busca tu servicio en Google: auditoría técnica, contenido enfocado en intención de compra, SEO local (Google Business Profile, directorios) y construcción de autoridad. En Dizayn trabajamos las tres áreas juntas, no solo una." },
         { q: "¿En cuánto tiempo veo resultados?", a: "Las mejoras técnicas y locales suelen notarse en 4 a 8 semanas; el crecimiento sostenido toma de 3 a 6 meses." },
         { q: "¿Garantizan el primer lugar?", a: "Nadie puede garantizarlo honestamente. Garantizamos trabajo medible y reportes claros de lo que sí se mueve." },
         { q: "¿Qué incluye una auditoría SEO?", a: "Revisamos indexación real en Google, velocidad de carga, estructura del sitio, contenido existente contra lo que tu competencia está posicionando, y el estado de tus perfiles locales (Google Business, directorios). Sales con una lista priorizada, no un PDF genérico de 100 puntos." },
@@ -164,6 +167,7 @@ export const services: Service[] = [
         "Local companies competing for their city",
       ],
       faq: [
+        { q: "What does an SEO agency in Guadalajara do?", a: "An SEO agency in Guadalajara optimizes your site so it shows up when local people search for your service on Google: technical audit, buying-intent content, local SEO (Google Business Profile, directories), and authority building. At Dizayn we work all three together, not just one." },
         { q: "How fast will I see results?", a: "Technical and local wins usually show in 4 to 8 weeks; compounding growth takes 3 to 6 months." },
         { q: "Do you guarantee position one?", a: "Nobody honestly can. We guarantee measurable work and clear reporting on what actually moves." },
         { q: "What's included in an SEO audit?", a: "We check real Google indexing, load speed, site structure, existing content against what your competitors are ranking for, and your local profiles (Google Business, directories). You get a prioritized list, not a generic 100-point PDF." },
@@ -281,6 +285,7 @@ export const services: Service[] = [
         "Negocios que quieren dejar de improvisar contenido",
       ],
       faq: [
+        { q: "¿Qué incluye la administración de redes sociales en Guadalajara?", a: "Estrategia y calendario editorial, producción mensual de foto y video, publicación, community management (respuestas y calificación de leads) y campañas pagadas en Meta/TikTok si tu marca lo necesita. En Dizayn lo entregamos completo, no solo la publicación." },
         { q: "¿Incluye la producción de contenido?", a: "Sí. Fotografía y video están incluidos en los planes mensuales; no dependes de material de banco." },
         { q: "¿Manejan pauta?", a: "Sí, gestionamos campañas en Meta y TikTok con presupuesto aparte del fee." },
         { q: "¿Cuántas publicaciones incluye el plan?", a: "Varía según el plan y la plataforma — lo que importa más que la cantidad es la constancia y que cada pieza tenga un propósito. Tenemos una guía completa sobre cuánto publicar según tu tipo de negocio en el blog." },
@@ -317,6 +322,7 @@ export const services: Service[] = [
         "Businesses tired of improvising content",
       ],
       faq: [
+        { q: "What does social media management in Guadalajara include?", a: "Strategy and editorial calendar, monthly photo and video production, publishing, community management (replies and lead qualification), and paid Meta/TikTok campaigns if your brand needs them. At Dizayn we deliver the full scope, not just publishing." },
         { q: "Is content production included?", a: "Yes. Photo and video are part of the monthly plans, so you never rely on stock." },
         { q: "Do you run ads?", a: "Yes, we manage Meta and TikTok campaigns with ad spend billed separately." },
         { q: "How many posts does the plan include?", a: "It varies by plan and platform — what matters more than volume is consistency and every piece having a purpose. We cover how much to post for your type of business in a full guide on the blog." },
