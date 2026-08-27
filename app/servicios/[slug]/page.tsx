@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: metaTitle,
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}` },
+    openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}`, images: ["/og-image.jpg"] },
     alternates: {
       canonical: `/servicios/${slug}`,
       languages: { es: `/servicios/${slug}`, en: langPath(`/servicios/${slug}`, "en") },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title,
   description,
   robots: { index: true, follow: true },
-  openGraph: { title, description, type: "website", url: "/en/terms-and-conditions" },
+  openGraph: { title, description, type: "website", url: "/en/terms-and-conditions", images: ["/og-image.jpg"] },
   alternates: { canonical: "/en/terms-and-conditions", languages: { es: "/terminos", en: "/en/terms-and-conditions" } },
 };
 

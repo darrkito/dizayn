@@ -28,7 +28,7 @@ export async function generateMetadata({
   return {
     title: metaTitle,
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "article", url: enPath },
+    openGraph: { title: metaTitle, description: metaDescription, type: "article", url: enPath, images: ["/og-image.jpg"] },
     alternates: {
       canonical: enPath,
       languages: { es: `/blog/${post.slug}`, en: enPath },

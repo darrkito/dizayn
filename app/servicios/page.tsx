@@ -9,7 +9,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: { title: ogTitle, description, type: "website", url: "/servicios" },
+  openGraph: { title: ogTitle, description, type: "website", url: "/servicios", images: ["/og-image.jpg"] },
   alternates: { canonical: "/servicios", languages: { es: "/servicios", en: "/en/services" } },
 };
 
