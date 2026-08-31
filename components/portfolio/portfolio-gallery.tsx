@@ -55,7 +55,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
       </div>
 
       <div className="mt-10 columns-1 gap-3 sm:columns-2 lg:columns-3">
-        {visible.map((item) => (
+        {visible.map((item, index) => (
           <button
             key={item.id}
             type="button"
@@ -68,6 +68,11 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
                 alt={localizedLabel(item)}
                 width={800}
                 height={1000}
+                // PSI audit (2026-08-31): this grid's first image is the page's
+                // LCP element -- was loading="lazy" (next/image's default),
+                // delaying discovery and pushing mobile LCP to ~5.2s. `priority`
+                // makes next/image render it eager with fetchpriority="high".
+                priority={index === 0}
                 className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
             ) : (
