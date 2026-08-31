@@ -56,7 +56,11 @@
   --card-foreground: oklch(0.22 0.04 258);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.04 258);
-  --primary: oklch(0.58 0.19 256);
+  /* L nudged 0.58->0.56 (2026-08-31, PSI audit): #1177e7 measured 4.36:1 on
+     white, just under WCAG AA's 4.5:1 for the small text/icons that use this
+     token sitewide (nav lang toggle, footer headings, "leer más" links).
+     #0371e0 measures 4.73:1 -- same hue/chroma, imperceptibly darker. */
+  --primary: oklch(0.56 0.19 256);
   --primary-foreground: oklch(0.99 0.005 250);
   --secondary: oklch(0.96 0.02 250);
   --secondary-foreground: oklch(0.3 0.05 258);
