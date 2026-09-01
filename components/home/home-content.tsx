@@ -89,11 +89,11 @@ export function HomeContent({ lang }: { lang: Lang }) {
             <li key={s.slug}>
               <Link
                 href={langPath(`/servicios/${s.slug}`, lang)}
-                className="group flex flex-col gap-2 rounded-2xl border-b border-border px-3 py-7 transition-colors hover:bg-muted md:flex-row md:items-baseline md:gap-10 md:px-2"
+                className="group flex flex-col gap-2 rounded-2xl border-b border-border px-3 py-7 transition-colors hover:bg-muted md:flex-row md:items-start md:gap-10 md:px-2"
               >
-                <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
-                <span className="font-display text-2xl md:w-96 md:text-3xl">{s[lang].name}</span>
-                <span className="text-sm text-muted-foreground md:flex-1">{s[lang].tagline}</span>
+                <span className="text-xs tracking-[0.2em] text-primary md:pt-2">{s.number}</span>
+                <span className="font-display text-2xl leading-snug md:w-96 md:text-3xl">{s[lang].metaTitle}</span>
+                <span className="text-sm text-muted-foreground md:flex-1 md:pt-2">{s[lang].tagline}</span>
                 <span className="text-primary opacity-0 transition-opacity group-hover:opacity-100">→</span>
               </Link>
             </li>

@@ -51,7 +51,10 @@ export function ContactForm({ lang }: { lang: Lang }) {
 
   return (
     <div className="container-x py-24">
-      <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.contact.title}</h1>
+      <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+        {t.contact.eyebrow}
+      </p>
+      <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.contact.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.contact.lead}</p>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.2fr_1fr]">

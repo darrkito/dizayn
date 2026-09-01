@@ -71,6 +71,7 @@ const dict = {
       cta: "Cotizar este servicio",
     },
     portfolio: {
+      eyebrow: "Foto, video y diseño · Guadalajara, Jalisco",
       title: "Portafolio",
       lead:
         "Fotografía, video y diseño producidos por nuestro equipo en Guadalajara. Filtra por categoría para ver los proyectos.",
@@ -107,6 +108,7 @@ const dict = {
       cta: "Trabajemos juntos",
     },
     contact: {
+      eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
       title: "Hablemos",
       lead:
         "Cuéntanos de tu proyecto. Respondemos el mismo día hábil con próximos pasos y rango de inversión.",
@@ -206,6 +208,7 @@ const dict = {
       cta: "Get a quote for this",
     },
     portfolio: {
+      eyebrow: "Photo, video & design · Guadalajara, Mexico",
       title: "Portfolio",
       lead:
         "Photography, video and design produced by our team in Guadalajara. Filter by category to browse.",
@@ -242,6 +245,7 @@ const dict = {
       cta: "Let's work together",
     },
     contact: {
+      eyebrow: "Marketing agency · Guadalajara, Mexico",
       title: "Let's talk",
       lead: "Tell us about your project. We reply the same business day with next steps and a budget range.",
       whatsapp: "Message us on WhatsApp",
