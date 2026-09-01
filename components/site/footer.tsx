@@ -33,7 +33,7 @@ export function Footer() {
                   href={langPath(`/servicios/${s.slug}`, lang)}
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  {s[lang].name}
+                  {s[lang].metaTitle}
                 </Link>
               </li>
             ))}

@@ -87,6 +87,7 @@ const dict = {
       igCta: "Seguir @dizayn_mx",
     },
     about: {
+      eyebrow: "Agencia creativa · Guadalajara, Jalisco",
       title: "Somos Dizayn",
       lead:
         "Un equipo creativo con base en Guadalajara, Jalisco. Empezamos produciendo imagen para marcas y terminamos construyendo todo el sistema que las hace crecer: sitio, posicionamiento, contenido y ventas.",
@@ -221,6 +222,7 @@ const dict = {
       igCta: "Follow @dizayn_mx",
     },
     about: {
+      eyebrow: "Creative agency · Guadalajara, Mexico",
       title: "We are Dizayn",
       lead:
         "A creative team based in Guadalajara, Jalisco. We started producing imagery for brands and ended up building the whole system that grows them: site, visibility, content and sales.",

@@ -28,7 +28,7 @@ export function ServicesContent({ lang }: { lang: Lang }) {
           >
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
             <div className="mt-16">
-              <h2 className="font-display text-2xl">{s[lang].name}</h2>
+              <h2 className="font-display text-2xl">{s[lang].metaTitle}</h2>
               <p className="mt-3 text-sm text-muted-foreground">{s[lang].tagline}</p>
               <span className="mt-6 inline-block text-xs uppercase tracking-[0.18em] text-primary">
                 {t.services.cta} →
