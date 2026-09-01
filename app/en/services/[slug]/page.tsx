@@ -49,7 +49,7 @@ export default async function ServiceDetailPageEn({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.en.name,
+    name: service.en.metaTitle,
     description: service.en.intro,
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: "MX",

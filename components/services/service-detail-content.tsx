@@ -24,7 +24,7 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
           ← {t.services.back}
         </Link>
         <p className="mt-10 text-xs tracking-[0.2em] text-primary">{service.number}</p>
-        <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.name}</h1>
+        <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.metaTitle}</h1>
         <p className="mt-6 max-w-2xl font-display text-xl text-primary">{copy.tagline}</p>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{copy.intro}</p>
         <Link href={langPath("/contacto", lang)} className="mt-10 btn-primary">
