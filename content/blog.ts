@@ -511,6 +511,10 @@ Want us to review how your business ranks in local search today? [Let's talk abo
           q: "¿Cuánto tiempo toma producir un video?",
           a: "Un reel puede estar listo en 1-2 semanas. Un video institucional o comercial toma de 3 a 5 semanas entre preproducción, rodaje y edición, dependiendo de cuántas revisiones se necesiten.",
         },
+        {
+          q: "¿Cómo defino el presupuesto para la producción de videos de mi marca?",
+          a: "Empieza por el tipo de pieza (reel, institucional o comercial) y cuántas necesitas al mes — eso ya te ubica en uno de los rangos de la tabla. Si tu presupuesto es fijo, dinos el número y ajustamos alcance (locaciones, casting, duración) para que la producción de video quepa ahí sin sacrificar calidad de edición.",
+        },
       ],
       content: `
 ## ¿Cuánto cuesta un video corporativo en Guadalajara?
@@ -580,6 +584,10 @@ Si no sabes qué tipo de video necesita tu marca (corporativo, de producto, para
         {
           q: "How long does it take to produce a video?",
           a: "A reel can be ready in 1-2 weeks. A corporate film or commercial takes 3 to 5 weeks across pre-production, shooting and editing, depending on how many rounds of revision are needed.",
+        },
+        {
+          q: "How do I set a budget for my brand's video production?",
+          a: "Start with the type of piece (reel, corporate film, or commercial) and how many you need per month — that already places you in one of the ranges in the table above. If your budget is fixed, tell us the number and we'll adjust scope (locations, casting, length) so the video production fits it without cutting corners on the edit.",
         },
       ],
       content: `
@@ -656,6 +664,10 @@ Want an exact quote for your video project? [Tell us what you need](/contacto) o
           q: "¿Puedo usar las fotos en redes sociales y en mi sitio web?",
           a: "Sí, el precio incluye licencia de uso comercial para los canales digitales del negocio (sitio, redes, pauta). Uso en medios impresos de gran formato o campañas externas puede requerir una licencia ampliada.",
         },
+        {
+          q: "¿Cómo cotizo fotografía de producto con un fotógrafo comercial en Guadalajara?",
+          a: "Compárte el tipo de producto, cuántas piezas necesitas y dónde vas a usar las fotos (catálogo, e-commerce, redes) y te regresamos una cotización con el rango de precio, número de fotos entregadas y tiempos de entrega — sin necesidad de agendar una sesión de estudio para saberlo.",
+        },
       ],
       content: `
 ## ¿Cuánto cuesta una sesión de fotografía de producto en Guadalajara?
@@ -722,6 +734,10 @@ Si tu producto se vende en línea, revisa qué necesita específicamente [la fot
         {
           q: "Can I use the photos on social media and my website?",
           a: "Yes, the price includes a commercial license for the business's digital channels (site, social, ads). Large-format print use or external campaigns may require an extended license.",
+        },
+        {
+          q: "How do I get a quote from a commercial photographer in Guadalajara?",
+          a: "Share the type of product, how many pieces you need, and where the photos will be used (catalog, e-commerce, social) and we'll send back a quote with the price range, number of delivered photos, and turnaround — no need to book a studio session just to find out.",
         },
       ],
       content: `
@@ -1556,6 +1572,10 @@ Does your restaurant need this full strategy? [Let's talk about your project](/c
           a: "Muy importante — la mayoría de los pacientes nuevos buscan por especialidad y zona ('dentista en Providencia', 'dermatólogo en Zapopan'), no por el nombre de la clínica. Un Google Business Profile completo y contenido que nombre tu zona específica son el mecanismo principal para aparecer en esas búsquedas.",
         },
         {
+          q: "¿Qué incluye el marketing médico en Guadalajara?",
+          a: "El marketing médico combina los mismos cuatro pilares de este artículo — reseñas verificables, contenido educativo, SEO local por especialidad y zona, y un sitio web claro — aplicados con el cuidado regulatorio que exige el sector salud. No es publicidad genérica adaptada a una clínica: la estrategia parte de cómo buscan y deciden los pacientes específicamente.",
+        },
+        {
           q: "¿Las redes sociales generan pacientes reales para una clínica?",
           a: "Indirectamente sí, funcionan mejor como generador de confianza que como generador directo de citas. La mayoría de los pacientes revisan las redes de un consultorio después de encontrarlo por búsqueda o recomendación, para confirmar que se ve profesional y activo, antes de agendar.",
         },
@@ -1613,6 +1633,10 @@ Funcionan mejor como generador de confianza que como generador directo de citas.
         {
           q: "How important is local SEO for a practice?",
           a: "Very important — most new patients search by specialty and area ('dentist in Providencia,' 'dermatologist in Zapopan'), not by the clinic's name. A complete Google Business Profile and content naming your specific service area are the main mechanism for showing up in those searches.",
+        },
+        {
+          q: "What does medical marketing in Guadalajara actually include?",
+          a: "Medical marketing combines the same four pillars from this article — verifiable reviews, educational content, local SEO by specialty and area, and a clear website — applied with the regulatory care the healthcare sector requires. It isn't generic advertising adapted for a clinic: the strategy starts from how patients specifically search and decide.",
         },
         {
           q: "Does social media generate real patients for a clinic?",
