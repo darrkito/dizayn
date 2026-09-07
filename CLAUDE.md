@@ -16,6 +16,12 @@ npm run build
 npx tsc --noEmit        # type-check only
 ```
 
+## Deploy pipeline — real gotcha (2026-09-07)
+
+Vercel auto-deploys on push to `main` **only when the commit author email is verified on the `darrkito` GitHub account.** The local repo's `git config user.email` had been set to `darrkito@gmail.com` — not a verified email on that account — so every push silently created zero Vercel deployments (confirmed via GitHub's Deployments API: commits stacked up with no deployment record, no error visible anywhere in git or the push output). Fixed by setting this repo's local `user.email` to `darrkito@users.noreply.github.com` (GitHub's own noreply address for the account — same pattern already correctly used in `luvory-genius-generator` and `Yume`, only `dizayn-web` had drifted). **If a push ever seems to have zero effect on the live site again, check `https://api.github.com/repos/darrkito/dizayn/deployments` first** — a missing entry for the latest SHA means the git integration didn't fire, not a slow build.
+
+**Manual deploy fallback**: a Vercel deploy hook exists for emergencies where the git integration is broken and dashboard/CLI access isn't available (this project's Vercel team isn't reachable from this machine's `vercel` CLI login — different account than `between_chain`). URL saved at `/home/darrkito/dizayn-505307-vercel-deploy-hook.txt` (not committed — treat like any other credential). `curl -X POST <url>` triggers a production build of whatever is on `main`.
+
 ## Env vars (`.env.local`, gitignored)
 
 - `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` — same Supabase project as the old site (table: `contact_submissions`)
