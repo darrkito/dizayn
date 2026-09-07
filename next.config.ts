@@ -23,11 +23,13 @@ const nextConfig: NextConfig = {
     // The /en/* routes briefly shipped with untranslated Spanish section names/slugs
     // (e.g. /en/servicios/seo) before this fix — already pinged to Bing/Yandex via
     // IndexNow and resubmitted to GSC in that window, so redirect rather than 404.
-    return Object.entries(EN_SLUG_MAP).map(([esPath, enPath]) => ({
-      source: `/en${esPath}`,
-      destination: `/en${enPath}`,
-      permanent: true,
-    }));
+    return Object.entries(EN_SLUG_MAP)
+      .filter(([esPath, enPath]) => esPath !== enPath)
+      .map(([esPath, enPath]) => ({
+        source: `/en${esPath}`,
+        destination: `/en${enPath}`,
+        permanent: true,
+      }));
   },
 };
 
