@@ -20,7 +20,10 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
   return (
     <div>
       <section className="container-x py-20">
-        <Link href={langPath("/servicios", lang)} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
+        <Link
+          href={langPath("/servicios", lang)}
+          className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
           ← {t.services.back}
         </Link>
         <p className="mt-10 text-xs tracking-[0.2em] text-primary">{service.number}</p>

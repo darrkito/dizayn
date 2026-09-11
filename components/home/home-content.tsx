@@ -79,7 +79,10 @@ export function HomeContent({ lang }: { lang: Lang }) {
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.servicesTitle}</h2>
             <p className="mt-4 max-w-md text-muted-foreground">{t.home.servicesLead}</p>
           </div>
-          <Link href={langPath("/servicios", lang)} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
+          <Link
+            href={langPath("/servicios", lang)}
+            className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
             {t.home.servicesAll} →
           </Link>
         </div>

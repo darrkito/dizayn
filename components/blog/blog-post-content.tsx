@@ -25,7 +25,10 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
 
   return (
     <div className="container-x py-24">
-      <Link href={blogHref} className="text-xs uppercase tracking-[0.18em] text-primary hover:underline">
+      <Link
+        href={blogHref}
+        className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
         ← {t.blog.back}
       </Link>
 

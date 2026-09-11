@@ -20,16 +20,22 @@ export function ServicesContent({ lang }: { lang: Lang }) {
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.services.lead}</p>
 
       <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
+        {services.map((s, i) => (
           <Link
             key={s.slug}
             href={langPath(`/servicios/${s.slug}`, lang)}
-            className="group flex flex-col justify-between bg-background p-8 transition-colors hover:bg-card"
+            className={`group flex flex-col justify-between bg-background p-8 transition-colors hover:bg-card ${
+              i === 0 ? "sm:col-span-2 sm:p-12 lg:col-span-2" : ""
+            }`}
           >
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
             <div className="mt-16">
-              <h2 className="font-display text-2xl">{s[lang].metaTitle}</h2>
-              <p className="mt-3 text-sm text-muted-foreground">{s[lang].tagline}</p>
+              <h2 className={i === 0 ? "font-display text-3xl lg:text-4xl" : "font-display text-2xl"}>
+                {s[lang].metaTitle}
+              </h2>
+              <p className={i === 0 ? "mt-3 max-w-md text-base text-muted-foreground" : "mt-3 text-sm text-muted-foreground"}>
+                {s[lang].tagline}
+              </p>
               <span className="mt-6 inline-block text-xs uppercase tracking-[0.18em] text-primary">
                 {t.services.cta} →
               </span>
