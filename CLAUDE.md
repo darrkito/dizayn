@@ -22,6 +22,23 @@ Vercel auto-deploys on push to `main` **only when the commit author email is ver
 
 **Manual deploy fallback**: a Vercel deploy hook exists for emergencies where the git integration is broken and dashboard/CLI access isn't available (this project's Vercel team isn't reachable from this machine's `vercel` CLI login — different account than `between_chain`). URL saved at `/home/darrkito/dizayn-505307-vercel-deploy-hook.txt` (not committed — treat like any other credential). `curl -X POST <url>` triggers a production build of whatever is on `main`.
 
+## Frontend Design Guidelines
+
+Claude tends to converge toward generic, "on-distribution" frontend output — the "AI slop" aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.
+
+- **Typography**: Choose distinctive fonts that elevate aesthetics. Avoid generic fonts like Arial, Roboto, and Inter. Use font pairings that create a strong visual hierarchy.
+- **Color & Theme**: Commit to a cohesive aesthetic using CSS variables. Dominant colors with sharp accents outperform timid, evenly distributed palettes. Never use generic purple gradients on white backgrounds.
+- **Layout**: Embrace bento grids, progressive disclosure, and asymmetric balance where appropriate. Ensure generous, consistent padding and margins (use a 4px/8px baseline grid).
+- **Motion**: Use animations for effects and micro-interactions. Focus on high-impact moments: a well-orchestrated page load with staggered reveals (`animation-delay`) creates more delight than scattered hover effects.
+- **Backgrounds**: Create atmosphere and depth. Layer CSS gradients, use subtle geometric patterns, or add mesh gradients rather than defaulting to solid colors.
+
+**Applied 2026-09-11** — this site had no font pairing at all (Plus Jakarta Sans doing both display and body duty) and a primary-button/hero-panel gradient that read as generic AI-blue rather than deliberate:
+- Added **Bricolage Grotesque** as the display face (`--font-display`, all `h1`–`h4` via the existing `--font-heading` token) — Plus Jakarta Sans stays for body. Real hierarchy contrast now exists between headline and body copy where there was none.
+- `.btn-primary` (the sitewide default CTA) no longer fills with `linear-gradient(120deg, var(--color-primary), var(--color-accent))` — a two-stop blue-on-blue gradient close in hue, the single most common AI-slop button tell. Now a solid `var(--color-primary)` fill with a relative-color-syntax darken on hover (`oklch(from var(--color-primary) calc(l - 0.08) c h)`).
+- **Deliberately not touched this pass**: `.sky-panel` (`app/globals.css`) — the soft blue-to-white gradient background used across home/header/about/services/blog/contact/portfolio. It's the same generic shape the guidance above warns against, but redesigning it needs its own visual QA pass across every one of those surfaces, not a quick swap — flagged as a real follow-up, not silently fixed alongside the button.
+
+Avoid generic fonts like Arial, Roboto, and Inter still applies going forward — Bricolage Grotesque + Plus Jakarta Sans is the resolved pairing, don't reintroduce a single-font setup.
+
 ## Env vars (`.env.local`, gitignored)
 
 - `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` — same Supabase project as the old site (table: `contact_submissions`)
