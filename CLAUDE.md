@@ -39,6 +39,14 @@ Claude tends to converge toward generic, "on-distribution" frontend output — t
 
 Avoid generic fonts like Arial, Roboto, and Inter still applies going forward — Bricolage Grotesque + Plus Jakarta Sans is the resolved pairing, don't reintroduce a single-font setup.
 
+### taste-skill audit (2026-09-11)
+
+Ran the fuller `taste-skill` checklist (Redesign - Preserve mode) against this site, same pass done on Yume/Luvory the same session:
+
+- **Em-dash ban (Section 9.G) applies to new copy only.** 421 em-dashes exist in already-published `content/blog.ts` (27 posts) + 12 in `content/services.ts` — correctly punctuated existing content, not an AI-writing tic to purge retroactively (taste-skill's own Section 11.C: preserve copy voice unless a rewrite is separately requested). **Going forward: no em-dashes in any new copy** (new blog posts, service copy, UI strings).
+- **Flagged, not fixed**: light-mode `--background` is pure white (`oklch(1 0 0)`). taste-skill's "no pure white/pure black, use off-white/off-black to keep depth" principle (Section 8.B) technically applies, but changing a foundational background token is a bigger brand-color decision than this pass's scope (font + button gradient) — noted for whenever backgrounds/tokens get their own look, not acted on unilaterally.
+- Not a premium-consumer brief (marketing agency, not artisan/luxury goods) — the Section 4.2 warm-craft palette ban doesn't apply here; not relevant to check.
+
 ## Env vars (`.env.local`, gitignored)
 
 - `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` — same Supabase project as the old site (table: `contact_submissions`)
