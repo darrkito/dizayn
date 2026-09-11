@@ -60,7 +60,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => handleLang("es")}
-              className={lang === "es" ? "text-primary" : "text-muted-foreground hover:text-foreground"}
+              className={`flex min-h-11 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${lang === "es" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
               aria-label="Español"
             >
               ES
@@ -69,7 +69,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => handleLang("en")}
-              className={lang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"}
+              className={`flex min-h-11 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${lang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
               aria-label="English"
             >
               EN
@@ -86,7 +86,7 @@ export function Header() {
 
           <button
             type="button"
-            className="md:hidden"
+            className="flex size-11 flex-col items-center justify-center md:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             aria-label="Menu"
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}

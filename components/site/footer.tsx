@@ -44,22 +44,22 @@ export function Footer() {
           <h2 className="text-xs uppercase tracking-[0.2em] text-primary">{t.footer.company}</h2>
           <ul className="mt-4 space-y-2">
             <li>
-              <Link href={langPath("/nosotros", lang)} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/nosotros", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 {t.nav.about}
               </Link>
             </li>
             <li>
-              <Link href={langPath("/portafolio", lang)} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/portafolio", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 {t.nav.portfolio}
               </Link>
             </li>
             <li>
-              <Link href={langPath("/blog", lang)} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/blog", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 {t.nav.blog}
               </Link>
             </li>
             <li>
-              <Link href={langPath("/contacto", lang)} className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href={langPath("/contacto", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 {t.nav.contact}
               </Link>
             </li>
@@ -70,12 +70,12 @@ export function Footer() {
           <h2 className="text-xs uppercase tracking-[0.2em] text-primary">{t.footer.contact}</h2>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${CONTACT.email}`} className="hover:text-foreground">
+              <a href={`mailto:${CONTACT.email}`} className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 {CONTACT.email}
               </a>
             </li>
             <li>
-              <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="hover:text-foreground">
+              <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 @dizayn_mx
               </a>
             </li>
@@ -90,10 +90,10 @@ export function Footer() {
             © {year} Dizayn. {t.footer.rights}
           </span>
           <span className="flex gap-4 normal-case tracking-normal">
-            <Link href={langPath("/privacidad", lang)} className="hover:text-foreground">
+            <Link href={langPath("/privacidad", lang)} className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               {t.footer.privacy}
             </Link>
-            <Link href={langPath("/terminos", lang)} className="hover:text-foreground">
+            <Link href={langPath("/terminos", lang)} className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               {t.footer.terms}
             </Link>
           </span>

@@ -43,7 +43,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
             type="button"
             onClick={() => setFilter(f.key)}
             className={cn(
-              "rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors",
+              "flex min-h-11 items-center rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
               filter === f.key
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border text-muted-foreground hover:border-primary hover:text-primary",
@@ -60,7 +60,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
             key={item.id}
             type="button"
             onClick={() => setActive(item)}
-            className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border text-left"
+            className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {item.kind === "image" && item.cloudinaryPublicId ? (
               <Image
