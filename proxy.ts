@@ -16,7 +16,7 @@ export function proxy(request: NextRequest) {
 
   if (pathname === "/" && accept.includes("text/markdown")) {
     return new Response(LLMS_TXT, {
-      headers: { "content-type": "text/markdown; charset=utf-8" },
+      headers: { "content-type": "text/markdown; charset=utf-8", vary: "Accept" },
     });
   }
 

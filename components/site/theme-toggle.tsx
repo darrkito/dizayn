@@ -8,6 +8,9 @@ export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // Standard next-themes hydration-safe mount flag — a single one-time flip,
+  // not the cascading-render pattern this rule is meant to catch.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return <span className="h-11 w-11" aria-hidden />;

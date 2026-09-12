@@ -298,7 +298,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("es");
 
   useEffect(() => {
+    // One-time read from an external system (localStorage) on mount — the
+    // documented correct use of an effect, not the cascading-render pattern
+    // this rule is meant to catch.
     const stored = window.localStorage.getItem(STORAGE_KEY);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (stored === "en" || stored === "es") setLangState(stored);
   }, []);
 
