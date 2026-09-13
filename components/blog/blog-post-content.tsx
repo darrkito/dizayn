@@ -4,24 +4,38 @@ import { useEffect } from "react";
 import Link from "next/link";
 import type { Lang } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
+import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { getDict, useI18n } from "@/lib/i18n";
 import { renderBlogContent } from "@/lib/blog-render";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 import { BlogCard, formatDate } from "./blog-card";
 
-export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
+export function BlogPostContent({
+  slug,
+  lang,
+  market = "mx",
+}: {
+  slug: string;
+  lang: Lang;
+  market?: Market;
+}) {
   const { setLang } = useI18n();
   const t = getDict(lang);
-  const post = getPost(slug)!;
+  const isUs = market === "us";
+  const posts = isUs ? usBlogPosts : blogPosts;
+  const post = (isUs ? getUsPost(slug) : getPost(slug))!;
   const copy = post[lang];
-  const blogHref = langPath("/blog", lang);
-  const contactHref = langPath("/contacto", lang);
+  const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
+  const blogHref = path("/blog");
+  const contactHref = path("/contacto");
 
   useEffect(() => {
     setLang(lang);
   }, [lang, setLang]);
 
-  const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  // Scoped to the same market's posts — a wedge post's "related" list only ever shows
+  // other wedge posts, never MX blog content and vice versa.
+  const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <div className="container-x py-24">
@@ -88,7 +102,7 @@ export function BlogPostContent({ slug, lang }: { slug: string; lang: Lang }) {
           <h2 className="font-display text-2xl">{t.blog.relatedTitle}</h2>
           <div className="mt-8 grid gap-px bg-border sm:grid-cols-2">
             {related.map((p) => (
-              <BlogCard key={p.slug} post={p} lang={lang} readMore={t.blog.readMore} />
+              <BlogCard key={p.slug} post={p} lang={lang} readMore={t.blog.readMore} market={market} />
             ))}
           </div>
         </section>

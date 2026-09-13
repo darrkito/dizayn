@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Lang } from "@/content/services";
 import type { BlogPost } from "@/content/blog";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 
 const formatDate = (date: string, lang: Lang) =>
   new Date(`${date}T00:00:00`).toLocaleDateString(lang === "es" ? "es-MX" : "en-US", {
@@ -10,9 +10,19 @@ const formatDate = (date: string, lang: Lang) =>
     day: "numeric",
   });
 
-export function BlogCard({ post, lang, readMore }: { post: BlogPost; lang: Lang; readMore: string }) {
+export function BlogCard({
+  post,
+  lang,
+  readMore,
+  market = "mx",
+}: {
+  post: BlogPost;
+  lang: Lang;
+  readMore: string;
+  market?: Market;
+}) {
   const copy = post[lang];
-  const href = langPath(`/blog/${post.slug}`, lang);
+  const href = market === "us" ? usPath(`/blog/${post.slug}`, lang) : langPath(`/blog/${post.slug}`, lang);
 
   return (
     <Link

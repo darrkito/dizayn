@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { altPath, langFromPath, langPath } from "@/lib/routes";
+import { altPath, langFromPath, langPath, marketFromPath, marketHomePath, usPath } from "@/lib/routes";
 import { ThemeToggle } from "./theme-toggle";
 
 const linkClass = "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
@@ -20,7 +20,10 @@ export function Header() {
   // first render must match the server-rendered HTML (no post-hydration flash) so crawlers
   // that don't execute JS still see the correct per-language nav links.
   const lang: Lang = langFromPath(pathname);
+  const market = marketFromPath(pathname);
+  const isUs = market === "us";
   const t = getDict(lang);
+  const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
 
   const handleLang = (l: Lang) => {
     const alt = altPath(pathname, l);
@@ -28,18 +31,30 @@ export function Header() {
     if (alt !== pathname) router.push(alt);
   };
 
-  const items = [
-    { href: langPath("/servicios", lang), label: t.nav.services },
-    { href: langPath("/portafolio", lang), label: t.nav.portfolio },
-    { href: langPath("/blog", lang), label: t.nav.blog },
-    { href: langPath("/nosotros", lang), label: t.nav.about },
-    { href: langPath("/contacto", lang), label: t.nav.contact },
-  ] as const;
+  // Market switcher always jumps to that market's home — not every MX page has a US
+  // sibling yet (portfolio, blog, legal pages), so it can't preserve the current page.
+  const otherMarketHref = marketHomePath(isUs ? "mx" : "us", lang);
+
+  const items = isUs
+    ? [
+        { href: path("/servicios"), label: t.nav.services },
+        { href: path("/precios"), label: t.usPricing.title },
+        { href: path("/blog"), label: t.nav.blog },
+        { href: path("/nosotros"), label: t.nav.about },
+        { href: path("/contacto"), label: t.nav.contact },
+      ]
+    : [
+        { href: path("/servicios"), label: t.nav.services },
+        { href: path("/portafolio"), label: t.nav.portfolio },
+        { href: path("/blog"), label: t.nav.blog },
+        { href: path("/nosotros"), label: t.nav.about },
+        { href: path("/contacto"), label: t.nav.contact },
+      ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
       <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link href={langPath("/", lang)} className="font-display text-2xl font-bold tracking-[-0.06em]">
+        <Link href={path("/")} className="font-display text-2xl font-bold tracking-[-0.06em]">
           DIZAYN<span className="text-primary">.</span>
         </Link>
 
@@ -56,6 +71,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <Link
+            href={otherMarketHref}
+            className="hidden min-h-11 items-center px-1 text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:flex"
+            title={isUs ? "Dizayn México" : "Dizayn para EE.UU. / for the US"}
+          >
+            {isUs ? "MX" : "US"}
+          </Link>
+
           <div className="flex items-center gap-1 text-xs uppercase tracking-[0.18em]">
             <button
               type="button"
@@ -79,7 +102,7 @@ export function Header() {
           <ThemeToggle />
 
           <span className="hidden sm:block">
-            <Link href={langPath("/contacto", lang)} className="btn-primary !px-5 !py-2.5 text-[0.8rem]">
+            <Link href={path("/contacto")} className="btn-primary !px-5 !py-2.5 text-[0.8rem]">
               {t.nav.cta}
             </Link>
           </span>
@@ -110,6 +133,13 @@ export function Header() {
                 {i.label}
               </Link>
             ))}
+            <Link
+              href={otherMarketHref}
+              onClick={() => setOpen(false)}
+              className="py-3 text-sm font-medium text-muted-foreground"
+            >
+              {isUs ? "Dizayn México" : "Dizayn for the US"}
+            </Link>
           </div>
         </nav>
       )}

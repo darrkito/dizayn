@@ -8,7 +8,7 @@ import { portfolioItems } from "@/content/portfolio";
 import { blogPosts } from "@/content/blog";
 import { cloudinaryUrl } from "@/lib/cloudinary";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 
 const teaserImages = portfolioItems.filter((i) => i.kind === "image").slice(0, 3);
 
@@ -17,9 +17,17 @@ const teaserImages = portfolioItems.filter((i) => i.kind === "image").slice(0, 3
 const CASE_STUDY_SLUGS = ["caso-luvory-sitio-web", "caso-luvory-seo", "caso-luvory-geo-posicionamiento-ia"];
 const caseStudies = CASE_STUDY_SLUGS.map((slug) => blogPosts.find((p) => p.slug === slug)!).filter(Boolean);
 
-export function HomeContent({ lang }: { lang: Lang }) {
+// Only the 5 services exportable to a remote US client (excludes photography/video).
+const usServices = services.filter((s) => s.us);
+
+export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
+  const isUs = market === "us";
+  const home = isUs ? t.usHome : t.home;
+  const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
+  const shownServices = isUs ? usServices : services;
+
   useEffect(() => {
     setLang(lang);
   }, [lang, setLang]);
@@ -30,20 +38,20 @@ export function HomeContent({ lang }: { lang: Lang }) {
         <div className="container-x relative grid items-center gap-14 py-20 md:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-              {t.home.eyebrow}
+              {home.eyebrow}
             </p>
             <h1 className="mt-7 text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.02]">
-              {t.home.h1a} <em className="not-italic text-primary">{t.home.h1b}</em>
+              {home.h1a} <em className="not-italic text-primary">{home.h1b}</em>
               <br />
-              {t.home.h1c}
+              {home.h1c}
             </h1>
-            <p className="mt-7 max-w-xl text-lg text-muted-foreground">{t.home.lead}</p>
+            <p className="mt-7 max-w-xl text-lg text-muted-foreground">{home.lead}</p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Link href={langPath("/contacto", lang)} className="btn-primary">
-                {t.home.ctaPrimary}
+              <Link href={path("/contacto")} className="btn-primary">
+                {home.ctaPrimary}
               </Link>
-              <Link href={langPath("/portafolio", lang)} className="btn-ghost">
-                {t.home.ctaSecondary}
+              <Link href={isUs ? path("/precios") : langPath("/portafolio", lang)} className="btn-ghost">
+                {home.ctaSecondary}
               </Link>
             </div>
           </div>
@@ -52,7 +60,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
             <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-2xl" aria-hidden />
             <Image
               src="/images/hero.jpg"
-              alt={t.home.heroAlt}
+              alt={home.heroAlt}
               width={960}
               height={1200}
               priority
@@ -64,7 +72,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
 
       <section className="rule">
         <div className="container-x grid gap-10 py-16 md:grid-cols-3">
-          {t.home.stats.map((s) => (
+          {home.stats.map((s) => (
             <div key={s.k}>
               <h2 className="font-display text-xl">{s.k}</h2>
               <p className="mt-3 text-sm text-muted-foreground">{s.v}</p>
@@ -76,42 +84,45 @@ export function HomeContent({ lang }: { lang: Lang }) {
       <section className="container-x py-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.servicesTitle}</h2>
-            <p className="mt-4 max-w-md text-muted-foreground">{t.home.servicesLead}</p>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{home.servicesTitle}</h2>
+            <p className="mt-4 max-w-md text-muted-foreground">{home.servicesLead}</p>
           </div>
           <Link
-            href={langPath("/servicios", lang)}
+            href={path("/servicios")}
             className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            {t.home.servicesAll} →
+            {home.servicesAll} →
           </Link>
         </div>
 
         <ul className="mt-14 border-t border-border">
-          {services.map((s) => (
-            <li key={s.slug}>
-              <Link
-                href={langPath(`/servicios/${s.slug}`, lang)}
-                className="group flex flex-col gap-2 rounded-2xl border-b border-border px-3 py-7 transition-colors hover:bg-muted md:flex-row md:items-start md:gap-10 md:px-2"
-              >
-                <span className="text-xs tracking-[0.2em] text-primary md:pt-2">{s.number}</span>
-                <span className="font-display text-2xl leading-snug md:w-96 md:text-3xl">{s[lang].metaTitle}</span>
-                <span className="text-sm text-muted-foreground md:flex-1 md:pt-2">{s[lang].tagline}</span>
-                <span className="text-primary opacity-0 transition-opacity group-hover:opacity-100">→</span>
-              </Link>
-            </li>
-          ))}
+          {shownServices.map((s) => {
+            const copy = isUs ? s.us![lang] : s[lang];
+            return (
+              <li key={s.slug}>
+                <Link
+                  href={path(`/servicios/${s.slug}`)}
+                  className="group flex flex-col gap-2 rounded-2xl border-b border-border px-3 py-7 transition-colors hover:bg-muted md:flex-row md:items-start md:gap-10 md:px-2"
+                >
+                  <span className="text-xs tracking-[0.2em] text-primary md:pt-2">{s.number}</span>
+                  <span className="font-display text-2xl leading-snug md:w-96 md:text-3xl">{copy.metaTitle}</span>
+                  <span className="text-sm text-muted-foreground md:flex-1 md:pt-2">{copy.tagline}</span>
+                  <span className="text-primary opacity-0 transition-opacity group-hover:opacity-100">→</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
       <section className="rule">
         <div className="container-x grid gap-10 py-24 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.portfolioTitle}</h2>
-            <p className="mt-5 max-w-md text-muted-foreground">{t.home.portfolioLead}</p>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{home.portfolioTitle}</h2>
+            <p className="mt-5 max-w-md text-muted-foreground">{home.portfolioLead}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href={langPath("/portafolio", lang)} className="btn-primary">
-                {t.home.portfolioCta}
+                {home.portfolioCta}
               </Link>
             </div>
           </div>
@@ -136,8 +147,8 @@ export function HomeContent({ lang }: { lang: Lang }) {
 
       <section className="rule">
         <div className="container-x py-24">
-          <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{t.home.casesTitle}</h2>
-          <p className="mt-5 max-w-md text-muted-foreground">{t.home.casesLead}</p>
+          <h2 className="text-[clamp(2rem,5vw,3.5rem)] leading-none">{home.casesTitle}</h2>
+          <p className="mt-5 max-w-md text-muted-foreground">{home.casesLead}</p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {caseStudies.map((post) => {
               const copy = post[lang];
@@ -150,21 +161,21 @@ export function HomeContent({ lang }: { lang: Lang }) {
                   <span className="text-xs uppercase tracking-[0.18em] text-primary">{copy.category}</span>
                   <h3 className="mt-3 font-display text-lg leading-snug">{copy.title}</h3>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{copy.excerpt}</p>
-                  <span className="mt-4 text-sm font-medium text-primary">{t.home.casesCta} →</span>
+                  <span className="mt-4 text-sm font-medium text-primary">{home.casesCta} →</span>
                 </Link>
               );
             })}
           </div>
           <Link href={langPath("/blog", lang)} className="mt-8 inline-block text-sm text-primary hover:underline">
-            {t.home.casesAll} →
+            {home.casesAll} →
           </Link>
         </div>
       </section>
 
       <section className="container-x py-28 text-center">
-        <h2 className="mx-auto max-w-3xl text-[clamp(2rem,6vw,4.5rem)] leading-[0.95]">{t.home.ctaTitle}</h2>
-        <p className="mx-auto mt-6 max-w-xl text-muted-foreground">{t.home.ctaLead}</p>
-        <Link href={langPath("/contacto", lang)} className="mt-10 btn-primary">
+        <h2 className="mx-auto max-w-3xl text-[clamp(2rem,6vw,4.5rem)] leading-[0.95]">{home.ctaTitle}</h2>
+        <p className="mx-auto mt-6 max-w-xl text-muted-foreground">{home.ctaLead}</p>
+        <Link href={path("/contacto")} className="mt-10 btn-primary">
           {t.nav.cta}
         </Link>
       </section>

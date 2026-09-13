@@ -17,6 +17,7 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/portafolio": "/portfolio",
   "/nosotros": "/about",
   "/contacto": "/contact",
+  "/precios": "/pricing",
   "/privacidad": "/privacy-policy",
   "/terminos": "/terms-and-conditions",
   "/blog/posicionamiento-marcas-ia-2026": "/blog/rank-brand-ai-search-2026",
@@ -54,14 +55,29 @@ export const EN_SLUG_MAP: Record<string, string> = {
   "/blog/seo-para-ecommerce-tiendas-online": "/blog/seo-for-ecommerce-online-stores",
   "/blog/seo-tips-para-principiantes": "/blog/seo-tips-for-beginners",
   "/blog/seo-negocios-varias-sucursales-mexico": "/blog/seo-for-multi-location-businesses-mexico",
+  // US-only wedge posts (content/us-blog.ts, reachable at /us/blog/* and /us/en/blog/*)
+  "/blog/cuanto-cobra-una-agencia-mexicana": "/blog/what-a-mexican-agency-charges",
+  "/blog/como-pagarle-a-una-agencia-en-mexico": "/blog/how-to-pay-a-mexican-agency",
+  "/blog/nearshore-vs-offshore-vs-agencia-en-eeuu": "/blog/nearshore-vs-offshore-vs-us-agency",
+  "/blog/marketing-en-espanol-para-negocios-hispanos-en-eeuu": "/blog/spanish-marketing-for-us-hispanic-businesses",
 };
 
 const ES_SLUG_MAP: Record<string, string> = Object.fromEntries(
   Object.entries(EN_SLUG_MAP).map(([es, en]) => [en, es])
 );
 
-export const langFromPath = (pathname: string): Lang =>
-  pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+export type Market = "mx" | "us";
+
+export const marketFromPath = (pathname: string): Market =>
+  pathname === "/us" || pathname.startsWith("/us/") ? "us" : "mx";
+
+/** Market-aware: strips a leading /us before applying the original /en check, so callers
+ * that pass a raw pathname (Header, Footer, WhatsAppButton) get the right language for
+ * both /en/* (en-MX) and /us/en/* (en-US) without needing to know about market at all. */
+export const langFromPath = (pathname: string): Lang => {
+  const p = marketFromPath(pathname) === "us" ? pathname.slice(3) || "/" : pathname;
+  return p === "/en" || p.startsWith("/en/") ? "en" : "es";
+};
 
 /** Strips a leading /en AND translates an English path back to its canonical Spanish
  * base path — self-healing even against a path that mixes /en with an untranslated
@@ -81,6 +97,64 @@ export const langPath = (basePath: string, lang: Lang): string => {
 };
 
 /** Given the current pathname (in either language), computes the sibling URL in the
- * target language — the one function a language toggle or hreflang tag ever needs. */
-export const altPath = (pathname: string, targetLang: Lang): string =>
-  langPath(stripLangPrefix(pathname), targetLang);
+ * target language — the one function a language toggle or hreflang tag ever needs.
+ * Market-aware: preserves /us vs MX, only switches language within it. */
+export const altPath = (pathname: string, targetLang: Lang): string => {
+  const market = marketFromPath(pathname);
+  const rest = market === "us" ? pathname.slice(3) || "/" : pathname;
+  const esBase = stripLangPrefix(rest);
+  return market === "us" ? usPath(esBase, targetLang) : langPath(esBase, targetLang);
+};
+
+/** Builds the /us (es-US) or /us/en (en-US) path for a canonical (Spanish) base path.
+ * Reuses EN_SLUG_MAP as-is — slugs are a function of language, not market, so the US
+ * English section is translated exactly like the MX English section. */
+export const usPath = (basePath: string, lang: Lang): string => {
+  if (lang === "es") return basePath === "/" ? "/us" : `/us${basePath}`;
+  const translated = EN_SLUG_MAP[basePath] ?? basePath;
+  return translated === "/" ? "/us/en" : `/us/en${translated}`;
+};
+
+/** The home path for a given market+lang pair — used by the header's market switcher,
+ * which always jumps to that market's home rather than guessing at an equivalent page
+ * (not every MX page has a US sibling yet, and vice versa for pricing). */
+export const marketHomePath = (market: Market, lang: Lang): string =>
+  market === "us" ? (lang === "es" ? "/us" : "/us/en") : lang === "es" ? "/" : "/en";
+
+export type HreflangCode = "es-MX" | "en-MX" | "es-US" | "en-US";
+
+/** Centralized hreflang builder. Pass the canonical (es-MX) base path and which variant the
+ * calling page IS; `us: false` omits the US pair for pages with no US sibling yet (the
+ * ~30 pre-existing pages not covered in this pass). x-default always points at es-MX — the
+ * site's actual origin — except for market-exclusive pages (e.g. pricing) with no MX
+ * equivalent at all, which should pass their own es-US path as `esBasePath` isn't meaningful
+ * there; see buildUsOnlyAlternates below for that case. */
+export function buildAlternates(
+  esBasePath: string,
+  current: HreflangCode,
+  opts: { us?: boolean } = {},
+): { canonical: string; languages: Record<string, string> } {
+  const languages: Record<string, string> = {
+    "es-MX": esBasePath,
+    "en-MX": langPath(esBasePath, "en"),
+  };
+  if (opts.us !== false) {
+    languages["es-US"] = usPath(esBasePath, "es");
+    languages["en-US"] = usPath(esBasePath, "en");
+  }
+  return { canonical: languages[current], languages: { ...languages, "x-default": languages["es-MX"] } };
+}
+
+/** For pages that exist only in the US section (no MX equivalent, e.g. /us/precios) — takes
+ * the canonical (Spanish) base path, same as buildAlternates, and returns just the es-US/en-US
+ * pair with x-default pointing at the es-US version itself. */
+export function buildUsOnlyAlternates(
+  esBasePath: string,
+  current: "es-US" | "en-US",
+): { canonical: string; languages: Record<string, string> } {
+  const languages: Record<string, string> = {
+    "es-US": usPath(esBasePath, "es"),
+    "en-US": usPath(esBasePath, "en"),
+  };
+  return { canonical: languages[current], languages: { ...languages, "x-default": languages["es-US"] } };
+}

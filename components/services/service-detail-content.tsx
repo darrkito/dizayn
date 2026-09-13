@@ -4,14 +4,24 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { getService, services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 
-export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang }) {
+export function ServiceDetailContent({
+  slug,
+  lang,
+  market = "mx",
+}: {
+  slug: string;
+  lang: Lang;
+  market?: Market;
+}) {
   const { setLang } = useI18n();
   const t = getDict(lang);
+  const isUs = market === "us";
+  const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
   const service = getService(slug)!;
-  const copy = service[lang];
-  const others = services.filter((s) => s.slug !== slug).slice(0, 3);
+  const copy = isUs ? service.us![lang] : service[lang];
+  const others = (isUs ? services.filter((s) => s.us) : services).filter((s) => s.slug !== slug).slice(0, 3);
 
   useEffect(() => {
     setLang(lang);
@@ -21,7 +31,7 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
     <div>
       <section className="container-x py-20">
         <Link
-          href={langPath("/servicios", lang)}
+          href={path("/servicios")}
           className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           ← {t.services.back}
@@ -30,7 +40,7 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
         <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.metaTitle}</h1>
         <p className="mt-6 max-w-2xl font-display text-xl text-primary">{copy.tagline}</p>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{copy.intro}</p>
-        <Link href={langPath("/contacto", lang)} className="mt-10 btn-primary">
+        <Link href={path("/contacto")} className="mt-10 btn-primary">
           {t.services.cta}
         </Link>
       </section>
@@ -96,16 +106,19 @@ export function ServiceDetailContent({ slug, lang }: { slug: string; lang: Lang 
         <div className="container-x py-16">
           <h2 className="font-display text-2xl">{t.services.other}</h2>
           <div className="mt-8 grid gap-px bg-border sm:grid-cols-3">
-            {others.map((o) => (
-              <Link
-                key={o.slug}
-                href={langPath(`/servicios/${o.slug}`, lang)}
-                className="bg-background p-6 transition-colors hover:bg-card"
-              >
-                <h3 className="font-display text-xl">{o[lang].name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{o[lang].tagline}</p>
-              </Link>
-            ))}
+            {others.map((o) => {
+              const oCopy = isUs ? o.us![lang] : o[lang];
+              return (
+                <Link
+                  key={o.slug}
+                  href={path(`/servicios/${o.slug}`)}
+                  className="bg-background p-6 transition-colors hover:bg-card"
+                >
+                  <h3 className="font-display text-xl">{oCopy.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{oCopy.tagline}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

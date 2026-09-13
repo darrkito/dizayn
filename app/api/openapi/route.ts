@@ -9,28 +9,47 @@ const openApiSpec = {
     version: "1.0.0",
     summary: "Read-only facts about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico.",
     description:
-      "A small, public, unauthenticated JSON API over Dizayn's real service catalog (web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production). No credentials required.",
+      "A small, public, unauthenticated JSON API over Dizayn's real service catalog (web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production), plus a dedicated nearshore offering for US businesses (market=us: 5 of 7 services, USD pricing). No credentials required.",
   },
   servers: [{ url: `${SITE_URL}/api` }],
   paths: {
-    "/services": { get: { summary: "List all services", responses: { "200": { description: "OK" } } } },
+    "/services": {
+      get: {
+        summary: "List services. market=mx (default, all 7) or market=us (5 exportable services, USD)",
+        parameters: [{ name: "market", in: "query", schema: { type: "string", enum: ["mx", "us"] } }],
+        responses: { "200": { description: "OK" } },
+      },
+    },
     "/services/{slug}": {
       get: {
-        summary: "Get one service's full detail (includes, process, FAQ)",
-        parameters: [{ name: "slug", in: "path", required: true, schema: { type: "string" } }],
+        summary: "Get one service's full detail (includes, process, FAQ). 404 if the slug has no market=us variant when market=us is passed.",
+        parameters: [
+          { name: "slug", in: "path", required: true, schema: { type: "string" } },
+          { name: "market", in: "query", schema: { type: "string", enum: ["mx", "us"] } },
+        ],
         responses: { "200": { description: "OK" }, "404": { description: "Not found" } },
+      },
+    },
+    "/pricing": {
+      get: {
+        summary: "Real, sourced USD price ranges for the 5 US-market services, alongside the US market average for the same service",
+        responses: { "200": { description: "OK" } },
       },
     },
     "/blog": {
       get: {
-        summary: "List all blog posts and case studies (title, excerpt, category, date, url)",
+        summary: "List all blog posts and case studies (title, excerpt, category, date, url). market=mx (default) or market=us (nearshore-focused guides)",
+        parameters: [{ name: "market", in: "query", schema: { type: "string", enum: ["mx", "us"] } }],
         responses: { "200": { description: "OK" } },
       },
     },
     "/blog/{slug}": {
       get: {
         summary: "Get one blog post's full content (body, FAQ) — includes real client case studies, not just guides",
-        parameters: [{ name: "slug", in: "path", required: true, schema: { type: "string" } }],
+        parameters: [
+          { name: "slug", in: "path", required: true, schema: { type: "string" } },
+          { name: "market", in: "query", schema: { type: "string", enum: ["mx", "us"] } },
+        ],
         responses: { "200": { description: "OK" }, "404": { description: "Not found" } },
       },
     },

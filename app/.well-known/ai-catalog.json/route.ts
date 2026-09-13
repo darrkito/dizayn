@@ -7,7 +7,7 @@ export async function GET() {
     specVersion: "1.0",
     host: {
       displayName: "Dizayn",
-      description: "Marketing and brand agency in Guadalajara, Jalisco, Mexico — web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production.",
+      description: "Marketing and brand agency in Guadalajara, Jalisco, Mexico — web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production. Also a nearshore offering for US businesses, USD pricing.",
       url: SITE_URL,
       contact: "sebasesc5@gmail.com",
     },
@@ -23,6 +23,7 @@ export async function GET() {
           "how much does a website cost in Guadalajara",
           "what is GEO / AI visibility marketing",
           "does Dizayn have case studies or past client work",
+          "how much does a Mexican nearshore agency charge a US client",
         ],
       },
       {

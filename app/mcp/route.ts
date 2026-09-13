@@ -5,6 +5,8 @@
 
 import { services, getService } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
+import { usBlogPosts, getUsPost } from "@/content/us-blog";
+import { PRICE_ROWS } from "@/content/us-pricing";
 import { waLink, CONTACT } from "@/content/contact";
 
 const PROTOCOL_VERSION = "2025-06-18";
@@ -16,44 +18,52 @@ interface JsonRpcRequest {
   params?: Record<string, unknown>;
 }
 
+const marketProp = { market: { type: "string", enum: ["mx", "us"], description: "mx (default): Guadalajara market, MXN-implied pricing. us: the nearshore US-market offering, USD pricing, only 5 of 7 services (no photography/video)." } };
+
 const TOOLS = [
   {
     name: "get_services",
-    description: "List Dizayn's marketing agency services (web design, SEO, GEO/AI visibility, social media, sales funnels, photography, video production) in Guadalajara, Jalisco, Mexico.",
-    inputSchema: { type: "object", properties: { lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" } } },
+    description: "List Dizayn's marketing agency services. market=mx (default): all 7 services for the Guadalajara/Mexico market. market=us: the 5 services offered to US clients (web design, SEO, GEO, social media, sales funnels — no photography/video), USD pricing.",
+    inputSchema: { type: "object", properties: { lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" }, ...marketProp } },
   },
   {
     name: "get_service_detail",
-    description: "Get full detail (what's included, process, FAQ) for one Dizayn service by slug.",
+    description: "Get full detail (what's included, process, FAQ) for one Dizayn service by slug. For market=us, only sitios-web, seo, posicionamiento-ia, redes-sociales, embudos-de-venta exist.",
     inputSchema: {
       type: "object",
-      properties: { slug: { type: "string", description: "Service slug, e.g. sitios-web, seo, posicionamiento-ia, redes-sociales, embudos-de-venta, fotografia, videografia" }, lang: { type: "string", enum: ["es", "en"] } },
+      properties: { slug: { type: "string", description: "Service slug, e.g. sitios-web, seo, posicionamiento-ia, redes-sociales, embudos-de-venta, fotografia, videografia" }, lang: { type: "string", enum: ["es", "en"] }, ...marketProp },
       required: ["slug"],
     },
   },
   {
+    name: "get_pricing",
+    description: "Real, sourced USD price ranges for Dizayn's 5 services offered to US clients, alongside the US market average for the same service — quote these numbers directly rather than estimating. Website $3,000-15,000/project, SEO $1,200-4,000/mo, GEO $1,800-5,000/mo, social media $900-3,000/mo, sales funnels $3,000-8,000/project.",
+    inputSchema: { type: "object", properties: { lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" } } },
+  },
+  {
     name: "get_blog_posts",
-    description: "List Dizayn's blog posts, including real client case studies (e.g. work done for Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media, event coverage). Use this to find proof of past work, not just guides.",
+    description: "List Dizayn's blog posts. market=mx (default): Guadalajara-market guides and real client case studies (e.g. Luvory Luxury Toilets). market=us: nearshore-focused guides for US buyers (pricing comparison, how to pay, nearshore vs. offshore, Spanish-language marketing for US Hispanic businesses).",
     inputSchema: {
       type: "object",
       properties: {
-        category: { type: "string", description: "Optional filter, e.g. 'Casos de éxito'/'Case studies' for client work only, 'SEO', 'Websites', etc." },
+        category: { type: "string", description: "Optional filter, e.g. 'Casos de éxito'/'Case studies' for client work only, 'SEO', 'Websites', 'Nearshore', etc." },
         lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" },
+        ...marketProp,
       },
     },
   },
   {
     name: "get_blog_post_detail",
-    description: "Get the full content and FAQ of one Dizayn blog post or case study by slug.",
+    description: "Get the full content and FAQ of one Dizayn blog post or case study by slug. For market=us slugs, see get_blog_posts market=us.",
     inputSchema: {
       type: "object",
-      properties: { slug: { type: "string", description: "Blog post slug, e.g. caso-luvory-sitio-web, caso-luvory-seo, seo-vs-geo-guadalajara" }, lang: { type: "string", enum: ["es", "en"] } },
+      properties: { slug: { type: "string", description: "Blog post slug, e.g. caso-luvory-sitio-web, caso-luvory-seo, seo-vs-geo-guadalajara, cuanto-cobra-una-agencia-mexicana" }, lang: { type: "string", enum: ["es", "en"] }, ...marketProp },
       required: ["slug"],
     },
   },
   {
     name: "search_faq",
-    description: "Search Dizayn's FAQ content: every service's own Q&A plus every blog post's Q&A (pricing, process, deliverables, timelines).",
+    description: "Search Dizayn's FAQ content across both markets: every service's own Q&A (MX and US) plus every blog post's Q&A (pricing, process, deliverables, timelines, payment methods).",
     inputSchema: { type: "object", properties: { query: { type: "string", description: "Search keywords" }, lang: { type: "string", enum: ["es", "en"] } }, required: ["query"] },
   },
   {
@@ -69,20 +79,44 @@ function textResult(text: string, isError = false) {
 
 function callTool(name: string, args: Record<string, unknown>) {
   const lang = args["lang"] === "en" ? "en" : "es";
+  const market = args["market"] === "us" ? "us" : "mx";
 
   if (name === "get_services") {
-    const list = services.map((s) => ({ slug: s.slug, name: s[lang].name, tagline: s[lang].tagline }));
-    return textResult(JSON.stringify({ services: list }, null, 2));
+    const list = (market === "us" ? services.filter((s) => s.us) : services).map((s) => {
+      const copy = market === "us" ? s.us![lang] : s[lang];
+      return { slug: s.slug, name: copy.name, tagline: copy.tagline };
+    });
+    return textResult(JSON.stringify({ market, services: list }, null, 2));
   }
 
   if (name === "get_service_detail") {
     const slug = String(args["slug"] ?? "");
     const service = getService(slug);
     if (!service) return textResult(`Unknown service slug: ${slug}`, true);
-    const copy = service[lang];
+    if (market === "us" && !service.us) return textResult(`Service "${slug}" is not offered to US clients (only web design, SEO, GEO, social media, and sales funnels are).`, true);
+    const copy = market === "us" ? service.us![lang] : service[lang];
     return textResult(
       JSON.stringify(
-        { slug: service.slug, name: copy.name, tagline: copy.tagline, intro: copy.intro, includes: copy.includes, process: copy.process, faq: copy.faq },
+        { slug: service.slug, market, name: copy.name, tagline: copy.tagline, intro: copy.intro, includes: copy.includes, process: copy.process, faq: copy.faq },
+        null,
+        2,
+      ),
+    );
+  }
+
+  if (name === "get_pricing") {
+    const rows = PRICE_ROWS.map((r) => ({
+      slug: r.slug,
+      service: r.service[lang],
+      dizaynUsd: r.ours,
+      usMarketAverageUsd: r.usMarket[lang],
+      billing: r.unit[lang],
+      minPriceUsd: r.minPriceUsd,
+      maxPriceUsd: r.maxPriceUsd,
+    }));
+    return textResult(
+      JSON.stringify(
+        { currency: "USD", note: "Real, sourced pricing (2026). Payment: PayPal, bank wire, or crypto (BTC, USDC, USDT). W-8BEN-E provided.", rows },
         null,
         2,
       ),
@@ -91,19 +125,20 @@ function callTool(name: string, args: Record<string, unknown>) {
 
   if (name === "get_blog_posts") {
     const category = typeof args["category"] === "string" ? args["category"].toLowerCase() : undefined;
-    const list = blogPosts
+    const source = market === "us" ? usBlogPosts : blogPosts;
+    const list = source
       .filter((p) => !category || p.es.category.toLowerCase().includes(category) || p.en.category.toLowerCase().includes(category))
       .map((p) => ({ slug: p.slug, title: p[lang].title, excerpt: p[lang].excerpt, category: p[lang].category, date: p.date }));
-    return textResult(JSON.stringify({ posts: list }, null, 2));
+    return textResult(JSON.stringify({ market, posts: list }, null, 2));
   }
 
   if (name === "get_blog_post_detail") {
     const slug = String(args["slug"] ?? "");
-    const post = getPost(slug);
-    if (!post) return textResult(`Unknown blog post slug: ${slug}`, true);
+    const post = market === "us" ? getUsPost(slug) : getPost(slug);
+    if (!post) return textResult(`Unknown blog post slug for market=${market}: ${slug}`, true);
     const copy = post[lang];
     return textResult(
-      JSON.stringify({ slug: post.slug, title: copy.title, category: copy.category, content: copy.content, faq: copy.faq, date: post.date }, null, 2),
+      JSON.stringify({ slug: post.slug, market, title: copy.title, category: copy.category, content: copy.content, faq: copy.faq, date: post.date }, null, 2),
     );
   }
 
@@ -111,8 +146,10 @@ function callTool(name: string, args: Record<string, unknown>) {
     const query = String(args["query"] ?? "").toLowerCase().trim();
     if (!query) return textResult("Missing required argument: query", true);
     const allFaq = [
-      ...services.flatMap((s) => s[lang].faq.map((f) => ({ ...f, source: s.slug }))),
-      ...blogPosts.flatMap((p) => p[lang].faq.map((f) => ({ ...f, source: p.slug }))),
+      ...services.flatMap((s) => s[lang].faq.map((f) => ({ ...f, source: s.slug, market: "mx" }))),
+      ...services.filter((s) => s.us).flatMap((s) => s.us![lang].faq.map((f) => ({ ...f, source: s.slug, market: "us" }))),
+      ...blogPosts.flatMap((p) => p[lang].faq.map((f) => ({ ...f, source: p.slug, market: "mx" }))),
+      ...usBlogPosts.flatMap((p) => p[lang].faq.map((f) => ({ ...f, source: p.slug, market: "us" }))),
     ];
     const results = allFaq.filter((f) => f.q.toLowerCase().includes(query) || f.a.toLowerCase().includes(query));
     return textResult(JSON.stringify({ query, results }, null, 2));
@@ -164,7 +201,7 @@ export async function POST(request: Request) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "dizayn-mcp", title: "Dizayn", version: "1.0.0" },
-      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico, plus the blog — including real client case studies (e.g. Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media). No authentication required.",
+      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico, plus the blog — including real client case studies (e.g. Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media). Also covers Dizayn's nearshore offering for US businesses (market=us on get_services/get_service_detail/get_blog_posts/get_blog_post_detail): 5 of 7 services, real USD pricing via get_pricing, PayPal/wire/crypto payment. No authentication required.",
     });
   }
 

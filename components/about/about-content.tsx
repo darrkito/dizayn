@@ -3,11 +3,14 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 
-export function AboutContent({ lang }: { lang: Lang }) {
+export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
+  const isUs = market === "us";
+  const about = isUs ? t.usAbout : t.about;
+  const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
 
   useEffect(() => {
     setLang(lang);
@@ -17,30 +20,30 @@ export function AboutContent({ lang }: { lang: Lang }) {
     <div>
       <section className="container-x py-24">
         <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-          {t.about.eyebrow}
+          {about.eyebrow}
         </p>
-        <h1 className="mt-7 max-w-4xl text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.about.title}</h1>
-        <p className="mt-8 max-w-2xl text-lg text-muted-foreground">{t.about.lead}</p>
+        <h1 className="mt-7 max-w-4xl text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{about.title}</h1>
+        <p className="mt-8 max-w-2xl text-lg text-muted-foreground">{about.lead}</p>
       </section>
 
       <section className="rule">
         <div className="container-x grid gap-12 py-16 md:grid-cols-2">
           <div>
-            <h2 className="font-display text-2xl text-primary">{t.about.p1title}</h2>
-            <p className="mt-4 text-muted-foreground">{t.about.p1}</p>
+            <h2 className="font-display text-2xl text-primary">{about.p1title}</h2>
+            <p className="mt-4 text-muted-foreground">{about.p1}</p>
           </div>
           <div>
-            <h2 className="font-display text-2xl text-primary">{t.about.p2title}</h2>
-            <p className="mt-4 text-muted-foreground">{t.about.p2}</p>
+            <h2 className="font-display text-2xl text-primary">{about.p2title}</h2>
+            <p className="mt-4 text-muted-foreground">{about.p2}</p>
           </div>
         </div>
       </section>
 
       <section className="rule">
         <div className="container-x py-16">
-          <h2 className="font-display text-2xl">{t.about.valuesTitle}</h2>
+          <h2 className="font-display text-2xl">{about.valuesTitle}</h2>
           <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {t.about.values.map((v) => (
+            {about.values.map((v) => (
               <div key={v.k} className="bg-background p-6">
                 <h3 className="font-display text-xl">{v.k}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{v.v}</p>
@@ -51,8 +54,8 @@ export function AboutContent({ lang }: { lang: Lang }) {
       </section>
 
       <section className="container-x py-24">
-        <Link href={langPath("/contacto", lang)} className="btn-primary">
-          {t.about.cta}
+        <Link href={path("/contacto")} className="btn-primary">
+          {about.cta}
         </Link>
       </section>
     </div>

@@ -9,6 +9,8 @@
 
 import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
+import { usBlogPosts } from "@/content/us-blog";
+import { PRICE_ROWS } from "@/content/us-pricing";
 import { waLink, CONTACT } from "@/content/contact";
 
 interface JsonRpcRequest {
@@ -74,6 +76,22 @@ function respondToMessage(text: string): string {
       : `Yes, we have real documented case studies, including our work with Luvory Luxury Toilets (website, SEO, GEO, AI agent infrastructure, social media, event coverage): ${list}. Check the get_blog_posts MCP tool or https://dizayn.com.mx/blog for full detail.`;
   }
 
+  // Nearshore/US-market intent — separate branch before the generic FAQ search since
+  // "how much" / "how do I pay" here means the US-market USD rate card, not the MX one
+  // (which has no published site-wide pricing at all outside a few blog posts).
+  if (/nearshore|united states|\bus\b market|\bus\b client|estados unidos|eeuu|ee\.uu|hispanic|hispano/.test(lower)) {
+    const rows = PRICE_ROWS.map((r) => (es ? `${r.service.es}: ${r.ours} USD ${r.unit.es}` : `${r.service.en}: ${r.ours} USD ${r.unit.en}`)).join(" | ");
+    return es
+      ? `Sí, atendemos negocios en Estados Unidos: mismo equipo, precios en USD, contrato en inglés, equipo bilingüe. Precios reales: ${rows}. Pagos por PayPal, transferencia bancaria o cripto (BTC, USDC, USDT). Más en https://dizayn.com.mx/us o la herramienta MCP get_pricing.`
+      : `Yes, we serve US businesses: same team, USD pricing, English-language contract, bilingual team. Real pricing: ${rows}. Payment via PayPal, bank wire, or crypto (BTC, USDC, USDT). More at https://dizayn.com.mx/us/en or the get_pricing MCP tool.`;
+  }
+
+  if (/pay(ment)?|paypal|wire transfer|crypto|bitcoin|usdc|usdt|w-?8ben|c[oó]mo (le )?pago|c[oó]mo pagar/.test(lower)) {
+    return es
+      ? "Aceptamos PayPal (tarjeta de crédito o débito), transferencia bancaria internacional (wire) y cripto: BTC, USDC y USDT. Facturamos en USD con contrato en inglés y entregamos el formulario W-8BEN-E para tu contador. Más detalle: https://dizayn.com.mx/us/blog/como-pagarle-a-una-agencia-en-mexico"
+      : "We accept PayPal (credit or debit card), international bank wire transfer, and crypto: BTC, USDC, and USDT. We invoice in USD with an English-language contract and provide a W-8BEN-E for your accountant. More detail: https://dizayn.com.mx/us/en/blog/how-to-pay-a-mexican-agency";
+  }
+
   // 2026-08-27 — added after the same gap was found and fixed on Luvory's A2A:
   // this responder had no FAQ search at all, only service-name and case-study
   // matches above, so any question matching a service/blog post's own FAQ
@@ -83,7 +101,12 @@ function respondToMessage(text: string): string {
   // drift from, so this is additive, not a duplicate-source fix like Luvory's.
   const lang = es ? "es" : "en";
   const inputWords = new Set(lower.split(/\W+/).filter((w) => w.length > 4));
-  const allFaq = [...services.flatMap((s) => s[lang].faq), ...blogPosts.flatMap((p) => p[lang].faq)];
+  const allFaq = [
+    ...services.flatMap((s) => s[lang].faq),
+    ...services.filter((s) => s.us).flatMap((s) => s.us![lang].faq),
+    ...blogPosts.flatMap((p) => p[lang].faq),
+    ...usBlogPosts.flatMap((p) => p[lang].faq),
+  ];
   const faqMatch = allFaq.find((f) => {
     const questionWords = f.q.toLowerCase().split(/\W+/);
     return questionWords.some((w) => w.length > 4 && inputWords.has(w));

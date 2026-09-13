@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeContent } from "@/components/home/home-content";
+import { buildAlternates } from "@/lib/routes";
 
 const title = "Marketing agency in Guadalajara";
 const ogTitle = "Dizayn | Marketing agency in Guadalajara";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title: ogTitle, description, type: "website", url: "/en", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/en", languages: { es: "/", en: "/en" } },
+  alternates: buildAlternates("/", "en-MX"),
 };
 
 export default function HomePageEn() {

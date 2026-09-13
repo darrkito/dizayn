@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeContent } from "@/components/home/home-content";
+import { buildAlternates } from "@/lib/routes";
 
 // Next.js does NOT apply the root layout's title.template to a page.tsx colocated at the exact
 // same route segment as the layout that defines it (only to nested segments like /servicios) —
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
+  alternates: buildAlternates("/", "es-MX"),
 };
 
 export default function HomePage() {

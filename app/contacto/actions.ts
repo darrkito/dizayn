@@ -10,6 +10,7 @@ const schema = z.object({
   service: z.string().trim().max(80).optional(),
   message: z.string().trim().min(1).max(3000),
   lang: z.enum(["es", "en"]),
+  market: z.enum(["mx", "us"]).default("mx"),
 });
 
 export type ContactResult =
@@ -24,6 +25,7 @@ export async function submitContact(input: {
   service: string;
   message: string;
   lang: "es" | "en";
+  market?: "mx" | "us";
 }): Promise<ContactResult> {
   const parsed = schema.safeParse(input);
 
@@ -41,7 +43,9 @@ export async function submitContact(input: {
     service: parsed.data.service || null,
     message: parsed.data.message,
     lang: parsed.data.lang,
-    source: "contacto",
+    // Distinguishes US-market leads from MX ones without a schema change — same
+    // "contact_submissions" table, just a different source tag.
+    source: parsed.data.market === "us" ? "contacto-us" : "contacto",
   });
 
   if (error) return { status: "submit-error" };

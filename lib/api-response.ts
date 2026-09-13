@@ -29,3 +29,8 @@ export function getLang(request: Request): "es" | "en" {
   const url = new URL(request.url);
   return url.searchParams.get("lang") === "en" ? "en" : "es";
 }
+
+export function getMarket(request: Request): "mx" | "us" {
+  const url = new URL(request.url);
+  return url.searchParams.get("market") === "us" ? "us" : "mx";
+}

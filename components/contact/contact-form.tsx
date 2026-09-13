@@ -4,14 +4,18 @@ import { useEffect, useState, type FormEvent } from "react";
 import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
+import type { Market } from "@/lib/routes";
 import { submitContact } from "@/app/contacto/actions";
 
 const fieldClass =
   "mt-2 w-full border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
 
-export function ContactForm({ lang }: { lang: Lang }) {
+export function ContactForm({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
+  const isUs = market === "us";
+  const contact = isUs ? t.usContact : t.contact;
+  const shownServices = isUs ? services.filter((s) => s.us) : services;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -33,6 +37,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
       service: String(form.get("service") ?? ""),
       message: String(form.get("message") ?? ""),
       lang,
+      market,
     });
 
     if (result.status === "validation-error") {
@@ -52,16 +57,16 @@ export function ContactForm({ lang }: { lang: Lang }) {
   return (
     <div className="container-x py-24">
       <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-        {t.contact.eyebrow}
+        {contact.eyebrow}
       </p>
-      <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.contact.title}</h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.contact.lead}</p>
+      <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{contact.title}</h1>
+      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{contact.lead}</p>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.2fr_1fr]">
         <form onSubmit={onSubmit} className="space-y-6" noValidate>
           <div>
             <label htmlFor="name" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              {t.contact.form.name}
+              {contact.form.name}
             </label>
             <input id="name" name="name" maxLength={120} required className={fieldClass} />
             {errors["name"] && <p className="mt-1 text-xs text-destructive">{errors["name"]}</p>}
@@ -70,14 +75,14 @@ export function ContactForm({ lang }: { lang: Lang }) {
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label htmlFor="email" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {t.contact.form.email}
+                {contact.form.email}
               </label>
               <input id="email" name="email" type="email" maxLength={255} required className={fieldClass} />
               {errors["email"] && <p className="mt-1 text-xs text-destructive">{errors["email"]}</p>}
             </div>
             <div>
               <label htmlFor="phone" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {t.contact.form.phone}
+                {contact.form.phone}
               </label>
               <input id="phone" name="phone" maxLength={40} className={fieldClass} />
             </div>
@@ -85,39 +90,42 @@ export function ContactForm({ lang }: { lang: Lang }) {
 
           <div>
             <label htmlFor="service" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              {t.contact.form.service}
+              {contact.form.service}
             </label>
             <select id="service" name="service" defaultValue="" className={fieldClass}>
-              <option value="">{t.contact.form.servicePlaceholder}</option>
-              {services.map((s) => (
-                <option key={s.slug} value={s[lang].name}>
-                  {s[lang].name}
-                </option>
-              ))}
-              <option value="other">{t.contact.form.serviceOther}</option>
+              <option value="">{contact.form.servicePlaceholder}</option>
+              {shownServices.map((s) => {
+                const name = isUs ? s.us![lang].name : s[lang].name;
+                return (
+                  <option key={s.slug} value={name}>
+                    {name}
+                  </option>
+                );
+              })}
+              <option value="other">{contact.form.serviceOther}</option>
             </select>
           </div>
 
           <div>
             <label htmlFor="message" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              {t.contact.form.message}
+              {contact.form.message}
             </label>
             <textarea id="message" name="message" rows={6} maxLength={3000} required className={fieldClass} />
             {errors["message"] && <p className="mt-1 text-xs text-destructive">{errors["message"]}</p>}
           </div>
 
           <button type="submit" disabled={status === "sending"} className="btn-primary">
-            {status === "sending" ? t.contact.form.sending : t.contact.form.submit}
+            {status === "sending" ? contact.form.sending : contact.form.submit}
           </button>
 
           {status === "sent" && (
             <p className="border border-primary p-4 text-sm text-primary" role="status">
-              <strong>{t.contact.form.successTitle}.</strong> {t.contact.form.success}
+              <strong>{contact.form.successTitle}.</strong> {contact.form.success}
             </p>
           )}
           {status === "error" && (
             <p className="border border-destructive p-4 text-sm text-destructive" role="alert">
-              {t.contact.form.error}
+              {contact.form.error}
             </p>
           )}
         </form>
@@ -129,28 +137,28 @@ export function ContactForm({ lang }: { lang: Lang }) {
             rel="noreferrer"
             className="block border border-border p-6 transition-colors hover:border-primary"
           >
-            <h2 className="font-display text-xl text-primary">{t.contact.whatsapp}</h2>
-            <p className="mt-2 text-sm text-muted-foreground">{t.contact.whatsappDesc}</p>
+            <h2 className="font-display text-xl text-primary">{contact.whatsapp}</h2>
+            <p className="mt-2 text-sm text-muted-foreground">{contact.whatsappDesc}</p>
             <p className="mt-3 text-sm">{CONTACT.whatsappDisplay}</p>
           </a>
 
           <div>
-            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{t.contact.emailLabel}</h2>
+            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{contact.emailLabel}</h2>
             <a href={`mailto:${CONTACT.email}`} className="mt-1 block text-lg hover:text-primary">
               {CONTACT.email}
             </a>
           </div>
 
           <div>
-            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{t.contact.igLabel}</h2>
+            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{contact.igLabel}</h2>
             <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-1 block text-lg hover:text-primary">
               @dizayn_mx
             </a>
           </div>
 
           <div>
-            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{t.contact.locationLabel}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{t.contact.location}</p>
+            <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{contact.locationLabel}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{contact.location}</p>
           </div>
         </aside>
       </div>

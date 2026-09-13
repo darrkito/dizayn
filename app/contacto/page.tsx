@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
+import { buildAlternates } from "@/lib/routes";
 
 const title = "Contacto | Agencia de marketing en Guadalajara";
 const description =
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/contacto", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/contacto", languages: { es: "/contacto", en: "/en/contact" } },
+  alternates: buildAlternates("/contacto", "es-MX"),
 };
 
 export default function ContactoPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
-import { langPath, stripLangPrefix } from "@/lib/routes";
+import { buildAlternates, langPath, stripLangPrefix } from "@/lib/routes";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
 
@@ -29,10 +29,7 @@ export async function generateMetadata({
     title: metaTitle,
     description: metaDescription,
     openGraph: { title: metaTitle, description: metaDescription, type: "website", url: enPath, images: ["/og-image.jpg"] },
-    alternates: {
-      canonical: enPath,
-      languages: { es: `/servicios/${service.slug}`, en: enPath },
-    },
+    alternates: buildAlternates(`/servicios/${service.slug}`, "en-MX", { us: Boolean(service.us) }),
   };
 }
 
