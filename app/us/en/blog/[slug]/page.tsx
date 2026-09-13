@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
 import { buildUsOnlyAlternates, langPath, stripLangPrefix } from "@/lib/routes";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 /** The route param is the translated English slug — resolve it back to the canonical
  * Spanish slug the US wedge post is actually keyed by. */

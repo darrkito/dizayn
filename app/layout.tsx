@@ -9,6 +9,7 @@ import { Footer } from "@/components/site/footer";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { WebMcpRegister } from "@/components/webmcp-register";
 import { CONTACT } from "@/content/contact";
+import { SITE_URL } from "@/lib/api-response";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -23,7 +24,6 @@ const bricolage = Bricolage_Grotesque({
 const title = "Dizayn | Agencia de marketing en Guadalajara";
 const description =
   "Agencia de marketing en Guadalajara: sitios web, SEO, posicionamiento en IA, redes sociales, embudos de venta, fotografía y video. México y el mundo.";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

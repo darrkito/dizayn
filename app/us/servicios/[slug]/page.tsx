@@ -4,8 +4,7 @@ import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { getPriceRow } from "@/content/us-pricing";
 import { buildAlternates } from "@/lib/routes";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 // Only the 5 services exportable to a remote US client (excludes photography/video —
 // see the 2026-09-13 US-expansion plan for why those two don't travel).

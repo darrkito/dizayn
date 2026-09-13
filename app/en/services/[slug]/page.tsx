@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { buildAlternates, langPath, stripLangPrefix } from "@/lib/routes";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 /** The route param is the translated English slug (e.g. "ai-visibility") — resolve it back
  * to the canonical Spanish slug the content is actually keyed by. */

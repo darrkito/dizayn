@@ -4,8 +4,7 @@ import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { getPriceRow } from "@/content/us-pricing";
 import { buildAlternates, langPath, stripLangPrefix } from "@/lib/routes";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 /** The route param is the translated English slug (e.g. "ai-visibility") — same EN_SLUG_MAP
  * as the MX /en/services/[slug] route, resolved back to the canonical Spanish slug. */

@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
 import { buildUsOnlyAlternates } from "@/lib/routes";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 export function generateStaticParams() {
   return usBlogPosts.map((p) => ({ slug: p.slug }));

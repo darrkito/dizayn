@@ -3,9 +3,7 @@ import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
 import { usBlogPosts } from "@/content/us-blog";
 import { langPath, usPath } from "@/lib/routes";
-
-// TODO: update once the production domain is live.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dizayn.com.mx";
+import { SITE_URL } from "@/lib/api-response";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // us: false for the ~30 pages with no US sibling yet (all blog posts, portfolio, legal
