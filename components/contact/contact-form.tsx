@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { ExploreLinks } from "@/components/site/inline-links";
 import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
@@ -61,6 +62,7 @@ export function ContactForm({ lang, market = "mx" }: { lang: Lang; market?: Mark
       </p>
       <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{contact.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{contact.lead}</p>
+      <ExploreLinks lang={lang} market={market} className="mt-4 max-w-2xl text-sm text-muted-foreground" />
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.2fr_1fr]">
         <form onSubmit={onSubmit} className="space-y-6" noValidate>

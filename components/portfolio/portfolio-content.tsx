@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { ExploreLinks } from "@/components/site/inline-links";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { portfolioItems } from "@/content/portfolio";
 import { PortfolioGallery } from "./portfolio-gallery";
@@ -21,6 +22,7 @@ export function PortfolioContent({ lang }: { lang: Lang }) {
       </p>
       <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.portfolio.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.portfolio.lead}</p>
+      <ExploreLinks lang={lang} className="mt-4 max-w-2xl text-sm text-muted-foreground" />
 
       <div className="mt-16">
         <PortfolioGallery items={portfolioItems} lang={lang} />

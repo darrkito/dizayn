@@ -59,6 +59,9 @@ const dict = {
       casesLead: "Resultados reales de clientes reales — no capturas de pantalla, casos documentados.",
       casesCta: "Leer caso completo",
       casesAll: "Ver todos los casos de Luvory",
+      whatTitle: "¿Qué hace una agencia de marketing en Guadalajara?",
+      whatAnswer:
+        "Una agencia de marketing en Guadalajara como Dizayn diseña sitios web, posiciona tu marca en Google y en las respuestas de IA, gestiona redes sociales, construye embudos de venta y produce foto y video propios. Trabajamos con marcas de Guadalajara y de todo México, y empezamos por un objetivo de negocio, no por un diseño.",
       ctaTitle: "¿Listos para que tu marca se vea distinta?",
       ctaLead: "Cuéntanos qué necesitas y te respondemos con una propuesta clara, sin humo.",
     },
@@ -285,6 +288,9 @@ const dict = {
       casesLead: "Real results from real clients — not screenshots, documented case studies.",
       casesCta: "Read full case",
       casesAll: "See all Luvory cases",
+      whatTitle: "What does a marketing agency in Guadalajara do?",
+      whatAnswer:
+        "A marketing agency in Guadalajara like Dizayn designs websites, ranks your brand in Google and in AI answers, manages social media, builds sales funnels and produces in-house photo and video. We work with brands in Guadalajara and across Mexico, and we start from a business goal, not from a design.",
       ctaTitle: "Ready for your brand to look different?",
       ctaLead: "Tell us what you need and we'll come back with a clear proposal, no fluff.",
     },

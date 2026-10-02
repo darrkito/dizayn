@@ -81,6 +81,15 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
         </div>
       </section>
 
+      {!isUs && (
+        <section className="rule">
+          <div className="container-x py-16">
+            <h2 className="font-display text-2xl">{t.home.whatTitle}</h2>
+            <p className="mt-4 max-w-3xl text-muted-foreground">{t.home.whatAnswer}</p>
+          </div>
+        </section>
+      )}
+
       <section className="container-x py-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -137,6 +146,9 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
                   src={cloudinaryUrl(item.cloudinaryPublicId!, 400)}
                   alt={`${t.portfolio.photo} ${item.id.split("-").pop()}`}
                   fill
+                  // 3-up thumbnail grid: without `sizes`, fill images default to 100vw and
+                  // download a far larger variant than the ~1/3-width slot needs.
+                  sizes="(min-width: 1024px) 20vw, 33vw"
                   className="object-cover transition-transform duration-300 hover:scale-105"
                 />
               </Link>

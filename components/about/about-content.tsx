@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { ExploreLinks } from "@/components/site/inline-links";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath, usPath, type Market } from "@/lib/routes";
 
@@ -24,6 +25,7 @@ export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Mar
         </p>
         <h1 className="mt-7 max-w-4xl text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{about.title}</h1>
         <p className="mt-8 max-w-2xl text-lg text-muted-foreground">{about.lead}</p>
+        <ExploreLinks lang={lang} market={market} />
       </section>
 
       <section className="rule">

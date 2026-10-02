@@ -99,6 +99,11 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <a href={`tel:+${CONTACT.whatsapp}`} className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                {CONTACT.whatsappDisplay}
+              </a>
+            </li>
+            <li>
               <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 @dizayn_mx
               </a>
