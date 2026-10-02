@@ -16,6 +16,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Baseline hardening for every route. Deliberately no CSP: it needs per-page testing
+        // (Clarity, Cloudinary, Next inline scripts) and a wrong one silently breaks the site.
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        ],
+      },
+      {
         // Page routes only — excludes /api/*, /mcp, /.well-known/*, and Next's
         // static assets, which already set their own headers or don't need this.
         source: "/((?!api/|mcp|\\.well-known/|_next/).*)",

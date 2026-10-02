@@ -3,7 +3,7 @@ import { fitTitle } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
-import { buildAlternates, langPath } from "@/lib/routes";
+import { buildAlternates } from "@/lib/routes";
 import { SITE_URL } from "@/lib/api-response";
 
 export function generateStaticParams() {
