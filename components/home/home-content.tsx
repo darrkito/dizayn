@@ -145,11 +145,12 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
                 <Image
                   src={cloudinaryUrl(item.cloudinaryPublicId!, 400)}
                   alt={`${t.portfolio.photo} ${item.id.split("-").pop()}`}
-                  fill
-                  // 3-up thumbnail grid: without `sizes`, fill images default to 100vw and
-                  // download a far larger variant than the ~1/3-width slot needs.
+                  // Explicit intrinsic size (the 3:4 slot) so the HTML carries width/height; `sizes` stops
+                  // the browser fetching a far larger variant than the ~1/3-width slot needs.
+                  width={400}
+                  height={533}
                   sizes="(min-width: 1024px) 20vw, 33vw"
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </Link>
             ))}
