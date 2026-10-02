@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
@@ -25,7 +26,7 @@ export async function generateMetadata({
   const { metaTitle, metaDescription } = post.en;
   const enPath = `/en/blog/${slug}`;
   return {
-    title: metaTitle,
+    title: fitTitle(metaTitle),
     description: metaDescription,
     openGraph: { title: metaTitle, description: metaDescription, type: "article", url: enPath, images: ["/og-image.jpg"] },
     alternates: buildAlternates(`/blog/${post.slug}`, "en-MX", { us: false }),

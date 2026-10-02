@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fitTitle } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const { metaTitle, metaDescription } = service.us.en;
   const enPath = `/us/en/services/${slug}`;
   return {
-    title: metaTitle,
+    title: fitTitle(metaTitle),
     description: metaDescription,
     openGraph: { title: metaTitle, description: metaDescription, type: "website", url: enPath, images: ["/og-image.jpg"] },
     alternates: buildAlternates(`/servicios/${service.slug}`, "en-US"),

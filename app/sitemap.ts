@@ -97,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   };
 
+  const usServicesHubPages = usOnlyEntries("/servicios", 0.8);
   const usPricingPages = usOnlyEntries("/precios", 0.7);
   const usBlogListPages = usOnlyEntries("/blog", 0.7);
   const usBlogPostPages = usBlogPosts.flatMap((p) => usOnlyEntries(`/blog/${p.slug}`, 0.6, p.dateModified));
@@ -107,6 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPostPages,
     ...usStaticPages,
     ...usServicePages,
+    ...usServicesHubPages,
     ...usPricingPages,
     ...usBlogListPages,
     ...usBlogPostPages,

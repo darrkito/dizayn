@@ -4,12 +4,16 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath } from "@/lib/routes";
+import { langPath, usPath, type Market } from "@/lib/routes";
 import { WhatsAppBand } from "@/components/site/whatsapp-band";
 
-export function ServicesContent({ lang }: { lang: Lang }) {
+export function ServicesContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
   const t = getDict(lang);
+  const isUs = market === "us";
+  // The US hub lists only the 5 services a remote US client can buy (no photo/video), with US copy.
+  const shown = isUs ? services.filter((s) => s.us) : services;
+  const href = (slug: string) => (isUs ? usPath(`/servicios/${slug}`, lang) : langPath(`/servicios/${slug}`, lang));
 
   useEffect(() => {
     setLang(lang);
@@ -22,10 +26,10 @@ export function ServicesContent({ lang }: { lang: Lang }) {
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.services.lead}</p>
 
       <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
-        {services.map((s, i) => (
+        {shown.map((s, i) => (
           <Link
             key={s.slug}
-            href={langPath(`/servicios/${s.slug}`, lang)}
+            href={href(s.slug)}
             className={`group flex flex-col justify-between bg-background p-5 transition-colors active:bg-card hover:bg-card md:p-8 ${
               i === 0 ? "sm:col-span-2 sm:p-12 lg:col-span-2" : ""
             }`}
@@ -33,10 +37,10 @@ export function ServicesContent({ lang }: { lang: Lang }) {
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
             <div className="mt-8 md:mt-16">
               <h2 className={i === 0 ? "font-display text-3xl lg:text-4xl" : "font-display text-2xl"}>
-                {s[lang].metaTitle}
+                {(isUs ? s.us![lang] : s[lang]).metaTitle}
               </h2>
               <p className={i === 0 ? "mt-3 max-w-md text-base text-muted-foreground" : "mt-3 text-sm text-muted-foreground"}>
-                {s[lang].tagline}
+                {(isUs ? s.us![lang] : s[lang]).tagline}
               </p>
               <span className="mt-6 inline-block text-xs uppercase tracking-[0.18em] text-primary">
                 {t.services.cta} →

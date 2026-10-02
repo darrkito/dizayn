@@ -111,7 +111,7 @@ ChatGPT no funciona como una red social donde publicas contenido — funciona co
       excerpt:
         "Google AI Overviews, Copilot and ChatGPT no longer send clicks to a blue link — they cite a paragraph. Here's how to write a page so that paragraph is yours.",
       category: "SEO & AI",
-      metaTitle: "How to Rank Your Brand in AI Search (AI Overviews) 2026",
+      metaTitle: "How to Rank Your Brand in AI Search in 2026",
       metaDescription:
         "A practical guide to getting cited by Google AI Overviews, Copilot and ChatGPT: direct-answer formatting, structured data, and common mistakes.",
       faq: [

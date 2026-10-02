@@ -287,7 +287,7 @@ export const services: Service[] = [
           { q: "¿En cuánto tiempo veo resultados?", a: "Las mejoras técnicas y locales suelen notarse en 4 a 8 semanas; el crecimiento sostenido toma de 3 a 6 meses, igual que con cualquier agencia seria." },
           { q: "¿Cómo se factura y se paga?", a: "Facturación mensual en USD, contrato en inglés, pago por PayPal, transferencia bancaria (wire) o cripto (BTC, USDC, USDT)." },
         ],
-        metaTitle: "Agencia SEO para Negocios en EE.UU. (Inglés y Español)",
+        metaTitle: "Agencia SEO bilingüe para negocios en EE.UU.",
         metaDescription:
           "SEO técnico, local y de contenido para negocios en Estados Unidos, en inglés y en español. Precios nearshore, reportes claros.",
       },
