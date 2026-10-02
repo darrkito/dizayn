@@ -39,7 +39,7 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
       <section className="relative overflow-hidden sky-panel">
         <div className="container-x relative grid items-center gap-8 py-8 md:gap-14 md:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+            <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
               {home.eyebrow}
             </p>
             <h1 className="mt-5 text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] md:mt-7">

@@ -38,6 +38,7 @@
   --color-primary: var(--primary);
   --color-wa: var(--wa);
   --color-wa-fg: var(--wa-fg);
+  --color-primary-text: var(--primary-text);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -56,6 +57,8 @@
   /* WhatsApp green, used ONLY on WhatsApp affordances. #0b7a5e = 5.3:1 against white text. */
   --wa: #0b7a5e;
   --wa-fg: #0b7a5e; /* green as TEXT on the page background (white 5.3:1; dark theme overrides to a lighter green) */
+  /* Primary blue as small TEXT on the tinted eyebrow pills: 5.4:1 (the fill blue is 4.2:1 there and failed PSI color-contrast). */
+  --primary-text: oklch(0.5 0.19 256);
   --background: oklch(1 0 0);
   --foreground: oklch(0.22 0.04 258);
   --card: oklch(0.98 0.012 250);
@@ -95,6 +98,7 @@
 }
 
 .dark {
+  --primary-text: var(--primary);
   --wa-fg: #3ecf9e; /* 9.6:1 on the dark background */
   --background: oklch(0.14 0.01 258);
   --foreground: oklch(0.96 0.01 250);

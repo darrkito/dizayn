@@ -21,7 +21,7 @@ export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Mar
   return (
     <div>
       <section className="container-x py-10 md:py-24">
-        <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+        <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
           {about.eyebrow}
         </p>
         <h1 className="mt-7 max-w-4xl text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{about.title}</h1>

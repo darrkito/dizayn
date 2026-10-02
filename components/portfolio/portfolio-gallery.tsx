@@ -80,6 +80,8 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
                 // delaying discovery and pushing mobile LCP to ~5.2s. `priority`
                 // makes next/image render it eager with fetchpriority="high".
                 priority={index === 0}
+                // Masonry: 1 column on phones, 2 from sm, 3 from lg. Without this the browser assumes 100vw.
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
             ) : (
