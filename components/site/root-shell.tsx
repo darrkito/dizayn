@@ -82,6 +82,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Dizayn",
+      url: SITE_URL,
+      inLanguage: ["es-MX", "en-MX", "es-US", "en-US"],
+      publisher: { "@id": ORG_ID },
+    },
+    {
       "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": ORG_ID,
       name: "Dizayn",

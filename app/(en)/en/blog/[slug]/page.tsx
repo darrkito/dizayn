@@ -56,7 +56,9 @@ export default async function BlogPostPageEn({
     inLanguage: "en",
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage` },
+    url,
+    image: `${SITE_URL}/og-image.jpg`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
   const faqSchema =
