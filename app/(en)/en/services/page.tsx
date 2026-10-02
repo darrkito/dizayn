@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/lib/routes";
 import { ServicesContent } from "@/components/services/services-content";
 
 const title = "Digital marketing services in Guadalajara";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title: ogTitle, description, type: "website", url: "/en/services", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/en/services", languages: { es: "/servicios", en: "/en/services" } },
+  alternates: buildAlternates("/servicios", "en-MX", { us: false }),
 };
 
 export default function ServicesPageEn() {

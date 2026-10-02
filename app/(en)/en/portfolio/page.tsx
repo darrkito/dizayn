@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/lib/routes";
 import { PortfolioContent } from "@/components/portfolio/portfolio-content";
 
 const title = "Photography, video and design portfolio";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title: ogTitle, description, type: "website", url: "/en/portfolio", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/en/portfolio", languages: { es: "/portafolio", en: "/en/portfolio" } },
+  alternates: buildAlternates("/portafolio", "en-MX", { us: false }),
 };
 
 export default function PortfolioPageEn() {

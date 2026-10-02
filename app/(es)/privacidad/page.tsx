@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/lib/routes";
 import { LegalContent } from "@/components/legal/legal-content";
 
 const title = "Aviso de Privacidad | Dizayn";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   description,
   robots: { index: true, follow: true },
   openGraph: { title, description, type: "website", url: "/privacidad", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/privacidad", languages: { es: "/privacidad", en: "/en/privacy-policy" } },
+  alternates: buildAlternates("/privacidad", "es-MX", { us: false }),
 };
 
 export default function PrivacidadPage() {

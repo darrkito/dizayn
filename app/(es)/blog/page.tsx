@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/lib/routes";
 import { BlogListContent } from "@/components/blog/blog-list-content";
 
 const title = "Blog de marketing, diseño y SEO";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", url: "/blog", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/blog", languages: { es: "/blog", en: "/en/blog" } },
+  alternates: buildAlternates("/blog", "es-MX", { us: false }),
 };
 
 export default function BlogPage() {

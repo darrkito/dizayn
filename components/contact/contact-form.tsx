@@ -5,7 +5,7 @@ import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import type { Market } from "@/lib/routes";
-import { submitContact } from "@/app/contacto/actions";
+import { submitContact } from "@/app/(es)/contacto/actions";
 
 const fieldClass =
   "mt-2 w-full border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-primary";

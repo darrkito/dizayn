@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 import { EN_SLUG_MAP } from "./lib/routes";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Two root layouts ((es)/(en) route groups) => no single layout for unmatched-URL 404s.
+    globalNotFound: true,
+  },
   turbopack: {
     root: path.join(__dirname),
   },

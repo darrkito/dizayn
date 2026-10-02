@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildAlternates } from "@/lib/routes";
 import { LegalContent } from "@/components/legal/legal-content";
 
 const title = "Términos y Condiciones | Dizayn";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   description,
   robots: { index: true, follow: true },
   openGraph: { title, description, type: "website", url: "/terminos", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/terminos", languages: { es: "/terminos", en: "/en/terms-and-conditions" } },
+  alternates: buildAlternates("/terminos", "es-MX", { us: false }),
 };
 
 export default function TerminosPage() {

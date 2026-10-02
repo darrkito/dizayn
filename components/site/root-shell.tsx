@@ -1,7 +1,8 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/lib/i18n";
 import { Header } from "@/components/site/header";
@@ -10,6 +11,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { WebMcpRegister } from "@/components/webmcp-register";
 import { CONTACT } from "@/content/contact";
 import { SITE_URL } from "@/lib/api-response";
+import type { Lang } from "@/content/services";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -21,38 +23,50 @@ const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
-const title = "Dizayn | Agencia de marketing en Guadalajara";
-const description =
-  "Agencia de marketing en Guadalajara: sitios web, SEO, posicionamiento en IA, redes sociales, embudos de venta, fotografía y video. México y el mundo.";
+const COPY = {
+  es: {
+    title: "Dizayn | Agencia de marketing en Guadalajara",
+    description:
+      "Agencia de marketing en Guadalajara: sitios web, SEO, posicionamiento en IA, redes sociales, embudos de venta, fotografía y video. México y el mundo.",
+    path: "/",
+  },
+  en: {
+    title: "Dizayn | Marketing agency in Guadalajara",
+    description:
+      "Marketing agency in Guadalajara: websites, SEO, AI visibility, social media, sales funnels, photography and video. Serving Mexico and the world.",
+    path: "/en",
+  },
+} as const;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: { default: title, template: "%s | Dizayn" },
-  description,
-  openGraph: {
-    title,
+/** Default metadata for a root layout. Two root layouts exist ((es) and (en) route groups)
+ * so that <html lang> is correct in the server-rendered HTML — a single root layout can only
+ * hardcode one language. Every page still overrides title/description/alternates itself. */
+export const rootMetadata = (lang: Lang): Metadata => {
+  const { title, description, path } = COPY[lang];
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: title, template: "%s | Dizayn" },
     description,
-    type: "website",
-    url: "/",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Dizayn" }],
-  },
-  twitter: { card: "summary_large_image", images: ["/og-image.jpg"] },
-  alternates: { canonical: "/" },
-  verification: {
-    google: "zqve3zaRBgJl0Xq3QfdJ6j3btWpsueyE_uohdujsiM0",
-  },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: path,
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Dizayn" }],
+    },
+    twitter: { card: "summary_large_image", images: ["/og-image.jpg"] },
+    alternates: { canonical: path },
+    verification: {
+      google: "zqve3zaRBgJl0Xq3QfdJ6j3btWpsueyE_uohdujsiM0",
+    },
+  };
 };
 
-// This schema block renders identically on every route (root layout can only declare it once —
-// see the <html lang> note below for the same static-generation tradeoff). It deliberately
-// carries no marketing-copy `description` field, so it has nothing to be the wrong language
-// about — each page's own JSON-LD (blog posts, service details) and <meta name="description">
-// already carry the real per-language copy. Only structural identity facts (name/address/areaServed)
-// live here, in English, since schema.org values are machine-read identifiers, not display copy.
-// Single @id-anchored entity (ProfessionalService + LocalBusiness merged), matching the
-// Luvory pattern — every "Dizayn" reference sitewide (blog author/publisher, service
-// provider) points at this same @id instead of re-declaring anonymous duplicate
-// Organization nodes, which fragments entity recognition for Google/AI crawlers.
+// Structural identity facts only (name/address/areaServed), in English — schema.org values are
+// machine-read identifiers, not display copy, so this block is identical in both root layouts.
+// Single @id-anchored entity (ProfessionalService + LocalBusiness merged): every "Dizayn"
+// reference sitewide (blog author/publisher, service provider) points at this same @id
+// instead of re-declaring anonymous duplicate Organization nodes.
 export const ORG_ID = `${SITE_URL}/#organization`;
 const jsonLd = {
   "@context": "https://schema.org",
@@ -63,6 +77,8 @@ const jsonLd = {
       name: "Dizayn",
       description: "Design and web development agency based in Guadalajara, Jalisco, Mexico.",
       url: SITE_URL,
+      logo: `${SITE_URL}/icon.png`,
+      image: `${SITE_URL}/og-image.jpg`,
       telephone: `+${CONTACT.whatsapp}`,
       areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
       address: {
@@ -84,9 +100,9 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export function RootShell({ lang, children }: { lang: Lang; children: ReactNode }) {
   return (
-    <html lang="es" className={`${jakarta.variable} ${bricolage.variable} h-full`} suppressHydrationWarning>
+    <html lang={lang} className={`${jakarta.variable} ${bricolage.variable} h-full`} suppressHydrationWarning>
       <head>
         <link rel="alternate" type="text/markdown" href="/llms.txt" />
         <script
@@ -104,10 +120,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <WebMcpRegister />
           </I18nProvider>
         </ThemeProvider>
-        {/* Microsoft Clarity — session recording/heatmaps. strategy="lazyOnload"
-            (matches the pattern already established for GA4 on the
-            SwapperBetweenChains project): Clarity's own snippet dynamically
-            injects a second script tag, so there's no benefit to loading it
+        {/* Microsoft Clarity — session recording/heatmaps. strategy="lazyOnload": Clarity's own
+            snippet dynamically injects a second script tag, so there's no benefit to loading it
             any earlier than the page becoming interactive. */}
         <Script id="clarity-init" strategy="lazyOnload">
           {`
