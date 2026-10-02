@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { ExploreLinks } from "@/components/site/inline-links";
+import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
@@ -56,15 +57,16 @@ export function ContactForm({ lang, market = "mx" }: { lang: Lang; market?: Mark
   }
 
   return (
-    <div className="container-x py-24">
+    <div className="container-x py-10 md:py-24">
       <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
         {contact.eyebrow}
       </p>
       <h1 className="mt-7 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{contact.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{contact.lead}</p>
+      <WhatsAppCTA label={t.nav.waCta} place="contact" className="mt-6 w-full sm:w-auto" />
       <ExploreLinks lang={lang} market={market} className="mt-4 max-w-2xl text-sm text-muted-foreground" />
 
-      <div className="mt-16 grid gap-16 lg:grid-cols-[1.2fr_1fr]">
+      <div className="mt-10 grid gap-12 md:mt-16 md:gap-16 lg:grid-cols-[1.2fr_1fr]">
         <form onSubmit={onSubmit} className="space-y-6" noValidate>
           <div>
             <label htmlFor="name" className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
@@ -146,14 +148,14 @@ export function ContactForm({ lang, market = "mx" }: { lang: Lang; market?: Mark
 
           <div>
             <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{contact.emailLabel}</h2>
-            <a href={`mailto:${CONTACT.email}`} className="mt-1 block text-lg hover:text-primary">
+            <a href={`mailto:${CONTACT.email}`} className="mt-1 flex min-h-11 items-center text-lg hover:text-primary">
               {CONTACT.email}
             </a>
           </div>
 
           <div>
             <h2 className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{contact.igLabel}</h2>
-            <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-1 block text-lg hover:text-primary">
+            <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-1 flex min-h-11 items-center text-lg hover:text-primary">
               @dizayn_mx
             </a>
           </div>

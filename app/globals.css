@@ -36,6 +36,8 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-wa: var(--wa);
+  --color-wa-fg: var(--wa-fg);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -51,6 +53,9 @@
 
 :root {
   --radius: 1rem;
+  /* WhatsApp green, used ONLY on WhatsApp affordances. #0b7a5e = 5.3:1 against white text. */
+  --wa: #0b7a5e;
+  --wa-fg: #0b7a5e; /* green as TEXT on the page background (white 5.3:1; dark theme overrides to a lighter green) */
   --background: oklch(1 0 0);
   --foreground: oklch(0.22 0.04 258);
   --card: oklch(0.98 0.012 250);
@@ -90,6 +95,7 @@
 }
 
 .dark {
+  --wa-fg: #3ecf9e; /* 9.6:1 on the dark background */
   --background: oklch(0.14 0.01 258);
   --foreground: oklch(0.96 0.01 250);
   --card: oklch(0.19 0.015 258 / 0.6);
@@ -222,5 +228,125 @@
     border-color: var(--color-primary);
     color: var(--color-primary);
     background: var(--color-muted);
+  }
+}
+@utility btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  border-radius: 9999px;
+  background: var(--color-wa);
+  color: #fff;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: 0 10px 24px -12px oklch(0.45 0.1 165 / 0.6);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    background: oklch(from var(--color-wa) calc(l - 0.05) c h);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@utility btn-wa-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-wa-fg);
+  color: var(--color-wa-fg);
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Touch feel (phones): no grey tap flash, no double-tap zoom delay, press feedback, 16px fields so iOS never zooms on focus. */
+@media (max-width: 767px) {
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  .btn-primary:active,
+  .btn-ghost:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Phones: reserve room for the fixed tab bar on <body> (not <main>), so the footer is never covered. */
+@media (max-width: 767px) {
+  body:has(.tabbar) {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Bottom sheet = native <dialog>: free focus trap, Esc and backdrop. */
+dialog.sheet {
+  width: 100%;
+  max-width: 28rem;
+  margin: auto auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+dialog.sheet::backdrop {
+  background: oklch(0 0 0 / 0.5);
+}
+@media (prefers-reduced-motion: no-preference) {
+  dialog.sheet[open] {
+    animation: sheet-up 220ms ease-out;
+  }
+  @keyframes sheet-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Swipe rail (phones): cards peek ~22% of the next one; desktop layout classes take over from md. */
+@media (max-width: 767px) {
+  .rail {
+    display: flex;
+    gap: 0.875rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: -1.5rem;
+    padding-inline: 1.5rem;
+    scroll-padding-inline: 1.5rem;
+    padding-bottom: 0.25rem;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .rail > .rail-item {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
   }
 }

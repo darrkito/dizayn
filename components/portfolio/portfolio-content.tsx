@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { ExploreLinks } from "@/components/site/inline-links";
+import { WhatsAppBand } from "@/components/site/whatsapp-band";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { portfolioItems } from "@/content/portfolio";
 import { PortfolioGallery } from "./portfolio-gallery";
@@ -16,7 +17,7 @@ export function PortfolioContent({ lang }: { lang: Lang }) {
   }, [lang, setLang]);
 
   return (
-    <div className="container-x py-24">
+    <div className="container-x py-10 md:py-24">
       <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
         {t.portfolio.eyebrow}
       </p>
@@ -29,6 +30,9 @@ export function PortfolioContent({ lang }: { lang: Lang }) {
       </div>
 
       <InstagramBand lang={lang} />
+      <div className="-mx-6 mt-14 md:-mx-0">
+        <WhatsAppBand lang={lang} place="portfolio" />
+      </div>
     </div>
   );
 }

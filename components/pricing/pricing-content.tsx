@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PRICE_ROWS } from "@/content/us-pricing";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { usPath } from "@/lib/routes";
+import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 
 /** US-only page — no MX equivalent, so unlike the other market-aware components this
  * doesn't take a `market` prop; it always renders the usPricing dict namespace. */
@@ -54,8 +55,9 @@ export function PricingContent({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      <section className="container-x py-24">
-        <Link href={usPath("/contacto", lang)} className="btn-primary">
+      <section className="container-x flex flex-col gap-3 py-14 sm:flex-row md:py-24">
+        <WhatsAppCTA label={getDict(lang).nav.waCta} place="pricing" />
+        <Link href={usPath("/contacto", lang)} className="btn-ghost">
           {p.cta}
         </Link>
       </section>

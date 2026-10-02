@@ -8,16 +8,16 @@ export default function NotFound() {
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
         La página que buscas no existe o fue movida. Visita nuestro portafolio o servicios para ver lo que hacemos.
       </p>
-      <Link href="/" className="mt-6 text-sm font-semibold text-primary hover:underline">
+      <Link href="/" className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline">
         Volver al inicio
       </Link>
       <p className="mt-8 text-sm text-muted-foreground">
         También puedes revisar{" "}
-        <Link href="/portafolio" className="underline hover:text-foreground">el portafolio</Link>,{" "}
-        <Link href="/servicios" className="underline hover:text-foreground">servicios</Link>,{" "}
-        <Link href="/blog" className="underline hover:text-foreground">el blog</Link>,{" "}
-        <a href="/sitemap.xml" className="underline hover:text-foreground">el mapa del sitio</a>{" "}
-        o <a href="/llms.txt" className="underline hover:text-foreground">llms.txt</a>.
+        <Link href="/portafolio" className="inline-flex min-h-11 items-center underline hover:text-foreground">el portafolio</Link>,{" "}
+        <Link href="/servicios" className="inline-flex min-h-11 items-center underline hover:text-foreground">servicios</Link>,{" "}
+        <Link href="/blog" className="inline-flex min-h-11 items-center underline hover:text-foreground">el blog</Link>,{" "}
+        <a href="/sitemap.xml" className="inline-flex min-h-11 items-center underline hover:text-foreground">el mapa del sitio</a>{" "}
+        o <a href="/llms.txt" className="inline-flex min-h-11 items-center underline hover:text-foreground">llms.txt</a>.
       </p>
     </section>
   );

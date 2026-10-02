@@ -11,10 +11,14 @@ import type { PortfolioItem } from "@/content/portfolio";
 
 type Filter = "all" | PortfolioItem["category"];
 
+const PAGE = 24;
+
 export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang: Lang }) {
   const t = getDict(lang);
   const [filter, setFilter] = useState<Filter>("all");
   const [active, setActive] = useState<PortfolioItem | null>(null);
+  // 219 items rendered at once made the phone page ~90,000 px tall: show a page at a time.
+  const [count, setCount] = useState(PAGE);
 
   // Item titles/alt text are auto-generated generic labels ("Fotografía 12", "Diseño 3") from
   // the original scrape — ES-only by construction, not real per-item descriptions worth
@@ -41,7 +45,10 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
           <button
             key={f.key}
             type="button"
-            onClick={() => setFilter(f.key)}
+            onClick={() => {
+              setFilter(f.key);
+              setCount(PAGE);
+            }}
             className={cn(
               "flex min-h-11 items-center rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
               filter === f.key
@@ -55,7 +62,7 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
       </div>
 
       <div className="mt-10 columns-1 gap-3 sm:columns-2 lg:columns-3">
-        {visible.map((item, index) => (
+        {visible.slice(0, count).map((item, index) => (
           <button
             key={item.id}
             type="button"
@@ -94,6 +101,14 @@ export function PortfolioGallery({ items, lang }: { items: PortfolioItem[]; lang
           </button>
         ))}
       </div>
+
+      {count < visible.length && (
+        <div className="mt-8 flex justify-center">
+          <button type="button" onClick={() => setCount((c) => c + PAGE)} className="btn-ghost">
+            {t.portfolio.more} ({visible.length - count})
+          </button>
+        </div>
+      )}
 
       <Dialog open={active !== null} onOpenChange={(open) => !open && setActive(null)}>
         <DialogContent className="max-w-3xl bg-background p-2 sm:p-2">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { altPath, langFromPath, langPath, marketFromPath, marketHomePath, usPath } from "@/lib/routes";
 import { ThemeToggle } from "./theme-toggle";
@@ -14,7 +14,20 @@ export function Header() {
   const { setLang } = useI18n();
   const pathname = usePathname() ?? "/";
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  // Phones: hide on scroll down, show on scroll up. Transform only, so no layout shift.
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (Math.abs(y - last) < 8) return;
+      setHidden(y > 80 && y > last);
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Derived from the URL, not the ambient i18n context: this is a client component but its
   // first render must match the server-rendered HTML (no post-hydration flash) so crawlers
@@ -52,9 +65,11 @@ export function Header() {
       ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
-      <div className="container-x flex h-20 items-center justify-between gap-6">
-        <Link href={path("/")} className="font-display text-2xl font-bold tracking-[-0.06em]">
+    <header
+      className={`sticky top-0 z-40 border-b border-border/70 bg-background transition-transform duration-200 md:z-50 md:bg-background/80 md:backdrop-blur-xl ${hidden ? "max-md:-translate-y-full" : ""}`}
+    >
+      <div className="container-x flex h-14 items-center justify-between gap-6 md:h-20">
+        <Link href={path("/")} className="inline-flex min-h-11 items-center font-display text-2xl font-bold tracking-[-0.06em]">
           DIZAYN<span className="text-primary">.</span>
         </Link>
 
@@ -107,42 +122,9 @@ export function Header() {
             </Link>
           </span>
 
-          <button
-            type="button"
-            className="flex size-11 flex-col items-center justify-center md:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            aria-label="Menu"
-            aria-expanded={open}
-            onClick={() => setOpen((o) => !o)}
-          >
-            <span className="block h-px w-6 bg-foreground" />
-            <span className="mt-1.5 block h-px w-6 bg-foreground" />
-          </button>
         </div>
       </div>
 
-      {open && (
-        <nav className="border-t border-border md:hidden">
-          <div className="container-x flex flex-col py-4">
-            {items.map((i) => (
-              <Link
-                key={i.href}
-                href={i.href}
-                onClick={() => setOpen(false)}
-                className="py-3 text-sm font-medium text-muted-foreground"
-              >
-                {i.label}
-              </Link>
-            ))}
-            <Link
-              href={otherMarketHref}
-              onClick={() => setOpen(false)}
-              className="py-3 text-sm font-medium text-muted-foreground"
-            >
-              {isUs ? "Dizayn México" : "Dizayn for the US"}
-            </Link>
-          </div>
-        </nav>
-      )}
     </header>
   );
 }

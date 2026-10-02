@@ -5,6 +5,7 @@ import Link from "next/link";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath } from "@/lib/routes";
+import { WhatsAppBand } from "@/components/site/whatsapp-band";
 
 export function ServicesContent({ lang }: { lang: Lang }) {
   const { setLang } = useI18n();
@@ -15,21 +16,22 @@ export function ServicesContent({ lang }: { lang: Lang }) {
   }, [lang, setLang]);
 
   return (
-    <div className="container-x py-24">
+    <div>
+      <div className="container-x py-10 md:py-24">
       <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.services.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.services.lead}</p>
 
-      <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
         {services.map((s, i) => (
           <Link
             key={s.slug}
             href={langPath(`/servicios/${s.slug}`, lang)}
-            className={`group flex flex-col justify-between bg-background p-8 transition-colors hover:bg-card ${
+            className={`group flex flex-col justify-between bg-background p-5 transition-colors active:bg-card hover:bg-card md:p-8 ${
               i === 0 ? "sm:col-span-2 sm:p-12 lg:col-span-2" : ""
             }`}
           >
             <span className="text-xs tracking-[0.2em] text-primary">{s.number}</span>
-            <div className="mt-16">
+            <div className="mt-8 md:mt-16">
               <h2 className={i === 0 ? "font-display text-3xl lg:text-4xl" : "font-display text-2xl"}>
                 {s[lang].metaTitle}
               </h2>
@@ -43,6 +45,8 @@ export function ServicesContent({ lang }: { lang: Lang }) {
           </Link>
         ))}
       </div>
+      </div>
+      <WhatsAppBand lang={lang} place="services" />
     </div>
   );
 }

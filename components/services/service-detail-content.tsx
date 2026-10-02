@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getService, services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath, usPath, type Market } from "@/lib/routes";
+import { WhatsAppBand } from "@/components/site/whatsapp-band";
+import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 
 export function ServiceDetailContent({
   slug,
@@ -29,20 +31,23 @@ export function ServiceDetailContent({
 
   return (
     <div>
-      <section className="container-x py-20">
+      <section className="container-x py-8 md:py-20">
         <Link
           href={path("/servicios")}
           className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           ← {t.services.back}
         </Link>
-        <p className="mt-10 text-xs tracking-[0.2em] text-primary">{service.number}</p>
+        <p className="mt-6 text-xs tracking-[0.2em] text-primary md:mt-10">{service.number}</p>
         <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.metaTitle}</h1>
         <p className="mt-6 max-w-2xl font-display text-xl text-primary">{copy.tagline}</p>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{copy.intro}</p>
-        <Link href={path("/contacto")} className="mt-10 btn-primary">
-          {t.services.cta}
-        </Link>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10">
+          <WhatsAppCTA label={t.nav.waCta} place="service_hero" />
+          <Link href={path("/contacto")} className="btn-ghost">
+            {t.nav.formCta}
+          </Link>
+        </div>
       </section>
 
       <section className="rule">
@@ -101,6 +106,8 @@ export function ServiceDetailContent({
           </dl>
         </div>
       </section>
+
+      <WhatsAppBand lang={lang} place="service_band" />
 
       <section className="rule">
         <div className="container-x py-16">

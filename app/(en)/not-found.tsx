@@ -8,7 +8,7 @@ export default function NotFoundEn() {
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
         The page you are looking for does not exist or was moved. Visit our portfolio or services to see what we do.
       </p>
-      <Link href="/en" className="mt-6 text-sm font-semibold text-primary hover:underline">
+      <Link href="/en" className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline">
         Back to home
       </Link>
     </section>

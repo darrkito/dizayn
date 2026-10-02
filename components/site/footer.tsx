@@ -37,7 +37,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={path(`/servicios/${s.slug}`)}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {copy.metaTitle}
                   </Link>

@@ -8,6 +8,7 @@ import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { getDict, useI18n } from "@/lib/i18n";
 import { renderBlogContent } from "@/lib/blog-render";
 import { langPath, usPath, type Market } from "@/lib/routes";
+import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { BlogCard, formatDate } from "./blog-card";
 
 export function BlogPostContent({
@@ -38,7 +39,7 @@ export function BlogPostContent({
   const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
-    <div className="container-x py-24">
+    <div className="container-x py-10 md:py-24">
       <Link
         href={blogHref}
         className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -92,9 +93,12 @@ export function BlogPostContent({
       <section className="mt-20 rule pt-16">
         <h2 className="font-display text-2xl">{t.blog.ctaTitle}</h2>
         <p className="mt-3 max-w-xl text-muted-foreground">{t.blog.ctaLead}</p>
-        <Link href={contactHref} className="mt-6 btn-primary inline-block">
-          {t.nav.cta}
-        </Link>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <WhatsAppCTA label={t.nav.waCta} place="blog_end" />
+          <Link href={contactHref} className="btn-ghost">
+            {t.nav.formCta}
+          </Link>
+        </div>
       </section>
 
       {related.length > 0 && (

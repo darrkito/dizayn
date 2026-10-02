@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
 import "@/app/globals.css";
@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/lib/i18n";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { MobileTabBar } from "@/components/site/mobile-tab-bar";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { WebMcpRegister } from "@/components/webmcp-register";
 import { CONTACT } from "@/content/contact";
@@ -22,6 +23,15 @@ const bricolage = Bricolage_Grotesque({
   variable: "--font-display",
   subsets: ["latin"],
 });
+
+/** viewport-fit=cover lets the tab bar sit under the iOS home indicator via env(safe-area-inset-bottom). */
+export const rootViewport: Viewport = {
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d1017" },
+  ],
+};
 
 const COPY = {
   es: {
@@ -117,6 +127,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: ReactNode 
             <main className="flex-1">{children}</main>
             <Footer />
             <WhatsAppButton />
+            <MobileTabBar />
             <WebMcpRegister />
           </I18nProvider>
         </ThemeProvider>

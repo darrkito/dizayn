@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { ExploreLinks } from "@/components/site/inline-links";
+import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath, usPath, type Market } from "@/lib/routes";
 
@@ -19,7 +20,7 @@ export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Mar
 
   return (
     <div>
-      <section className="container-x py-24">
+      <section className="container-x py-10 md:py-24">
         <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
           {about.eyebrow}
         </p>
@@ -55,8 +56,9 @@ export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Mar
         </div>
       </section>
 
-      <section className="container-x py-24">
-        <Link href={path("/contacto")} className="btn-primary">
+      <section className="container-x flex flex-col gap-3 py-14 sm:flex-row md:py-24">
+        <WhatsAppCTA label={t.nav.waCta} place="about" />
+        <Link href={path("/contacto")} className="btn-ghost">
           {about.cta}
         </Link>
       </section>
