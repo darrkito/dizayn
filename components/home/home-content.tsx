@@ -39,14 +39,17 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
       <section className="relative overflow-hidden sky-panel">
         <div className="container-x relative grid items-center gap-8 py-8 md:gap-14 md:py-28 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
+            {/* The H1 carries the head term ("Agencia de marketing en Guadalajara"), styled as the
+                eyebrow pill; the slogan keeps its display styling as a paragraph. Same look,
+                but the one heading search engines weigh most now names what Dizayn is and where. */}
+            <h1 className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
               {home.eyebrow}
-            </p>
-            <h1 className="mt-5 text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] md:mt-7">
-              {home.h1a} <em className="not-italic text-primary">{home.h1b}</em>
+            </h1>
+            <p className="mt-5 font-display text-[clamp(2.25rem,6vw,4.75rem)] font-extrabold leading-[1.02] tracking-[-0.035em] md:mt-7">
+              {home.h1a} <em className="whitespace-nowrap not-italic text-primary">{home.h1b}</em>
               <br />
               {home.h1c}
-            </h1>
+            </p>
             <p className="mt-5 max-w-xl text-base text-muted-foreground md:mt-7 md:text-lg">{home.lead}</p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:mt-9">
               <WhatsAppCTA label={t.nav.waCta} place="hero" />

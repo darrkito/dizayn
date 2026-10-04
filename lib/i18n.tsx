@@ -27,7 +27,7 @@ const dict = {
       pricing: "Precios",
     },
     blog: {
-      title: "Blog",
+      title: "Blog de marketing digital, SEO y GEO",
       lead: "Ideas y guías sobre marketing, diseño y posicionamiento en buscadores e IA, escritas por el equipo de Dizayn en Guadalajara.",
       readMore: "Leer artículo",
       back: "Volver al blog",
@@ -43,7 +43,7 @@ const dict = {
       lead: "Precios reales, cómo pagar, y cómo elegir entre nearshore, offshore o una agencia local — escrito para negocios en Estados Unidos.",
     },
     home: {
-      eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
+      eyebrow: "Agencia de marketing en Guadalajara, Jalisco",
       heroAlt: "Producción creativa de Dizayn en Guadalajara",
       h1a: "Marcas que",
       h1b: "se ven",
@@ -78,7 +78,7 @@ const dict = {
       ctaLead: "Cuéntanos qué necesitas y te respondemos con una propuesta clara, sin humo.",
     },
     usHome: {
-      eyebrow: "Agencia nearshore · Guadalajara, México → EE.UU.",
+      eyebrow: "Agencia nearshore en Guadalajara para EE.UU.",
       heroAlt: "Producción creativa de Dizayn para clientes en Estados Unidos",
       h1a: "Tu negocio en EE.UU.,",
       h1b: "hablado",
@@ -110,7 +110,7 @@ const dict = {
     },
     usAbout: {
       eyebrow: "Agencia nearshore · Guadalajara, México",
-      title: "Somos Dizayn",
+      title: "Dizayn, agencia nearshore para negocios en EE.UU.",
       lead:
         "Un equipo creativo con base en Guadalajara, Jalisco, que atiende negocios en Estados Unidos desde hace años. Empezamos produciendo imagen para marcas y terminamos construyendo todo el sistema que las hace crecer: sitio, posicionamiento, contenido y ventas — en inglés y en español.",
       p1title: "De Guadalajara para EE.UU., sin fricción",
@@ -124,13 +124,13 @@ const dict = {
         { k: "Claridad", v: "Hablamos claro, cobramos claro en USD y reportamos claro." },
         { k: "Oficio", v: "Producción propia, hecha con las manos y con criterio." },
         { k: "Constancia", v: "El crecimiento viene de publicar y optimizar, mes tras mes." },
-        { k: "Resultado", v: "Nos mide lo que le pasa a tu negocio, no nuestros premios." },
+        { k: "Resultado", v: "Nos mide lo que le pasa a tu negocio: tráfico, prospectos y ventas." },
       ],
       cta: "Trabajemos juntos",
     },
     usContact: {
       eyebrow: "Agencia nearshore para EE.UU.",
-      title: "Hablemos",
+      title: "Cotiza con una agencia nearshore en Guadalajara",
       lead:
         "Cuéntanos de tu proyecto. Respondemos el mismo día hábil, en tu horario, con próximos pasos y un rango de inversión en USD.",
       whatsapp: "Escríbenos por WhatsApp",
@@ -154,9 +154,20 @@ const dict = {
         error: "No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos por WhatsApp.",
       },
     },
+    pricing: {
+      eyebrow: "Precios en MXN · Guadalajara, Jalisco",
+      title: "Precios de marketing digital en Guadalajara",
+      lead:
+        "Rangos reales de lo que cobramos en México, en pesos y antes de IVA. El precio exacto depende del alcance: te lo damos por escrito después de una llamada corta.",
+      table: { service: "Servicio", range: "Rango", detail: "Qué mueve el precio" },
+      note:
+        "Rangos de referencia de octubre de 2026, comparados contra precios públicos de agencias en Guadalajara y México. No incluyen IVA ni inversión en anuncios. No son una cotización final.",
+      cta: "Pedir cotización exacta",
+      serviceLink: "Ver el servicio",
+    },
     usPricing: {
       eyebrow: "Precios en USD · Para negocios en EE.UU.",
-      title: "Precios",
+      title: "Precios en USD para negocios en EE.UU.",
       lead:
         "Rango real de lo que cobramos vs. el promedio del mercado en Estados Unidos para el mismo trabajo. Sin letra chica — cotización exacta después de conocer tu proyecto.",
       table: { service: "Servicio", ours: "Dizayn", usMarket: "Promedio en EE.UU.", unit: "" },
@@ -165,7 +176,8 @@ const dict = {
       cta: "Pedir cotización exacta",
     },
     services: {
-      title: "Servicios",
+      title: "Servicios de marketing en Guadalajara",
+      usTitle: "Servicios de marketing para negocios en EE.UU.",
       lead:
         "Cubrimos todo el recorrido: cómo te ven, cómo te encuentran y cómo te compran. Puedes tomar una pieza o el sistema completo.",
       includes: "Qué incluye",
@@ -175,10 +187,14 @@ const dict = {
       other: "Otros servicios",
       back: "Todos los servicios",
       cta: "Cotizar este servicio",
+      price: "Precio",
+      priceLink: "Ver todos los precios",
+      related: "Casos y guías relacionadas",
+      updated: "Actualizado",
     },
     portfolio: {
       eyebrow: "Foto, video y diseño · Guadalajara, Jalisco",
-      title: "Portafolio",
+      title: "Portafolio de diseño, foto y video en Guadalajara",
       lead:
         "Fotografía, video y diseño producidos por nuestro equipo en Guadalajara. Filtra por categoría para ver los proyectos.",
       filterAll: "Todo",
@@ -195,13 +211,13 @@ const dict = {
       igCta: "Seguir @dizayn_mx",
     },
     about: {
-      eyebrow: "Agencia creativa · Guadalajara, Jalisco",
-      title: "Somos Dizayn",
+      eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
+      title: "Sobre Dizayn, agencia de marketing en Guadalajara",
       lead:
         "Un equipo creativo con base en Guadalajara, Jalisco. Empezamos produciendo imagen para marcas y terminamos construyendo todo el sistema que las hace crecer: sitio, posicionamiento, contenido y ventas.",
       p1title: "Desde Guadalajara, para donde haga falta",
       p1:
-        "Vivimos y producimos en Guadalajara, conocemos su mercado y a su gente. Trabajamos con clientes en todo México y con marcas fuera del país que necesitan un equipo bilingüe que entienda ambos contextos.",
+        "Vivimos y producimos en Guadalajara y atendemos a toda la zona metropolitana: Zapopan, Tlaquepaque, Tonalá y Tlajomulco. Conocemos su mercado y a su gente. Trabajamos con clientes en todo México y con marcas fuera del país que necesitan un equipo bilingüe que entienda ambos contextos.",
       p2title: "Diseño con criterio comercial",
       p2:
         "La estética sin estrategia es decoración. Cada decisión de diseño en Dizayn responde a una pregunta simple: ¿esto acerca a la marca a una venta?",
@@ -210,13 +226,13 @@ const dict = {
         { k: "Claridad", v: "Hablamos claro, cobramos claro y reportamos claro." },
         { k: "Oficio", v: "Producción propia, hecha con las manos y con criterio." },
         { k: "Constancia", v: "El crecimiento viene de publicar y optimizar, mes tras mes." },
-        { k: "Resultado", v: "Nos mide lo que le pasa a tu negocio, no nuestros premios." },
+        { k: "Resultado", v: "Nos mide lo que le pasa a tu negocio: tráfico, prospectos y ventas." },
       ],
       cta: "Trabajemos juntos",
     },
     contact: {
       eyebrow: "Agencia de marketing · Guadalajara, Jalisco",
-      title: "Hablemos",
+      title: "Contacto: agencia de marketing en Guadalajara",
       lead:
         "Cuéntanos de tu proyecto. Respondemos el mismo día hábil con próximos pasos y rango de inversión.",
       whatsapp: "Escríbenos por WhatsApp",
@@ -224,7 +240,7 @@ const dict = {
       emailLabel: "Correo",
       igLabel: "Instagram",
       locationLabel: "Ubicación",
-      location: "Guadalajara, Jalisco, México · servicio en todo México y en el extranjero",
+      location: "Guadalajara, Jalisco, México · Atendemos Guadalajara, Zapopan, Tlaquepaque, Tonalá y Tlajomulco, y a clientes en todo México y EE.UU.",
       form: {
         name: "Nombre",
         email: "Correo electrónico",
@@ -272,7 +288,7 @@ const dict = {
       pricing: "Pricing",
     },
     blog: {
-      title: "Blog",
+      title: "Digital marketing, SEO and GEO blog",
       lead: "Ideas and guides on marketing, design, and ranking in search and AI, written by the Dizayn team in Guadalajara.",
       readMore: "Read article",
       back: "Back to blog",
@@ -288,7 +304,7 @@ const dict = {
       lead: "Real pricing, how to pay, and how to choose between nearshore, offshore, or a local agency — written for businesses in the United States.",
     },
     home: {
-      eyebrow: "Marketing agency · Guadalajara, Mexico",
+      eyebrow: "Marketing agency in Guadalajara, Mexico",
       heroAlt: "Creative production by Dizayn in Guadalajara",
       h1a: "Brands that",
       h1b: "look right",
@@ -322,7 +338,7 @@ const dict = {
       ctaLead: "Tell us what you need and we'll come back with a clear proposal, no fluff.",
     },
     usHome: {
-      eyebrow: "Nearshore agency · Guadalajara, Mexico → USA",
+      eyebrow: "Nearshore agency in Guadalajara for the US",
       heroAlt: "Creative production by Dizayn for US clients",
       h1a: "Your US business,",
       h1b: "spoken",
@@ -354,7 +370,7 @@ const dict = {
     },
     usAbout: {
       eyebrow: "Nearshore agency · Guadalajara, Mexico",
-      title: "We are Dizayn",
+      title: "Dizayn, a nearshore agency for US businesses",
       lead:
         "A creative team based in Guadalajara, Jalisco, serving US businesses for years. We started producing imagery for brands and ended up building the whole system that grows them: site, visibility, content and sales — in English and in Spanish.",
       p1title: "From Guadalajara to the US, no friction",
@@ -368,13 +384,13 @@ const dict = {
         { k: "Clarity", v: "We speak plainly, price plainly in USD and report plainly." },
         { k: "Craft", v: "In-house production, made by hand and with judgment." },
         { k: "Consistency", v: "Growth comes from publishing and optimizing, month after month." },
-        { k: "Results", v: "We're measured by your business, not by our awards." },
+        { k: "Results", v: "We're measured by what happens to your business: traffic, leads and sales." },
       ],
       cta: "Let's work together",
     },
     usContact: {
       eyebrow: "Nearshore agency for the US",
-      title: "Let's talk",
+      title: "Get a quote from a nearshore agency in Guadalajara",
       lead: "Tell us about your project. We reply the same business day, on your schedule, with next steps and a USD budget range.",
       whatsapp: "Message us on WhatsApp",
       whatsappDesc: "The fastest route. Works the same from the US.",
@@ -397,9 +413,20 @@ const dict = {
         error: "We couldn't send your message. Try again or reach us on WhatsApp.",
       },
     },
+    pricing: {
+      eyebrow: "MXN pricing · Guadalajara, Mexico",
+      title: "Digital marketing pricing in Guadalajara",
+      lead:
+        "Real ranges for what we charge in Mexico, in pesos and before VAT. The exact price depends on scope: we put it in writing after a short call.",
+      table: { service: "Service", range: "Range", detail: "What moves the price" },
+      note:
+        "Reference ranges as of October 2026, checked against public pricing from agencies in Guadalajara and Mexico. VAT and ad spend not included. Not a final quote.",
+      cta: "Get an exact quote",
+      serviceLink: "See the service",
+    },
     usPricing: {
       eyebrow: "USD pricing · For US businesses",
-      title: "Pricing",
+      title: "USD pricing for US businesses",
       lead:
         "What we actually charge vs. the US market average for the same work. No fine print — exact quote once we know your project.",
       table: { service: "Service", ours: "Dizayn", usMarket: "US market average", unit: "" },
@@ -408,7 +435,8 @@ const dict = {
       cta: "Request an exact quote",
     },
     services: {
-      title: "Services",
+      title: "Marketing services in Guadalajara",
+      usTitle: "Marketing services for US businesses",
       lead:
         "We cover the whole journey: how you look, how you get found and how you get bought. Take one piece or the whole system.",
       includes: "What's included",
@@ -418,10 +446,14 @@ const dict = {
       other: "Other services",
       back: "All services",
       cta: "Get a quote for this",
+      price: "Pricing",
+      priceLink: "See all pricing",
+      related: "Related case studies and guides",
+      updated: "Updated",
     },
     portfolio: {
       eyebrow: "Photo, video & design · Guadalajara, Mexico",
-      title: "Portfolio",
+      title: "Design, photo and video portfolio in Guadalajara",
       lead:
         "Photography, video and design produced by our team in Guadalajara. Filter by category to browse.",
       filterAll: "All",
@@ -438,13 +470,13 @@ const dict = {
       igCta: "Follow @dizayn_mx",
     },
     about: {
-      eyebrow: "Creative agency · Guadalajara, Mexico",
-      title: "We are Dizayn",
+      eyebrow: "Marketing agency · Guadalajara, Mexico",
+      title: "About Dizayn, a marketing agency in Guadalajara",
       lead:
         "A creative team based in Guadalajara, Jalisco. We started producing imagery for brands and ended up building the whole system that grows them: site, visibility, content and sales.",
       p1title: "From Guadalajara, to wherever you are",
       p1:
-        "We live and produce in Guadalajara and we know this market. We work with clients across Mexico and with brands abroad that need a bilingual team fluent in both contexts.",
+        "We live and produce in Guadalajara and serve the whole metro area: Zapopan, Tlaquepaque, Tonalá and Tlajomulco. We know this market. We work with clients across Mexico and with brands abroad that need a bilingual team fluent in both contexts.",
       p2title: "Design with commercial judgment",
       p2:
         "Aesthetics without strategy is decoration. Every design decision at Dizayn answers one question: does this move the brand closer to a sale?",
@@ -453,20 +485,20 @@ const dict = {
         { k: "Clarity", v: "We speak plainly, price plainly and report plainly." },
         { k: "Craft", v: "In-house production, made by hand and with judgment." },
         { k: "Consistency", v: "Growth comes from publishing and optimizing, month after month." },
-        { k: "Results", v: "We're measured by your business, not by our awards." },
+        { k: "Results", v: "We're measured by what happens to your business: traffic, leads and sales." },
       ],
       cta: "Let's work together",
     },
     contact: {
       eyebrow: "Marketing agency · Guadalajara, Mexico",
-      title: "Let's talk",
+      title: "Contact a marketing agency in Guadalajara",
       lead: "Tell us about your project. We reply the same business day with next steps and a budget range.",
       whatsapp: "Message us on WhatsApp",
       whatsappDesc: "The fastest route. Replies during business hours.",
       emailLabel: "Email",
       igLabel: "Instagram",
       locationLabel: "Location",
-      location: "Guadalajara, Jalisco, Mexico · serving all of Mexico and international clients",
+      location: "Guadalajara, Jalisco, Mexico · Serving Guadalajara, Zapopan, Tlaquepaque, Tonalá and Tlajomulco, plus clients across Mexico and the US",
       form: {
         name: "Name",
         email: "Email",

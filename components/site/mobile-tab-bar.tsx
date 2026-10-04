@@ -28,7 +28,7 @@ export function MobileTabBar() {
   const slots: { href: string; label: string; icon: ReactNode }[] = isUs
     ? [
         { href: marketHomePath("us", lang), label: t.nav.home, icon: <Home size={20} /> },
-        { href: path("/precios"), label: t.usPricing.title, icon: <Tag size={20} /> },
+        { href: path("/precios"), label: t.nav.pricing, icon: <Tag size={20} /> },
       ]
     : [
         { href: marketHomePath("mx", lang), label: t.nav.home, icon: <Home size={20} /> },
@@ -56,7 +56,7 @@ export function MobileTabBar() {
 
   const close = () => sheet.current?.close();
   const moreLinks = [
-    ...(isUs ? [] : [{ href: path("/blog"), label: t.nav.blog }]),
+    ...(isUs ? [] : [{ href: path("/blog"), label: t.nav.blog }, { href: path("/precios"), label: t.nav.pricing }]),
     { href: path("/nosotros"), label: t.nav.about },
     { href: path("/contacto"), label: t.nav.contact },
     { href: marketHomePath(isUs ? "mx" : "us", lang), label: isUs ? "Dizayn México" : "Dizayn for the US" },

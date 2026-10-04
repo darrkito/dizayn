@@ -20,6 +20,8 @@ export type Service = {
   number: string;
   /** Last real content change (ISO date) — feeds the visible "Actualizado" line and the sitemap. */
   updated?: string;
+  /** content/blog.ts slugs shown as proof on the MX service page (case studies first, then guides). */
+  related?: string[];
   es: ServiceCopy;
   en: ServiceCopy;
   /** Present only for the 5 services exportable to a remote US client (excludes photography
@@ -31,12 +33,16 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "sitios-web",
+    updated: "2026-10-04",
+    related: ["caso-luvory-sitio-web", "cuanto-cuesta-sitio-web-guadalajara", "diseno-paginas-web-guadalajara-que-incluye"],
     number: "01",
     es: {
       name: "Diseño de sitios web",
       tagline: "Sitios que venden, no folletos digitales.",
       intro:
         "Diseñamos y desarrollamos sitios web rápidos, claros y pensados para convertir visitas en clientes. Cada proyecto arranca con estrategia de mensaje y termina con un sitio medible, editable y listo para posicionar.",
+      answer:
+        "Dizayn diseña y desarrolla sitios web a medida en Guadalajara y Zapopan: rápidos, optimizados para SEO y pensados para convertir visitas en clientes. Una landing page cuesta de $8,000 a $18,000 MXN y un sitio corporativo de 5 a 10 páginas de $18,000 a $45,000 MXN; un sitio corporativo típico queda listo en 3 a 6 semanas.",
       includes: [
         "Estrategia de mensaje y arquitectura de información",
         "Diseño a medida, sin plantillas genéricas",
@@ -61,7 +67,7 @@ export const services: Service[] = [
         { q: "¿Qué debe incluir un diseño de páginas web en Guadalajara?", a: "Un sitio profesional debe incluir base técnica de SEO (velocidad, estructura, datos estructurados), diseño a medida (no plantilla genérica), contenido real de tu negocio y capacitación para que tu equipo lo actualice sin depender de nosotros. Trabajamos con negocios de Guadalajara y Zapopan, y también proyectos nacionales." },
         { q: "¿Cuánto tarda un sitio?", a: "Un sitio corporativo típico toma de 3 a 6 semanas, dependiendo de contenido y aprobaciones." },
         { q: "¿Puedo editarlo yo?", a: "Sí. Entregamos el sitio con capacitación y documentación para que tu equipo actualice contenido sin depender de nosotros." },
-        { q: "¿Cuánto cuesta un sitio web?", a: "Depende del número de páginas, si necesitas tienda en línea y cuánto contenido hay que crear desde cero. Tenemos una guía con rangos reales para Guadalajara en el blog, y damos una cotización exacta después de conocer tu proyecto." },
+        { q: "¿Cuánto cuesta un sitio web en Guadalajara?", a: "Una landing page cuesta de $8,000 a $18,000 MXN, un sitio corporativo de 5 a 10 páginas de $18,000 a $45,000 MXN y una tienda en línea de $45,000 a $120,000+ MXN. Depende del número de páginas, la funcionalidad y cuánto contenido hay que crear; damos una cotización exacta por escrito después de conocer tu proyecto." },
         { q: "¿Incluye hosting y dominio?", a: "Podemos gestionarlo o dejarlo en tu cuenta si prefieres tener el control directo — te explicamos las dos opciones antes de arrancar, sin obligarte a depender de nosotros para algo tan básico." },
         { q: "¿El sitio queda optimizado para SEO?", a: "Sí, la base técnica (velocidad, estructura, datos estructurados, metadatos) va incluida en todo proyecto. Posicionar de forma continua ya es el servicio de SEO aparte, pero el sitio nunca sale con deuda técnica que lo frene." },
         { q: "¿Hacen tiendas en línea?", a: "Sí, integramos catálogo y pago cuando el proyecto lo requiere. Lo evaluamos junto contigo desde la etapa de diagnóstico para dimensionar el alcance correcto." },
@@ -75,6 +81,8 @@ export const services: Service[] = [
       tagline: "Websites that sell, not digital brochures.",
       intro:
         "We design and build fast, clear websites made to turn visitors into customers. Every project starts with message strategy and ends with a measurable, editable site that is ready to rank.",
+      answer:
+        "Dizayn designs and builds custom websites in Guadalajara and Zapopan: fast, SEO-ready and built to turn visits into clients. A landing page costs $8,000 to $18,000 MXN and a 5 to 10 page corporate site $18,000 to $45,000 MXN; a typical corporate site is ready in 3 to 6 weeks.",
       includes: [
         "Message strategy and information architecture",
         "Custom design, no generic templates",
@@ -99,7 +107,7 @@ export const services: Service[] = [
         { q: "What should professional web design in Guadalajara include?", a: "A professional site should include an SEO technical foundation (speed, structure, structured data), custom design (not a generic template), real content about your business, and training so your team can update it without depending on us. We work with businesses in Guadalajara and Zapopan, and national projects too." },
         { q: "How long does a site take?", a: "A typical corporate site takes 3 to 6 weeks depending on content and approvals." },
         { q: "Can I edit it myself?", a: "Yes. We hand over with training and documentation so your team updates content without us." },
-        { q: "How much does a website cost?", a: "It depends on page count, whether you need an online store, and how much content has to be written from scratch. We publish real Guadalajara pricing ranges on the blog, and give an exact quote once we know your project." },
+        { q: "How much does a website cost in Guadalajara?", a: "A landing page costs $8,000 to $18,000 MXN, a 5 to 10 page corporate site $18,000 to $45,000 MXN and an online store $45,000 to $120,000+ MXN. It depends on page count, functionality and how much content has to be written; we give an exact written quote once we know your project." },
         { q: "Does it include hosting and a domain?", a: "We can manage it, or leave it on your own account if you'd rather keep direct control — we walk through both options before starting, no lock-in for something this basic." },
         { q: "Is the site SEO-ready?", a: "Yes, the technical foundation (speed, structure, structured data, metadata) is included in every project. Ongoing ranking work is the separate SEO service, but the site never launches with technical debt holding it back." },
         { q: "Do you build online stores?", a: "Yes, we integrate catalog and payment when a project calls for it. We scope it together during discovery so the build matches what you actually need." },
@@ -114,6 +122,8 @@ export const services: Service[] = [
         tagline: "Un sitio que vende en inglés o en español, hecho por un equipo que domina los dos.",
         intro:
           "Diseñamos y desarrollamos el sitio de tu negocio en EE.UU. desde Guadalajara: mismo nivel que una agencia local, en dólares, con un equipo que piensa y escribe en español nativo — no una traducción automática. Ideal si tu cliente es bilingüe o hispanohablante.",
+        answer:
+          "Dizayn es una agencia nearshore de diseño web en Guadalajara, México, que construye sitios a medida y optimizados para SEO para negocios en EE.UU., en inglés y en español. Los proyectos van de $3,000 a $15,000+ USD, con factura en dólares, y un sitio corporativo típico queda listo en 3 a 6 semanas.",
         includes: [
           "Estrategia de mensaje y arquitectura de información",
           "Diseño a medida, sin plantillas genéricas",
@@ -149,6 +159,8 @@ export const services: Service[] = [
         tagline: "A site that sells in English or Spanish, built by a team fluent in both.",
         intro:
           "We design and build your US business's website from Guadalajara: the same level as a local agency, priced in USD, with a team that writes native Spanish and English — not a machine translation. A strong fit if your customers are bilingual or Spanish-speaking.",
+        answer:
+          "Dizayn is a nearshore web design agency in Guadalajara, Mexico, building custom, SEO-ready websites for US businesses in English and Spanish. Projects run $3,000 to $15,000+ USD, invoiced in dollars, and a typical corporate site is ready in 3 to 6 weeks.",
         includes: [
           "Message strategy and information architecture",
           "Custom design, no generic templates",
@@ -183,12 +195,16 @@ export const services: Service[] = [
   },
   {
     slug: "seo",
+    updated: "2026-10-04",
+    related: ["caso-luvory-seo", "seo-local-guadalajara-guia", "auditoria-seo-guadalajara"],
     number: "02",
     es: {
       name: "Posicionamiento SEO",
       tagline: "Que te encuentren cuando ya te están buscando.",
       intro:
         "Trabajo de SEO técnico, contenido y autoridad para que tu marca aparezca en los resultados que realmente generan ventas. Medimos posiciones, tráfico y prospectos, no vanidad.",
+      answer:
+        "Dizayn es una agencia SEO en Guadalajara que trabaja SEO técnico, contenido y SEO local (Google Business Profile) para que tu negocio aparezca cuando te buscan en Google. Los planes cuestan de $8,000 a $25,000 MXN al mes; las mejoras técnicas y locales se notan en 4 a 8 semanas y el crecimiento sostenido toma de 3 a 6 meses.",
       includes: [
         "Auditoría técnica completa e implementación",
         "Investigación de palabras clave con intención de compra",
@@ -217,6 +233,7 @@ export const services: Service[] = [
         { q: "¿Trabajan con negocios fuera de Guadalajara?", a: "Sí. La mayoría de nuestros clientes están en Guadalajara y Zapopan, pero el mismo proceso técnico y de contenido aplica a cualquier ciudad o mercado nacional." },
         { q: "¿Necesito rehacer mi sitio para hacer SEO?", a: "No siempre. Si el sitio ya tiene una base técnica sana, trabajamos sobre lo existente. Solo recomendamos reconstruir cuando la plataforma actual realmente está limitando el crecimiento." },
         { q: "¿Cuál es la diferencia entre SEO y pauta paga?", a: "El SEO construye posiciones que se quedan sin pagar por clic; la pauta paga resultados inmediatos que desaparecen si dejas de pagar. Los buenos negocios locales usan ambos en momentos distintos — tenemos una guía completa en el blog." },
+        { q: "¿Cuánto cuesta el SEO en Guadalajara?", a: "En Dizayn, de $8,000 a $25,000 MXN al mes: SEO local para un negocio de la zona metropolitana de $8,000 a $12,000, y SEO nacional, B2B o de varias sucursales de $12,000 a $25,000. Precios antes de IVA; el desglose está en nuestra página de precios." },
       ],
       metaTitle: "Agencia SEO en Guadalajara",
       metaDescription:
@@ -227,6 +244,8 @@ export const services: Service[] = [
       tagline: "Get found when people are already looking.",
       intro:
         "Technical SEO, content and authority work so your brand shows up in the searches that actually create sales. We report rankings, traffic and leads, not vanity metrics.",
+      answer:
+        "Dizayn is an SEO agency in Guadalajara working on technical SEO, content and local SEO (Google Business Profile) so your business shows up when people search for it. Plans cost $8,000 to $25,000 MXN per month; technical and local wins show in 4 to 8 weeks and compounding growth takes 3 to 6 months.",
       includes: [
         "Full technical audit and implementation",
         "Keyword research with buying intent",
@@ -255,6 +274,7 @@ export const services: Service[] = [
         { q: "Do you work with businesses outside Guadalajara?", a: "Yes. Most of our clients are in Guadalajara and Zapopan, but the same technical and content process applies to any city or national market." },
         { q: "Do I need to rebuild my site for SEO?", a: "Not always. If the site already has a healthy technical foundation, we build on what's there. We only recommend a rebuild when the current platform is genuinely capping growth." },
         { q: "What's the difference between SEO and paid search?", a: "SEO builds rankings that stay without paying per click; paid search buys immediate results that stop the moment you stop paying. Good local businesses use both at different moments — we cover this in depth on the blog." },
+        { q: "How much does SEO cost in Guadalajara?", a: "At Dizayn, $8,000 to $25,000 MXN per month: local SEO for a business in the Guadalajara metro area $8,000 to $12,000, and national, B2B or multi-location SEO $12,000 to $25,000. Prices before VAT; the full breakdown is on our pricing page." },
       ],
       metaTitle: "SEO agency in Guadalajara, Mexico",
       metaDescription:
@@ -266,6 +286,8 @@ export const services: Service[] = [
         tagline: "Que te encuentren en Google, en inglés y en español.",
         intro:
           "Trabajo de SEO técnico, contenido y autoridad para negocios en Estados Unidos, con la ventaja de un equipo que también domina el SEO en español — el mercado hispano de EE.UU. busca en ambos idiomas y la mayoría de las agencias solo cubre uno.",
+        answer:
+          "Dizayn es una agencia SEO nearshore en Guadalajara, México: SEO técnico, contenido y SEO local para negocios en EE.UU., en inglés y en español. Los planes van de $1,200 a $4,000 USD al mes, contra un promedio del mercado en EE.UU. de unos $3,200, y las mejoras técnicas se notan en 4 a 8 semanas.",
         includes: [
           "Auditoría técnica completa e implementación",
           "Investigación de palabras clave en inglés y en español",
@@ -301,6 +323,8 @@ export const services: Service[] = [
         tagline: "Get found on Google, in English and in Spanish.",
         intro:
           "Technical SEO, content and authority work for US businesses, with the added edge of a team that also does SEO in Spanish — the US Hispanic market searches in both languages, and most agencies only cover one.",
+        answer:
+          "Dizayn is a nearshore SEO agency in Guadalajara, Mexico: technical SEO, content and local SEO for US businesses, in English and Spanish. Plans run $1,200 to $4,000 USD per month, against a US market average of about $3,200, with technical wins showing in 4 to 8 weeks.",
         includes: [
           "Full technical audit and implementation",
           "Keyword research in English and Spanish",
@@ -335,12 +359,16 @@ export const services: Service[] = [
   },
   {
     slug: "posicionamiento-ia",
+    updated: "2026-10-04",
+    related: ["caso-luvory-geo-posicionamiento-ia", "caso-luvory-agente-ia-mcp", "seo-vs-geo-guadalajara"],
     number: "03",
     es: {
       name: "GEO: posicionamiento en IA y LLMs",
       tagline: "Que ChatGPT también te recomiende.",
       intro:
         "Cada vez más personas preguntan a ChatGPT, Perplexity o Gemini antes de comprar. A optimizar tu marca para estos motores se le llama GEO (Generative Engine Optimization). Preparamos tu marca para ser citada por esos modelos: contenido estructurado, entidades claras y fuentes que la IA puede leer y confiar.",
+      answer:
+        "Dizayn es una agencia GEO en Guadalajara: preparamos tu sitio y tu presencia en la web para que ChatGPT, Perplexity, Claude y los AI Overviews de Google mencionen y citen tu marca. El servicio cuesta de $12,000 a $30,000 MXN al mes, se trabaja junto con el SEO y se mide cada mes con preguntas reales en cada motor de IA.",
       includes: [
         "Auditoría de visibilidad en ChatGPT, Perplexity y Gemini",
         "Datos estructurados y definición de entidad de marca",
@@ -367,6 +395,7 @@ export const services: Service[] = [
         { q: "¿Qué es GEO exactamente?", a: "GEO (Generative Engine Optimization) es preparar tu contenido y presencia de marca para que sistemas como ChatGPT, Perplexity o los AI Overviews de Google te citen como fuente al responder — no solo para que aparezcas en una lista de links." },
         { q: "¿Cómo saben qué dice la IA de mi marca hoy?", a: "Le preguntamos directamente a los modelos por tu categoría y tu marca, con prompts repetibles, y documentamos las respuestas con capturas. Esa es tu línea base antes de empezar cualquier trabajo." },
         { q: "¿Sirve para negocios locales?", a: "Sí. Entre más específico y verificable sea el dato (ciudad, servicio, precio), más fácil es para un modelo de IA citarte con confianza en una búsqueda local." },
+        { q: "¿Cuánto cuesta el posicionamiento en IA (GEO)?", a: "De $12,000 a $30,000 MXN al mes. Para un negocio local, de $12,000 a $18,000; para marcas con competencia nacional, con SEO incluido, de $18,000 a $30,000. El diagnóstico inicial de visibilidad en IA va incluido en el primer mes." },
       ],
       metaTitle: "Agencia GEO en Guadalajara (Posicionamiento en IA)",
       metaDescription:
@@ -377,6 +406,8 @@ export const services: Service[] = [
       tagline: "Get recommended by ChatGPT too.",
       intro:
         "More people ask ChatGPT, Perplexity or Gemini before they buy. Optimizing your brand for these engines is called GEO (Generative Engine Optimization). We prepare your brand to be cited by those models: structured content, clear entities and sources AI can read and trust.",
+      answer:
+        "Dizayn is a GEO agency in Guadalajara: we prepare your site and your presence across the web so ChatGPT, Perplexity, Claude and Google AI Overviews mention and cite your brand. The service costs $12,000 to $30,000 MXN per month, runs alongside SEO, and is measured monthly with real questions in each AI engine.",
       includes: [
         "Visibility audit across ChatGPT, Perplexity and Gemini",
         "Structured data and brand entity definition",
@@ -403,6 +434,7 @@ export const services: Service[] = [
         { q: "What exactly is GEO?", a: "GEO (Generative Engine Optimization) is preparing your content and brand presence so systems like ChatGPT, Perplexity, or Google's AI Overviews cite you as a source when answering — not just so you show up in a list of links." },
         { q: "How do you know what AI says about my brand today?", a: "We ask the models directly about your category and your brand, with repeatable prompts, and document the answers with screenshots. That's your baseline before any work starts." },
         { q: "Does this work for local businesses?", a: "Yes. The more specific and verifiable the fact (city, service, price), the easier it is for an AI model to confidently cite you in a local search." },
+        { q: "How much does AI visibility (GEO) cost?", a: "$12,000 to $30,000 MXN per month. For a local business, $12,000 to $18,000; for brands competing nationally, with SEO included, $18,000 to $30,000. The initial AI visibility diagnosis is included in the first month." },
       ],
       metaTitle: "GEO Agency in Guadalajara (AI Search Visibility)",
       metaDescription:
@@ -414,6 +446,8 @@ export const services: Service[] = [
         tagline: "Que ChatGPT también recomiende tu negocio.",
         intro:
           "Cada vez más clientes en EE.UU. le preguntan a ChatGPT, Perplexity o los AI Overviews de Google antes de contratar un servicio. GEO (Generative Engine Optimization) prepara tu marca para ser la respuesta que esos modelos citan — es la categoría de marketing más nueva y con menos competencia real hoy.",
+        answer:
+          "Dizayn es una agencia GEO nearshore en Guadalajara, México, que prepara a negocios en EE.UU. para que ChatGPT, Perplexity, Claude y los AI Overviews de Google citen su marca, en inglés y en español. El servicio va de $1,800 a $5,000 USD al mes; las agencias en EE.UU. empiezan en unos $3,000.",
         includes: [
           "Auditoría de visibilidad en ChatGPT, Perplexity, Gemini y AI Overviews",
           "Datos estructurados y definición de entidad de marca",
@@ -449,6 +483,8 @@ export const services: Service[] = [
         tagline: "Get ChatGPT to recommend your business too.",
         intro:
           "More US customers now ask ChatGPT, Perplexity or Google's AI Overviews before hiring a service. GEO (Generative Engine Optimization) prepares your brand to be the answer those models cite — it's the newest marketing category, and the one with the least real competition today.",
+        answer:
+          "Dizayn is a nearshore GEO agency in Guadalajara, Mexico, getting US businesses cited by ChatGPT, Perplexity, Claude and Google AI Overviews, in English and Spanish. The service runs $1,800 to $5,000 USD per month; US agencies start around $3,000.",
         includes: [
           "Visibility audit across ChatGPT, Perplexity, Gemini and AI Overviews",
           "Structured data and brand entity definition",
@@ -483,12 +519,16 @@ export const services: Service[] = [
   },
   {
     slug: "redes-sociales",
+    updated: "2026-10-04",
+    related: ["caso-luvory-redes-sociales", "cuantas-publicaciones-redes-sociales-necesita-tu-marca", "como-elegir-agencia-redes-sociales-guadalajara"],
     number: "04",
     es: {
       name: "Agencia de redes sociales",
       tagline: "Comunidad que compra, no solo que da like.",
       intro:
         "Estrategia, producción y publicación para que tus redes trabajen como canal de venta. Contenido con dirección de arte real, calendario constante y métricas que importan.",
+      answer:
+        "Dizayn maneja redes sociales para marcas en Guadalajara y Zapopan: estrategia, producción propia de foto, video y reels, publicación y community management. Cuesta de $6,000 a $20,000 MXN al mes según el número de redes y publicaciones; la inversión en anuncios se paga aparte.",
       includes: [
         "Estrategia de contenido y línea gráfica",
         "Producción mensual de foto y video",
@@ -516,6 +556,7 @@ export const services: Service[] = [
         { q: "¿Cuántas publicaciones incluye el plan?", a: "Varía según el plan y la plataforma — lo que importa más que la cantidad es la constancia y que cada pieza tenga un propósito. Tenemos una guía completa sobre cuánto publicar según tu tipo de negocio en el blog." },
         { q: "¿En qué plataformas trabajan?", a: "Principalmente Instagram, TikTok y Facebook, que es donde vive la mayoría de nuestros clientes de producto, restaurantes y retail. Evaluamos LinkedIn para marcas B2B según el caso." },
         { q: "¿Puedo pedir solo producción sin manejo de cuenta?", a: "Sí, podemos separar producción de foto/video de la gestión diaria de la cuenta si ya tienes quien publique internamente." },
+        { q: "¿Cuánto cuesta el manejo de redes sociales en Guadalajara?", a: "De $6,000 a $20,000 MXN al mes: 2 redes con 12 publicaciones de $6,000 a $10,000, y 3 redes con reels propios y community management de $10,000 a $20,000. La inversión en anuncios se paga aparte, directo a la plataforma." },
       ],
       metaTitle: "Agencia de Redes Sociales en Guadalajara",
       metaDescription:
@@ -526,6 +567,8 @@ export const services: Service[] = [
       tagline: "A community that buys, not just likes.",
       intro:
         "Strategy, production and publishing so your social channels work as a sales channel. Content with real art direction, a consistent calendar and metrics that matter.",
+      answer:
+        "Dizayn manages social media for brands in Guadalajara and Zapopan: strategy, in-house photo, video and reels, publishing and community management. It costs $6,000 to $20,000 MXN per month depending on the number of networks and posts; ad spend is paid separately.",
       includes: [
         "Content strategy and visual identity",
         "Monthly photo and video production",
@@ -553,6 +596,7 @@ export const services: Service[] = [
         { q: "How many posts does the plan include?", a: "It varies by plan and platform — what matters more than volume is consistency and every piece having a purpose. We cover how much to post for your type of business in a full guide on the blog." },
         { q: "Which platforms do you work on?", a: "Mainly Instagram, TikTok and Facebook, where most of our product, restaurant and retail clients live. We evaluate LinkedIn for B2B brands case by case." },
         { q: "Can I get just production without account management?", a: "Yes, we can split photo/video production from day-to-day account management if you already have someone posting in-house." },
+        { q: "How much does social media management cost in Guadalajara?", a: "$6,000 to $20,000 MXN per month: 2 networks with 12 posts $6,000 to $10,000, and 3 networks with original reels and community management $10,000 to $20,000. Ad spend is paid separately, directly to the platform." },
       ],
       metaTitle: "Social Media Management Agency in Guadalajara",
       metaDescription:
@@ -564,6 +608,8 @@ export const services: Service[] = [
         tagline: "Comunidad que compra, no solo que da like — en inglés y en español.",
         intro:
           "Estrategia, producción y publicación para que tus redes trabajen como canal de venta. Escribimos y respondemos en el idioma de tu cliente real, algo que la mayoría de las agencias en EE.UU. no puede ofrecer si tu comunidad es bilingüe o hispanohablante.",
+        answer:
+          "Dizayn es una agencia nearshore de redes sociales en Guadalajara, México, que maneja contenido en inglés y en español para negocios en EE.UU., con producción propia. Cuesta de $900 a $3,000 USD al mes, contra $2,500 a $7,500 de una agencia en EE.UU. por el mismo nivel de servicio.",
         includes: [
           "Estrategia de contenido y línea gráfica",
           "Copy y respuestas en inglés y/o español según tu audiencia",
@@ -599,6 +645,8 @@ export const services: Service[] = [
         tagline: "A community that buys, not just likes — in English and Spanish.",
         intro:
           "Strategy, production and publishing so your social channels work as a sales channel. We write and reply in your actual customer's language, something most US agencies can't offer if your community is bilingual or Spanish-speaking.",
+        answer:
+          "Dizayn is a nearshore social media agency in Guadalajara, Mexico, running English and Spanish content for US businesses with in-house production. It costs $900 to $3,000 USD per month, against $2,500 to $7,500 from a US agency for the same level of service.",
         includes: [
           "Content strategy and visual identity",
           "Copy and replies in English and/or Spanish, matched to your audience",
@@ -633,12 +681,16 @@ export const services: Service[] = [
   },
   {
     slug: "embudos-de-venta",
+    updated: "2026-10-04",
+    related: ["que-es-un-embudo-de-ventas", "sitio-web-que-vende-guadalajara", "caso-luvory-sitio-web"],
     number: "05",
     es: {
       name: "Embudos de venta",
       tagline: "Del clic al cliente, sin fugas.",
       intro:
         "Diseñamos el camino completo: anuncio, landing, oferta, seguimiento automatizado y cierre. Cada paso medido para saber exactamente cuánto cuesta un prospecto y cuánto vale.",
+      answer:
+        "Dizayn diseña embudos de venta en Guadalajara: landing page, formulario o WhatsApp, automatización y seguimiento para que cada visita termine en una venta que se pueda medir. Un embudo cuesta de $20,000 a $80,000 MXN por proyecto y uno básico queda listo en 2 a 4 semanas.",
       includes: [
         "Diseño de oferta y propuesta de valor",
         "Landing pages de alta conversión",
@@ -665,6 +717,7 @@ export const services: Service[] = [
         { q: "¿Cuánto tiempo toma construir un embudo?", a: "Un embudo básico (landing, automatización simple, seguimiento) suele estar listo en 2 a 4 semanas. Embudos con múltiples pasos o integraciones complejas toman más." },
         { q: "¿Sirve si ya tengo sitio web?", a: "Sí, un embudo casi siempre vive aparte del sitio principal — una landing enfocada en una sola oferta convierte mejor que mandar tráfico pagado a un sitio con muchas distracciones." },
         { q: "¿Qué pasa si el embudo no convierte al inicio?", a: "Es normal — los primeros datos sirven para diagnosticar dónde se pierde el prospecto, y ahí es donde iteramos oferta, mensaje o segmentación antes de subir la inversión en anuncios." },
+        { q: "¿Cuánto cuesta un embudo de ventas?", a: "De $20,000 a $80,000 MXN por proyecto: un embudo de captación con landing, formulario y WhatsApp de $20,000 a $35,000, y uno completo con CRM, automatizaciones y secuencias de correo de $35,000 a $80,000." },
       ],
       metaTitle: "Agencia de Embudos de Venta en Guadalajara",
       metaDescription:
@@ -675,6 +728,8 @@ export const services: Service[] = [
       tagline: "From click to customer, with no leaks.",
       intro:
         "We design the full path: ad, landing page, offer, automated follow-up and close. Every step measured so you know exactly what a lead costs and what it's worth.",
+      answer:
+        "Dizayn builds sales funnels in Guadalajara: landing page, form or WhatsApp, automation and follow-up so every visit can end in a measurable sale. A funnel costs $20,000 to $80,000 MXN per project and a basic one is ready in 2 to 4 weeks.",
       includes: [
         "Offer and value proposition design",
         "High-conversion landing pages",
@@ -701,6 +756,7 @@ export const services: Service[] = [
         { q: "How long does it take to build a funnel?", a: "A basic funnel (landing page, simple automation, follow-up) is usually ready in 2 to 4 weeks. Multi-step funnels or complex integrations take longer." },
         { q: "Does this work if I already have a website?", a: "Yes, a funnel almost always lives separately from the main site — a landing page focused on one offer converts better than sending paid traffic to a site full of distractions." },
         { q: "What if the funnel doesn't convert at first?", a: "That's normal — early data is what tells us where leads are dropping off, and that's where we iterate on offer, message or targeting before increasing ad spend." },
+        { q: "How much does a sales funnel cost?", a: "$20,000 to $80,000 MXN per project: a lead funnel with landing page, form and WhatsApp $20,000 to $35,000, and a full funnel with CRM, automations and email sequences $35,000 to $80,000." },
       ],
       metaTitle: "Sales Funnel Agency in Guadalajara",
       metaDescription:
@@ -712,6 +768,8 @@ export const services: Service[] = [
         tagline: "Del clic al cliente, sin fugas — en dólares.",
         intro:
           "Diseñamos el camino completo: anuncio, landing, oferta, seguimiento automatizado y cierre, para negocios en Estados Unidos. Mismo rigor de medición que una agencia especializada de EE.UU., a un costo nearshore.",
+        answer:
+          "Dizayn es una agencia nearshore de embudos de venta en Guadalajara, México, para negocios en EE.UU.: landing pages, automatización y seguimiento en inglés y en español. Un proyecto completo cuesta de $3,000 a $8,000 USD y un embudo básico queda listo en 2 a 4 semanas.",
         includes: [
           "Diseño de oferta y propuesta de valor",
           "Landing pages de alta conversión, en inglés o español",
@@ -747,6 +805,8 @@ export const services: Service[] = [
         tagline: "From click to customer, with no leaks — priced in USD.",
         intro:
           "We design the full path: ad, landing page, offer, automated follow-up and close, for US businesses. Same measurement rigor as a specialized US agency, at a nearshore cost.",
+        answer:
+          "Dizayn is a nearshore sales funnel agency in Guadalajara, Mexico, for US businesses: landing pages, automation and follow-up in English and Spanish. A full project costs $3,000 to $8,000 USD and a basic funnel is ready in 2 to 4 weeks.",
         includes: [
           "Offer and value proposition design",
           "High-conversion landing pages, in English or Spanish",
@@ -781,12 +841,16 @@ export const services: Service[] = [
   },
   {
     slug: "fotografia",
+    updated: "2026-10-04",
+    related: ["cuanto-cuesta-fotografia-producto-guadalajara", "fotografia-producto-ecommerce", "caso-luvory-cobertura-eventos-guadalajara"],
     number: "06",
     es: {
       name: "Fotografía",
       tagline: "Imagen que sostiene el precio de tu marca.",
       intro:
         "Fotografía de producto, gastronomía, arquitectura, retrato corporativo y campaña. Dirección de arte, iluminación y retoque para que tu marca se vea como lo que cobra.",
+      answer:
+        "Dizayn hace fotografía profesional de producto, gastronomía y marca en Guadalajara, en estudio o en locación. Una sesión de producto con 10 a 15 fotos retocadas cuesta de $6,000 a $12,000 MXN y una campaña con varias locaciones y dirección de arte de $20,000 a $30,000+ MXN.",
       includes: [
         "Dirección de arte y moodboard previo",
         "Producción en estudio o locación",
@@ -810,7 +874,7 @@ export const services: Service[] = [
       faq: [
         { q: "¿Viajan fuera de Guadalajara?", a: "Sí. Trabajamos en todo México y en proyectos internacionales cuando el alcance lo justifica." },
         { q: "¿Cuántas fotos entregan?", a: "Depende del proyecto; siempre se define el número de tomas finales retocadas antes de empezar." },
-        { q: "¿Cuánto cuesta una sesión de fotos?", a: "Depende del tipo de producto, la cantidad de tomas y si es en estudio o locación. Tenemos una guía con rangos reales para sesiones de producto en Guadalajara en el blog, y cotizamos exacto según tu proyecto." },
+        { q: "¿Cuánto cuesta una sesión de fotos en Guadalajara?", a: "Una sesión de producto en estudio (10 a 15 fotos retocadas) cuesta de $6,000 a $12,000 MXN, una sesión de gastronomía con styling de $10,000 a $20,000 MXN y una campaña con varias locaciones de $20,000 a $30,000+ MXN. Cotizamos exacto según el tipo de producto, la cantidad de tomas y la locación." },
         { q: "¿Necesito preparar algo antes de la sesión?", a: "Coordinamos moodboard, lista de tomas y logística (producto limpio, locación lista) contigo antes del día de rodaje, para que la sesión sea eficiente." },
         { q: "¿Puedo usar las fotos en redes y en el sitio web?", a: "Sí, la licencia de uso comercial que entregamos cubre tu sitio, redes sociales y materiales de marca." },
       ],
@@ -823,6 +887,8 @@ export const services: Service[] = [
       tagline: "Imagery that justifies your price.",
       intro:
         "Product, food, architecture, corporate portrait and campaign photography. Art direction, lighting and retouching so your brand looks like what it charges.",
+      answer:
+        "Dizayn shoots professional product, food and brand photography in Guadalajara, in studio or on location. A product session with 10 to 15 retouched photos costs $6,000 to $12,000 MXN and a campaign with multiple locations and art direction $20,000 to $30,000+ MXN.",
       includes: [
         "Art direction and moodboard up front",
         "Studio or on-location production",
@@ -846,7 +912,7 @@ export const services: Service[] = [
       faq: [
         { q: "Do you travel outside Guadalajara?", a: "Yes. We work across Mexico and internationally when the scope justifies it." },
         { q: "How many photos do we get?", a: "It depends on the project; the number of final retouched frames is always agreed up front." },
-        { q: "How much does a photo session cost?", a: "It depends on the product type, number of shots and whether it's studio or on location. We publish real Guadalajara pricing ranges for product sessions on the blog, and quote exactly based on your project." },
+        { q: "How much does a photo session cost in Guadalajara?", a: "A studio product session (10 to 15 retouched photos) costs $6,000 to $12,000 MXN, a food session with styling $10,000 to $20,000 MXN and a campaign with multiple locations $20,000 to $30,000+ MXN. We quote exactly based on product type, number of shots and location." },
         { q: "Do I need to prepare anything before the shoot?", a: "We coordinate the moodboard, shot list and logistics (clean product, location ready) with you before shoot day, so the session runs efficiently." },
         { q: "Can I use the photos on social media and my website?", a: "Yes, the commercial usage license we deliver covers your site, social channels and brand materials." },
       ],
@@ -857,12 +923,16 @@ export const services: Service[] = [
   },
   {
     slug: "videografia",
+    updated: "2026-10-04",
+    related: ["cuanto-cuesta-video-corporativo-guadalajara", "video-marketing-marcas-mexicanas", "caso-luvory-wta-guadalajara-open"],
     number: "07",
     es: {
       name: "Videografía",
       tagline: "Historias que se quedan y venden.",
       intro:
         "Del reel vertical al comercial de marca: guion, producción, edición y color. Video pensado para el canal donde se va a ver y para el objetivo que tiene que cumplir.",
+      answer:
+        "Dizayn produce video corporativo, comerciales y reels en Guadalajara, de guion a edición final. Un reel vertical cuesta de $12,000 a $25,000 MXN y un video corporativo de 2 a 4 minutos de $25,000 a $50,000 MXN; una producción típica toma de 2 a 4 semanas.",
       includes: [
         "Guion y storyboard",
         "Producción y dirección en set",
@@ -886,7 +956,7 @@ export const services: Service[] = [
       faq: [
         { q: "¿Hacen paquetes mensuales de reels?", a: "Sí. Un día de rodaje al mes suele rendir contenido para cuatro a seis semanas." },
         { q: "¿Incluyen locución o actores?", a: "Podemos incluir casting, voz en off y música licenciada dentro del presupuesto de producción." },
-        { q: "¿Cuánto cuesta un video corporativo?", a: "Depende de duración, número de locaciones y si hay animación o motion graphics. Publicamos rangos reales para Guadalajara en el blog, y cotizamos exacto según tu guion." },
+        { q: "¿Cuánto cuesta un video corporativo en Guadalajara?", a: "Un reel vertical cuesta de $12,000 a $25,000 MXN, un video corporativo de 2 a 4 minutos de $25,000 a $50,000 MXN y un comercial con casting y varias locaciones de $50,000 a $80,000+ MXN. Cotizamos exacto según duración, locaciones y si lleva animación." },
         { q: "¿Cuánto dura la producción de un video?", a: "Un video institucional típico toma de 2 a 4 semanas de guion a entrega final; reels sueltos pueden estar listos en días." },
         { q: "¿Filman en exteriores o en otras ciudades?", a: "Sí, trabajamos locaciones dentro y fuera de Guadalajara según lo que pida el guion." },
       ],
@@ -899,6 +969,8 @@ export const services: Service[] = [
       tagline: "Stories that stick and sell.",
       intro:
         "From vertical reels to brand commercials: script, production, edit and color. Video built for the channel it will live on and the goal it has to hit.",
+      answer:
+        "Dizayn produces corporate films, commercials and reels in Guadalajara, from script to final edit. A vertical reel costs $12,000 to $25,000 MXN and a 2 to 4 minute corporate film $25,000 to $50,000 MXN; a typical production takes 2 to 4 weeks.",
       includes: [
         "Script and storyboard",
         "Production and on-set direction",
@@ -922,7 +994,7 @@ export const services: Service[] = [
       faq: [
         { q: "Do you offer monthly reel packages?", a: "Yes. One shoot day per month usually yields four to six weeks of content." },
         { q: "Do you include voiceover or talent?", a: "Casting, voiceover and licensed music can all be included in the production budget." },
-        { q: "How much does a corporate video cost?", a: "It depends on length, number of locations and whether it needs animation or motion graphics. We publish real Guadalajara pricing ranges on the blog, and quote exactly based on your script." },
+        { q: "How much does a corporate video cost in Guadalajara?", a: "A vertical reel costs $12,000 to $25,000 MXN, a 2 to 4 minute corporate film $25,000 to $50,000 MXN and a commercial with casting and multiple locations $50,000 to $80,000+ MXN. We quote exactly based on length, locations and whether it needs animation." },
         { q: "How long does video production take?", a: "A typical corporate film takes 2 to 4 weeks from script to final delivery; standalone reels can be ready in days." },
         { q: "Do you shoot on location outside Guadalajara?", a: "Yes, we work locations in and outside Guadalajara depending on what the script calls for." },
       ],

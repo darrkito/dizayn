@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { PricingContent } from "@/components/pricing/pricing-content";
-import { buildUsOnlyAlternates } from "@/lib/routes";
+import { buildAlternates } from "@/lib/routes";
 
 // Same title.template caveat as app/us/page.tsx — do not hardcode the brand suffix here.
 const title = "USD Pricing for US Businesses";
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: og({ title: ogTitle, description, type: "website", url: "/us/en/pricing" }),
-  alternates: buildUsOnlyAlternates("/precios", "en-US"),
+  alternates: buildAlternates("/precios", "en-US"),
 };
 
 export default function UsPricingPageEn() {
   return (
     <>
       <JsonLd data={hubPageSchema("pricing", { path: "/us/en/pricing", name: title, description, lang: "en", market: "us" })} />
-      <PricingContent lang="en" />
+      <PricingContent lang="en" market="us" />
     </>
   );
 }

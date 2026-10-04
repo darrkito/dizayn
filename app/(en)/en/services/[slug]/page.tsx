@@ -3,6 +3,7 @@ import { fitTitle, og, ogImagePath } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
+import { getPost } from "@/content/blog";
 import { buildAlternates, langPath, stripLangPrefix } from "@/lib/routes";
 import { JsonLd } from "@/components/seo/json-ld";
 import { abs, faqPage, serviceNode } from "@/lib/schema";
@@ -49,10 +50,15 @@ export default async function ServiceDetailPageEn({
   const faq = service.en.faq;
   const node = serviceNode({ service, lang: "en", market: "mx", path, image: ogImagePath("service", "mx", "en", service.slug), price: servicePrice(esSlug, "mx") });
 
+  const related = (service.related ?? []).flatMap((s) => {
+    const post = getPost(s);
+    return post ? [{ href: langPath(`/blog/${s}`, "en"), title: post.en.title, category: post.en.category }] : [];
+  });
+
   return (
     <>
       <JsonLd data={[node, faqPage(faq, abs(path))]} />
-      <ServiceDetailContent slug={esSlug} lang="en" />
+      <ServiceDetailContent slug={esSlug} lang="en" related={related} />
     </>
   );
 }

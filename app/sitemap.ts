@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/portafolio", priority: 0.7, us: false },
     { path: "/nosotros", priority: 0.6, us: true },
     { path: "/contacto", priority: 0.7, us: true },
+    { path: "/precios", priority: 0.8, us: true },
     { path: "/blog", priority: 0.7, us: false },
     { path: "/privacidad", priority: 0.3, us: false },
     { path: "/terminos", priority: 0.3, us: false },
@@ -43,11 +44,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages.flatMap(({ path, priority, us }) => group(mx(path, us), priority)),
-    ...services.flatMap((s) => group(mx(`/servicios/${s.slug}`, Boolean(s.us)), 0.8)),
+    ...services.flatMap((s) => group(mx(`/servicios/${s.slug}`, Boolean(s.us)), 0.8, s.updated)),
     ...blogPosts.flatMap((p) => group(mx(`/blog/${p.slug}`, false), 0.6, p.dateModified)),
     // US-only hubs and posts (es-US/en-US pair, x-default = es-US).
     ...group(usOnly("/servicios"), 0.8),
-    ...group(usOnly("/precios"), 0.7),
     ...group(usOnly("/blog"), 0.7),
     ...usBlogPosts.flatMap((p) => group(usOnly(`/blog/${p.slug}`), 0.6, p.dateModified)),
   ];

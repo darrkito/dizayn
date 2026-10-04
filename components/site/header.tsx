@@ -46,7 +46,7 @@ export function Header() {
   const items = isUs
     ? [
         { href: path("/servicios"), label: t.nav.services },
-        { href: path("/precios"), label: t.usPricing.title },
+        { href: path("/precios"), label: t.nav.pricing },
         { href: path("/blog"), label: t.nav.blog },
         { href: path("/nosotros"), label: t.nav.about },
         { href: path("/contacto"), label: t.nav.contact },
@@ -54,6 +54,7 @@ export function Header() {
     : [
         { href: path("/servicios"), label: t.nav.services },
         { href: path("/portafolio"), label: t.nav.portfolio },
+        { href: path("/precios"), label: t.nav.pricing },
         { href: path("/blog"), label: t.nav.blog },
         { href: path("/nosotros"), label: t.nav.about },
         { href: path("/contacto"), label: t.nav.contact },

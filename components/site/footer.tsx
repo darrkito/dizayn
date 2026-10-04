@@ -59,7 +59,7 @@ export function Footer() {
               <>
                 <li>
                   <Link href={path("/precios")} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                    {t.usPricing.title}
+                    {t.nav.pricing}
                   </Link>
                 </li>
                 <li>
@@ -73,6 +73,11 @@ export function Footer() {
                 <li>
                   <Link href={langPath("/portafolio", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                     {t.nav.portfolio}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={langPath("/precios", lang)} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                    {t.nav.pricing}
                   </Link>
                 </li>
                 <li>

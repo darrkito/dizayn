@@ -485,7 +485,7 @@ Want us to review how your business ranks in local search today? [Let's talk abo
   {
     slug: "cuanto-cuesta-video-corporativo-guadalajara",
     date: "2026-08-14",
-    dateModified: "2026-08-14",
+    dateModified: "2026-09-04",
     es: {
       title: "¿Cuánto cuesta un video corporativo o comercial en Guadalajara?",
       excerpt:
@@ -638,7 +638,7 @@ Want an exact quote for your video project? [Tell us what you need](/contacto) o
   {
     slug: "cuanto-cuesta-fotografia-producto-guadalajara",
     date: "2026-08-14",
-    dateModified: "2026-08-14",
+    dateModified: "2026-09-04",
     es: {
       title: "¿Cuánto cuesta una sesión de fotografía de producto o gastronomía en Guadalajara?",
       excerpt:
@@ -1549,7 +1549,7 @@ Does your restaurant need this full strategy? [Let's talk about your project](/c
   {
     slug: "marketing-para-clinicas-guadalajara",
     date: "2026-08-14",
-    dateModified: "2026-08-14",
+    dateModified: "2026-09-04",
     es: {
       title: "Marketing para clínicas y consultorios en Guadalajara",
       excerpt:

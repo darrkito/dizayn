@@ -31,7 +31,7 @@ export function ServicesContent({ lang, market = "mx" }: { lang: Lang; market?: 
             { label: t.nav.services, href: marketPath("/servicios", lang, market) },
           ]}
         />
-      <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.services.title}</h1>
+      <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{isUs ? t.services.usTitle : t.services.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.services.lead}</p>
 
       <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
