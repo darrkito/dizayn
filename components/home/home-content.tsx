@@ -66,6 +66,9 @@ export function HomeContent({ lang, market = "mx" }: { lang: Lang; market?: Mark
               alt={home.heroAlt}
               width={960}
               height={1200}
+              // Full width below lg, ~45% of the 82rem container above it: lets phones pick a
+              // 640/750w file instead of the fixed 1x/2x pair (1080/1920w) used without `sizes`.
+              sizes="(min-width: 1024px) 600px, calc(100vw - 3rem)"
               priority
               className="relative aspect-[16/11] w-full rounded-[2rem] md:aspect-[4/5] object-cover shadow-[0_30px_70px_-40px_oklch(0.58_0.19_256/0.7)]"
             />

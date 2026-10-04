@@ -40,14 +40,10 @@ const AI_BOTS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: DISALLOW,
-        other: {
-          "Content-Signal": "ai-train=yes, search=yes, ai-input=yes",
-        },
-      },
+      // No Content-Signal line: with training allowed it expressed nothing the Allow rules don't,
+      // and it is a non-standard directive that validators (Lighthouse, robots testers) report
+      // as an error.
+      { userAgent: "*", allow: "/", disallow: DISALLOW },
       { userAgent: AI_BOTS, allow: "/", disallow: DISALLOW },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
