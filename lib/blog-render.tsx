@@ -23,6 +23,31 @@ const parseInline = (text: string, lang: Lang) =>
       return `<a href="${href}" class="text-primary underline underline-offset-4 hover:no-underline">${label}</a>`;
     });
 
+/** URL-safe anchor for a heading: lowercase, accents stripped, punctuation dropped. */
+export const headingId = (text: string) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 80);
+
+const stripInline = (text: string) => text.replace(/\*\*(.*?)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+/** The post's H2s, for the table of contents (anchors match the ids renderBlogContent emits). */
+export function extractToc(content: string): { id: string; text: string }[] {
+  return content
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith("## "))
+    .map((l) => {
+      const text = stripInline(l.slice(3));
+      return { id: headingId(text), text };
+    });
+}
+
 /** Parses a small markdown-lite dialect (headers, bold, links, lists, blockquote, tables) into JSX. */
 export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
   const lines = content.trim().split("\n");
@@ -63,9 +88,11 @@ export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
               <thead>
                 <tr className="bg-primary/10">
                   {parseRow(header).map((h, j) => (
-                    <th key={j} className="border border-border px-4 py-2 text-left font-semibold text-foreground">
-                      {h}
-                    </th>
+                    <th
+                      key={j}
+                      className="border border-border px-4 py-2 text-left font-semibold text-foreground"
+                      dangerouslySetInnerHTML={{ __html: parseInline(h, lang) }}
+                    />
                   ))}
                 </tr>
               </thead>
@@ -73,9 +100,11 @@ export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
                 {body.map((row, j) => (
                   <tr key={j} className={j % 2 === 1 ? "bg-card" : ""}>
                     {parseRow(row).map((cell, k) => (
-                      <td key={k} className="border border-border px-4 py-2 text-muted-foreground">
-                        {cell}
-                      </td>
+                      <td
+                        key={k}
+                        className="border border-border px-4 py-2 text-muted-foreground"
+                        dangerouslySetInnerHTML={{ __html: parseInline(cell, lang) }}
+                      />
                     ))}
                   </tr>
                 ))}
@@ -95,9 +124,10 @@ export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
 
     if (trimmed.startsWith("## ")) {
       flushList();
+      const text = stripInline(trimmed.slice(3));
       elements.push(
-        <h2 key={i} className="font-display text-2xl md:text-3xl text-foreground mt-12 mb-4">
-          {trimmed.slice(3)}
+        <h2 key={i} id={headingId(text)} className="font-display text-2xl md:text-3xl text-foreground mt-12 mb-4 scroll-mt-28">
+          {text}
         </h2>
       );
       i++;
@@ -106,9 +136,10 @@ export function renderBlogContent(content: string, lang: Lang): ReactNode[] {
 
     if (trimmed.startsWith("### ")) {
       flushList();
+      const text = stripInline(trimmed.slice(4));
       elements.push(
-        <h3 key={i} className="font-display text-xl text-foreground mt-8 mb-3">
-          {trimmed.slice(4)}
+        <h3 key={i} id={headingId(text)} className="font-display text-xl text-foreground mt-8 mb-3 scroll-mt-28">
+          {text}
         </h3>
       );
       i++;

@@ -10,10 +10,21 @@ export type BlogPostCopy = {
   faq: { q: string; a: string }[];
 };
 
+/** One measured outcome for a case study. Only real, sourced numbers (GSC, Bing Webmaster,
+ * analytics); posts without verified data simply omit `results`. */
+export type CaseResult = {
+  metric: Record<Lang, string>;
+  before: string;
+  after: string;
+  period: Record<Lang, string>;
+  source: string;
+};
+
 export type BlogPost = {
   slug: string;
   date: string;
   dateModified: string;
+  results?: CaseResult[];
   es: BlogPostCopy;
   en: BlogPostCopy;
 };
@@ -22,7 +33,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "posicionamiento-marcas-ia-2026",
     date: "2026-08-13",
-    dateModified: "2026-08-13",
+    dateModified: "2026-10-04",
     es: {
       title: "Cómo posicionar tu marca en las respuestas de IA (AI Overviews) en 2026",
       excerpt:
@@ -30,7 +41,7 @@ export const blogPosts: BlogPost[] = [
       category: "SEO e IA",
       metaTitle: "Cómo posicionar tu marca en IA (AI Overviews) 2026",
       metaDescription:
-        "Guía práctica para que Google AI Overviews, Copilot y ChatGPT citen tu marca: formato de respuesta directa, datos estructurados y errores comunes.",
+        "Guía práctica, actualizada con la guía oficial de Google de 2026, para que AI Overviews, Copilot y ChatGPT citen tu marca: formato, contenido y errores.",
       faq: [
         {
           q: "¿Qué son los AI Overviews de Google?",
@@ -38,7 +49,7 @@ export const blogPosts: BlogPost[] = [
         },
         {
           q: "¿Cómo hago que Google AI Overviews cite mi página?",
-          a: "Responde la pregunta en la primera oración del contenido, en texto plano y directo, antes de cualquier introducción de marca. Agrega datos estructurados FAQPage que coincidan exactamente con preguntas y respuestas visibles en la página. Usa tablas para cualquier dato con más de dos variantes numéricas. Ningún truco técnico sustituye responder la pregunta de forma clara y verificable.",
+          a: "Responde la pregunta en la primera oración del contenido, en texto plano y directo, antes de cualquier introducción de marca. Aporta información propia que no esté en otras diez páginas (precios reales, casos, datos de tu ciudad). Usa tablas para cualquier dato con más de dos variantes numéricas. Google confirmó en mayo de 2026 que no hace falta ningún marcado especial ni archivo llms.txt: ningún truco técnico sustituye responder la pregunta de forma clara y verificable.",
         },
         {
           q: "¿El SEO tradicional ya no sirve?",
@@ -56,7 +67,7 @@ export const blogPosts: BlogPost[] = [
       content: `
 ## ¿Cómo posiciono mi marca en las respuestas de IA?
 
-Para que Google AI Overviews, Copilot o ChatGPT citen tu marca, tu página necesita **responder la pregunta en la primera oración**, con datos estructurados (schema FAQPage) que coincidan **exactamente** con el texto visible, y suficiente especificidad — números, tablas, hechos verificables — para que el sistema de IA pueda extraer el párrafo directamente.
+Para que Google AI Overviews, Copilot o ChatGPT citen tu marca, tu página necesita **responder la pregunta en la primera oración**, aportar información propia (no la misma lista que ya publicaron diez sitios) y tener suficiente especificidad, con números, tablas y hechos verificables, para que el sistema de IA pueda extraer el párrafo directamente. Además, los rastreadores de Google, Bing y OpenAI tienen que poder leer tu sitio.
 
 No es magia ni un truco técnico oculto. Es escribir con la misma disciplina que un buen redactor técnico ya usa, aplicada de forma deliberada en cada página que quieres que compita por una respuesta de IA.
 
@@ -76,8 +87,8 @@ La primera oración después del título debe contener la respuesta específica,
 - ❌ "Muchas personas se preguntan cuánto cuesta un sitio web. Hay muchos factores a considerar..."
 - ✅ "Un sitio corporativo de 5-10 páginas cuesta entre **$18,000 y $45,000 MXN** en Guadalajara, según diseño y contenido."
 
-### 2. Datos estructurados que coinciden con el texto visible
-Un schema FAQPage que declara preguntas que no aparecen visibles en la página (o con respuestas distintas) es una señal débil — y en las guías de Google, puede hacer que el resultado enriquecido se descarte. Cada pregunta en el schema debe tener su bloque visible correspondiente, con el mismo texto.
+### 2. Datos estructurados: útiles, pero no son el atajo
+Los datos estructurados ayudan a que buscadores y sistemas de IA entiendan quién eres, qué vendes y dónde. Pero la [guía de Google para funciones de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) (mayo de 2026) es explícita: no son requisito para aparecer en AI Overviews ni en AI Mode, y no existe un marcado especial para IA. Además, Google [retiró los resultados enriquecidos de FAQ](https://developers.google.com/search/updates) el 7 de mayo de 2026. Si usas schema FAQPage, que sea porque las preguntas existen visibles en la página con el mismo texto, no para "ganar" algo en Google.
 
 ### 3. Tablas para datos comparables
 Cualquier dato con más de dos variantes numéricas (precios por tipo de producto, tiempos por alcance de proyecto, cantidades por escenario) se explica mejor en una tabla real que en un párrafo — y es exactamente el formato que los sistemas de IA prefieren extraer para responder preguntas de comparación.
@@ -86,12 +97,19 @@ Cualquier dato con más de dos variantes numéricas (precios por tipo de product
 |----------|----------------|-----------------|
 | Apertura | Introducción de marca | Respuesta directa con datos |
 | Datos | Prosa continua | Tabla comparativa |
-| Preguntas | Solo en schema | Visibles + en schema, texto idéntico |
+| Preguntas | Solo en schema | Visibles en la página, schema opcional |
 | Cifras | Vagas ("depende") | Específicas con rango claro |
+
+## Lo que Google y Bing dijeron en 2026
+
+- **Google publicó su [guía para optimizar en funciones de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)** el 15 de mayo de 2026. Lo que pide: contenido original y "no commodity" (experiencia propia, no resúmenes de lo que ya existe), imágenes y video de calidad, y buena experiencia de página. Lo que dice que no necesitas: archivos llms.txt, partir el contenido en fragmentos ni reescribir "para la IA".
+- **Search Console ya muestra en qué respuestas de IA aparece tu sitio**, y desde agosto de 2026 cualquier sitio puede decidir si participa o no en esas funciones. Las bases técnicas siguen en la [documentación de funciones de IA](https://developers.google.com/search/docs/appearance/ai-features).
+- **Bing lanzó el [reporte AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)** en Bing Webmaster Tools: cuántas veces Copilot cita tus páginas y cuáles. Si no tienes tu sitio dado de alta en Bing, no estás midiendo ese canal.
+- **ChatGPT usa su propio rastreador ([OAI-SearchBot](https://platform.openai.com/docs/bots)) además de resultados de Bing.** Bloquear cualquiera de los dos en robots.txt te saca de la lista de fuentes posibles.
 
 ## Errores comunes que vemos
 
-- **Schema sin contenido visible que lo respalde** — cinco preguntas en el JSON-LD, tres visibles en la página. Le resta credibilidad al resultado.
+- **Contenido "commodity"**: la misma lista de consejos que ya está en diez sitios. Google lo nombra como el tipo de contenido que menos aporta; sin información propia no hay razón para citarte a ti.
 - **Enterrar la respuesta bajo tres párrafos de contexto** — para cuando el lector (o el sistema de IA) llega al dato, ya perdió el interés o extrajo el párrafo de un competidor más directo.
 - **Hablar en general cuando el negocio es local** — una página que dice "servicio en todo México" cuando en realidad opera en una ciudad diluye la señal exacta que hace que una IA recomiende tu marca para una búsqueda local específica.
 
@@ -101,7 +119,7 @@ El SEO técnico de base sigue siendo el cimiento: velocidad de carga, estructura
 
 ## ¿Cómo uso ChatGPT para promocionar mi negocio?
 
-ChatGPT no funciona como una red social donde publicas contenido — funciona como un motor de respuesta que cita fuentes cuando un usuario pregunta algo relacionado con tu servicio, ciudad o industria. La estrategia para aparecer ahí es la misma descrita arriba: páginas con respuesta directa, datos específicos y estructura FAQPage que coincida con el texto visible. No hay un "perfil de negocio en ChatGPT" que optimizar — hay contenido en tu sitio que ChatGPT puede o no encontrar y citar.
+ChatGPT no funciona como una red social donde publicas contenido — funciona como un motor de respuesta que cita fuentes cuando un usuario pregunta algo relacionado con tu servicio, ciudad o industria. La estrategia para aparecer ahí es la misma descrita arriba: páginas con respuesta directa, datos específicos y propios, y un robots.txt que deje pasar a OAI-SearchBot. No hay un "perfil de negocio en ChatGPT" que optimizar: hay contenido en tu sitio, y menciones de tu marca en otros sitios, que ChatGPT puede o no encontrar y citar.
 
 ¿Quieres que evaluemos cómo está posicionada tu marca hoy en búsquedas normales y en respuestas de IA? [Hablemos de tu proyecto](/contacto) o revisa nuestro servicio de [posicionamiento en IA](/servicios/posicionamiento-ia).
       `,
@@ -113,7 +131,7 @@ ChatGPT no funciona como una red social donde publicas contenido — funciona co
       category: "SEO & AI",
       metaTitle: "How to Rank Your Brand in AI Search in 2026",
       metaDescription:
-        "A practical guide to getting cited by Google AI Overviews, Copilot and ChatGPT: direct-answer formatting, structured data, and common mistakes.",
+        "A practical guide, updated with Google's official 2026 guidance, to getting cited by AI Overviews, Copilot and ChatGPT: format, content and mistakes.",
       faq: [
         {
           q: "What are Google AI Overviews?",
@@ -121,7 +139,7 @@ ChatGPT no funciona como una red social donde publicas contenido — funciona co
         },
         {
           q: "How do I get Google AI Overviews to cite my page?",
-          a: "Answer the question in the first sentence, in plain, direct text, before any brand introduction. Add FAQPage structured data that exactly matches questions and answers actually visible on the page. Use tables for any data with more than two numeric variants. No technical trick replaces answering the question clearly and verifiably.",
+          a: "Answer the question in the first sentence, in plain, direct text, before any brand introduction. Bring information of your own that isn't on ten other pages (real prices, cases, local data). Use tables for any data with more than two numeric variants. Google confirmed in May 2026 that no special markup or llms.txt file is needed: no technical trick replaces answering the question clearly and verifiably.",
         },
         {
           q: "Is traditional SEO no longer relevant?",
@@ -139,7 +157,7 @@ ChatGPT no funciona como una red social donde publicas contenido — funciona co
       content: `
 ## How do I rank my brand in AI answers?
 
-To get cited by Google AI Overviews, Copilot, or ChatGPT, your page needs to **answer the question in the first sentence**, with structured data (FAQPage schema) that matches the visible text **exactly**, and enough specificity — numbers, tables, verifiable facts — for the AI system to extract the passage directly.
+To get cited by Google AI Overviews, Copilot, or ChatGPT, your page needs to **answer the question in the first sentence**, bring information of its own (not the same list ten other sites already published), and be specific enough, with numbers, tables and verifiable facts, for the AI system to extract the passage directly. Google's, Bing's and OpenAI's crawlers also have to be able to read your site.
 
 This isn't magic or a hidden technical trick. It's writing with the same discipline a good technical writer already uses, applied deliberately to every page you want competing for an AI-generated answer.
 
@@ -159,8 +177,8 @@ The first sentence after the heading should contain the specific answer, in bold
 - ❌ "Many people wonder how much a website costs. There are many factors to consider..."
 - ✅ "A 5-10 page corporate site typically costs **$18,000-$45,000 MXN** in Guadalajara, depending on design and content."
 
-### 2. Structured data that matches the visible text
-An FAQPage schema declaring questions that don't appear visibly on the page (or with different answers) is a weak signal — and by Google's own guidelines, can get the rich result discarded entirely. Every question in the schema needs a matching visible block, with the same text.
+### 2. Structured data: useful, but not the shortcut
+Structured data helps search engines and AI systems understand who you are, what you sell and where. But [Google's guide to AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) (May 2026) is explicit: it isn't required to appear in AI Overviews or AI Mode, and there is no special AI markup. Google also [retired FAQ rich results](https://developers.google.com/search/updates) on May 7, 2026. If you use FAQPage schema, do it because the questions are visible on the page with the same text, not to "win" something in Google.
 
 ### 3. Tables for comparable data
 Any data with more than two numeric variants (prices by product type, timelines by project scope, quantities by scenario) explains better in a real table than in a paragraph — and it's exactly the format AI systems prefer to extract when answering comparison queries.
@@ -169,12 +187,19 @@ Any data with more than two numeric variants (prices by product type, timelines 
 |---------|-------------|-----------------|
 | Opening | Brand introduction | Direct answer with data |
 | Data | Continuous prose | Comparison table |
-| Questions | Schema only | Visible + schema, identical text |
+| Questions | Schema only | Visible on the page, schema optional |
 | Figures | Vague ("it depends") | Specific with a clear range |
+
+## What Google and Bing said in 2026
+
+- **Google published its [guide to optimizing for AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)** on May 15, 2026. What it asks for: original, "non-commodity" content (first-hand experience, not summaries of what already exists), quality images and video, and a good page experience. What it says you don't need: llms.txt files, chunking content into fragments, or rewriting "for AI".
+- **Search Console now shows which AI answers your site appears in**, and since August 2026 any site can choose whether to take part in those features. The technical basics are in the [AI features documentation](https://developers.google.com/search/docs/appearance/ai-features).
+- **Bing launched the [AI Performance report](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)** in Bing Webmaster Tools: how often Copilot cites your pages, and which ones. If your site isn't set up in Bing, you aren't measuring that channel.
+- **ChatGPT uses its own crawler ([OAI-SearchBot](https://platform.openai.com/docs/bots)) as well as Bing results.** Blocking either one in robots.txt takes you off the list of possible sources.
 
 ## Common mistakes we see
 
-- **Schema with no visible content backing it up** — five questions in the JSON-LD, three visible on the page. It weakens the result's credibility.
+- **"Commodity" content**: the same list of tips that's already on ten sites. Google names it as the kind of content that adds the least; without information of your own there's no reason to cite you.
 - **Burying the answer under three paragraphs of context** — by the time the reader (or the AI system) reaches the fact, they've already lost interest or extracted a more direct competitor's paragraph.
 - **Speaking nationally when the business is local** — a page that says "service across the whole country" when it actually operates in one city dilutes the exact signal that gets an AI to recommend your brand for a specific local search.
 
@@ -340,7 +365,7 @@ Want an exact quote for your project? [Tell us what you need](/contacto) or chec
   {
     slug: "seo-local-guadalajara-guia",
     date: "2026-08-13",
-    dateModified: "2026-08-13",
+    dateModified: "2026-10-04",
     es: {
       title: "SEO local en Guadalajara: cómo aparecer primero en Google Maps y búsquedas cercanas",
       excerpt:
@@ -372,7 +397,7 @@ Want an exact quote for your project? [Tell us what you need](/contacto) or chec
 
 Para aparecer primero en el mapa y en búsquedas cercanas necesitas tres cosas: un **perfil de Google Business Profile completo y verificado**, tu **nombre-dirección-teléfono (NAP) consistente** en todo tu sitio y directorios externos, y **contenido que nombre tu colonia o municipio específico** — no solo "Guadalajara" de forma genérica.
 
-Estos tres pilares valen más que cualquier otro factor de SEO local. Vamos uno por uno.
+Estos tres pilares valen más que cualquier otro factor de SEO local. Google mismo explica que su ranking local combina [relevancia, distancia y prominencia](https://support.google.com/business/answer/7091): un perfil completo trabaja la relevancia, y las reseñas y menciones en otros sitios, la prominencia. Vamos uno por uno.
 
 ## Pilar 1: Google Business Profile completo
 
@@ -442,7 +467,7 @@ Si tu negocio sí opera en más de una ciudad, la situación es distinta — rev
 
 To rank first on the map and in nearby searches you need three things: a **complete, verified Google Business Profile**, a **consistent name-address-phone (NAP)** across your site and external directories, and **content that names your specific neighborhood or municipality** — not just "Guadalajara" generically.
 
-These three pillars outweigh any other local SEO factor. Let's go one by one.
+These three pillars outweigh any other local SEO factor. Google itself explains that local ranking combines [relevance, distance and prominence](https://support.google.com/business/answer/7091): a complete profile works on relevance, and reviews and mentions on other sites build prominence. Let's go one by one.
 
 ## Pillar 1: A complete Google Business Profile
 
@@ -2097,7 +2122,7 @@ Want to see how we handle production and strategy for brands in Guadalajara? [Te
   {
     slug: "auditoria-seo-guadalajara",
     date: "2026-08-25",
-    dateModified: "2026-08-25",
+    dateModified: "2026-10-04",
     es: {
       title: "Auditoría SEO en Guadalajara: qué revisamos y qué encontramos casi siempre",
       excerpt:
@@ -2128,6 +2153,8 @@ Want to see how we handle production and strategy for brands in Guadalajara? [Te
 ## ¿Qué es una auditoría SEO y qué debería incluir?
 
 Una auditoría SEO real revisa **indexación en Google, velocidad de carga, estructura técnica del sitio, contenido comparado contra tu competencia directa, y el estado de tus perfiles locales** — y debería entregarte una lista priorizada por impacto, no un PDF genérico de cien puntos sin contexto de tu negocio.
+
+Para la parte de velocidad, la referencia son las [Core Web Vitals](https://web.dev/articles/vitals) que Google mide con datos de usuarios reales: LCP (qué tan rápido carga lo principal), INP (qué tan rápido responde a un toque o clic) y CLS (qué tanto se mueve la página mientras carga). Una auditoría seria las revisa con los datos de campo de Search Console, no solo con una prueba de laboratorio.
 
 ## Por qué la mayoría de las auditorías gratuitas no sirven de mucho
 
@@ -2195,6 +2222,8 @@ Si tu sitio es una tienda en línea, varios de estos hallazgos cambian — revis
 
 A real SEO audit checks **Google indexing, load speed, technical site structure, content compared against your direct competitors, and the state of your local profiles** — and should hand you a list prioritized by impact, not a generic hundred-point PDF with no context on your business.
 
+For the speed part, the benchmark is [Core Web Vitals](https://web.dev/articles/vitals), which Google measures with real-user data: LCP (how fast the main content loads), INP (how fast the page responds to a tap or click) and CLS (how much the page shifts while loading). A serious audit checks them against Search Console field data, not just a lab test.
+
 ## Why most free audits don't help much
 
 Many automated tools generate a report with dozens of technical "errors" that in practice have minimal impact, mixed together with no priority alongside the two or three problems actually holding your rankings back. Without that human filter, it's easy to spend weeks fixing minor details while the real problem stays untouched.
@@ -2234,7 +2263,7 @@ Want to know exactly where your site stands today? [Request your audit](/contact
   {
     slug: "que-es-posicionamiento-web",
     date: "2026-08-25",
-    dateModified: "2026-08-25",
+    dateModified: "2026-10-04",
     es: {
       title: "¿Qué es el posicionamiento web y cómo funciona en Guadalajara?",
       excerpt:
@@ -2264,7 +2293,7 @@ Want to know exactly where your site stands today? [Request your audit](/contact
       content: `
 ## ¿Qué es el posicionamiento web?
 
-El posicionamiento web es el trabajo de **hacer que tu negocio aparezca más arriba en los resultados orgánicos de Google** cuando alguien busca lo que ofreces — sin pagar por cada clic. Es el mismo concepto que SEO (Search Engine Optimization), solo que "posicionamiento web" es el término que más se usa en español en México y Latinoamérica.
+El posicionamiento web es el trabajo de **hacer que tu negocio aparezca más arriba en los resultados orgánicos de Google** cuando alguien busca lo que ofreces — sin pagar por cada clic. Es el mismo concepto que SEO (Search Engine Optimization), solo que "posicionamiento web" es el término que más se usa en español en México y Latinoamérica. Google publica su propia [guía de introducción al SEO](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) y sus [criterios de contenido útil](https://developers.google.com/search/docs/fundamentals/creating-helpful-content); todo lo que sigue parte de ahí.
 
 ## Por qué importa para un negocio en Guadalajara
 
@@ -2337,7 +2366,7 @@ Si esto te suena a lo básico y quieres siete acciones concretas para empezar ho
       content: `
 ## What is SEO / web positioning?
 
-SEO — called "posicionamiento web" in Spanish — is the work of **getting your business to show up higher in Google's organic results** when someone searches for what you offer, without paying per click. It's the same concept whether you call it SEO or web positioning; the term just varies by language.
+SEO — called "posicionamiento web" in Spanish — is the work of **getting your business to show up higher in Google's organic results** when someone searches for what you offer, without paying per click. It's the same concept whether you call it SEO or web positioning; the term just varies by language. Google publishes its own [SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and its [helpful content criteria](https://developers.google.com/search/docs/fundamentals/creating-helpful-content); everything below builds on them.
 
 ## Why it matters for a Guadalajara business
 
@@ -2385,7 +2414,7 @@ Want to know where your business ranks today for the searches that matter? [Let'
   {
     slug: "seo-vs-geo-guadalajara",
     date: "2026-08-25",
-    dateModified: "2026-08-25",
+    dateModified: "2026-10-04",
     es: {
       title: "SEO vs. GEO: por qué tu negocio en Guadalajara necesita ambos",
       excerpt:
@@ -2433,10 +2462,10 @@ Cuando alguien busca algo en Google y la respuesta aparece en un resumen generad
 El SEO clásico premia contenido completo y bien estructurado que un humano lee de principio a fin. El GEO premia que la respuesta específica esté en la primera oración, en texto directo, antes de cualquier introducción de marca — porque así es como un modelo de IA extrae un párrafo para citar.
 
 ### Datos estructurados
-Un schema FAQPage que coincide exactamente con preguntas y respuestas visibles en la página ayuda a ambos, pero es especialmente importante para GEO — es la señal más directa de que ese contenido responde una pregunta específica.
+Ayudan a ambos a entender quién eres y qué ofreces, pero no son un atajo para la IA. La [guía de Google para funciones de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) (mayo de 2026) aclara que no existe un marcado especial para aparecer en AI Overviews, y Google dejó de mostrar los resultados enriquecidos de FAQ el 7 de mayo de 2026. Lo que sí pesa en GEO es tener la pregunta y su respuesta visibles en la página, con información propia.
 
 ### Medición
-El SEO se mide con posiciones y tráfico en Search Console. El GEO se mide preguntando directamente a los modelos y documentando qué contestan — es un proceso más manual porque no existe todavía un "Search Console" oficial para respuestas de IA.
+El SEO se mide con posiciones y tráfico en Search Console. El GEO ya tiene datos oficiales parciales: Search Console muestra en qué respuestas de IA aparecen tus páginas ([documentación](https://developers.google.com/search/docs/appearance/ai-features)) y Bing Webmaster Tools tiene un [reporte AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview) con las citas en Copilot. Para ChatGPT, Perplexity y Claude sigue siendo necesario preguntar directamente a cada modelo cada mes y documentar qué contesta.
 
 ## Por qué un negocio en Guadalajara no debería elegir solo uno
 
@@ -2492,10 +2521,10 @@ When someone searches something on Google and the answer shows up in an AI-gener
 Classic SEO rewards complete, well-structured content a human reads start to finish. GEO rewards having the specific answer in the first sentence, in plain direct text, before any brand introduction — because that's how an AI model extracts a passage to cite.
 
 ### Structured data
-An FAQPage schema that exactly matches questions and answers visible on the page helps both, but matters especially for GEO — it's the most direct signal that content answers a specific question.
+It helps both understand who you are and what you offer, but it isn't a shortcut for AI. [Google's guide to AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) (May 2026) makes clear there is no special markup for appearing in AI Overviews, and Google stopped showing FAQ rich results on May 7, 2026. What does count for GEO is having the question and its answer visible on the page, with information of your own.
 
 ### Measurement
-SEO is measured with rankings and traffic in Search Console. GEO is measured by asking the models directly and documenting what they answer — a more manual process, since there's no official "Search Console" for AI answers yet.
+SEO is measured with rankings and traffic in Search Console. GEO now has some official data: Search Console shows which AI answers your pages appear in ([documentation](https://developers.google.com/search/docs/appearance/ai-features)) and Bing Webmaster Tools has an [AI Performance report](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview) with Copilot citations. For ChatGPT, Perplexity and Claude you still need to ask each model directly every month and document what it answers.
 
 ## Why a Guadalajara business shouldn't pick just one
 

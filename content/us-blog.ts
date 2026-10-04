@@ -9,7 +9,7 @@ export const usBlogPosts: BlogPost[] = [
   {
     slug: "cuanto-cobra-una-agencia-mexicana",
     date: "2026-09-13",
-    dateModified: "2026-09-13",
+    dateModified: "2026-10-04",
     es: {
       title: "¿Cuánto cobra una agencia de marketing mexicana a un cliente en EE.UU.?",
       excerpt:
@@ -41,9 +41,9 @@ La respuesta corta: **no lo mismo que le cobra a un cliente en México**, y tamp
 
 | Servicio | Promedio en EE.UU. | Nearshore mexicano (real) |
 |---|---|---|
-| SEO mensual | $3,209 USD/mes (Ahrefs) | $500 – $10,000 USD/mes (Marketing México, Tijuana) |
+| SEO mensual | $3,209 USD/mes ([Ahrefs](https://ahrefs.com/blog/seo-pricing/)) | $500 – $10,000 USD/mes (Marketing México, Tijuana) |
 | Sitio web | $2,000 – $15,000+ USD | $3,000 – $15,000 USD |
-| Tarifa por hora | $100 – $149 USD/hora (Clutch) | $25 – $49 USD/hora (Clutch, tarifa base mexicana) |
+| Tarifa por hora | $100 – $149 USD/hora ([Clutch](https://clutch.co/agencies/digital-marketing/pricing)) | $25 – $49 USD/hora (Clutch, tarifa base mexicana) |
 | Redes sociales | $2,500 – $7,500 USD/mes | $900 – $3,000 USD/mes |
 
 La fila de "tarifa por hora" es la que más confunde: $25-49 USD/hora es lo que Clutch reporta para agencias mexicanas **en general**, pero eso es la tarifa que se cobra en el mercado doméstico mexicano. Una agencia mexicana que factura directo a un cliente en EE.UU. — en dólares, con contrato en inglés — normalmente cobra más que eso, aunque siga siendo menos que una agencia local en EE.UU.
@@ -98,9 +98,9 @@ Short answer: **not the same as they charge a Mexican client**, and not 80% less
 
 | Service | US average | Real Mexican nearshore |
 |---|---|---|
-| Monthly SEO | $3,209 USD/mo (Ahrefs) | $500 – $10,000 USD/mo (Marketing México, Tijuana) |
+| Monthly SEO | $3,209 USD/mo ([Ahrefs](https://ahrefs.com/blog/seo-pricing/)) | $500 – $10,000 USD/mo (Marketing México, Tijuana) |
 | Website | $2,000 – $15,000+ USD | $3,000 – $15,000 USD |
-| Hourly rate | $100 – $149 USD/hr (Clutch) | $25 – $49 USD/hr (Clutch, Mexican domestic baseline) |
+| Hourly rate | $100 – $149 USD/hr ([Clutch](https://clutch.co/agencies/digital-marketing/pricing)) | $25 – $49 USD/hr (Clutch, Mexican domestic baseline) |
 | Social media | $2,500 – $7,500 USD/mo | $900 – $3,000 USD/mo |
 
 The "hourly rate" row is the most misleading one: $25-49 USD/hour is what Clutch reports for Mexican agencies **overall**, but that's the domestic Mexican market rate. A Mexican agency invoicing a US client directly — in dollars, with an English contract — typically charges more than that, while still coming in below a US-based agency.

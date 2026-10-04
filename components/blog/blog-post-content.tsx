@@ -6,7 +6,7 @@ import type { Lang } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
 import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { getDict, useI18n } from "@/lib/i18n";
-import { renderBlogContent } from "@/lib/blog-render";
+import { extractToc, renderBlogContent } from "@/lib/blog-render";
 import { langPath, usPath, type Market } from "@/lib/routes";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
@@ -37,7 +37,19 @@ export function BlogPostContent({
 
   // Scoped to the same market's posts — a wedge post's "related" list only ever shows
   // other wedge posts, never MX blog content and vice versa.
-  const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
+  // Topic-matched: same category first, then most slug words in common (e.g. "guadalajara",
+  // "seo"), so a clinic-marketing post no longer always recommends the first two posts in the file.
+  const words = (s: string) => new Set(s.split("-").filter((w) => w.length > 3));
+  const mine = words(slug);
+  const score = (p: typeof post) =>
+    (p.es.category === post.es.category ? 10 : 0) + [...words(p.slug)].filter((w) => mine.has(w)).length;
+  const related = posts
+    .filter((p) => p.slug !== slug)
+    .map((p, i) => ({ p, i, s: score(p) }))
+    .sort((a, b) => b.s - a.s || a.i - b.i)
+    .slice(0, 2)
+    .map(({ p }) => p);
+  const toc = extractToc(copy.content);
 
   return (
     <div className="container-x py-10 md:py-24">
@@ -73,6 +85,51 @@ export function BlogPostContent({
             </p>
           )}
         </header>
+
+        {toc.length >= 4 && (
+          <nav aria-label={t.blog.toc} className="mt-10 rounded-2xl border border-border p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-primary">{t.blog.toc}</p>
+            <ol className="mt-4 space-y-1 text-sm">
+              {toc.map((h) => (
+                <li key={h.id}>
+                  <a href={`#${h.id}`} className="inline-flex min-h-9 items-center text-muted-foreground hover:text-primary">
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
+        {post.results && post.results.length > 0 && (
+          <section className="mt-10">
+            <h2 className="font-display text-2xl text-foreground">{t.blog.results.title}</h2>
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr className="bg-primary/10 text-left">
+                    {[t.blog.results.metric, t.blog.results.before, t.blog.results.after, t.blog.results.period, t.blog.results.source].map((h) => (
+                      <th key={h} className="border border-border px-4 py-2 font-semibold text-foreground">
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {post.results.map((r) => (
+                    <tr key={r.metric.es}>
+                      <td className="border border-border px-4 py-2 text-foreground">{r.metric[lang]}</td>
+                      <td className="border border-border px-4 py-2 text-muted-foreground">{r.before}</td>
+                      <td className="border border-border px-4 py-2 font-semibold text-primary">{r.after}</td>
+                      <td className="border border-border px-4 py-2 text-muted-foreground">{r.period[lang]}</td>
+                      <td className="border border-border px-4 py-2 text-muted-foreground">{r.source}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
 
         <div className="mt-10">
           {renderBlogContent(copy.content, lang)}
