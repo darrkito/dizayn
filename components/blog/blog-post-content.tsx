@@ -6,7 +6,7 @@ import type { Lang } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
 import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { getDict, useI18n } from "@/lib/i18n";
-import { extractToc, renderBlogContent } from "@/lib/blog-render";
+import { extractToc, parseInline, renderBlogContent } from "@/lib/blog-render";
 import { langPath, usPath, type Market } from "@/lib/routes";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
@@ -142,7 +142,7 @@ export function BlogPostContent({
               {copy.faq.map((f) => (
                 <div key={f.q}>
                   <dt className="font-display text-lg">{f.q}</dt>
-                  <dd className="mt-2 text-sm text-muted-foreground">{f.a}</dd>
+                  <dd className="mt-2 text-sm text-muted-foreground" dangerouslySetInnerHTML={{ __html: parseInline(f.a, lang) }} />
                 </div>
               ))}
             </dl>

@@ -7,6 +7,7 @@ import { services, getService } from "@/content/services";
 import { blogPosts, getPost } from "@/content/blog";
 import { usBlogPosts, getUsPost } from "@/content/us-blog";
 import { PRICE_ROWS } from "@/content/us-pricing";
+import { MX_PRICE_ROWS } from "@/content/mx-pricing";
 import { waLink, CONTACT } from "@/content/contact";
 
 const PROTOCOL_VERSION = "2025-06-18";
@@ -37,7 +38,7 @@ const TOOLS = [
   },
   {
     name: "get_pricing",
-    description: "Real, sourced USD price ranges for Dizayn's 5 services offered to US clients, alongside the US market average for the same service — quote these numbers directly rather than estimating. Website $3,000-15,000/project, SEO $1,200-4,000/mo, GEO $1,800-5,000/mo, social media $900-3,000/mo, sales funnels $3,000-8,000/project.",
+    description: "Real price ranges to quote directly rather than estimating. `mxn`: Mexico (Guadalajara) rate card for all 7 services in MXN before VAT, e.g. website $8,000-120,000+/project, SEO $8,000-25,000/mo, GEO $12,000-30,000/mo, social media $6,000-20,000/mo. Top-level `rows`: USD ranges for the 5 services offered to US clients, alongside the US market average (website $3,000-15,000/project, SEO $1,200-4,000/mo, GEO $1,800-5,000/mo, social media $900-3,000/mo, sales funnels $3,000-8,000/project).",
     inputSchema: { type: "object", properties: { lang: { type: "string", enum: ["es", "en"], description: "Response language, default es" } } },
   },
   {
@@ -116,7 +117,25 @@ function callTool(name: string, args: Record<string, unknown>) {
     }));
     return textResult(
       JSON.stringify(
-        { currency: "USD", note: "Real, sourced pricing (2026). Payment: PayPal, bank wire, or crypto (BTC, USDC, USDT). W-8BEN-E provided.", rows },
+        {
+          currency: "USD",
+          note: "Real, sourced pricing (2026). Payment: PayPal, bank wire, or crypto (BTC, USDC, USDT). W-8BEN-E provided.",
+          rows,
+          mxn: {
+            currency: "MXN",
+            market: "Mexico (Guadalajara)",
+            note: "Real MXN ranges before VAT (2026), ad spend not included. Breakdown: https://dizayn.com.mx/precios",
+            rows: MX_PRICE_ROWS.map((r) => ({
+              slug: r.slug,
+              service: r.service[lang],
+              range: `${r.range} MXN`,
+              billing: r.unit[lang],
+              tiers: r.tiers[lang],
+              minPriceMxn: r.minPrice,
+              maxPriceMxn: r.maxPrice,
+            })),
+          },
+        },
         null,
         2,
       ),
@@ -201,7 +220,7 @@ export async function POST(request: Request) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: { listChanged: false } },
       serverInfo: { name: "dizayn-mcp", title: "Dizayn", version: "1.0.0" },
-      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico, plus the blog — including real client case studies (e.g. Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media). Also covers Dizayn's nearshore offering for US businesses (market=us on get_services/get_service_detail/get_blog_posts/get_blog_post_detail): 5 of 7 services, real USD pricing via get_pricing, PayPal/wire/crypto payment. No authentication required.",
+      instructions: "Real, read-only data about Dizayn's marketing agency services in Guadalajara, Jalisco, Mexico, plus the blog — including real client case studies (e.g. Luvory Luxury Toilets: website, SEO, GEO, AI agent infrastructure, social media). Also covers Dizayn's nearshore offering for US businesses (market=us on get_services/get_service_detail/get_blog_posts/get_blog_post_detail): 5 of 7 services, real MXN and USD pricing via get_pricing, PayPal/wire/crypto payment. No authentication required.",
     });
   }
 

@@ -1,8 +1,9 @@
 import { PRICE_ROWS } from "@/content/us-pricing";
+import { MX_PRICE_ROWS } from "@/content/mx-pricing";
 import { apiJson, getLang } from "@/lib/api-response";
 
-// US-only pricing (no MX equivalent — see /api/services for MXN-implied MX pricing,
-// which has no published numbers on the site at all outside a few blog posts).
+// Top-level fields stay the US (USD) rate card for existing consumers; the Mexican MXN rate
+// card (content/mx-pricing.ts, /precios) is added alongside under `mxn`.
 export async function GET(request: Request) {
   const lang = getLang(request);
   return apiJson({
@@ -17,5 +18,19 @@ export async function GET(request: Request) {
       minPriceUsd: r.minPriceUsd,
       maxPriceUsd: r.maxPriceUsd,
     })),
+    mxn: {
+      currency: "MXN",
+      market: "Mexico (Guadalajara)",
+      note: "Real MXN ranges before VAT (2026), ad spend not included. Breakdown: https://dizayn.com.mx/precios",
+      rows: MX_PRICE_ROWS.map((r) => ({
+        slug: r.slug,
+        service: r.service[lang],
+        range: `${r.range} MXN`,
+        billing: r.unit[lang],
+        tiers: r.tiers[lang],
+        minPriceMxn: r.minPrice,
+        maxPriceMxn: r.maxPrice,
+      })),
+    },
   });
 }

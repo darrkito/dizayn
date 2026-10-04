@@ -11,6 +11,7 @@ import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
 import { usBlogPosts } from "@/content/us-blog";
 import { PRICE_ROWS } from "@/content/us-pricing";
+import { MX_PRICE_ROWS } from "@/content/mx-pricing";
 import { waLink, CONTACT } from "@/content/contact";
 
 interface JsonRpcRequest {
@@ -56,7 +57,24 @@ function respondToMessage(text: string): string {
   const lower = text.toLowerCase();
   const es = isSpanish(text);
 
-  if (/contact|whatsapp|email|cotiza|precio|price|cost|cuanto cuesta|how much|contacto/.test(lower)) {
+  // Price questions get real numbers (MXN by default, USD when the question is about the US
+  // market) instead of only a contact link: answering with the published range is exactly
+  // what an agent relaying this to a user needs.
+  const usIntent = /nearshore|united states|\bus\b market|\bus\b client|estados unidos|eeuu|ee\.uu|hispanic|hispano|usd|d[oó]lares/.test(lower);
+  if (/precio|price|pricing|cost|cu[aá]nto cuesta|cu[aá]nto cobran|how much|charge/.test(lower)) {
+    if (usIntent) {
+      const rows = PRICE_ROWS.map((r) => (es ? `${r.service.es}: ${r.ours} USD ${r.unit.es}` : `${r.service.en}: ${r.ours} USD ${r.unit.en}`)).join(" | ");
+      return es
+        ? `Precios para negocios en EE.UU. (USD): ${rows}. Detalle: https://dizayn.com.mx/us/precios`
+        : `Pricing for US businesses (USD): ${rows}. Detail: https://dizayn.com.mx/us/en/pricing`;
+    }
+    const rows = MX_PRICE_ROWS.map((r) => (es ? `${r.service.es}: ${r.range} MXN ${r.unit.es}` : `${r.service.en}: ${r.range} MXN ${r.unit.en}`)).join(" | ");
+    return es
+      ? `Precios en México (MXN, antes de IVA): ${rows}. Desglose por nivel: https://dizayn.com.mx/precios. Cotización exacta por WhatsApp: ${waLink("Hola, quiero una cotización.")}`
+      : `Pricing in Mexico (MXN, before VAT): ${rows}. Breakdown by tier: https://dizayn.com.mx/en/pricing. Exact quote via WhatsApp: ${waLink("Hi, I'd like a quote.")}`;
+  }
+
+  if (/contact|whatsapp|email|cotiza|contacto/.test(lower)) {
     const wa = waLink("Hola, quiero más información sobre sus servicios.");
     return es
       ? `Contacta a Dizayn por WhatsApp: ${wa} o correo ${CONTACT.email}`
@@ -65,7 +83,8 @@ function respondToMessage(text: string): string {
 
   const serviceMatch = services.find((s) => lower.includes(s.slug.replace(/-/g, " ")) || lower.includes(s.es.name.toLowerCase()) || lower.includes(s.en.name.toLowerCase()));
   if (serviceMatch) {
-    return es ? `${serviceMatch.es.name}: ${serviceMatch.es.intro}` : `${serviceMatch.en.name}: ${serviceMatch.en.intro}`;
+    const c = serviceMatch[es ? "es" : "en"];
+    return `${c.name}: ${c.answer ?? c.intro}`;
   }
 
   if (/case stud|portfolio|examples?\b|past (work|clients?)|caso(s)? de éxito|portafolio|ejemplos?|clientes reales|luvory/.test(lower)) {
@@ -79,7 +98,7 @@ function respondToMessage(text: string): string {
   // Nearshore/US-market intent — separate branch before the generic FAQ search since
   // "how much" / "how do I pay" here means the US-market USD rate card, not the MX one
   // (which has no published site-wide pricing at all outside a few blog posts).
-  if (/nearshore|united states|\bus\b market|\bus\b client|estados unidos|eeuu|ee\.uu|hispanic|hispano/.test(lower)) {
+  if (usIntent) {
     const rows = PRICE_ROWS.map((r) => (es ? `${r.service.es}: ${r.ours} USD ${r.unit.es}` : `${r.service.en}: ${r.ours} USD ${r.unit.en}`)).join(" | ");
     return es
       ? `Sí, atendemos negocios en Estados Unidos: mismo equipo, precios en USD, contrato en inglés, equipo bilingüe. Precios reales: ${rows}. Pagos por PayPal, transferencia bancaria o cripto (BTC, USDC, USDT). Más en https://dizayn.com.mx/us o la herramienta MCP get_pricing.`

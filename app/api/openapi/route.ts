@@ -32,7 +32,7 @@ const openApiSpec = {
     },
     "/pricing": {
       get: {
-        summary: "Real, sourced USD price ranges for the 5 US-market services, alongside the US market average for the same service",
+        summary: "Real price ranges: USD for the 5 US-market services vs. the US market average (top level), and the Mexico MXN rate card for all 7 services (under `mxn`)",
         responses: { "200": { description: "OK" } },
       },
     },

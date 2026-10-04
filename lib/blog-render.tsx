@@ -7,7 +7,7 @@ import { altPath } from "./routes";
  * `en` (self-healing even against an already-/en-prefixed but untranslated legacy link). */
 const localizePath = (path: string, lang: Lang) => altPath(path, lang);
 
-const parseInline = (text: string, lang: Lang) =>
+export const parseInline = (text: string, lang: Lang) =>
   text
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
     .replace(
@@ -34,7 +34,7 @@ export const headingId = (text: string) =>
     .replace(/\s+/g, "-")
     .slice(0, 80);
 
-const stripInline = (text: string) => text.replace(/\*\*(.*?)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+export const stripInline = (text: string) => text.replace(/\*\*(.*?)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
 /** The post's H2s, for the table of contents (anchors match the ids renderBlogContent emits). */
 export function extractToc(content: string): { id: string; text: string }[] {

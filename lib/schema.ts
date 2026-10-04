@@ -50,7 +50,8 @@ export const faqPage = (faq: { q: string; a: string }[], url: string) =>
         mainEntity: faq.map((f) => ({
           "@type": "Question",
           name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
+          // Answers may carry markdown-lite (**bold**, [label](/path)); schema gets plain text.
+          acceptedAnswer: { "@type": "Answer", text: f.a.replace(/\*\*(.*?)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
         })),
       }
     : null;
