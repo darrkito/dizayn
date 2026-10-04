@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { fitTitle, og } from "@/lib/seo";
+import { fitTitle, og, ogImagePath } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
 import { buildAlternates } from "@/lib/routes";
-import { SITE_URL } from "@/lib/api-response";
+import { JsonLd } from "@/components/seo/json-ld";
+import { abs, blogPostingNode, faqPage } from "@/lib/schema";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -23,7 +24,7 @@ export async function generateMetadata({
   return {
     title: fitTitle(metaTitle),
     description: metaDescription,
-    openGraph: og({ title: metaTitle, description: metaDescription, type: "article", url: `/blog/${slug}`, publishedTime: post.date, modifiedTime: post.dateModified, section: post.es.category }),
+    openGraph: og({ title: metaTitle, description: metaDescription, type: "article", url: `/blog/${slug}`, publishedTime: post.date, modifiedTime: post.dateModified, section: post.es.category, image: ogImagePath("blog", "mx", "es", post.slug) }),
     alternates: buildAlternates(`/blog/${slug}`, "es-MX", { us: false }),
   };
 }
@@ -37,43 +38,12 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
-  const copy = post.es;
-  const url = `${SITE_URL}/blog/${slug}`;
-
-  const blogSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: copy.title,
-    description: copy.excerpt,
-    datePublished: post.date,
-    dateModified: post.dateModified,
-    inLanguage: "es-MX",
-    author: { "@id": `${SITE_URL}/#organization` },
-    publisher: { "@id": `${SITE_URL}/#organization` },
-    url,
-    image: `${SITE_URL}/og-image.jpg`,
-    mainEntityOfPage: { "@type": "WebPage", "@id": url },
-  };
-
-  const faqSchema =
-    copy.faq.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: copy.faq.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }
-      : null;
+  const path = `/blog/${slug}`;
+  const article = blogPostingNode({ post, lang: "es", market: "mx", path, image: ogImagePath("blog", "mx", "es", post.slug) });
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      <JsonLd data={[article, faqPage(post.es.faq, abs(path))]} />
       <BlogPostContent slug={slug} lang="es" />
     </>
   );

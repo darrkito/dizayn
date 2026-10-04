@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { BlogListContent } from "@/components/blog/blog-list-content";
 import { buildUsOnlyAlternates } from "@/lib/routes";
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function UsBlogPageEn() {
-  return <BlogListContent lang="en" market="us" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("blog", { path: "/us/en/blog", name: title, description, lang: "en", market: "us" })} />
+      <BlogListContent lang="en" market="us" />
+    </>
+  );
 }

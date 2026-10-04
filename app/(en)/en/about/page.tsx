@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { AboutContent } from "@/components/about/about-content";
 import { buildAlternates } from "@/lib/routes";
@@ -15,5 +17,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPageEn() {
-  return <AboutContent lang="en" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("about", { path: "/en/about", name: title, description, lang: "en", market: "mx" })} />
+      <AboutContent lang="en" />
+    </>
+  );
 }

@@ -104,10 +104,22 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                @dizayn_mx
+              <a href={CONTACT.instagram} target="_blank" rel="me noreferrer" className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                Instagram @dizayn_mx
               </a>
             </li>
+            {[
+              { href: CONTACT.facebook, label: "Facebook" },
+              { href: CONTACT.tiktok, label: "TikTok" },
+            ]
+              .filter((p) => p.href)
+              .map((p) => (
+                <li key={p.label}>
+                  <a href={p.href} target="_blank" rel="me noreferrer" className="inline-flex min-h-11 items-center hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                    {p.label}
+                  </a>
+                </li>
+              ))}
             <li>{CONTACT.city[lang]}</li>
           </ul>
         </div>

@@ -158,3 +158,8 @@ export function buildUsOnlyAlternates(
   };
   return { canonical: languages[current], languages: { ...languages, "x-default": languages["es-US"] } };
 }
+
+/** A canonical (Spanish) base path rendered for a market+language: the one call components
+ * need instead of repeating `isUs ? usPath(...) : langPath(...)`. */
+export const marketPath = (basePath: string, lang: Lang, market: Market): string =>
+  market === "us" ? usPath(basePath, lang) : langPath(basePath, lang);

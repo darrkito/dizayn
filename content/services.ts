@@ -4,6 +4,9 @@ export type ServiceCopy = {
   name: string;
   tagline: string;
   intro: string;
+  /** Answer-first summary shown right under the H1: who, where, what, how much, how long.
+   * Written to be quotable on its own by search snippets and AI answers. */
+  answer?: string;
   includes: string[];
   process: { title: string; body: string }[];
   forWho: string[];
@@ -15,6 +18,8 @@ export type ServiceCopy = {
 export type Service = {
   slug: string;
   number: string;
+  /** Last real content change (ISO date) — feeds the visible "Actualizado" line and the sitemap. */
+  updated?: string;
   es: ServiceCopy;
   en: ServiceCopy;
   /** Present only for the 5 services exportable to a remote US client (excludes photography

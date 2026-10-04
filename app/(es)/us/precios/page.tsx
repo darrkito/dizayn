@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { PricingContent } from "@/components/pricing/pricing-content";
 import { buildUsOnlyAlternates } from "@/lib/routes";
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function UsPricingPage() {
-  return <PricingContent lang="es" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("pricing", { path: "/us/precios", name: title, description, lang: "es", market: "us" })} />
+      <PricingContent lang="es" />
+    </>
+  );
 }

@@ -24,6 +24,10 @@ const defaultOgImage = (locale: OgLocale) => ({
   alt: locale.startsWith("en") ? "Dizayn, marketing agency in Guadalajara" : "Dizayn, agencia de marketing en Guadalajara",
 });
 
+/** Stable URL of a generated share card (served by app/og/[...key]/route.tsx). */
+export const ogImagePath = (kind: "blog" | "service", market: "mx" | "us", lang: "es" | "en", esSlug: string) =>
+  `/og/${kind}/${market}/${lang}/${esSlug}.png`;
+
 type OgInput = {
   title: string;
   description: string;
@@ -32,13 +36,15 @@ type OgInput = {
   publishedTime?: string;
   modifiedTime?: string;
   section?: string;
+  /** A page-specific share card (see ogImagePath); defaults to the sitewide og-image.jpg. */
+  image?: string;
 };
 
 /** Every page's openGraph block. A page-level `openGraph` REPLACES the root layout's (Next merges
  * metadata shallowly), so anything not repeated here — site name, locale, image dimensions — is
  * silently lost. Routes with a colocated opengraph-image.tsx still win over `images` here:
  * file-based metadata has priority over the metadata object. */
-export function og({ title, description, url, type = "website", publishedTime, modifiedTime, section }: OgInput): NonNullable<Metadata["openGraph"]> {
+export function og({ title, description, url, type = "website", publishedTime, modifiedTime, section, image }: OgInput): NonNullable<Metadata["openGraph"]> {
   const locale = ogLocaleFromPath(url);
   const base = {
     title,
@@ -47,7 +53,7 @@ export function og({ title, description, url, type = "website", publishedTime, m
     siteName: "Dizayn",
     locale,
     alternateLocale: OG_LOCALES.filter((l) => l !== locale),
-    images: [defaultOgImage(locale)],
+    images: [image ? { url: image, width: 1200, height: 630, alt: title } : defaultOgImage(locale)],
   };
   return type === "article"
     ? { ...base, type: "article", publishedTime, modifiedTime, section, authors: ["Dizayn"] }

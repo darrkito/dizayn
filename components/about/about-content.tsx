@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ExploreLinks } from "@/components/site/inline-links";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath, usPath, type Market } from "@/lib/routes";
+import { langPath, usPath, type Market, marketPath } from "@/lib/routes";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
@@ -21,6 +22,14 @@ export function AboutContent({ lang, market = "mx" }: { lang: Lang; market?: Mar
   return (
     <div>
       <section className="container-x py-10 md:py-24">
+        <Breadcrumbs
+          label={t.nav.breadcrumb}
+          className="mb-6 md:mb-8"
+          items={[
+            { label: t.nav.home, href: marketPath("/", lang, market) },
+            { label: t.nav.about, href: marketPath("/nosotros", lang, market) },
+          ]}
+        />
         <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
           {about.eyebrow}
         </p>

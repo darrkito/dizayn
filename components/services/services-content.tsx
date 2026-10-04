@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { langPath, usPath, type Market } from "@/lib/routes";
+import { langPath, usPath, type Market, marketPath } from "@/lib/routes";
 import { WhatsAppBand } from "@/components/site/whatsapp-band";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function ServicesContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
@@ -22,6 +23,14 @@ export function ServicesContent({ lang, market = "mx" }: { lang: Lang; market?: 
   return (
     <div>
       <div className="container-x py-10 md:py-24">
+        <Breadcrumbs
+          label={t.nav.breadcrumb}
+          className="mb-6 md:mb-8"
+          items={[
+            { label: t.nav.home, href: marketPath("/", lang, market) },
+            { label: t.nav.services, href: marketPath("/servicios", lang, market) },
+          ]}
+        />
       <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{t.services.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{t.services.lead}</p>
 

@@ -5,8 +5,9 @@ import type { Lang } from "@/content/services";
 import { blogPosts } from "@/content/blog";
 import { usBlogPosts } from "@/content/us-blog";
 import { getDict, useI18n } from "@/lib/i18n";
-import type { Market } from "@/lib/routes";
+import { type Market, marketPath } from "@/lib/routes";
 import { BlogCard } from "./blog-card";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function BlogListContent({ lang, market = "mx" }: { lang: Lang; market?: Market }) {
   const { setLang } = useI18n();
@@ -22,6 +23,14 @@ export function BlogListContent({ lang, market = "mx" }: { lang: Lang; market?: 
 
   return (
     <div className="container-x py-24">
+      <Breadcrumbs
+        label={t.nav.breadcrumb}
+        className="mb-6 md:mb-8"
+        items={[
+          { label: t.nav.home, href: marketPath("/", lang, market) },
+          { label: t.nav.blog, href: marketPath("/blog", lang, market) },
+        ]}
+      />
       <h1 className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.95]">{heading.title}</h1>
       <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{heading.lead}</p>
 

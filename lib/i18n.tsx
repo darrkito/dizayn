@@ -23,6 +23,8 @@ const dict = {
       formCta: "Prefiero el formulario",
       close: "Cerrar",
       menu: "Navegación principal",
+      breadcrumb: "Ruta de navegación",
+      pricing: "Precios",
     },
     blog: {
       title: "Blog",
@@ -266,6 +268,8 @@ const dict = {
       formCta: "I prefer the form",
       close: "Close",
       menu: "Main navigation",
+      breadcrumb: "Breadcrumb",
+      pricing: "Pricing",
     },
     blog: {
       title: "Blog",

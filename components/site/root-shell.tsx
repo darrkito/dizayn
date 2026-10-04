@@ -10,9 +10,9 @@ import { Footer } from "@/components/site/footer";
 import { MobileTabBar } from "@/components/site/mobile-tab-bar";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { WebMcpRegister } from "@/components/webmcp-register";
-import { CONTACT } from "@/content/contact";
 import { SITE_URL } from "@/lib/api-response";
 import { og } from "@/lib/seo";
+import { siteGraph } from "@/lib/schema-pages";
 import type { Lang } from "@/content/services";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -70,51 +70,9 @@ export const rootMetadata = (lang: Lang): Metadata => {
   };
 };
 
-// Structural identity facts only (name/address/areaServed), in English — schema.org values are
-// machine-read identifiers, not display copy, so this block is identical in both root layouts.
-// Single @id-anchored entity (ProfessionalService + LocalBusiness merged): every "Dizayn"
-// reference sitewide (blog author/publisher, service provider) points at this same @id
-// instead of re-declaring anonymous duplicate Organization nodes.
-export const ORG_ID = `${SITE_URL}/#organization`;
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      name: "Dizayn",
-      url: SITE_URL,
-      inLanguage: ["es-MX", "en-MX", "es-US", "en-US"],
-      publisher: { "@id": ORG_ID },
-    },
-    {
-      "@type": ["ProfessionalService", "LocalBusiness"],
-      "@id": ORG_ID,
-      name: "Dizayn",
-      description: "Design and web development agency based in Guadalajara, Jalisco, Mexico.",
-      url: SITE_URL,
-      logo: `${SITE_URL}/icon.png`,
-      image: `${SITE_URL}/og-image.jpg`,
-      telephone: `+${CONTACT.whatsapp}`,
-      areaServed: ["Guadalajara", "Jalisco", "Mexico", "Worldwide"],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Guadalajara",
-        addressRegion: "Jalisco",
-        addressCountry: "MX",
-      },
-      email: CONTACT.email,
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: `+${CONTACT.whatsapp}`,
-        email: CONTACT.email,
-        contactType: "customer service",
-        areaServed: "Worldwide",
-      },
-      sameAs: [CONTACT.instagram],
-    },
-  ],
-};
+// Identity facts for the single sitewide Organization node, built in lib/schema-pages.ts
+// (identical in both root layouts; schema.org values are machine-read identifiers, not copy).
+const jsonLd = siteGraph();
 
 export function RootShell({ lang, children }: { lang: Lang; children: ReactNode }) {
   return (
@@ -123,7 +81,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: ReactNode 
         <link rel="alternate" type="text/markdown" href="/llms.txt" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { ContactForm } from "@/components/contact/contact-form";
 import { buildAlternates } from "@/lib/routes";
@@ -15,5 +17,10 @@ export const metadata: Metadata = {
 };
 
 export default function UsContactPageEn() {
-  return <ContactForm lang="en" market="us" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("contact", { path: "/us/en/contact", name: title, description, lang: "en", market: "us" })} />
+      <ContactForm lang="en" market="us" />
+    </>
+  );
 }

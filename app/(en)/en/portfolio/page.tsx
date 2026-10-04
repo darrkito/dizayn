@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { buildAlternates } from "@/lib/routes";
 import { PortfolioContent } from "@/components/portfolio/portfolio-content";
@@ -16,5 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPageEn() {
-  return <PortfolioContent lang="en" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("portfolio", { path: "/en/portfolio", name: title, description, lang: "en", market: "mx" })} />
+      <PortfolioContent lang="en" />
+    </>
+  );
 }

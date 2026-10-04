@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { fitTitle, og } from "@/lib/seo";
+import { fitTitle, og, ogImagePath } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { buildAlternates, langPath, stripLangPrefix } from "@/lib/routes";
-import { SITE_URL } from "@/lib/api-response";
+import { JsonLd } from "@/components/seo/json-ld";
+import { abs, faqPage, serviceNode } from "@/lib/schema";
+import { servicePrice } from "@/lib/pricing";
 
 /** The route param is the translated English slug (e.g. "ai-visibility") — resolve it back
  * to the canonical Spanish slug the content is actually keyed by. */
@@ -28,7 +30,7 @@ export async function generateMetadata({
   return {
     title: fitTitle(metaTitle),
     description: metaDescription,
-    openGraph: og({ title: metaTitle, description: metaDescription, type: "website", url: enPath }),
+    openGraph: og({ title: metaTitle, description: metaDescription, type: "website", url: enPath, image: ogImagePath("service", "mx", "en", service.slug) }),
     alternates: buildAlternates(`/servicios/${service.slug}`, "en-MX", { us: Boolean(service.us) }),
   };
 }
@@ -43,18 +45,13 @@ export default async function ServiceDetailPageEn({
   const service = getService(esSlug);
   if (!service) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: service.en.metaTitle,
-    description: service.en.intro,
-    provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: "MX",
-  };
+  const path = `/en/services/${slug}`;
+  const faq = service.en.faq;
+  const node = serviceNode({ service, lang: "en", market: "mx", path, image: ogImagePath("service", "mx", "en", service.slug), price: servicePrice(esSlug, "mx") });
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={[node, faqPage(faq, abs(path))]} />
       <ServiceDetailContent slug={esSlug} lang="en" />
     </>
   );

@@ -7,6 +7,8 @@ import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { portfolioItems } from "@/content/portfolio";
 import { PortfolioGallery } from "./portfolio-gallery";
 import { InstagramBand } from "./instagram-band";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { marketPath } from "@/lib/routes";
 
 export function PortfolioContent({ lang }: { lang: Lang }) {
   const { setLang } = useI18n();
@@ -18,6 +20,14 @@ export function PortfolioContent({ lang }: { lang: Lang }) {
 
   return (
     <div className="container-x py-10 md:py-24">
+      <Breadcrumbs
+        label={t.nav.breadcrumb}
+        className="mb-6 md:mb-8"
+        items={[
+          { label: t.nav.home, href: marketPath("/", lang, "mx") },
+          { label: t.nav.portfolio, href: marketPath("/portafolio", lang, "mx") },
+        ]}
+      />
       <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
         {t.portfolio.eyebrow}
       </p>

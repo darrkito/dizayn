@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { hubPageSchema } from "@/lib/schema-pages";
 import { og } from "@/lib/seo";
 import { ServicesContent } from "@/components/services/services-content";
 import { buildUsOnlyAlternates } from "@/lib/routes";
@@ -16,5 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default function UsServiciosPage() {
-  return <ServicesContent lang="es" market="us" />;
+  return (
+    <>
+      <JsonLd data={hubPageSchema("services", { path: "/us/servicios", name: title, description, lang: "es", market: "us" })} />
+      <ServicesContent lang="es" market="us" />
+    </>
+  );
 }

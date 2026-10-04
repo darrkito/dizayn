@@ -9,6 +9,7 @@ import { getDict, useI18n } from "@/lib/i18n";
 import { renderBlogContent } from "@/lib/blog-render";
 import { langPath, usPath, type Market } from "@/lib/routes";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { BlogCard, formatDate } from "./blog-card";
 
 export function BlogPostContent({
@@ -40,38 +41,40 @@ export function BlogPostContent({
 
   return (
     <div className="container-x py-10 md:py-24">
-      <Link
-        href={blogHref}
-        className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-      >
-        ← {t.blog.back}
-      </Link>
+      <Breadcrumbs
+        label={t.nav.breadcrumb}
+        items={[
+          { label: t.nav.home, href: path("/") },
+          { label: t.nav.blog, href: blogHref },
+          { label: copy.title, href: path(`/blog/${slug}`) },
+        ]}
+      />
 
-      <article className="mt-10 max-w-3xl" itemScope itemType="https://schema.org/BlogPosting">
+      <article className="mt-10 max-w-3xl">
         <header>
           <div className="flex items-center gap-3">
-            <span className="text-xs uppercase tracking-[0.18em] text-primary" itemProp="articleSection">
+            <span className="text-xs uppercase tracking-[0.18em] text-primary">
               {copy.category}
             </span>
-            <time className="text-xs text-muted-foreground" dateTime={post.date} itemProp="datePublished">
+            <time className="text-xs text-muted-foreground" dateTime={post.date}>
               {t.blog.published} {formatDate(post.date, lang)}
             </time>
           </div>
-          <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] leading-[1.02]" itemProp="headline">
+          <h1 className="mt-4 text-[clamp(2rem,6vw,3.5rem)] leading-[1.02]">
             {copy.title}
           </h1>
           <p className="mt-4 text-sm text-muted-foreground">{t.blog.by}</p>
           {post.dateModified !== post.date && (
             <p className="mt-4 text-xs text-muted-foreground">
               {t.blog.updated}{" "}
-              <time dateTime={post.dateModified} itemProp="dateModified">
+              <time dateTime={post.dateModified}>
                 {formatDate(post.dateModified, lang)}
               </time>
             </p>
           )}
         </header>
 
-        <div className="mt-10" itemProp="articleBody">
+        <div className="mt-10">
           {renderBlogContent(copy.content, lang)}
         </div>
 

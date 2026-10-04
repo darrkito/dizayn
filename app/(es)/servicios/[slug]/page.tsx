@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { fitTitle, og } from "@/lib/seo";
+import { fitTitle, og, ogImagePath } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
 import { buildAlternates } from "@/lib/routes";
-import { SITE_URL } from "@/lib/api-response";
+import { JsonLd } from "@/components/seo/json-ld";
+import { abs, faqPage, serviceNode } from "@/lib/schema";
+import { servicePrice } from "@/lib/pricing";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -23,7 +25,7 @@ export async function generateMetadata({
   return {
     title: fitTitle(metaTitle),
     description: metaDescription,
-    openGraph: og({ title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}` }),
+    openGraph: og({ title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}`, image: ogImagePath("service", "mx", "es", service.slug) }),
     alternates: buildAlternates(`/servicios/${slug}`, "es-MX", { us: Boolean(service.us) }),
   };
 }
@@ -37,18 +39,13 @@ export default async function ServiceDetailPage({
   const service = getService(slug);
   if (!service) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: service.es.metaTitle,
-    description: service.es.intro,
-    provider: { "@id": `${SITE_URL}/#organization` },
-    areaServed: "MX",
-  };
+  const path = `/servicios/${slug}`;
+  const faq = service.es.faq;
+  const node = serviceNode({ service, lang: "es", market: "mx", path, image: ogImagePath("service", "mx", "es", service.slug), price: servicePrice(slug, "mx") });
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={[node, faqPage(faq, abs(path))]} />
       <ServiceDetailContent slug={slug} lang="es" />
     </>
   );

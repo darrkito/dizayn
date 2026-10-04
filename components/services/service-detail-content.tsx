@@ -7,6 +7,7 @@ import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { langPath, usPath, type Market } from "@/lib/routes";
 import { WhatsAppBand } from "@/components/site/whatsapp-band";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function ServiceDetailContent({
   slug,
@@ -32,12 +33,14 @@ export function ServiceDetailContent({
   return (
     <div>
       <section className="container-x py-8 md:py-20">
-        <Link
-          href={path("/servicios")}
-          className="inline-flex min-h-11 items-center text-xs uppercase tracking-[0.18em] text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          ← {t.services.back}
-        </Link>
+        <Breadcrumbs
+          label={t.nav.breadcrumb}
+          items={[
+            { label: t.nav.home, href: path("/") },
+            { label: t.nav.services, href: path("/servicios") },
+            { label: copy.name, href: path(`/servicios/${slug}`) },
+          ]}
+        />
         <p className="mt-6 text-xs tracking-[0.2em] text-primary md:mt-10">{service.number}</p>
         <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,7vw,5rem)] leading-[0.95]">{copy.metaTitle}</h1>
         <p className="mt-6 max-w-2xl font-display text-xl text-primary">{copy.tagline}</p>

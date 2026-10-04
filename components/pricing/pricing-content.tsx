@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { PRICE_ROWS } from "@/content/us-pricing";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import { usPath } from "@/lib/routes";
+import { usPath, marketPath } from "@/lib/routes";
 import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 /** US-only page — no MX equivalent, so unlike the other market-aware components this
  * doesn't take a `market` prop; it always renders the usPricing dict namespace. */
@@ -21,6 +22,14 @@ export function PricingContent({ lang }: { lang: Lang }) {
   return (
     <div>
       <section className="container-x py-24">
+        <Breadcrumbs
+          label={t.nav.breadcrumb}
+          className="mb-6 md:mb-8"
+          items={[
+            { label: t.nav.home, href: marketPath("/", lang, "us") },
+            { label: t.nav.pricing, href: marketPath("/precios", lang, "us") },
+          ]}
+        />
         <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
           {p.eyebrow}
         </p>

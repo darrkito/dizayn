@@ -6,8 +6,9 @@ import { WhatsAppCTA } from "@/components/site/whatsapp-cta";
 import { CONTACT, waLink } from "@/content/contact";
 import { services } from "@/content/services";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
-import type { Market } from "@/lib/routes";
+import { type Market, marketPath } from "@/lib/routes";
 import { submitContact } from "@/app/(es)/contacto/actions";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 const fieldClass =
   "mt-2 w-full border border-border bg-card px-4 py-3 text-sm outline-none transition-colors focus:border-primary";
@@ -58,6 +59,14 @@ export function ContactForm({ lang, market = "mx" }: { lang: Lang; market?: Mark
 
   return (
     <div className="container-x py-10 md:py-24">
+      <Breadcrumbs
+        label={t.nav.breadcrumb}
+        className="mb-6 md:mb-8"
+        items={[
+          { label: t.nav.home, href: marketPath("/", lang, market) },
+          { label: t.nav.contact, href: marketPath("/contacto", lang, market) },
+        ]}
+      />
       <p className="inline-flex rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-text">
         {contact.eyebrow}
       </p>
