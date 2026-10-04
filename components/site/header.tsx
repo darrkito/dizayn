@@ -69,7 +69,7 @@ export function Header() {
           DIZAYN<span className="text-primary">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-4 md:flex lg:gap-8">
           {items.map((i) => (
             <Link
               key={i.href}
@@ -112,7 +112,9 @@ export function Header() {
 
           <ThemeToggle />
 
-          <span className="hidden sm:block">
+          {/* Hidden md→lg: with the full nav visible there is no room for it at tablet widths
+              (the header overflowed at 768px), and the floating WhatsApp button covers the CTA. */}
+          <span className="hidden sm:block md:hidden lg:block">
             <Link href={path("/contacto")} className="btn-primary !px-5 !py-2.5 text-[0.8rem]">
               {t.nav.cta}
             </Link>
