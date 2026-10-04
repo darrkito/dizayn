@@ -12,6 +12,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { WebMcpRegister } from "@/components/webmcp-register";
 import { CONTACT } from "@/content/contact";
 import { SITE_URL } from "@/lib/api-response";
+import { og } from "@/lib/seo";
 import type { Lang } from "@/content/services";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -57,15 +58,12 @@ export const rootMetadata = (lang: Lang): Metadata => {
     metadataBase: new URL(SITE_URL),
     title: { default: title, template: "%s | Dizayn" },
     description,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      url: path,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Dizayn" }],
-    },
-    twitter: { card: "summary_large_image", images: ["/og-image.jpg"] },
-    alternates: { canonical: path },
+    // No canonical/og:url at the layout level: every page sets its own, and anything that falls
+    // through to the layout (in-group 404s) must not claim to be the homepage.
+    openGraph: { ...og({ title, description, url: path }), url: undefined },
+    // No `images` here on purpose: twitter:image then inherits each page's resolved og:image
+    // (including generated opengraph-image routes) instead of pinning the static default.
+    twitter: { card: "summary_large_image" },
     verification: {
       google: "zqve3zaRBgJl0Xq3QfdJ6j3btWpsueyE_uohdujsiM0",
     },

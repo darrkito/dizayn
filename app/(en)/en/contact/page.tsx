@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import { ContactForm } from "@/components/contact/contact-form";
 import { buildAlternates } from "@/lib/routes";
 
@@ -9,7 +10,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: { title, description, type: "website", url: "/en/contact", images: ["/og-image.jpg"] },
+  openGraph: og({ title, description, type: "website", url: "/en/contact" }),
   alternates: buildAlternates("/contacto", "en-MX"),
 };
 

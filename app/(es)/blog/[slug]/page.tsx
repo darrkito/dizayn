@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { fitTitle } from "@/lib/seo";
+import { fitTitle, og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { blogPosts, getPost } from "@/content/blog";
 import { BlogPostContent } from "@/components/blog/blog-post-content";
@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: fitTitle(metaTitle),
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `/blog/${slug}`, images: ["/og-image.jpg"] },
+    openGraph: og({ title: metaTitle, description: metaDescription, type: "article", url: `/blog/${slug}`, publishedTime: post.date, modifiedTime: post.dateModified, section: post.es.category }),
     alternates: buildAlternates(`/blog/${slug}`, "es-MX", { us: false }),
   };
 }

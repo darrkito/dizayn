@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import { BlogListContent } from "@/components/blog/blog-list-content";
 import { buildUsOnlyAlternates } from "@/lib/routes";
 
@@ -11,7 +12,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: { title: ogTitle, description, type: "website", url: "/us/en/blog", images: ["/og-image.jpg"] },
+  openGraph: og({ title: ogTitle, description, type: "website", url: "/us/en/blog" }),
   alternates: buildUsOnlyAlternates("/blog", "en-US"),
 };
 

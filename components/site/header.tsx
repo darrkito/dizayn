@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getDict, useI18n, type Lang } from "@/lib/i18n";
 import { altPath, langFromPath, langPath, marketFromPath, marketHomePath, usPath } from "@/lib/routes";
@@ -10,10 +10,11 @@ import { ThemeToggle } from "./theme-toggle";
 const linkClass = "text-sm font-medium text-muted-foreground transition-colors hover:text-primary";
 const activeLinkClass = "text-sm font-semibold text-primary";
 
+const hrefLangFor = (l: Lang, market: "mx" | "us") => `${l}-${market === "us" ? "US" : "MX"}`;
+
 export function Header() {
   const { setLang } = useI18n();
   const pathname = usePathname() ?? "/";
-  const router = useRouter();
   const [hidden, setHidden] = useState(false);
 
   // Phones: hide on scroll down, show on scroll up. Transform only, so no layout shift.
@@ -37,12 +38,6 @@ export function Header() {
   const isUs = market === "us";
   const t = getDict(lang);
   const path = (esPath: string) => (isUs ? usPath(esPath, lang) : langPath(esPath, lang));
-
-  const handleLang = (l: Lang) => {
-    const alt = altPath(pathname, l);
-    setLang(l);
-    if (alt !== pathname) router.push(alt);
-  };
 
   // Market switcher always jumps to that market's home — not every MX page has a US
   // sibling yet (portfolio, blog, legal pages), so it can't preserve the current page.
@@ -95,23 +90,23 @@ export function Header() {
           </Link>
 
           <div className="flex items-center gap-1 text-xs uppercase tracking-[0.18em]">
-            <button
-              type="button"
-              onClick={() => handleLang("es")}
-              className={`flex min-h-11 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${lang === "es" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
-              aria-label="Español"
-            >
-              ES
-            </button>
-            <span className="text-border">/</span>
-            <button
-              type="button"
-              onClick={() => handleLang("en")}
-              className={`flex min-h-11 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${lang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
-              aria-label="English"
-            >
-              EN
-            </button>
+            {(["es", "en"] as const).map((l, i) => (
+              <span key={l} className="flex items-center gap-1">
+                {i > 0 && <span className="text-border">/</span>}
+                {/* Real links (not buttons + router.push) so crawlers can follow the language
+                    sibling; setLang still records the visitor's preference. */}
+                <Link
+                  href={altPath(pathname, l)}
+                  hrefLang={hrefLangFor(l, market)}
+                  onClick={() => setLang(l)}
+                  aria-current={lang === l ? "true" : undefined}
+                  className={`flex min-h-11 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${lang === l ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}
+                  aria-label={l === "es" ? "Español" : "English"}
+                >
+                  {l.toUpperCase()}
+                </Link>
+              </span>
+            ))}
           </div>
 
           <ThemeToggle />

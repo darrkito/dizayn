@@ -26,10 +26,21 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Page routes only — excludes /api/*, /mcp, /.well-known/*, and Next's
-        // static assets, which already set their own headers or don't need this.
-        source: "/((?!api/|mcp|\\.well-known/|_next/).*)",
+        // Homepage only: llms.txt is a whole-site summary, so advertising it as every page's
+        // markdown alternate misdescribed those pages. The homepage genuinely has it as its
+        // markdown rendering (proxy.ts serves it on Accept: text/markdown).
+        source: "/",
         headers: [{ key: "Link", value: '</llms.txt>; rel="alternate"; type="text/markdown"' }],
+      },
+      {
+        // Machine endpoints stay readable by agents (robots.ts allows /api/) but out of the
+        // search index: a JSON payload ranking instead of the page it describes helps no one.
+        source: "/:dir(api|\\.well-known)/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/:endpoint(mcp|a2a|llms-full\\.txt)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
     ];
   },
@@ -37,13 +48,24 @@ const nextConfig: NextConfig = {
     // The /en/* routes briefly shipped with untranslated Spanish section names/slugs
     // (e.g. /en/servicios/seo) before this fix — already pinged to Bing/Yandex via
     // IndexNow and resubmitted to GSC in that window, so redirect rather than 404.
-    return Object.entries(EN_SLUG_MAP)
-      .filter(([esPath, enPath]) => esPath !== enPath)
-      .map(([esPath, enPath]) => ({
-        source: `/en${esPath}`,
-        destination: `/en${enPath}`,
+    const translated = Object.entries(EN_SLUG_MAP).filter(([esPath, enPath]) => esPath !== enPath);
+    // Fully-Spanish paths under an English prefix (/en/servicios/seo, /us/en/servicios/seo).
+    const spanishPaths = translated.flatMap(([esPath, enPath]) =>
+      ["/en", "/us/en"].map((prefix) => ({ source: `${prefix}${esPath}`, destination: `${prefix}${enPath}`, permanent: true })),
+    );
+    // Half-translated paths: English section + Spanish slug (/en/services/sitios-web). The [slug]
+    // routes resolve these to real content, which made them silent duplicates of the English URL.
+    const halfTranslated = translated.flatMap(([esPath, enPath]) => {
+      const esSlug = esPath.split("/")[2];
+      const enSection = enPath.split("/")[1];
+      if (!esSlug || esSlug === enPath.split("/")[2]) return [];
+      return ["/en", "/us/en"].map((prefix) => ({
+        source: `${prefix}/${enSection}/${esSlug}`,
+        destination: `${prefix}${enPath}`,
         permanent: true,
       }));
+    });
+    return [...spanishPaths, ...halfTranslated];
   },
 };
 

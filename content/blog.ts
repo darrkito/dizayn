@@ -1805,7 +1805,7 @@ Does your firm need a content and local presence strategy? [Let's talk about you
       category: "Sitios web",
       metaTitle: "Diseño de páginas web en Guadalajara: qué incluir",
       metaDescription:
-        "Guía de qué debe incluir un sitio web profesional en Guadalajara: estrategia, diseño a medida, SEO técnico, velocidad y capacitación. Qué exigir antes de contratar.",
+        "Qué debe incluir un sitio web profesional en Guadalajara: estrategia, diseño a medida, SEO técnico, velocidad y capacitación. Qué exigir antes de contratar.",
       faq: [
         {
           q: "¿Qué diferencia a un diseño de páginas web profesional de uno genérico?",
@@ -3027,7 +3027,7 @@ Does your business have real event presence it isn't turning into content? [Let'
       title: "Caso de éxito: cómo posicionamos la cobertura de Luvory del WTA Guadalajara Open",
       excerpt: "Luvory proveyó baños VIP y presidenciales para el WTA 500 en Zapopan. Esto es cómo convertimos esa presencia real en una guía completa que compite por búsquedas del torneo.",
       category: "Casos de éxito",
-      metaTitle: "Caso de éxito: contenido del WTA Guadalajara Open para Luvory",
+      metaTitle: "Caso de éxito: Luvory en el WTA Guadalajara Open",
       metaDescription: "Cómo estructuramos el contenido de Luvory sobre el WTA Guadalajara Open (Zapopan) para competir por búsquedas reales del torneo, con SEO y GEO.",
       faq: [
         { q: "¿Qué papel tuvo Luvory en el WTA Guadalajara Open?", a: "Proveyó baños VIP y presidenciales para las zonas de jugadoras y hospitalidad, remolques premium para las zonas de mayor afluencia, y mantenimiento continuo durante toda la semana del torneo." },
@@ -3333,7 +3333,7 @@ Si tu negocio opera principalmente en Guadalajara o Jalisco, una agencia local s
       excerpt:
         "Hiring an agency in Guadalajara vs. Mexico City doesn't change the quality of the work — it changes response time, local market knowledge, and cost. Here's what actually matters.",
       category: "Strategy",
-      metaTitle: "Marketing Agency Guadalajara vs Mexico City: Real Differences",
+      metaTitle: "Marketing Agency: Guadalajara vs Mexico City",
       metaDescription:
         "Is it better to hire a digital marketing agency in Guadalajara or Mexico City? Real differences in cost, response time, and local market knowledge.",
       faq: [
@@ -3529,7 +3529,7 @@ Want to verify our portfolio and process yourself? [Tell us about your project](
       excerpt:
         "No todo negocio necesita el mismo tipo de video. Esto es lo que realmente separa un video corporativo, uno para redes sociales y uno de producto, y cuándo usar cada uno.",
       category: "Video",
-      metaTitle: "Video marketing para marcas mexicanas: guía por tipo de video",
+      metaTitle: "Video marketing para marcas mexicanas: guía por tipo",
       metaDescription:
         "Qué tipo de video marketing necesita tu marca en México: corporativo, para redes sociales, de producto o testimonial. Diferencias reales y cuándo usar cada uno.",
       faq: [
@@ -3924,7 +3924,7 @@ Want us to evaluate whether your current site has these five elements? [Tell us 
       category: "SEO",
       metaTitle: "SEO para e-commerce y tiendas en línea en México",
       metaDescription:
-        "Cómo mejorar el SEO de una tienda en línea: optimización de páginas de producto, categorías, datos estructurados y velocidad. Guía práctica para e-commerce en México.",
+        "Cómo mejorar el SEO de una tienda en línea: páginas de producto, categorías, datos estructurados y velocidad. Guía práctica para e-commerce en México.",
       faq: [
         {
           q: "¿Cómo mejorar el posicionamiento SEO de una tienda en línea?",
@@ -4186,7 +4186,7 @@ Want us to check your site for free against these seven points? [Tell us about y
       category: "SEO",
       metaTitle: "SEO multi-sucursal: posicionar varias ubicaciones en México",
       metaDescription:
-        "Cómo hacer SEO para un negocio con varias sucursales en México: página propia por ubicación, perfil de Google Business por sucursal, datos consistentes y contenido único.",
+        "SEO para negocios con varias sucursales en México: una página por ubicación, un perfil de Google Business por sucursal, datos consistentes y contenido único.",
       faq: [
         {
           q: "¿Cómo mejoro el SEO de mi negocio si tengo varias sucursales?",
@@ -4246,7 +4246,7 @@ El nombre, dirección y teléfono de cada sucursal deben ser idénticos en tu si
       category: "SEO",
       metaTitle: "Multi-Location SEO: Ranking Several Locations in Mexico",
       metaDescription:
-        "How to do SEO for a business with multiple branches in Mexico: a dedicated page per location, a Google Business Profile per branch, consistent data, and unique content.",
+        "SEO for a business with several branches in Mexico: one page per location, one Google Business Profile per branch, consistent data and unique content.",
       faq: [
         {
           q: "How do I improve SEO for my business if I have multiple locations?",

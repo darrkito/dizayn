@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { fitTitle } from "@/lib/seo";
+import { fitTitle, og } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { getService, services } from "@/content/services";
 import { ServiceDetailContent } from "@/components/services/service-detail-content";
@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     title: fitTitle(metaTitle),
     description: metaDescription,
-    openGraph: { title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}`, images: ["/og-image.jpg"] },
+    openGraph: og({ title: metaTitle, description: metaDescription, type: "website", url: `/servicios/${slug}` }),
     alternates: buildAlternates(`/servicios/${slug}`, "es-MX", { us: Boolean(service.us) }),
   };
 }

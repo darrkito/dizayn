@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import { buildAlternates } from "@/lib/routes";
 import { PortfolioContent } from "@/components/portfolio/portfolio-content";
 
@@ -10,7 +11,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: { title: ogTitle, description, type: "website", url: "/portafolio", images: ["/og-image.jpg"] },
+  openGraph: og({ title: ogTitle, description, type: "website", url: "/portafolio" }),
   alternates: buildAlternates("/portafolio", "es-MX", { us: false }),
 };
 
